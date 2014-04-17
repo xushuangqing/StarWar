@@ -9,6 +9,7 @@
 #import "SRSpaceLayer.h"
 #import "SRSpaceShip.h"
 #import "SRConstants.h"
+#import "SRControlLayer.h"
 
 @interface SRSpaceLayer(){
     b2World* _world;
@@ -24,8 +25,12 @@
 {
     //Create a new Scene which is the main scene of this game.
     CCScene *scene = [CCScene node];
+    
     SRSpaceLayer *layer = [SRSpaceLayer node];
     [scene addChild: layer];
+    
+    SRControlLayer *controlLayer = [SRControlLayer node];
+    [scene addChild:controlLayer];
     
     return scene;
 }

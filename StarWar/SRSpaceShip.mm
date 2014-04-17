@@ -8,7 +8,6 @@
 
 #import "SRSpaceShip.h"
 #import "SRConstants.h"
-//#import "SRSpaceLayer.h"
 
 
 @implementation SRSpaceShip
@@ -16,8 +15,13 @@
 -(id) init
 {
     if (self = [super init]) {
+        [self registerNotification];
     }
     return self;
+}
+
+-(id) registerNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(plusVelocity:) name:NSNotificationNamePlusVelocity object:nil];
 }
 
 -(void) createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position withVelocity:(b2Vec2)velocity
@@ -53,6 +57,14 @@
     b2Vec2 force(-5.0/R2*((self.b2Body->GetPosition()).x-5)/R,-5.0/R2*(self.b2Body->GetPosition()).y/R);
     
     self.b2Body->ApplyForce(force, self.b2Body->GetWorldCenter());
+}
+
+-(void) plusVelocity: (NSNotification *) notification
+{
+    b2Vec2 v = self.b2Body->GetLinearVelocity();
+    v.x = v.x * 1.1;
+    v.y = v.y * 1.1;
+    self.b2Body->SetLinearVelocity(v);
 }
 
 @end

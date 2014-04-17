@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A99ECBF18FFF9300092D9A9 /* SRControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A99ECBE18FFF9300092D9A9 /* SRControlLayer.m */; };
 		4AAA9A9418FA2BFA00565381 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9318FA2BFA00565381 /* QuartzCore.framework */; };
 		4AAA9A9618FA2BFA00565381 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9518FA2BFA00565381 /* OpenGLES.framework */; };
 		4AAA9A9818FA2BFA00565381 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9718FA2BFA00565381 /* OpenAL.framework */; };
@@ -193,6 +194,8 @@
 
 /* Begin PBXFileReference section */
 		4A99ECB818FFEF660092D9A9 /* SRConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRConstants.h; sourceTree = "<group>"; };
+		4A99ECBD18FFF9300092D9A9 /* SRControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRControlLayer.h; sourceTree = "<group>"; };
+		4A99ECBE18FFF9300092D9A9 /* SRControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRControlLayer.m; sourceTree = "<group>"; };
 		4AAA9A9018FA2BFA00565381 /* StarWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AAA9A9318FA2BFA00565381 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4AAA9A9518FA2BFA00565381 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -596,6 +599,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A99ECBC18FFF8E20092D9A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A99ECBD18FFF9300092D9A9 /* SRControlLayer.h */,
+				4A99ECBE18FFF9300092D9A9 /* SRControlLayer.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		4AAA9A8718FA2BFA00565381 = {
 			isa = PBXGroup;
 			children = (
@@ -633,6 +645,7 @@
 		4AAA9AA718FA2BFA00565381 /* StarWar */ = {
 			isa = PBXGroup;
 			children = (
+				4A99ECBC18FFF8E20092D9A9 /* Controller */,
 				4AAA9CC818FA2BFD00565381 /* AppDelegate.h */,
 				4AAA9CC918FA2BFD00565381 /* AppDelegate.mm */,
 				4AAA9CCB18FA2BFD00565381 /* HelloWorldLayer.h */,
@@ -1279,6 +1292,7 @@
 				4AAA9C6518FA2BFC00565381 /* b2Settings.cpp in Sources */,
 				4AAA9B0D18FA2BFB00565381 /* CCGLProgram.m in Sources */,
 				4AAA9BFD18FA2BFC00565381 /* SimpleAudioEngine.m in Sources */,
+				4A99ECBF18FFF9300092D9A9 /* SRControlLayer.m in Sources */,
 				4AAA9ADC18FA2BFA00565381 /* CCActionManager.m in Sources */,
 				4AAA9CB118FA2BFD00565381 /* b2PulleyJoint.cpp in Sources */,
 				4AAA9B0718FA2BFA00565381 /* CCDrawNode.m in Sources */,
