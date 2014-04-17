@@ -187,9 +187,12 @@
 		4AAA9CD018FA2BFD00565381 /* IntroLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CCF18FA2BFD00565381 /* IntroLayer.mm */; };
 		4AAA9CD318FA2BFD00565381 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CD218FA2BFD00565381 /* GLES-Render.mm */; };
 		4AAA9CD518FA2BFD00565381 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAA9CD418FA2BFD00565381 /* blocks.png */; };
+		4AAA9CDD18FA304D00565381 /* SRSpaceShip.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CDC18FA304D00565381 /* SRSpaceShip.mm */; };
+		4AAA9CE618FA329000565381 /* SRSpaceLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CE518FA329000565381 /* SRSpaceLayer.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A99ECB818FFEF660092D9A9 /* SRConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRConstants.h; sourceTree = "<group>"; };
 		4AAA9A9018FA2BFA00565381 /* StarWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AAA9A9318FA2BFA00565381 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4AAA9A9518FA2BFA00565381 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -566,6 +569,10 @@
 		4AAA9CD118FA2BFD00565381 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		4AAA9CD218FA2BFD00565381 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		4AAA9CD418FA2BFD00565381 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
+		4AAA9CDB18FA304D00565381 /* SRSpaceShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSpaceShip.h; sourceTree = "<group>"; };
+		4AAA9CDC18FA304D00565381 /* SRSpaceShip.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRSpaceShip.mm; sourceTree = "<group>"; };
+		4AAA9CE418FA329000565381 /* SRSpaceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSpaceLayer.h; sourceTree = "<group>"; };
+		4AAA9CE518FA329000565381 /* SRSpaceLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRSpaceLayer.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -637,6 +644,11 @@
 				4AAA9AA818FA2BFA00565381 /* Resources */,
 				4AAA9AC018FA2BFA00565381 /* libs */,
 				4AAA9CC418FA2BFD00565381 /* Supporting Files */,
+				4AAA9CDB18FA304D00565381 /* SRSpaceShip.h */,
+				4AAA9CDC18FA304D00565381 /* SRSpaceShip.mm */,
+				4AAA9CE418FA329000565381 /* SRSpaceLayer.h */,
+				4AAA9CE518FA329000565381 /* SRSpaceLayer.mm */,
+				4A99ECB818FFEF660092D9A9 /* SRConstants.h */,
 			);
 			path = StarWar;
 			sourceTree = "<group>";
@@ -1254,6 +1266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AAA9AFE18FA2BFA00565381 /* ccDeprecated.m in Sources */,
+				4AAA9CE618FA329000565381 /* SRSpaceLayer.mm in Sources */,
 				4AAA9C9818FA2BFD00565381 /* b2PolygonAndCircleContact.cpp in Sources */,
 				4AAA9BC918FA2BFC00565381 /* ccCArray.m in Sources */,
 				4AAA9C4318FA2BFC00565381 /* b2Distance.cpp in Sources */,
@@ -1379,6 +1392,7 @@
 				4AAA9B0418FA2BFA00565381 /* CCDrawingPrimitives.m in Sources */,
 				4AAA9B4A18FA2BFB00565381 /* CCProgressTimer.m in Sources */,
 				4AAA9C4618FA2BFC00565381 /* b2DynamicTree.cpp in Sources */,
+				4AAA9CDD18FA304D00565381 /* SRSpaceShip.mm in Sources */,
 				4AAA9C2F18FA2BFC00565381 /* vec4.c in Sources */,
 				4AAA9C5618FA2BFC00565381 /* b2PolygonShape.cpp in Sources */,
 				4AAA9B1618FA2BFB00565381 /* CCGrid.m in Sources */,
@@ -1527,6 +1541,7 @@
 				4AAA9CDA18FA2BFD00565381 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
