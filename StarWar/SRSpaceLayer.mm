@@ -13,6 +13,7 @@
 @interface SRSpaceLayer(){
     b2World* _world;
     SRSpaceShip* _spaceShip;
+    GLESDebugDraw *m_debugDraw;
 }
 @end
 
@@ -49,7 +50,7 @@
     _world->SetAllowSleeping(true);
 	_world->SetContinuousPhysics(true);
     
-    GLESDebugDraw *m_debugDraw = new GLESDebugDraw(PTM_RATIO);
+    m_debugDraw = new GLESDebugDraw(PTM_RATIO);
 	_world->SetDebugDraw(m_debugDraw);
 
     m_debugDraw->SetFlags(b2Draw::e_shapeBit);
@@ -91,6 +92,17 @@
 	// Instruct the world to perform a single step of simulation. It is
 	// generally best to keep the time step and iterations fixed.
 	_world->Step(dt, velocityIterations, positionIterations);
+}
+
+-(void) dealloc
+{
+	delete _world;
+	_world = NULL;
+	
+	delete m_debugDraw;
+	m_debugDraw = NULL;
+	
+	[super dealloc];
 }
 
 
