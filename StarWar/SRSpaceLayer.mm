@@ -10,10 +10,13 @@
 #import "SRSpaceShip.h"
 #import "SRConstants.h"
 #import "SRControlLayer.h"
+#import "SREarth.h"
 
 @interface SRSpaceLayer(){
     b2World* _world;
     SRSpaceShip* _spaceShip;
+    SREarth* _earth;
+    
     GLESDebugDraw *m_debugDraw;
 }
 @end
@@ -39,8 +42,11 @@
 {
     if (self = [super init]) {
         [self initPhysics];
+        [self initEarth];
         [self initSpaceShip];
-                /* Only set scheduleUpdate, the update function can work*/
+        [self setAnchorPoint:ccp(0.5, 0)];
+        
+        /* Only set scheduleUpdate, the update function can work*/
         [self scheduleUpdate];
     }
     return self;
@@ -67,9 +73,16 @@
     
     b2Vec2 position(2, 3);
     b2Vec2 velocity(0.7, 0.7);
-    [_spaceShip createBodyForWorld:_world withPosition:position withVelocity:velocity];
+    
+    [_spaceShip createBodyForWorld:_world withPosition:position withGeocentric:_earth.geocentric withVelocity:velocity];
     
     [self addChild:_spaceShip];
+}
+
+-(void) initEarth
+{
+    _earth = [SREarth node];
+    [_earth createBodyForWorld:_world withRadius:5.0f withAngularVelocity:0];
 }
 
 -(void) draw {
@@ -97,6 +110,14 @@
 	// Instruct the world to perform a single step of simulation. It is
 	// generally best to keep the time step and iterations fixed.
 	_world->Step(dt, velocityIterations, positionIterations);
+
+    float angle = atan(([[UIScreen mainScreen] bounds].size.height/2-_spaceShip.position.x)/_spaceShip.position.y);
+    angle = CC_RADIANS_TO_DEGREES(angle);
+    
+    if (_spaceShip.position.y >= 0)
+        [self setRotation:angle];
+    else
+        [self setRotation:180+angle];
 }
 
 -(void) dealloc

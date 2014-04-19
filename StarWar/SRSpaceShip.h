@@ -14,5 +14,5 @@
 
 @interface SRSpaceShip : CCPhysicsSprite {
 }
--(void) createBodyForWorld: (b2World *)world;
+-(void) createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position withGeocentric:(b2Vec2)geocentric withVelocity:(b2Vec2)velocity;
 @end

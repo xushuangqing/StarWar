@@ -9,6 +9,9 @@
 #import "SRSpaceShip.h"
 #import "SRConstants.h"
 
+@interface SRSpaceShip ()
+@property b2Vec2 geocentric;
+@end
 
 @implementation SRSpaceShip
 
@@ -20,11 +23,11 @@
     return self;
 }
 
--(id) registerNotification {
+-(void) registerNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(plusVelocity:) name:NSNotificationNamePlusVelocity object:nil];
 }
 
--(void) createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position withVelocity:(b2Vec2)velocity
+-(void) createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position withGeocentric:(b2Vec2)geocentric withVelocity:(b2Vec2)velocity
 {
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
@@ -46,15 +49,19 @@
     [self setPTMRatio:PTM_RATIO];
     [self setB2Body:body];
     [self scheduleUpdate];
+    
+    [self setGeocentric:geocentric];
 }
 
 -(void) update:(ccTime)delta {
     
+    
     /* For test, I make the spaceShip go around the point (5, 0) */
-    float R2 = ((self.b2Body->GetPosition()).x-5)*((self.b2Body->GetPosition()).x-5) + (self.b2Body->GetPosition()).y*(self.b2Body->GetPosition()).y;
+
+    float R2 = ((self.b2Body->GetPosition()).x-[self geocentric].x)*((self.b2Body->GetPosition()).x-[self geocentric].x) + (self.b2Body->GetPosition()).y*(self.b2Body->GetPosition()).y;
     float R = sqrt(R2);
     
-    b2Vec2 force(-5.0/R2*((self.b2Body->GetPosition()).x-5)/R,-5.0/R2*(self.b2Body->GetPosition()).y/R);
+    b2Vec2 force(-5.0/R2*((self.b2Body->GetPosition()).x-[self geocentric].x)/R,-5.0/R2*(self.b2Body->GetPosition()).y/R);
     
     self.b2Body->ApplyForce(force, self.b2Body->GetWorldCenter());
 }

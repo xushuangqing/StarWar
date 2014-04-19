@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A971F9D1900B87A00A33EE3 /* SREarth.mm */; };
 		4A99ECBF18FFF9300092D9A9 /* SRControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A99ECBE18FFF9300092D9A9 /* SRControlLayer.m */; };
 		4AAA9A9418FA2BFA00565381 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9318FA2BFA00565381 /* QuartzCore.framework */; };
 		4AAA9A9618FA2BFA00565381 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9518FA2BFA00565381 /* OpenGLES.framework */; };
@@ -193,6 +194,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A971F9C1900B87A00A33EE3 /* SREarth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SREarth.h; sourceTree = "<group>"; };
+		4A971F9D1900B87A00A33EE3 /* SREarth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SREarth.mm; sourceTree = "<group>"; };
 		4A99ECB818FFEF660092D9A9 /* SRConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRConstants.h; sourceTree = "<group>"; };
 		4A99ECBD18FFF9300092D9A9 /* SRControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRControlLayer.h; sourceTree = "<group>"; };
 		4A99ECBE18FFF9300092D9A9 /* SRControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRControlLayer.m; sourceTree = "<group>"; };
@@ -662,6 +665,8 @@
 				4AAA9CE418FA329000565381 /* SRSpaceLayer.h */,
 				4AAA9CE518FA329000565381 /* SRSpaceLayer.mm */,
 				4A99ECB818FFEF660092D9A9 /* SRConstants.h */,
+				4A971F9C1900B87A00A33EE3 /* SREarth.h */,
+				4A971F9D1900B87A00A33EE3 /* SREarth.mm */,
 			);
 			path = StarWar;
 			sourceTree = "<group>";
@@ -1290,6 +1295,7 @@
 				4AAA9AE818FA2BFA00565381 /* CCActionTween.m in Sources */,
 				4AAA9BD818FA2BFC00565381 /* CGPointExtension.m in Sources */,
 				4AAA9C6518FA2BFC00565381 /* b2Settings.cpp in Sources */,
+				4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */,
 				4AAA9B0D18FA2BFB00565381 /* CCGLProgram.m in Sources */,
 				4AAA9BFD18FA2BFC00565381 /* SimpleAudioEngine.m in Sources */,
 				4A99ECBF18FFF9300092D9A9 /* SRControlLayer.m in Sources */,
