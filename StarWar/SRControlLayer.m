@@ -14,17 +14,20 @@
 -(id) init
 {
     if (self = [super init]) {
-        [self initPlusButton];
+        [self initButton];
     }
     return self;
 }
 
--(void) initPlusButton
+-(void) initButton
 {
     CCMenuItem *plusButton = [CCMenuItemImage itemWithNormalImage:@"blocks.png" selectedImage:@"blocks.png" target:self selector:@selector(plusButtonPressed)];
     plusButton.position = ccp(60, 60);
     
-    CCMenu *menu = [CCMenu menuWithItems:plusButton, nil];
+    CCMenuItem *minusButton = [CCMenuItemImage itemWithNormalImage:@"blocks.png" selectedImage:@"blocks.png" target:self selector:@selector(minusButtonPressed)];
+    minusButton.position = ccp(400, 60);
+    
+    CCMenu *menu = [CCMenu menuWithItems:plusButton,minusButton, nil];
     menu.position = CGPointZero;
     [self addChild:menu];
 }
@@ -32,6 +35,11 @@
 -(void) plusButtonPressed
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNamePlusVelocity object:nil];
+}
+
+-(void) minusButtonPressed
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameMinusVelocity object:nil];
 }
 
 @end

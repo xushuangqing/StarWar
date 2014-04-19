@@ -25,6 +25,7 @@
 
 -(void) registerNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(plusVelocity:) name:NSNotificationNamePlusVelocity object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(minusVelocity:) name:NSNotificationNameMinusVelocity object:nil];
 }
 
 -(void) createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position withGeocentric:(b2Vec2)geocentric withVelocity:(b2Vec2)velocity
@@ -71,6 +72,14 @@
     b2Vec2 v = self.b2Body->GetLinearVelocity();
     v.x = v.x * 1.1;
     v.y = v.y * 1.1;
+    self.b2Body->SetLinearVelocity(v);
+}
+
+-(void) minusVelocity: (NSNotification *) notification
+{
+    b2Vec2 v = self.b2Body->GetLinearVelocity();
+    v.x = v.x * 0.9;
+    v.y = v.y * 0.9;
     self.b2Body->SetLinearVelocity(v);
 }
 

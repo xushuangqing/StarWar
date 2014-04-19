@@ -8,6 +8,7 @@
 
 #define PTM_RATIO 32
 #define NSNotificationNamePlusVelocity @"plusVelocity"
+#define NSNotificationNameMinusVelocity @"minusVelocity"
 
 @interface SRConstants: NSObject
 
