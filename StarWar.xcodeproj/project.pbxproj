@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A971F9D1900B87A00A33EE3 /* SREarth.mm */; };
+		4A986E0719021CAE00B68A1B /* SRStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E0619021CAE00B68A1B /* SRStar.mm */; };
 		4A99ECBF18FFF9300092D9A9 /* SRControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A99ECBE18FFF9300092D9A9 /* SRControlLayer.m */; };
 		4AAA9A9418FA2BFA00565381 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9318FA2BFA00565381 /* QuartzCore.framework */; };
 		4AAA9A9618FA2BFA00565381 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9518FA2BFA00565381 /* OpenGLES.framework */; };
@@ -196,6 +197,8 @@
 /* Begin PBXFileReference section */
 		4A971F9C1900B87A00A33EE3 /* SREarth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SREarth.h; sourceTree = "<group>"; };
 		4A971F9D1900B87A00A33EE3 /* SREarth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SREarth.mm; sourceTree = "<group>"; };
+		4A986E0519021CAE00B68A1B /* SRStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStar.h; sourceTree = "<group>"; };
+		4A986E0619021CAE00B68A1B /* SRStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRStar.mm; sourceTree = "<group>"; };
 		4A99ECB818FFEF660092D9A9 /* SRConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRConstants.h; sourceTree = "<group>"; };
 		4A99ECBD18FFF9300092D9A9 /* SRControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRControlLayer.h; sourceTree = "<group>"; };
 		4A99ECBE18FFF9300092D9A9 /* SRControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRControlLayer.m; sourceTree = "<group>"; };
@@ -602,6 +605,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A986E0419021C5100B68A1B /* NPC */ = {
+			isa = PBXGroup;
+			children = (
+				4A986E0519021CAE00B68A1B /* SRStar.h */,
+				4A986E0619021CAE00B68A1B /* SRStar.mm */,
+			);
+			name = NPC;
+			sourceTree = "<group>";
+		};
 		4A99ECBC18FFF8E20092D9A9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -648,6 +660,7 @@
 		4AAA9AA718FA2BFA00565381 /* StarWar */ = {
 			isa = PBXGroup;
 			children = (
+				4A986E0419021C5100B68A1B /* NPC */,
 				4A99ECBC18FFF8E20092D9A9 /* Controller */,
 				4AAA9CC818FA2BFD00565381 /* AppDelegate.h */,
 				4AAA9CC918FA2BFD00565381 /* AppDelegate.mm */,
@@ -1319,6 +1332,7 @@
 				4AAA9B5118FA2BFB00565381 /* CCScene.m in Sources */,
 				4AAA9C6818FA2BFC00565381 /* b2StackAllocator.cpp in Sources */,
 				4AAA9B9618FA2BFB00565381 /* CCTransitionPageTurn.m in Sources */,
+				4A986E0719021CAE00B68A1B /* SRStar.mm in Sources */,
 				4AAA9B0A18FA2BFB00565381 /* ccFPSImages.m in Sources */,
 				4AAA9BC618FA2BFC00565381 /* CCArray.m in Sources */,
 				4AAA9C9218FA2BFD00565381 /* b2EdgeAndCircleContact.cpp in Sources */,

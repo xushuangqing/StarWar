@@ -11,6 +11,7 @@
 #import "SRConstants.h"
 #import "SRControlLayer.h"
 #import "SREarth.h"
+#import "SRStar.h"
 
 @interface SRSpaceLayer(){
     b2World* _world;
@@ -44,6 +45,7 @@
         [self initPhysics];
         [self initEarth];
         [self initSpaceShip];
+        [self initStars];
         [self setAnchorPoint:ccp(0.5, 0)];
         
         /* Only set scheduleUpdate, the update function can work*/
@@ -83,6 +85,13 @@
 {
     _earth = [SREarth node];
     [_earth createBodyForWorld:_world withRadius:5.0f withAngularVelocity:0];
+}
+
+-(void) initStars
+{
+    SRStar *star = [SRStar node];
+    b2Vec2 p(0,0);
+    [star createBodyForWorld:_world withPosition:p];
 }
 
 -(void) draw {
