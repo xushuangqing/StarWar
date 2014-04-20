@@ -12,11 +12,14 @@
 #import "SRControlLayer.h"
 #import "SREarth.h"
 #import "SRStar.h"
+#import "SRContactListener.h"
 
 @interface SRSpaceLayer(){
     b2World* _world;
     SRSpaceShip* _spaceShip;
     SREarth* _earth;
+    
+    SRStar *_star;
     
     GLESDebugDraw *m_debugDraw;
 }
@@ -67,6 +70,9 @@
 	_world->SetDebugDraw(m_debugDraw);
 
     m_debugDraw->SetFlags(b2Draw::e_shapeBit);
+    
+    SRContactListener *listener = new SRContactListener();
+    _world->SetContactListener(listener);
 }
 
 -(void) initSpaceShip
@@ -89,9 +95,9 @@
 
 -(void) initStars
 {
-    SRStar *star = [SRStar node];
+    _star = [SRStar node];
     b2Vec2 p(0,0);
-    [star createBodyForWorld:_world withPosition:p];
+    [_star createBodyForWorld:_world withPosition:p];
 }
 
 -(void) draw {

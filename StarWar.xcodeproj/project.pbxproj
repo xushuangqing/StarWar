@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A971F9D1900B87A00A33EE3 /* SREarth.mm */; };
 		4A986E0719021CAE00B68A1B /* SRStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E0619021CAE00B68A1B /* SRStar.mm */; };
+		4A986E0A1902236200B68A1B /* SRContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E091902236200B68A1B /* SRContactListener.mm */; };
 		4A99ECBF18FFF9300092D9A9 /* SRControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A99ECBE18FFF9300092D9A9 /* SRControlLayer.m */; };
 		4AAA9A9418FA2BFA00565381 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9318FA2BFA00565381 /* QuartzCore.framework */; };
 		4AAA9A9618FA2BFA00565381 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9518FA2BFA00565381 /* OpenGLES.framework */; };
@@ -199,6 +200,8 @@
 		4A971F9D1900B87A00A33EE3 /* SREarth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SREarth.mm; sourceTree = "<group>"; };
 		4A986E0519021CAE00B68A1B /* SRStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStar.h; sourceTree = "<group>"; };
 		4A986E0619021CAE00B68A1B /* SRStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRStar.mm; sourceTree = "<group>"; };
+		4A986E081902236200B68A1B /* SRContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRContactListener.h; sourceTree = "<group>"; };
+		4A986E091902236200B68A1B /* SRContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRContactListener.mm; sourceTree = "<group>"; };
 		4A99ECB818FFEF660092D9A9 /* SRConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRConstants.h; sourceTree = "<group>"; };
 		4A99ECBD18FFF9300092D9A9 /* SRControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRControlLayer.h; sourceTree = "<group>"; };
 		4A99ECBE18FFF9300092D9A9 /* SRControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRControlLayer.m; sourceTree = "<group>"; };
@@ -680,6 +683,8 @@
 				4A99ECB818FFEF660092D9A9 /* SRConstants.h */,
 				4A971F9C1900B87A00A33EE3 /* SREarth.h */,
 				4A971F9D1900B87A00A33EE3 /* SREarth.mm */,
+				4A986E081902236200B68A1B /* SRContactListener.h */,
+				4A986E091902236200B68A1B /* SRContactListener.mm */,
 			);
 			path = StarWar;
 			sourceTree = "<group>";
@@ -1401,6 +1406,7 @@
 				4AAA9CC718FA2BFD00565381 /* main.m in Sources */,
 				4AAA9C1318FA2BFC00565381 /* aabb.c in Sources */,
 				4AAA9C2B18FA2BFC00565381 /* vec2.c in Sources */,
+				4A986E0A1902236200B68A1B /* SRContactListener.mm in Sources */,
 				4AAA9B6618FA2BFB00565381 /* CCShaderCache.m in Sources */,
 				4AAA9B4418FA2BFB00565381 /* CCPhysicsDebugNode.m in Sources */,
 				4AAA9B7E18FA2BFB00565381 /* CCTextureCache.m in Sources */,

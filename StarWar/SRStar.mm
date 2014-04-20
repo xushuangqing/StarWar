@@ -16,6 +16,7 @@
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
     bodyDef.position = position;
+    bodyDef.userData = @"star";
     
     b2Body *body = world->CreateBody(&bodyDef);
     
