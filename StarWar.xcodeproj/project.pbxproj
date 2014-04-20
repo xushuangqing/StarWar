@@ -10,6 +10,8 @@
 		4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A971F9D1900B87A00A33EE3 /* SREarth.mm */; };
 		4A986E0719021CAE00B68A1B /* SRStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E0619021CAE00B68A1B /* SRStar.mm */; };
 		4A986E0A1902236200B68A1B /* SRContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E091902236200B68A1B /* SRContactListener.mm */; };
+		4A98B400190409A60048E492 /* SRBullet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A98B3FD190409A60048E492 /* SRBullet.mm */; };
+		4A98B401190409A60048E492 /* SRBulletBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A98B3FF190409A60048E492 /* SRBulletBatch.mm */; };
 		4A99ECBF18FFF9300092D9A9 /* SRControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A99ECBE18FFF9300092D9A9 /* SRControlLayer.m */; };
 		4AAA9A9418FA2BFA00565381 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9318FA2BFA00565381 /* QuartzCore.framework */; };
 		4AAA9A9618FA2BFA00565381 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9518FA2BFA00565381 /* OpenGLES.framework */; };
@@ -202,6 +204,10 @@
 		4A986E0619021CAE00B68A1B /* SRStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRStar.mm; sourceTree = "<group>"; };
 		4A986E081902236200B68A1B /* SRContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRContactListener.h; sourceTree = "<group>"; };
 		4A986E091902236200B68A1B /* SRContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRContactListener.mm; sourceTree = "<group>"; };
+		4A98B3FC190409A60048E492 /* SRBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRBullet.h; sourceTree = "<group>"; };
+		4A98B3FD190409A60048E492 /* SRBullet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRBullet.mm; sourceTree = "<group>"; };
+		4A98B3FE190409A60048E492 /* SRBulletBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRBulletBatch.h; sourceTree = "<group>"; };
+		4A98B3FF190409A60048E492 /* SRBulletBatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRBulletBatch.mm; sourceTree = "<group>"; };
 		4A99ECB818FFEF660092D9A9 /* SRConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRConstants.h; sourceTree = "<group>"; };
 		4A99ECBD18FFF9300092D9A9 /* SRControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRControlLayer.h; sourceTree = "<group>"; };
 		4A99ECBE18FFF9300092D9A9 /* SRControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRControlLayer.m; sourceTree = "<group>"; };
@@ -617,6 +623,17 @@
 			name = NPC;
 			sourceTree = "<group>";
 		};
+		4A98B402190409AF0048E492 /* Bullet */ = {
+			isa = PBXGroup;
+			children = (
+				4A98B3FC190409A60048E492 /* SRBullet.h */,
+				4A98B3FD190409A60048E492 /* SRBullet.mm */,
+				4A98B3FE190409A60048E492 /* SRBulletBatch.h */,
+				4A98B3FF190409A60048E492 /* SRBulletBatch.mm */,
+			);
+			name = Bullet;
+			sourceTree = "<group>";
+		};
 		4A99ECBC18FFF8E20092D9A9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -663,6 +680,7 @@
 		4AAA9AA718FA2BFA00565381 /* StarWar */ = {
 			isa = PBXGroup;
 			children = (
+				4A98B402190409AF0048E492 /* Bullet */,
 				4A986E0419021C5100B68A1B /* NPC */,
 				4A99ECBC18FFF8E20092D9A9 /* Controller */,
 				4AAA9CC818FA2BFD00565381 /* AppDelegate.h */,
@@ -1301,6 +1319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A98B400190409A60048E492 /* SRBullet.mm in Sources */,
 				4AAA9AFE18FA2BFA00565381 /* ccDeprecated.m in Sources */,
 				4AAA9CE618FA329000565381 /* SRSpaceLayer.mm in Sources */,
 				4AAA9C9818FA2BFD00565381 /* b2PolygonAndCircleContact.cpp in Sources */,
@@ -1339,6 +1358,7 @@
 				4AAA9B9618FA2BFB00565381 /* CCTransitionPageTurn.m in Sources */,
 				4A986E0719021CAE00B68A1B /* SRStar.mm in Sources */,
 				4AAA9B0A18FA2BFB00565381 /* ccFPSImages.m in Sources */,
+				4A98B401190409A60048E492 /* SRBulletBatch.mm in Sources */,
 				4AAA9BC618FA2BFC00565381 /* CCArray.m in Sources */,
 				4AAA9C9218FA2BFD00565381 /* b2EdgeAndCircleContact.cpp in Sources */,
 				4AAA9AE518FA2BFA00565381 /* CCActionTiledGrid.m in Sources */,

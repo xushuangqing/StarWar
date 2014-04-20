@@ -14,6 +14,9 @@
 #import "SRStar.h"
 #import "SRContactListener.h"
 
+#import "SRBullet.h"
+#import "SRBulletBatch.h"
+
 @interface SRSpaceLayer(){
     b2World* _world;
     SRSpaceShip* _spaceShip;
@@ -49,6 +52,7 @@
         [self initEarth];
         [self initSpaceShip];
         [self initStars];
+        [self initBullets];
         [self setAnchorPoint:ccp(0.5, 0)];
         
         /* Only set scheduleUpdate, the update function can work*/
@@ -98,6 +102,13 @@
     _star = [SRStar node];
     b2Vec2 p(0,0);
     [_star createBodyForWorld:_world withPosition:p];
+}
+
+-(void) initBullets
+{
+    SRBulletBatch *bulletBatch = [SRBulletBatch node];
+    [bulletBatch createBulletBatchForWorld:_world withSpaceShip:_spaceShip];
+    [self addChild:bulletBatch];
 }
 
 -(void) draw {
