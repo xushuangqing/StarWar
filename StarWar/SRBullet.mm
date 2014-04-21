@@ -27,6 +27,7 @@
     
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &dynamicBox;
+    fixtureDef.filter.maskBits = 0x0000;
     body->CreateFixture(&fixtureDef);
     
     body->SetLinearVelocity(velocity);
