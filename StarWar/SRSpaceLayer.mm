@@ -21,9 +21,7 @@
     b2World* _world;
     SRSpaceShip* _spaceShip;
     SREarth* _earth;
-    
     SRStar *_star;
-    
     GLESDebugDraw *m_debugDraw;
 }
 @end
@@ -52,7 +50,6 @@
         [self initEarth];
         [self initSpaceShip];
         [self initStars];
-        [self initBullets];
         [self setAnchorPoint:ccp(0.5, 0)];
         
         /* Only set scheduleUpdate, the update function can work*/
@@ -104,9 +101,10 @@
     [_star createBodyForWorld:_world withPosition:p];
 }
 
+/*This function will not be used now*/
 -(void) initBullets
 {
-    SRBulletBatch *bulletBatch = [SRBulletBatch node];
+    SRBulletBatch *bulletBatch = [SRBulletBatch batchNodeWithFile:@"blocks.png"];
     [bulletBatch createBulletBatchForWorld:_world withSpaceShip:_spaceShip];
     [self addChild:bulletBatch];
 }
