@@ -32,7 +32,7 @@
 {
     SRPlane* plane = [SRPlane node];
     
-    CGPoint position = [self convertToNodeSpace:ccp(100, 100)];
+    CGPoint position = [self convertToNodeSpace:ccp(100, 300)];
     
     
     [plane createBodyForWorld:_world withGeocentric:_geocentric];

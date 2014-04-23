@@ -9,13 +9,6 @@
 #import "SRPlane.h"
 #import "SRConstants.h"
 
-@interface SRPlane ()
-{
-    b2Vec2 _geocentric;
-}
-
-@end
-
 @implementation SRPlane
 
 -(void) createBodyForWorld:(b2World *)world withGeocentric:(b2Vec2)geocentric
@@ -41,15 +34,4 @@
     
     _geocentric = geocentric;
 }
-
--(void) update:(ccTime)delta
-{
-    float R2 = ((self.b2Body->GetPosition()).x-_geocentric.x)*((self.b2Body->GetPosition()).x-_geocentric.x) + (self.b2Body->GetPosition()).y*(self.b2Body->GetPosition()).y;
-    float R = sqrt(R2);
-    
-    b2Vec2 force(-10.0/R2*((self.b2Body->GetPosition()).x-_geocentric.x)/R,-10.0/R2*(self.b2Body->GetPosition()).y/R);
-    
-    self.b2Body->ApplyForce(force, self.b2Body->GetWorldCenter());
-}
-
 @end

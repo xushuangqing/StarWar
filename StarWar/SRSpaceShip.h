@@ -10,9 +10,10 @@
 #import "cocos2d.h"
 #import "CCPhysicsSprite.h"
 #import "Box2D.h"
+#import "SRAircraft.h"
 
 
-@interface SRSpaceShip : CCPhysicsSprite {
+@interface SRSpaceShip : SRAircraft {
 }
 -(void) createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position withGeocentric:(b2Vec2)geocentric withVelocity:(b2Vec2)velocity;
 @end

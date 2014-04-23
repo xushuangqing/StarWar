@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A960BBC1907D0D400099796 /* SRAircraft.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A960BBB1907D0D400099796 /* SRAircraft.mm */; };
 		4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A971F9D1900B87A00A33EE3 /* SREarth.mm */; };
 		4A986E0719021CAE00B68A1B /* SRStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E0619021CAE00B68A1B /* SRStar.mm */; };
 		4A986E0A1902236200B68A1B /* SRContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E091902236200B68A1B /* SRContactListener.mm */; };
@@ -201,6 +202,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A960BBA1907D0D400099796 /* SRAircraft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRAircraft.h; sourceTree = "<group>"; };
+		4A960BBB1907D0D400099796 /* SRAircraft.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRAircraft.mm; sourceTree = "<group>"; };
 		4A971F9C1900B87A00A33EE3 /* SREarth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SREarth.h; sourceTree = "<group>"; };
 		4A971F9D1900B87A00A33EE3 /* SREarth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SREarth.mm; sourceTree = "<group>"; };
 		4A986E0519021CAE00B68A1B /* SRStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStar.h; sourceTree = "<group>"; };
@@ -623,7 +626,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A986E0419021C5100B68A1B /* NPC */ = {
+		4A986E0419021C5100B68A1B /* Aircraft */ = {
 			isa = PBXGroup;
 			children = (
 				4A986E0519021CAE00B68A1B /* SRStar.h */,
@@ -632,8 +635,12 @@
 				4A99BA1619076B6400BCAB7E /* SRPlane.mm */,
 				4A99BA1819076D3700BCAB7E /* SRPlaneBatch.h */,
 				4A99BA1919076D3700BCAB7E /* SRPlaneBatch.mm */,
+				4A960BBA1907D0D400099796 /* SRAircraft.h */,
+				4A960BBB1907D0D400099796 /* SRAircraft.mm */,
+				4AAA9CDB18FA304D00565381 /* SRSpaceShip.h */,
+				4AAA9CDC18FA304D00565381 /* SRSpaceShip.mm */,
 			);
-			name = NPC;
+			name = Aircraft;
 			sourceTree = "<group>";
 		};
 		4A98B402190409AF0048E492 /* Bullet */ = {
@@ -696,7 +703,7 @@
 			isa = PBXGroup;
 			children = (
 				4A98B402190409AF0048E492 /* Bullet */,
-				4A986E0419021C5100B68A1B /* NPC */,
+				4A986E0419021C5100B68A1B /* Aircraft */,
 				4A99ECBC18FFF8E20092D9A9 /* Controller */,
 				4AAA9CC818FA2BFD00565381 /* AppDelegate.h */,
 				4AAA9CC918FA2BFD00565381 /* AppDelegate.mm */,
@@ -709,8 +716,6 @@
 				4AAA9AA818FA2BFA00565381 /* Resources */,
 				4AAA9AC018FA2BFA00565381 /* libs */,
 				4AAA9CC418FA2BFD00565381 /* Supporting Files */,
-				4AAA9CDB18FA304D00565381 /* SRSpaceShip.h */,
-				4AAA9CDC18FA304D00565381 /* SRSpaceShip.mm */,
 				4AAA9CE418FA329000565381 /* SRSpaceLayer.h */,
 				4AAA9CE518FA329000565381 /* SRSpaceLayer.mm */,
 				4A99ECB818FFEF660092D9A9 /* SRConstants.h */,
@@ -1440,6 +1445,7 @@
 				4AAA9B7818FA2BFB00565381 /* CCTexture2D.m in Sources */,
 				4AAA9CAE18FA2BFD00565381 /* b2PrismaticJoint.cpp in Sources */,
 				4AAA9CD318FA2BFD00565381 /* GLES-Render.mm in Sources */,
+				4A960BBC1907D0D400099796 /* SRAircraft.mm in Sources */,
 				4AAA9AD618FA2BFA00565381 /* CCActionInstant.m in Sources */,
 				4AAA9CC718FA2BFD00565381 /* main.m in Sources */,
 				4AAA9C1318FA2BFC00565381 /* aabb.c in Sources */,
