@@ -12,5 +12,5 @@
 #import "SRAircraft.h"
 
 @interface SRPlane : SRAircraft
--(void) createBodyForWorld:(b2World *)world withGeocentric:(b2Vec2)geocentric;
+-(void) createBodyForWorld:(b2World *)world withGeocentric:(b2Vec2)geocentric withPosition:(b2Vec2)position withLinearVelocity:(b2Vec2)linearVelocity;
 @end

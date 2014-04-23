@@ -10,6 +10,8 @@
 #define NSNotificationNamePlusVelocity @"plusVelocity"
 #define NSNotificationNameMinusVelocity @"minusVelocity"
 
+#define GM 10.0
+
 @interface SRConstants: NSObject
 
 @end

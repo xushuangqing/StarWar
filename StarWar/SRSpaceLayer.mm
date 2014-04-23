@@ -126,7 +126,7 @@
 -(void) initPlaneBatch
 {
     SRPlaneBatch* planeBatch = [SRPlaneBatch node];
-    [planeBatch createBulletBatchForWorld:_world withGeocentric:_earth.geocentric];
+    [planeBatch createPlaneBatchForWorld:_world withGeocentric:_earth.geocentric];
     [self addChild:planeBatch];
 }
 

@@ -11,5 +11,5 @@
 #import "Box2D.h"
 
 @interface SRPlaneBatch : CCSpriteBatchNode
--(void)createBulletBatchForWorld: (b2World *)world withGeocentric: (b2Vec2)geocentric;
+-(void)createPlaneBatchForWorld: (b2World *)world withGeocentric: (b2Vec2)geocentric;
 @end
