@@ -55,4 +55,21 @@
     [self addChild:plane];
 }
 
+-(void)update:(ccTime)delta
+{
+    for (SRPlane* plane in self.children) {
+        CGPoint worldPosition = [self convertToWorldSpace:plane.position];
+        
+        if (worldPosition.x > [UIScreen mainScreen].bounds.size.height+PTM_RATIO || worldPosition.y > [UIScreen mainScreen].bounds.size.width+PTM_RATIO || worldPosition.x < -PTM_RATIO || worldPosition.y < -PTM_RATIO) {
+            
+            _world->DestroyBody(plane.b2Body);
+            plane.b2Body = NULL;
+            
+            [self removeChild:plane cleanup:YES];
+            plane = NULL;
+            
+        }
+    }
+}
+
 @end
