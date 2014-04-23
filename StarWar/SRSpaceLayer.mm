@@ -154,12 +154,22 @@
     else
         [self setRotation:180+angle];
     
-    NSLog(@"aaaaaa%f,%f",_laser.anchorPoint.x, _laser.anchorPoint.y);
-    
     float velocityAngle = atan((_spaceShip.b2Body->GetLinearVelocity()).y/(_spaceShip.b2Body->GetLinearVelocity()).x);
     velocityAngle = CC_RADIANS_TO_DEGREES(velocityAngle);
     _laser.position = _spaceShip.position;
-    _laser.rotation = velocityAngle;
+    
+    if ((_spaceShip.b2Body->GetLinearVelocity()).x >= 0)
+    {
+        _laser.rotation = velocityAngle;
+        _spaceShip.rotation = velocityAngle;
+    }
+    else
+    {
+        _laser.rotation = velocityAngle + 180;
+        _spaceShip.rotation = velocityAngle + 180;
+    }
+    
+    
 }
 
 -(void) dealloc

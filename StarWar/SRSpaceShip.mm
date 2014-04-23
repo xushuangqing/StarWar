@@ -33,6 +33,7 @@
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
     bodyDef.position = position;
+    bodyDef.fixedRotation = YES;
     bodyDef.userData = @"spaceShip";
     
     b2Body *body = world->CreateBody(&bodyDef);
