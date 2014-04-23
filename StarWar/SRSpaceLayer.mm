@@ -17,11 +17,14 @@
 #import "SRBullet.h"
 #import "SRBulletBatch.h"
 
+#import "SRLaser.h"
+
 @interface SRSpaceLayer(){
     b2World* _world;
     SRSpaceShip* _spaceShip;
     SREarth* _earth;
     SRStar *_star;
+    SRLaser *_laser;
     GLESDebugDraw *m_debugDraw;
 }
 @end
@@ -50,6 +53,7 @@
         [self initEarth];
         [self initSpaceShip];
         [self initStars];
+        [self initLaser];
         [self setAnchorPoint:ccp(0.5, 0)];
         
         /* Only set scheduleUpdate, the update function can work*/
@@ -109,6 +113,13 @@
     [self addChild:bulletBatch];
 }
 
+-(void) initLaser
+{
+    _laser = [SRLaser node];
+    [_laser createBodyForWorld:_world withPosition:_spaceShip.b2Body->GetPosition() withRotation:0];
+    [self addChild:_laser];
+}
+
 -(void) draw {
     [super draw];
 	
@@ -142,6 +153,13 @@
         [self setRotation:angle];
     else
         [self setRotation:180+angle];
+    
+    NSLog(@"aaaaaa%f,%f",_laser.anchorPoint.x, _laser.anchorPoint.y);
+    
+    float velocityAngle = atan((_spaceShip.b2Body->GetLinearVelocity()).y/(_spaceShip.b2Body->GetLinearVelocity()).x);
+    velocityAngle = CC_RADIANS_TO_DEGREES(velocityAngle);
+    _laser.position = _spaceShip.position;
+    _laser.rotation = velocityAngle;
 }
 
 -(void) dealloc
