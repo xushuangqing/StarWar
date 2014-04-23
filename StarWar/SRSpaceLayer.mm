@@ -18,6 +18,7 @@
 #import "SRBulletBatch.h"
 
 #import "SRLaser.h"
+#import "SRPlaneBatch.h"
 
 @interface SRSpaceLayer(){
     b2World* _world;
@@ -54,6 +55,8 @@
         [self initSpaceShip];
         [self initStars];
         [self initLaser];
+        [self initPlaneBatch];
+        
         [self setAnchorPoint:ccp(0.5,PTM_RATIO*_earth.geocentric.y/[UIScreen mainScreen].bounds.size.width)];
         
         /* Only set scheduleUpdate, the update function can work*/
@@ -118,6 +121,13 @@
     _laser = [SRLaser node];
     [_laser createBodyForWorld:_world withPosition:_spaceShip.b2Body->GetPosition() withRotation:0];
     [self addChild:_laser];
+}
+
+-(void) initPlaneBatch
+{
+    SRPlaneBatch* planeBatch = [SRPlaneBatch node];
+    [planeBatch createBulletBatchForWorld:_world withGeocentric:_earth.geocentric];
+    [self addChild:planeBatch];
 }
 
 -(void) draw {
