@@ -14,7 +14,7 @@
 -(id) init
 {
     if (self = [super init]) {
-        b2Vec2 center([[UIScreen mainScreen] bounds].size.height/PTM_RATIO/2, 0);
+        b2Vec2 center([[UIScreen mainScreen] bounds].size.height/PTM_RATIO/2, -8);
         [self setGeocentric:center];
     }
     return self;

@@ -64,7 +64,7 @@
     float R2 = ((self.b2Body->GetPosition()).x-[self geocentric].x)*((self.b2Body->GetPosition()).x-[self geocentric].x) + (self.b2Body->GetPosition()).y*(self.b2Body->GetPosition()).y;
     float R = sqrt(R2);
     
-    b2Vec2 force(-5.0/R2*((self.b2Body->GetPosition()).x-[self geocentric].x)/R,-5.0/R2*(self.b2Body->GetPosition()).y/R);
+    b2Vec2 force(-10.0/R2*((self.b2Body->GetPosition()).x-[self geocentric].x)/R,-10.0/R2*(self.b2Body->GetPosition()).y/R);
     
     self.b2Body->ApplyForce(force, self.b2Body->GetWorldCenter());
 }

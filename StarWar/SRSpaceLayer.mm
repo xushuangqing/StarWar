@@ -54,7 +54,7 @@
         [self initSpaceShip];
         [self initStars];
         [self initLaser];
-        [self setAnchorPoint:ccp(0.5, 0)];
+        [self setAnchorPoint:ccp(0.5,PTM_RATIO*_earth.geocentric.y/[UIScreen mainScreen].bounds.size.width)];
         
         /* Only set scheduleUpdate, the update function can work*/
         [self scheduleUpdate];
@@ -95,7 +95,7 @@
 -(void) initEarth
 {
     _earth = [SREarth node];
-    [_earth createBodyForWorld:_world withRadius:5.0f withAngularVelocity:0];
+    [_earth createBodyForWorld:_world withRadius:11.5f withAngularVelocity:0];
 }
 
 -(void) initStars
@@ -146,10 +146,10 @@
 	// generally best to keep the time step and iterations fixed.
 	_world->Step(dt, velocityIterations, positionIterations);
 
-    float angle = atan(([[UIScreen mainScreen] bounds].size.height/2-_spaceShip.position.x)/_spaceShip.position.y);
+    float angle = atan(([[UIScreen mainScreen] bounds].size.height/2-_spaceShip.position.x)/(_spaceShip.position.y-_earth.geocentric.y*PTM_RATIO));
     angle = CC_RADIANS_TO_DEGREES(angle);
     
-    if (_spaceShip.position.y >= 0)
+    if ((_spaceShip.position.y-_earth.geocentric.y*PTM_RATIO) >= 0)
         [self setRotation:angle];
     else
         [self setRotation:180+angle];
