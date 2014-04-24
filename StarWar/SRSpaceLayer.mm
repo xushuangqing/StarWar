@@ -19,6 +19,7 @@
 
 #import "SRLaser.h"
 #import "SRPlaneBatch.h"
+#import "SRPlane.h"
 
 @interface SRSpaceLayer(){
     b2World* _world;
@@ -26,7 +27,11 @@
     SREarth* _earth;
     SRStar *_star;
     SRLaser *_laser;
+    SRPlaneBatch* _planeBatch;
+    
     GLESDebugDraw *m_debugDraw;
+    b2RayCastInput _input;
+    b2RayCastOutput _output;
 }
 @end
 
@@ -125,9 +130,9 @@
 
 -(void) initPlaneBatch
 {
-    SRPlaneBatch* planeBatch = [SRPlaneBatch node];
-    [planeBatch createPlaneBatchForWorld:_world withGeocentric:_earth.geocentric];
-    [self addChild:planeBatch];
+    _planeBatch = [SRPlaneBatch node];
+    [_planeBatch createPlaneBatchForWorld:_world withGeocentric:_earth.geocentric];
+    [self addChild:_planeBatch];
 }
 
 -(void) draw {
@@ -179,7 +184,26 @@
         _spaceShip.rotation = velocityAngle + 180;
     }
     
+    [self destoryPlane];
+}
+
+-(void) destoryPlane
+{
+    _input.p1 = _spaceShip.b2Body->GetPosition();
+    _input.p2 = b2Vec2((_spaceShip.b2Body->GetPosition()).x+(_spaceShip.b2Body->GetLinearVelocity()).x, (_spaceShip.b2Body->GetPosition()).y+(_spaceShip.b2Body->GetLinearVelocity()).y);
+    _input.maxFraction = 100;
     
+    for (SRPlane* plane in _planeBatch.children) {
+        for (b2Fixture* fixture = plane.b2Body->GetFixtureList(); fixture; fixture = fixture->GetNext()) {
+            if (fixture->RayCast(&_output, _input, 0)) {
+                
+                _world->DestroyBody(plane.b2Body);
+                [_planeBatch removeChild:plane];
+                break;
+                
+            }
+        }
+    }
 }
 
 -(void) dealloc

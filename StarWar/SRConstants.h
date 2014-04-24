@@ -19,7 +19,7 @@
 
 #define MaskBitsEarth 0x0002
 #define MaskBitsSpaceShit 0x0009
-#define MaskBitsLaser 0x0008
+#define MaskBitsLaser 0x0000
 #define MaskBitsPlane 0x0006
 
 

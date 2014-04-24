@@ -22,11 +22,11 @@
     
     /*Set the shape of SpaceShip*/
     b2PolygonShape dynamicBox;
-    dynamicBox.SetAsBox(.5, .5);
+    dynamicBox.SetAsBox(.25, .25);
     
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &dynamicBox;
-    fixtureDef.density = 1.0f;//It is a test value
+    fixtureDef.density = 4.0f;//It is a test value
     
     fixtureDef.filter.maskBits = MaskBitsPlane;
     fixtureDef.filter.categoryBits = CategoryBitsPlane;
