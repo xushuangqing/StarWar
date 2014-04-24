@@ -27,7 +27,11 @@
     
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &dynamicBox;
-    fixtureDef.filter.maskBits = 0x0000;
+    
+    fixtureDef.filter.maskBits = MaskBitsLaser;
+    fixtureDef.filter.categoryBits = CategoryBitsLaser;
+    
+    
     body->CreateFixture(&fixtureDef);
     
     body->SetTransform(position, rotation);

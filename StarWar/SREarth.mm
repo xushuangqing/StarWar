@@ -36,6 +36,10 @@
     
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &dynamicBox;
+    
+    fixtureDef.filter.maskBits = MaskBitsEarth;
+    fixtureDef.filter.categoryBits = CategoryBitsEarth;
+    
     body->CreateFixture(&fixtureDef);
     
     body->SetAngularVelocity(angularVelocity);

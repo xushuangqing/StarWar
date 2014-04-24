@@ -45,6 +45,10 @@
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &dynamicBox;
     fixtureDef.density = 1.0f;//It is a test value
+    
+    fixtureDef.filter.maskBits = MaskBitsSpaceShit;
+    fixtureDef.filter.categoryBits = CategoryBitsSpaceShip;
+    
     body->CreateFixture(&fixtureDef);
 
     body->SetLinearVelocity(velocity);
