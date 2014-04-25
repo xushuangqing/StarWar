@@ -56,6 +56,7 @@
 {
     if (self = [super init]) {
         [self initPhysics];
+        [self registerNotifications];
         [self initEarth];
         [self initSpaceShip];
         [self initStars];
@@ -68,6 +69,12 @@
         [self scheduleUpdate];
     }
     return self;
+}
+
+-(void) registerNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipDown object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTouchPlane object:nil];
 }
 
 -(void) initPhysics
@@ -133,6 +140,17 @@
     _planeBatch = [SRPlaneBatch node];
     [_planeBatch createPlaneBatchForWorld:_world withGeocentric:_earth.geocentric];
     [self addChild:_planeBatch];
+}
+
+-(void) gameOver: (NSNotification *) notification
+{
+    NSLog(@"Game Over!!!!!");
+    for (CCNode* node in self.children) {
+        [node unscheduleAllSelectors];
+        [node unscheduleUpdate];
+    }
+    [self unscheduleAllSelectors];
+    [self unscheduleUpdate];
 }
 
 -(void) draw {

@@ -26,7 +26,7 @@
     bodyDef.type = b2_kinematicBody;
     
     bodyDef.position = [self geocentric];
-    bodyDef.userData = @"Earth";
+    bodyDef.userData = @"earth";
     
     b2Body *body = world->CreateBody(&bodyDef);
     

@@ -18,8 +18,12 @@ void SRContactListener::BeginContact(b2Contact *contact)
     NSString* spriteA = (NSString*)contact->GetFixtureA()->GetBody()->GetUserData();
     NSString* spriteB = (NSString*)contact->GetFixtureB()->GetBody()->GetUserData();
     
-    if (([spriteA isEqual:@"spaceShip"] && [spriteB isEqual:@"star"]) || ([spriteB isEqual:@"spaceShip"] && [spriteA isEqual:@"star"])) {
-        NSLog(@"YOU WIN");
+    if (([spriteA isEqual:@"spaceShip"] && [spriteB isEqual:@"earth"]) || ([spriteB isEqual:@"spaceShip"] && [spriteA isEqual:@"earth"])) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameSpaceShipDown object:nil];
+    }
+    
+    if (([spriteA isEqual:@"spaceShip"] && [spriteB isEqual:@"plane"]) || ([spriteB isEqual:@"spaceShip"] && [spriteA isEqual:@"plane"])) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameSpaceShipDown object:nil];
     }
 }
 
