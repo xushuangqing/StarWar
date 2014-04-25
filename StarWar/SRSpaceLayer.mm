@@ -211,16 +211,23 @@
     _input.p2 = b2Vec2((_spaceShip.b2Body->GetPosition()).x+(_spaceShip.b2Body->GetLinearVelocity()).x, (_spaceShip.b2Body->GetPosition()).y+(_spaceShip.b2Body->GetLinearVelocity()).y);
     _input.maxFraction = 100;
     
+    float minFraction = _input.maxFraction;
+    SRPlane* touchedPlane = nil;
+    
     for (SRPlane* plane in _planeBatch.children) {
         for (b2Fixture* fixture = plane.b2Body->GetFixtureList(); fixture; fixture = fixture->GetNext()) {
             if (fixture->RayCast(&_output, _input, 0)) {
-                
-                _world->DestroyBody(plane.b2Body);
-                [_planeBatch removeChild:plane];
-                break;
-                
+                if (_output.fraction < minFraction) {
+                    minFraction = _output.fraction;
+                    touchedPlane = plane;
+                }
             }
         }
+    }
+    
+    if (touchedPlane) {
+        _world->DestroyBody(touchedPlane.b2Body);
+        [_planeBatch removeChild:touchedPlane];
     }
 }
 
