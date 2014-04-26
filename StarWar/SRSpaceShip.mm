@@ -76,4 +76,10 @@
     self.b2Body->SetLinearVelocity(v);
 }
 
+-(void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
+}
+
 @end

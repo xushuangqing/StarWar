@@ -238,6 +238,8 @@
 	
 	delete m_debugDraw;
 	m_debugDraw = NULL;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 	
 	[super dealloc];
 }
