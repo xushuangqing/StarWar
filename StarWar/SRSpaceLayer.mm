@@ -99,7 +99,8 @@
 
 -(void) initSpaceShip
 {
-    _spaceShip = [SRSpaceShip node];
+    _spaceShip = [SRSpaceShip spriteWithFile:@"spaceShip.png"];
+    _spaceShip.scale = 0.15;
     
     b2Vec2 position(2, 3);
     b2Vec2 velocity(0.7, 0.7);
@@ -111,7 +112,8 @@
 
 -(void) initEarth
 {
-    _earth = [SREarth node];
+    _earth = [SREarth spriteWithFile:@"Icon.png"];
+    _earth.scale = 0.1;
     [_earth createBodyForWorld:_world withRadius:11.5f withAngularVelocity:0];
 }
 
