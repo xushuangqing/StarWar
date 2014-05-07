@@ -112,9 +112,11 @@
 
 -(void) initEarth
 {
-    _earth = [SREarth spriteWithFile:@"Icon.png"];
-    _earth.scale = 0.1;
+    _earth = [SREarth spriteWithFile:@"earth.png"];
+    _earth.scale = 0.57;
     [_earth createBodyForWorld:_world withRadius:11.5f withAngularVelocity:0];
+    
+    [self addChild:_earth];
 }
 
 -(void) initStars

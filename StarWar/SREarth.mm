@@ -11,9 +11,9 @@
 
 @implementation SREarth
 
--(id) init
+-(id) initWithFile:(NSString *)filename
 {
-    if (self = [super init]) {
+    if (self = [super initWithFile:filename]) {
         b2Vec2 center([[UIScreen mainScreen] bounds].size.height/PTM_RATIO/2, -8);
         [self setGeocentric:center];
     }
