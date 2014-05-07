@@ -11,6 +11,9 @@
 		4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A971F9D1900B87A00A33EE3 /* SREarth.mm */; };
 		4A986E0719021CAE00B68A1B /* SRStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E0619021CAE00B68A1B /* SRStar.mm */; };
 		4A986E0A1902236200B68A1B /* SRContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E091902236200B68A1B /* SRContactListener.mm */; };
+		4A988B98191A5A1700A2C3D8 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B95191A5A1700A2C3D8 /* earth.png */; };
+		4A988B99191A5A1700A2C3D8 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B96191A5A1700A2C3D8 /* plane.png */; };
+		4A988B9A191A5A1700A2C3D8 /* spaceShip.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B97191A5A1700A2C3D8 /* spaceShip.png */; };
 		4A98B400190409A60048E492 /* SRBullet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A98B3FD190409A60048E492 /* SRBullet.mm */; };
 		4A98B401190409A60048E492 /* SRBulletBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A98B3FF190409A60048E492 /* SRBulletBatch.mm */; };
 		4A99B7C01907535300BCAB7E /* SRLaser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99B7BF1907535300BCAB7E /* SRLaser.mm */; };
@@ -210,6 +213,9 @@
 		4A986E0619021CAE00B68A1B /* SRStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRStar.mm; sourceTree = "<group>"; };
 		4A986E081902236200B68A1B /* SRContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRContactListener.h; sourceTree = "<group>"; };
 		4A986E091902236200B68A1B /* SRContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRContactListener.mm; sourceTree = "<group>"; };
+		4A988B95191A5A1700A2C3D8 /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = earth.png; path = Resources/earth.png; sourceTree = "<group>"; };
+		4A988B96191A5A1700A2C3D8 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plane.png; path = Resources/plane.png; sourceTree = "<group>"; };
+		4A988B97191A5A1700A2C3D8 /* spaceShip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spaceShip.png; path = Resources/spaceShip.png; sourceTree = "<group>"; };
 		4A98B3FC190409A60048E492 /* SRBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRBullet.h; sourceTree = "<group>"; };
 		4A98B3FD190409A60048E492 /* SRBullet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRBullet.mm; sourceTree = "<group>"; };
 		4A98B3FE190409A60048E492 /* SRBulletBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRBulletBatch.h; sourceTree = "<group>"; };
@@ -730,6 +736,9 @@
 		4AAA9AA818FA2BFA00565381 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A988B95191A5A1700A2C3D8 /* earth.png */,
+				4A988B96191A5A1700A2C3D8 /* plane.png */,
+				4A988B97191A5A1700A2C3D8 /* spaceShip.png */,
 				4AAA9AA918FA2BFA00565381 /* Default.png */,
 				4AAA9AAB18FA2BFA00565381 /* Default@2x.png */,
 				4AAA9AAD18FA2BFA00565381 /* Default-568h@2x.png */,
@@ -1316,8 +1325,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A988B9A191A5A1700A2C3D8 /* spaceShip.png in Resources */,
 				4AAA9ABA18FA2BFA00565381 /* Icon.png in Resources */,
 				4AAA9C1518FA2BFC00565381 /* ChangeLog in Resources */,
+				4A988B99191A5A1700A2C3D8 /* plane.png in Resources */,
 				4AAA9AAC18FA2BFA00565381 /* Default@2x.png in Resources */,
 				4AAA9AB618FA2BFA00565381 /* Icon-Small.png in Resources */,
 				4AAA9AB218FA2BFA00565381 /* Icon-72.png in Resources */,
@@ -1326,6 +1337,7 @@
 				4AAA9ABF18FA2BFA00565381 /* iTunesArtwork in Resources */,
 				4AAA9CD518FA2BFD00565381 /* blocks.png in Resources */,
 				4AAA9AB818FA2BFA00565381 /* Icon-Small@2x.png in Resources */,
+				4A988B98191A5A1700A2C3D8 /* earth.png in Resources */,
 				4AAA9AB018FA2BFA00565381 /* Default-Landscape~ipad.png in Resources */,
 				4AAA9AAE18FA2BFA00565381 /* Default-568h@2x.png in Resources */,
 				4AAA9ABC18FA2BFA00565381 /* Icon@2x.png in Resources */,

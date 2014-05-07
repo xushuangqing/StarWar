@@ -139,7 +139,7 @@
 
 -(void) initPlaneBatch
 {
-    _planeBatch = [SRPlaneBatch node];
+    _planeBatch = [SRPlaneBatch batchNodeWithFile:@"plane.png"];
     [_planeBatch createPlaneBatchForWorld:_world withGeocentric:_earth.geocentric];
     [self addChild:_planeBatch];
 }

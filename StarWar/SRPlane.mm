@@ -22,7 +22,7 @@
     
     /*Set the shape of SpaceShip*/
     b2PolygonShape dynamicBox;
-    dynamicBox.SetAsBox(.25, .25);
+    dynamicBox.SetAsBox(self.contentSize.width*self.scale/PTM_RATIO/2, self.contentSize.height*self.scale/PTM_RATIO/2);
     
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &dynamicBox;
