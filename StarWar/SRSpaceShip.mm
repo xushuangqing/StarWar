@@ -15,9 +15,9 @@
 
 @implementation SRSpaceShip
 
--(id) init
+-(id) initWithFile:(NSString *)filename
 {
-    if (self = [super init]) {
+    if (self = [super initWithFile:filename]) {
         [self registerNotification];
     }
     return self;
