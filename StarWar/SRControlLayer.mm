@@ -8,6 +8,8 @@
 
 #import "SRControlLayer.h"
 #import "SRConstants.h"
+#import "SRSpaceLayer.h"
+#import "IntroLayer.h"
 
 @implementation SRControlLayer
 
@@ -15,6 +17,7 @@
 {
     if (self = [super init]) {
         [self initButton];
+        [self initGameOverLabel];
     }
     return self;
 }
@@ -27,9 +30,22 @@
     CCMenuItem *minusButton = [CCMenuItemImage itemWithNormalImage:@"blocks.png" selectedImage:@"blocks.png" target:self selector:@selector(minusButtonPressed)];
     minusButton.position = ccp(400, 60);
     
-    CCMenu *menu = [CCMenu menuWithItems:plusButton,minusButton, nil];
-    menu.position = CGPointZero;
-    [self addChild:menu];
+    _controlMenu = [CCMenu menuWithItems:plusButton,minusButton, nil];
+    _controlMenu.position = CGPointZero;
+    [self addChild:_controlMenu];
+}
+
+-(void) initGameOverLabel
+{
+    CCMenuItemImage *gameOverImage = [CCMenuItemImage itemWithNormalImage:@"blocks.png" selectedImage:@"blocks.png"];
+    gameOverImage.position = ccp(200, 200);
+    
+    CCMenuItem *restartButton = [CCMenuItemImage itemWithNormalImage:@"blocks.png" selectedImage:@"blocks.png" target:self selector:@selector(restartButtonPressed)];
+    restartButton.position = ccp(200, 100);
+    
+    _gameOverMenu = [CCMenu menuWithItems:gameOverImage, restartButton, nil];
+    _gameOverMenu.position = CGPointZero;
+    [self addChild:_gameOverMenu];
 }
 
 -(void) plusButtonPressed
@@ -40,6 +56,11 @@
 -(void) minusButtonPressed
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameMinusVelocity object:nil];
+}
+
+-(void) restartButtonPressed
+{
+    [[CCDirector sharedDirector] replaceScene:[SRSpaceLayer scene]];
 }
 
 @end

@@ -32,6 +32,8 @@
     GLESDebugDraw *m_debugDraw;
     b2RayCastInput _input;
     b2RayCastOutput _output;
+    
+    SRContactListener *listener;
 }
 @end
 
@@ -91,7 +93,7 @@
 
     m_debugDraw->SetFlags(b2Draw::e_shapeBit);
     
-    SRContactListener *listener = new SRContactListener();
+    listener = new SRContactListener();
     _world->SetContactListener(listener);
 }
 
@@ -235,6 +237,8 @@
 {
 	delete _world;
 	_world = NULL;
+    
+    delete listener;
 	
 	delete m_debugDraw;
 	m_debugDraw = NULL;
