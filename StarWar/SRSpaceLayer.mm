@@ -5,6 +5,7 @@
 //  Created by XuShuangqing on 14-4-12.
 //  Copyright (c) 2014年 XuShuangqing. All rights reserved.
 //
+#import "GB2ShapeCache.h"
 
 #import "SRSpaceLayer.h"
 #import "SRSpaceShip.h"
@@ -57,6 +58,9 @@
 -(id) init
 {
     if (self = [super init]) {
+        
+        [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"test.plist"];
+        
         [self initPhysics];
         [self registerNotifications];
         [self initEarth];
@@ -100,7 +104,7 @@
 -(void) initSpaceShip
 {
     _spaceShip = [SRSpaceShip spriteWithFile:@"spaceShip.png"];
-    _spaceShip.scale = 0.15;
+    //_spaceShip.scale = 0.15;
     
     b2Vec2 position(2, 3);
     b2Vec2 velocity(0.7, 0.7);
@@ -112,7 +116,7 @@
 
 -(void) initEarth
 {
-    _earth = [SREarth spriteWithFile:@"earth.png"];
+    _earth = [SREarth spriteWithFile:@"blocks.png"];
     _earth.scale = 0.57;
     [_earth createBodyForWorld:_world withRadius:11.5f withAngularVelocity:0];
     

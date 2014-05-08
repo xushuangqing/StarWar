@@ -6,6 +6,7 @@
 //  Copyright 2014年 XuShuangqing. All rights reserved.
 //
 
+#import "GB2ShapeCache.h"
 #import "SRSpaceShip.h"
 #import "SRConstants.h"
 
@@ -37,19 +38,14 @@
     bodyDef.userData = @"spaceShip";
     
     b2Body *body = world->CreateBody(&bodyDef);
+
+    [[GB2ShapeCache sharedShapeCache] addFixturesToBody:body forShapeName:@"spaceShip"];
     
-    /*Set the shape of SpaceShip*/
-    b2PolygonShape dynamicBox;
-    dynamicBox.SetAsBox(self.contentSize.width*self.scale/PTM_RATIO/2, self.contentSize.height*self.scale/PTM_RATIO/2);
-    
-    b2FixtureDef fixtureDef;
-    fixtureDef.shape = &dynamicBox;
-    fixtureDef.density = 1.0f;//It is a test value
-    
-    fixtureDef.filter.maskBits = MaskBitsSpaceShit;
-    fixtureDef.filter.categoryBits = CategoryBitsSpaceShip;
-    
-    body->CreateFixture(&fixtureDef);
+    b2Filter filter;
+    filter.maskBits = MaskBitsSpaceShit;
+    filter.categoryBits = CategoryBitsSpaceShip;
+    body->GetFixtureList()->SetFilterData(filter);
+    body->GetFixtureList()->SetDensity(0.1);
 
     body->SetLinearVelocity(velocity);
 
