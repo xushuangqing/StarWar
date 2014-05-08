@@ -42,7 +42,7 @@
     [[GB2ShapeCache sharedShapeCache] addFixturesToBody:body forShapeName:@"spaceShip"];
     
     b2Filter filter;
-    filter.maskBits = MaskBitsSpaceShit;
+    filter.maskBits = MaskBitsSpaceShip;
     filter.categoryBits = CategoryBitsSpaceShip;
     body->GetFixtureList()->SetFilterData(filter);
     body->GetFixtureList()->SetDensity(0.1);

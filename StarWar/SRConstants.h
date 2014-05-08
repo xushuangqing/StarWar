@@ -20,9 +20,9 @@
 #define CategoryBitsPlane 0x0008
 
 #define MaskBitsEarth 0x0002
-#define MaskBitsSpaceShit 0x0009
+#define MaskBitsSpaceShip 0x0008
 #define MaskBitsLaser 0x0000
-#define MaskBitsPlane 0x0006
+#define MaskBitsPlane 0x0002
 
 
 @interface SRConstants: NSObject
