@@ -44,8 +44,11 @@
     b2Filter filter;
     filter.maskBits = MaskBitsSpaceShip;
     filter.categoryBits = CategoryBitsSpaceShip;
-    body->GetFixtureList()->SetFilterData(filter);
-    body->GetFixtureList()->SetDensity(0.1);
+    
+    for (b2Fixture* fixture=body->GetFixtureList(); fixture; fixture=fixture->GetNext()) {
+        fixture->SetFilterData(filter);
+        fixture->SetDensity(0.1);
+    }
 
     body->SetLinearVelocity(velocity);
 
