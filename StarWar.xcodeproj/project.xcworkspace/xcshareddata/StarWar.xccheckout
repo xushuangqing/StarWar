@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D4916D8E-9E50-4F3F-802A-A78FF9862945</string>
+	<key>IDESourceControlProjectName</key>
+	<string>StarWar</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FCF9C5E1-889A-4A25-AC74-D5C2070A4297</key>
+		<string>https://github.com/xushuangqing/StarWar.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>StarWar.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FCF9C5E1-889A-4A25-AC74-D5C2070A4297</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/xushuangqing/StarWar.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FCF9C5E1-889A-4A25-AC74-D5C2070A4297</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FCF9C5E1-889A-4A25-AC74-D5C2070A4297</string>
+			<key>IDESourceControlWCCName</key>
+			<string>StarWar</string>
+		</dict>
+	</array>
+</dict>
+</plist>

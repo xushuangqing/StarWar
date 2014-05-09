@@ -50,7 +50,7 @@
     [scene addChild: layer];
     
     SRControlLayer *controlLayer = [SRControlLayer node];
-    [scene addChild:controlLayer];
+    [scene addChild:controlLayer z:zControlLayer tag:kTagControlLayer];
     
     return scene;
 }
@@ -161,6 +161,10 @@
     }
     [self unscheduleAllSelectors];
     [self unscheduleUpdate];
+    
+    SRControlLayer* controlLayer = [[[CCDirector sharedDirector] runningScene] getChildByTag:kTagControlLayer];
+    controlLayer.gameOverMenu.visible = true;
+    
 }
 
 -(void) draw {

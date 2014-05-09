@@ -18,6 +18,7 @@
     if (self = [super init]) {
         [self initButton];
         [self initGameOverLabel];
+        _gameOverMenu.visible = NO;
     }
     return self;
 }

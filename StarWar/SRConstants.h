@@ -24,6 +24,11 @@
 #define MaskBitsLaser 0x0000
 #define MaskBitsPlane 0x0002
 
+#define zControlLayer 100
+
+enum {
+	kTagControlLayer = 1,
+};
 
 @interface SRConstants: NSObject
 
