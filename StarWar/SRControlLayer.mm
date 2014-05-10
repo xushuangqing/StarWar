@@ -25,11 +25,15 @@
 
 -(void) initButton
 {
-    CCMenuItem *plusButton = [CCMenuItemImage itemWithNormalImage:@"blocks.png" selectedImage:@"blocks.png" target:self selector:@selector(plusButtonPressed)];
-    plusButton.position = ccp(60, 60);
+    CCMenuItem *plusButton = [CCMenuItemImage itemWithNormalImage:@"plus.png" selectedImage:@"plus.png" target:self selector:@selector(plusButtonPressed)];
+    plusButton.anchorPoint = ccp(0, 0);
+    plusButton.scale = 0.5;
+    plusButton.position = ccp(0, 0);
     
-    CCMenuItem *minusButton = [CCMenuItemImage itemWithNormalImage:@"blocks.png" selectedImage:@"blocks.png" target:self selector:@selector(minusButtonPressed)];
-    minusButton.position = ccp(400, 60);
+    CCMenuItem *minusButton = [CCMenuItemImage itemWithNormalImage:@"minus.png" selectedImage:@"minus.png" target:self selector:@selector(minusButtonPressed)];
+    minusButton.anchorPoint = ccp(1, 0);
+    minusButton.scale = 0.5;
+    minusButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
     
     _controlMenu = [CCMenu menuWithItems:plusButton,minusButton, nil];
     _controlMenu.position = CGPointZero;
@@ -38,11 +42,13 @@
 
 -(void) initGameOverLabel
 {
-    CCMenuItemImage *gameOverImage = [CCMenuItemImage itemWithNormalImage:@"blocks.png" selectedImage:@"blocks.png"];
-    gameOverImage.position = ccp(200, 200);
+    CCMenuItemImage *gameOverImage = [CCMenuItemImage itemWithNormalImage:@"gameOver.png" selectedImage:@"gameOver.png"];
+    gameOverImage.scale = 0.5;
+    gameOverImage.position = ccp([UIScreen mainScreen].bounds.size.height/2, 200);
     
-    CCMenuItem *restartButton = [CCMenuItemImage itemWithNormalImage:@"blocks.png" selectedImage:@"blocks.png" target:self selector:@selector(restartButtonPressed)];
-    restartButton.position = ccp(200, 100);
+    CCMenuItem *restartButton = [CCMenuItemImage itemWithNormalImage:@"replay.png" selectedImage:@"replay.png" target:self selector:@selector(restartButtonPressed)];
+    restartButton.scale = 0.5;
+    restartButton.position = ccp([UIScreen mainScreen].bounds.size.height/2, 100);
     
     _gameOverMenu = [CCMenu menuWithItems:gameOverImage, restartButton, nil];
     _gameOverMenu.position = CGPointZero;
