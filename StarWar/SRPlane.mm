@@ -40,4 +40,17 @@
     
     _geocentric = geocentric;
 }
+
+-(void)update:(ccTime)delta
+{
+    [super update:delta];
+    float tanAngle = (self.b2Body->GetPosition().x-_geocentric.x)/(self.b2Body->GetPosition().y-_geocentric.y);
+    float angle = atan(tanAngle);
+    angle = CC_RADIANS_TO_DEGREES(angle);
+    
+    if ((self.b2Body->GetPosition().y-_geocentric.y)<0) {
+        angle = 180+angle;
+    }
+    self.rotation = -angle;
+}
 @end
