@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4A960BBC1907D0D400099796 /* SRAircraft.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A960BBB1907D0D400099796 /* SRAircraft.mm */; };
 		4A964EB4191B989300C27FAE /* GB2ShapeCache.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A964EB3191B989300C27FAE /* GB2ShapeCache.mm */; };
-		4A964EB6191B9B2000C27FAE /* test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A964EB5191B9B2000C27FAE /* test.plist */; };
 		4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A971F9D1900B87A00A33EE3 /* SREarth.mm */; };
 		4A986E0719021CAE00B68A1B /* SRStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E0619021CAE00B68A1B /* SRStar.mm */; };
 		4A986E0A1902236200B68A1B /* SRContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E091902236200B68A1B /* SRContactListener.mm */; };
@@ -22,6 +21,7 @@
 		4A99BA1719076B6400BCAB7E /* SRPlane.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99BA1619076B6400BCAB7E /* SRPlane.mm */; };
 		4A99BA1A19076D3700BCAB7E /* SRPlaneBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99BA1919076D3700BCAB7E /* SRPlaneBatch.mm */; };
 		4A99ECBF18FFF9300092D9A9 /* SRControlLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99ECBE18FFF9300092D9A9 /* SRControlLayer.mm */; };
+		4AA88C8F191DC80E0063436F /* physicsShape.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AA88C8E191DC80E0063436F /* physicsShape.plist */; };
 		4AAA9A9418FA2BFA00565381 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9318FA2BFA00565381 /* QuartzCore.framework */; };
 		4AAA9A9618FA2BFA00565381 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9518FA2BFA00565381 /* OpenGLES.framework */; };
 		4AAA9A9818FA2BFA00565381 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9718FA2BFA00565381 /* OpenAL.framework */; };
@@ -211,7 +211,6 @@
 		4A960BBB1907D0D400099796 /* SRAircraft.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRAircraft.mm; sourceTree = "<group>"; };
 		4A964EB2191B989300C27FAE /* GB2ShapeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2ShapeCache.h; sourceTree = "<group>"; };
 		4A964EB3191B989300C27FAE /* GB2ShapeCache.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB2ShapeCache.mm; sourceTree = "<group>"; };
-		4A964EB5191B9B2000C27FAE /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = test.plist; path = Resources/test.plist; sourceTree = "<group>"; };
 		4A971F9C1900B87A00A33EE3 /* SREarth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SREarth.h; sourceTree = "<group>"; };
 		4A971F9D1900B87A00A33EE3 /* SREarth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SREarth.mm; sourceTree = "<group>"; };
 		4A986E0519021CAE00B68A1B /* SRStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStar.h; sourceTree = "<group>"; };
@@ -234,6 +233,7 @@
 		4A99ECB818FFEF660092D9A9 /* SRConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRConstants.h; sourceTree = "<group>"; };
 		4A99ECBD18FFF9300092D9A9 /* SRControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRControlLayer.h; sourceTree = "<group>"; };
 		4A99ECBE18FFF9300092D9A9 /* SRControlLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRControlLayer.mm; sourceTree = "<group>"; };
+		4AA88C8E191DC80E0063436F /* physicsShape.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = physicsShape.plist; path = Resources/physicsShape.plist; sourceTree = "<group>"; };
 		4AAA9A9018FA2BFA00565381 /* StarWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AAA9A9318FA2BFA00565381 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4AAA9A9518FA2BFA00565381 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -751,7 +751,7 @@
 		4AAA9AA818FA2BFA00565381 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4A964EB5191B9B2000C27FAE /* test.plist */,
+				4AA88C8E191DC80E0063436F /* physicsShape.plist */,
 				4A988B95191A5A1700A2C3D8 /* earth.png */,
 				4A988B96191A5A1700A2C3D8 /* plane.png */,
 				4A988B97191A5A1700A2C3D8 /* spaceShip.png */,
@@ -1341,6 +1341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA88C8F191DC80E0063436F /* physicsShape.plist in Resources */,
 				4A988B9A191A5A1700A2C3D8 /* spaceShip.png in Resources */,
 				4AAA9ABA18FA2BFA00565381 /* Icon.png in Resources */,
 				4AAA9C1518FA2BFC00565381 /* ChangeLog in Resources */,
@@ -1353,7 +1354,6 @@
 				4AAA9ABF18FA2BFA00565381 /* iTunesArtwork in Resources */,
 				4AAA9CD518FA2BFD00565381 /* blocks.png in Resources */,
 				4AAA9AB818FA2BFA00565381 /* Icon-Small@2x.png in Resources */,
-				4A964EB6191B9B2000C27FAE /* test.plist in Resources */,
 				4A988B98191A5A1700A2C3D8 /* earth.png in Resources */,
 				4AAA9AB018FA2BFA00565381 /* Default-Landscape~ipad.png in Resources */,
 				4AAA9AAE18FA2BFA00565381 /* Default-568h@2x.png in Resources */,

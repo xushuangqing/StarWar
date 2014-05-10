@@ -45,8 +45,6 @@
 -(void)addPlane
 {
     SRPlane* plane = [SRPlane spriteWithTexture:[self texture]];
-    plane.scale = 0.3;
-    
     float y = ((float)rand()/RAND_MAX)*[UIScreen mainScreen].bounds.size.width;
     CGPoint ccpPosition = [self convertToNodeSpace:ccp([UIScreen mainScreen].bounds.size.height+PTM_RATIO, y)];
     

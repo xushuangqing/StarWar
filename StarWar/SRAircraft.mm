@@ -19,8 +19,8 @@
     float radius = sqrtf(sqrRadius);
     
     float force = GM/sqrRadius;
-    float forceY = force/radius*(_geocentric.y-(self.b2Body->GetPosition()).y) /** M_PI/4*/;
-    float forceX = force/radius*(_geocentric.x-(self.b2Body->GetPosition()).x) /** M_PI/4*/;
+    float forceY = force/radius*(_geocentric.y-(self.b2Body->GetPosition()).y)*(self.b2Body->GetMass());
+    float forceX = force/radius*(_geocentric.x-(self.b2Body->GetPosition()).x)*(self.b2Body->GetMass());
     
     b2Vec2 forceVec(forceX, forceY);
     

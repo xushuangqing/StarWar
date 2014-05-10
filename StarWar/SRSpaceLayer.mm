@@ -59,7 +59,7 @@
 {
     if (self = [super init]) {
         
-        [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"test.plist"];
+        [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"physicsShape.plist"];
         
         [self initPhysics];
         [self registerNotifications];
@@ -116,8 +116,7 @@
 
 -(void) initEarth
 {
-    _earth = [SREarth spriteWithFile:@"blocks.png"];
-    _earth.scale = 0.57;
+    _earth = [SREarth spriteWithFile:@"earth.png"];
     [_earth createBodyForWorld:_world withRadius:11.5f withAngularVelocity:0];
     
     [self addChild:_earth];

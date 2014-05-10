@@ -8,6 +8,7 @@
 
 #import "SRPlane.h"
 #import "SRConstants.h"
+#import "GB2ShapeCache.h"
 
 @implementation SRPlane
 
@@ -20,20 +21,17 @@
     
     b2Body *body = world->CreateBody(&bodyDef);
     
-    /*Set the shape of SpaceShip*/
-    b2PolygonShape dynamicBox;
-    dynamicBox.SetAsBox(0.25, 0.25);
-    //dynamicBox.SetAsBox(self.contentSize.width*self.scale/PTM_RATIO/2, self.contentSize.height*self.scale/PTM_RATIO/2);
+    [[GB2ShapeCache sharedShapeCache] addFixturesToBody:body forShapeName:@"plane"];
     
-    b2FixtureDef fixtureDef;
-    fixtureDef.shape = &dynamicBox;
-    fixtureDef.density = 4.0f;//It is a test value
+    b2Filter filter;
+    filter.maskBits = MaskBitsPlane;
+    filter.categoryBits = CategoryBitsPlane;
     
-    fixtureDef.filter.maskBits = MaskBitsPlane;
-    fixtureDef.filter.categoryBits = CategoryBitsPlane;
-    
-    body->CreateFixture(&fixtureDef);
-    
+    for (b2Fixture* fixture=body->GetFixtureList(); fixture; fixture=fixture->GetNext()) {
+        fixture->SetFilterData(filter);
+        fixture->SetDensity(0.1);
+    }
+
     body->SetLinearVelocity(linearVelocity);
     
     [self setPTMRatio:PTM_RATIO];
