@@ -35,6 +35,7 @@
     b2RayCastOutput _output;
     
     SRContactListener *listener;
+    int _score;
 }
 @end
 
@@ -73,6 +74,7 @@
         
         /* Only set scheduleUpdate, the update function can work*/
         [self scheduleUpdate];
+        _score = 0;
     }
     return self;
 }
@@ -161,8 +163,9 @@
     [self unscheduleAllSelectors];
     [self unscheduleUpdate];
     
-    SRControlLayer* controlLayer = [[[CCDirector sharedDirector] runningScene] getChildByTag:kTagControlLayer];
+    SRControlLayer* controlLayer = (SRControlLayer *)[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagControlLayer];
     controlLayer.gameOverMenu.visible = true;
+    [controlLayer saveCurrentScore:_score withName:@"No Name"];
     
 }
 
@@ -239,9 +242,15 @@
     }
     
     if (touchedPlane) {
+        [self scorePlus];
         _world->DestroyBody(touchedPlane.b2Body);
         [_planeBatch removeChild:touchedPlane];
     }
+}
+
+-(void) scorePlus
+{
+    _score++;
 }
 
 -(void) dealloc

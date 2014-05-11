@@ -14,4 +14,6 @@
 @property CCMenu *controlMenu;
 @property CCMenu *gameOverMenu;
 
+-(void) saveCurrentScore: (int)score withName: (NSString*)name;
+
 @end

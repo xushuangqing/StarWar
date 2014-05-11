@@ -10,6 +10,8 @@
 #import "SRConstants.h"
 #import "SRSpaceLayer.h"
 #import "IntroLayer.h"
+#import "UserData.h"
+#import "AppDelegate.h"
 
 @implementation SRControlLayer
 
@@ -68,6 +70,20 @@
 -(void) restartButtonPressed
 {
     [[CCDirector sharedDirector] replaceScene:[SRSpaceLayer scene]];
+}
+
+-(void) saveCurrentScore: (int)score withName: (NSString*)name
+{
+    AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [app managedObjectContext];
+    NSManagedObject *contactInfo = [NSEntityDescription insertNewObjectForEntityForName:@"UserData" inManagedObjectContext:context];
+    [contactInfo setValue:name forKey:@"name"];
+    [contactInfo setValue:[NSNumber numberWithInt:score] forKey:@"score"];
+    
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Fail to save context: %@", [error localizedDescription]);
+    }
 }
 
 @end
