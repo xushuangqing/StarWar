@@ -210,9 +210,9 @@
     angle = CC_RADIANS_TO_DEGREES(angle);
     
     if ((_spaceShip.position.y-_earth.geocentric.y*PTM_RATIO) >= 0)
-        [self setRotation:angle];
+        [self setRotation:angle-SpaceShipAngelInView];
     else
-        [self setRotation:180+angle];
+        [self setRotation:180+angle-SpaceShipAngelInView];
     
     float velocityAngle = atan((_spaceShip.b2Body->GetLinearVelocity()).y/(_spaceShip.b2Body->GetLinearVelocity()).x);
     velocityAngle = CC_RADIANS_TO_DEGREES(velocityAngle);

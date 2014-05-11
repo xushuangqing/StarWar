@@ -12,6 +12,8 @@
 #define NSNotificationNameSpaceShipDown @"spaceShipDown"
 #define NSNotificationNameSpaceShipTouchPlane @"spaceShipTouchPlane"
 
+#define SpaceShipAngelInView 15
+
 #define GM 10.0
 
 #define CategoryBitsEarth 0x0001
