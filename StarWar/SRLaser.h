@@ -10,6 +10,6 @@
 #import "cocos2d.h"
 #import "Box2D.h"
 
-@interface SRLaser : CCPhysicsSprite
--(void) createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position withRotation:(float)rotation;
+@interface SRLaser : CCSprite
+
 @end

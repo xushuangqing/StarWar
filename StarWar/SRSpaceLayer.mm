@@ -141,8 +141,19 @@
 
 -(void) initLaser
 {
-    _laser = [SRLaser node];
-    [_laser createBodyForWorld:_world withPosition:_spaceShip.b2Body->GetPosition() withRotation:0];
+    
+    CGRect r = CGRectMake(0, 0, LaserMaxWidth, LaserHeight);
+    _laser = [SRLaser spriteWithFile:@"blocks.png" rect:r];
+    
+    ccTexParams params = {
+        GL_LINEAR,
+        GL_LINEAR,
+        GL_REPEAT,
+        GL_REPEAT
+    };
+    [_laser.texture setTexParameters:&params];
+
+    _laser.anchorPoint = ccp(0, 0.5);
     [self addChild:_laser];
 }
 
@@ -206,15 +217,15 @@
     float velocityAngle = atan((_spaceShip.b2Body->GetLinearVelocity()).y/(_spaceShip.b2Body->GetLinearVelocity()).x);
     velocityAngle = CC_RADIANS_TO_DEGREES(velocityAngle);
     _laser.position = _spaceShip.position;
-    
+
     if ((_spaceShip.b2Body->GetLinearVelocity()).x >= 0)
     {
-        _laser.rotation = velocityAngle;
+        _laser.rotation = -velocityAngle;
         _spaceShip.rotation = velocityAngle;
     }
     else
     {
-        _laser.rotation = velocityAngle + 180;
+        _laser.rotation = -velocityAngle - 180;
         _spaceShip.rotation = velocityAngle + 180;
     }
     
@@ -243,8 +254,18 @@
     
     if (touchedPlane) {
         [self scorePlus];
+        
+        float v = sqrtf(powf(_spaceShip.b2Body->GetLinearVelocity().x, 2.0f)+powf(_spaceShip.b2Body->GetLinearVelocity().y, 2.0f));
+        
+        CGRect r = CGRectMake(0, 0, v*_output.fraction*PTM_RATIO, LaserHeight);
+        [_laser setTextureRect:r];
+        
         _world->DestroyBody(touchedPlane.b2Body);
         [_planeBatch removeChild:touchedPlane];
+    }
+    else {
+        CGRect r = CGRectMake(0, 0, LaserMaxWidth, LaserHeight);
+        [_laser setTextureRect:r];
     }
 }
 

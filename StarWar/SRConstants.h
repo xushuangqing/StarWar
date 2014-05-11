@@ -30,6 +30,9 @@ enum {
 	kTagControlLayer = 1,
 };
 
+#define LaserMaxWidth 320
+#define LaserHeight 10
+
 @interface SRConstants: NSObject
 
 @end
