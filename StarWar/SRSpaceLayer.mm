@@ -48,7 +48,7 @@
     CCScene *scene = [CCScene node];
     
     SRSpaceLayer *layer = [SRSpaceLayer node];
-    [scene addChild: layer];
+    [scene addChild:layer z:zSpaceLayer tag:kTagSpaceLayer];
     
     SRControlLayer *controlLayer = [SRControlLayer node];
     [scene addChild:controlLayer z:zControlLayer tag:kTagControlLayer];
@@ -73,7 +73,7 @@
         [self setAnchorPoint:ccp(0.5,PTM_RATIO*_earth.geocentric.y/[UIScreen mainScreen].bounds.size.width)];
         
         /* Only set scheduleUpdate, the update function can work*/
-        [self scheduleUpdate];
+        //[self scheduleUpdate];
         _score = 0;
     }
     return self;
@@ -175,7 +175,7 @@
     [self unscheduleUpdate];
     
     SRControlLayer* controlLayer = (SRControlLayer *)[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagControlLayer];
-    controlLayer.gameOverMenu.visible = true;
+    controlLayer.gameOverMenu.visible = YES;
     [controlLayer saveCurrentScore:_score withName:@"No Name"];
     
 }
