@@ -10,7 +10,7 @@
 #import "SRConstants.h"
 #import "SRSpaceLayer.h"
 #import "IntroLayer.h"
-#import "UserData.h"
+#import "User.h"
 #import "AppDelegate.h"
 
 @implementation SRControlLayer
@@ -76,9 +76,9 @@
 {
     AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [app managedObjectContext];
-    NSManagedObject *contactInfo = [NSEntityDescription insertNewObjectForEntityForName:@"UserData" inManagedObjectContext:context];
-    [contactInfo setValue:name forKey:@"name"];
-    [contactInfo setValue:[NSNumber numberWithInt:score] forKey:@"score"];
+    User *contactInfo = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
+    [contactInfo setName:name];
+    [contactInfo setScore:[NSNumber numberWithInt:score]];
     
     NSError *error;
     if (![context save:&error]) {

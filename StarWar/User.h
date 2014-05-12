@@ -1,5 +1,5 @@
 //
-//  UserData.h
+//  User.h
 //  StarWar
 //
 //  Created by XuShuangqing on 14-5-10.
@@ -10,9 +10,15 @@
 #import <CoreData/CoreData.h>
 
 
-@interface UserData : NSManagedObject
+@interface User : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * score;
+
+-(NSString*) name;
+-(NSNumber*) score;
+-(void) setName:(NSString *)name;
+-(void) setScore:(NSNumber *)score;
+
 
 @end

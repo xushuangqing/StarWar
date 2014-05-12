@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "IntroLayer.h"
 #import <CoreData/CoreData.h>
+#import "User.h"
 
 @implementation MyNavigationController
 
@@ -150,13 +151,13 @@
 {
     NSManagedObjectContext *context = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"UserData" inManagedObjectContext:context];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     NSError *error;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (NSManagedObject *info in fetchedObjects){
-        NSLog(@"name:%@", [info valueForKey:@"name"]);
-        NSLog(@"score:%@", [info valueForKey:@"score"]);
+    for (User *info in fetchedObjects){
+        NSLog(@"name:%@", [info name]);
+        NSLog(@"score:%@", [info score]);
     }
 }
 
