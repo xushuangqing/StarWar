@@ -19,6 +19,7 @@
 		4A97C1CC191E449A007C1EAE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A97C1CB191E449A007C1EAE /* CoreData.framework */; };
 		4A986E0719021CAE00B68A1B /* SRStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E0619021CAE00B68A1B /* SRStar.mm */; };
 		4A986E0A1902236200B68A1B /* SRContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E091902236200B68A1B /* SRContactListener.mm */; };
+		4A987AFA19223FE900E4ABC1 /* SRMenuLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A987AF919223FE900E4ABC1 /* SRMenuLayer.mm */; };
 		4A988B98191A5A1700A2C3D8 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B95191A5A1700A2C3D8 /* earth.png */; };
 		4A988B99191A5A1700A2C3D8 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B96191A5A1700A2C3D8 /* plane.png */; };
 		4A988B9A191A5A1700A2C3D8 /* spaceShip.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B97191A5A1700A2C3D8 /* spaceShip.png */; };
@@ -232,6 +233,8 @@
 		4A986E0619021CAE00B68A1B /* SRStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRStar.mm; sourceTree = "<group>"; };
 		4A986E081902236200B68A1B /* SRContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRContactListener.h; sourceTree = "<group>"; };
 		4A986E091902236200B68A1B /* SRContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRContactListener.mm; sourceTree = "<group>"; };
+		4A987AF819223FE900E4ABC1 /* SRMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMenuLayer.h; sourceTree = "<group>"; };
+		4A987AF919223FE900E4ABC1 /* SRMenuLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRMenuLayer.mm; sourceTree = "<group>"; };
 		4A988B95191A5A1700A2C3D8 /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = earth.png; path = Resources/earth.png; sourceTree = "<group>"; };
 		4A988B96191A5A1700A2C3D8 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plane.png; path = Resources/plane.png; sourceTree = "<group>"; };
 		4A988B97191A5A1700A2C3D8 /* spaceShip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spaceShip.png; path = Resources/spaceShip.png; sourceTree = "<group>"; };
@@ -689,6 +692,15 @@
 			name = Aircraft;
 			sourceTree = "<group>";
 		};
+		4A987AF719223F9B00E4ABC1 /* MenuLayer */ = {
+			isa = PBXGroup;
+			children = (
+				4A987AF819223FE900E4ABC1 /* SRMenuLayer.h */,
+				4A987AF919223FE900E4ABC1 /* SRMenuLayer.mm */,
+			);
+			name = MenuLayer;
+			sourceTree = "<group>";
+		};
 		4A98B402190409AF0048E492 /* Bullet */ = {
 			isa = PBXGroup;
 			children = (
@@ -749,11 +761,12 @@
 		4AAA9AA718FA2BFA00565381 /* StarWar */ = {
 			isa = PBXGroup;
 			children = (
+				4A987AF719223F9B00E4ABC1 /* MenuLayer */,
+				4A99ECBC18FFF8E20092D9A9 /* Controller */,
 				4A97C180191E3B81007C1EAE /* CoreData */,
 				4A964EB1191B987100C27FAE /* PhysicsEditorSources */,
 				4A98B402190409AF0048E492 /* Bullet */,
 				4A986E0419021C5100B68A1B /* Aircraft */,
-				4A99ECBC18FFF8E20092D9A9 /* Controller */,
 				4AAA9CC818FA2BFD00565381 /* AppDelegate.h */,
 				4AAA9CC918FA2BFD00565381 /* AppDelegate.mm */,
 				4AAA9CCB18FA2BFD00565381 /* HelloWorldLayer.h */,
@@ -1469,6 +1482,7 @@
 				4AAA9BA718FA2BFB00565381 /* CCES2Renderer.m in Sources */,
 				4AAA9BF318FA2BFC00565381 /* CDXMacOSXSupport.m in Sources */,
 				4AAA9B6F18FA2BFB00565381 /* CCSpriteBatchNode.m in Sources */,
+				4A987AFA19223FE900E4ABC1 /* SRMenuLayer.mm in Sources */,
 				4AAA9C3C18FA2BFC00565381 /* b2CollideEdge.cpp in Sources */,
 				4AAA9AC718FA2BFA00565381 /* CCActionCamera.m in Sources */,
 				4AAA9BE718FA2BFC00565381 /* ZipUtils.m in Sources */,
