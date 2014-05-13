@@ -12,7 +12,7 @@
 @interface SRControlLayer : CCLayer
 
 @property CCMenu *controlMenu;
-@property CCMenu *gameOverMenu;
+//@property CCMenu *gameOverMenu;
 
 -(void) saveCurrentScore: (int)score withName: (NSString*)name;
 

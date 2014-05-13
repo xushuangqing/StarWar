@@ -11,6 +11,7 @@
 #import "SRSpaceShip.h"
 #import "SRConstants.h"
 #import "SRControlLayer.h"
+#import "SRGameOverBoardLayer.h"
 #import "SREarth.h"
 #import "SRStar.h"
 #import "SRContactListener.h"
@@ -175,8 +176,9 @@
     [self unscheduleUpdate];
     
     SRControlLayer* controlLayer = (SRControlLayer *)[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagControlLayer];
-    controlLayer.gameOverMenu.visible = true;
+    //controlLayer.gameOverMenu.visible = true;
     [controlLayer saveCurrentScore:_score withName:@"No Name"];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRGameOverBoardLayer scene]]];
     
 }
 

@@ -20,6 +20,8 @@
 		4A986E0719021CAE00B68A1B /* SRStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E0619021CAE00B68A1B /* SRStar.mm */; };
 		4A986E0A1902236200B68A1B /* SRContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E091902236200B68A1B /* SRContactListener.mm */; };
 		4A987AFA19223FE900E4ABC1 /* SRMenuLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A987AF919223FE900E4ABC1 /* SRMenuLayer.mm */; };
+		4A987AFD1922473000E4ABC1 /* SRScoreBoardLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A987AFC1922473000E4ABC1 /* SRScoreBoardLayer.mm */; };
+		4A987B0019224A9C00E4ABC1 /* SRGameOverBoardLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A987AFF19224A9C00E4ABC1 /* SRGameOverBoardLayer.mm */; };
 		4A988B98191A5A1700A2C3D8 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B95191A5A1700A2C3D8 /* earth.png */; };
 		4A988B99191A5A1700A2C3D8 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B96191A5A1700A2C3D8 /* plane.png */; };
 		4A988B9A191A5A1700A2C3D8 /* spaceShip.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B97191A5A1700A2C3D8 /* spaceShip.png */; };
@@ -235,6 +237,10 @@
 		4A986E091902236200B68A1B /* SRContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRContactListener.mm; sourceTree = "<group>"; };
 		4A987AF819223FE900E4ABC1 /* SRMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMenuLayer.h; sourceTree = "<group>"; };
 		4A987AF919223FE900E4ABC1 /* SRMenuLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRMenuLayer.mm; sourceTree = "<group>"; };
+		4A987AFB1922473000E4ABC1 /* SRScoreBoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRScoreBoardLayer.h; sourceTree = "<group>"; };
+		4A987AFC1922473000E4ABC1 /* SRScoreBoardLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRScoreBoardLayer.mm; sourceTree = "<group>"; };
+		4A987AFE19224A9C00E4ABC1 /* SRGameOverBoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRGameOverBoardLayer.h; sourceTree = "<group>"; };
+		4A987AFF19224A9C00E4ABC1 /* SRGameOverBoardLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRGameOverBoardLayer.mm; sourceTree = "<group>"; };
 		4A988B95191A5A1700A2C3D8 /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = earth.png; path = Resources/earth.png; sourceTree = "<group>"; };
 		4A988B96191A5A1700A2C3D8 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plane.png; path = Resources/plane.png; sourceTree = "<group>"; };
 		4A988B97191A5A1700A2C3D8 /* spaceShip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spaceShip.png; path = Resources/spaceShip.png; sourceTree = "<group>"; };
@@ -697,6 +703,10 @@
 			children = (
 				4A987AF819223FE900E4ABC1 /* SRMenuLayer.h */,
 				4A987AF919223FE900E4ABC1 /* SRMenuLayer.mm */,
+				4A987AFB1922473000E4ABC1 /* SRScoreBoardLayer.h */,
+				4A987AFC1922473000E4ABC1 /* SRScoreBoardLayer.mm */,
+				4A987AFE19224A9C00E4ABC1 /* SRGameOverBoardLayer.h */,
+				4A987AFF19224A9C00E4ABC1 /* SRGameOverBoardLayer.mm */,
 			);
 			name = MenuLayer;
 			sourceTree = "<group>";
@@ -1562,6 +1572,7 @@
 				4AAA9C2F18FA2BFC00565381 /* vec4.c in Sources */,
 				4AAA9C5618FA2BFC00565381 /* b2PolygonShape.cpp in Sources */,
 				4AAA9B1618FA2BFB00565381 /* CCGrid.m in Sources */,
+				4A987B0019224A9C00E4ABC1 /* SRGameOverBoardLayer.mm in Sources */,
 				4AAA9AFB18FA2BFA00565381 /* CCConfiguration.m in Sources */,
 				4AAA9BCF18FA2BFC00565381 /* CCProfiling.m in Sources */,
 				4AAA9C8C18FA2BFD00565381 /* b2Contact.cpp in Sources */,
@@ -1581,6 +1592,7 @@
 				4AAA9C5318FA2BFC00565381 /* b2EdgeShape.cpp in Sources */,
 				4AAA9BDB18FA2BFC00565381 /* NSThread+performBlock.m in Sources */,
 				4AAA9C8918FA2BFD00565381 /* b2CircleContact.cpp in Sources */,
+				4A987AFD1922473000E4ABC1 /* SRScoreBoardLayer.mm in Sources */,
 				4AAA9C7518FA2BFD00565381 /* b2Fixture.cpp in Sources */,
 				4AAA9B8418FA2BFB00565381 /* CCTileMapAtlas.m in Sources */,
 				4AAA9CBA18FA2BFD00565381 /* b2WeldJoint.cpp in Sources */,

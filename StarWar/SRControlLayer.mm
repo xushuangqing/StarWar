@@ -12,6 +12,7 @@
 #import "IntroLayer.h"
 #import "User.h"
 #import "AppDelegate.h"
+#import "SRScoreBoardLayer.h"
 
 @implementation SRControlLayer
 
@@ -19,8 +20,8 @@
 {
     if (self = [super init]) {
         [self initButton];
-        [self initGameOverLabel];
-        _gameOverMenu.visible = NO;
+        //[self initGameOverLabel];
+        //_gameOverMenu.visible = NO;
     }
     return self;
 }
@@ -42,7 +43,7 @@
     [self addChild:_controlMenu];
 }
 
--(void) initGameOverLabel
+/*-(void) initGameOverLabel
 {
     CCMenuItemImage *gameOverImage = [CCMenuItemImage itemWithNormalImage:@"gameOver.png" selectedImage:@"gameOver.png"];
     gameOverImage.scale = 0.5;
@@ -55,7 +56,7 @@
     _gameOverMenu = [CCMenu menuWithItems:gameOverImage, restartButton, nil];
     _gameOverMenu.position = CGPointZero;
     [self addChild:_gameOverMenu];
-}
+}*/
 
 -(void) plusButtonPressed
 {

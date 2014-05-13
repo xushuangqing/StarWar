@@ -8,6 +8,7 @@
 
 #import "SRMenuLayer.h"
 #import "SRSpaceLayer.h"
+#import "SRScoreBoardLayer.h"
 
 @implementation SRMenuLayer
 
@@ -52,6 +53,7 @@
 -(void) scoreBoardButtonPressed
 {
     NSLog(@"scoreBoardButtonPressed");
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRScoreBoardLayer scene] ]];
 }
 
 
