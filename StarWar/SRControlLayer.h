@@ -13,7 +13,6 @@
 
 @property CCMenu *controlMenu;
 @property CCMenu *gameOverMenu;
-@property CCMenu *startMenu;
 
 -(void) saveCurrentScore: (int)score withName: (NSString*)name;
 

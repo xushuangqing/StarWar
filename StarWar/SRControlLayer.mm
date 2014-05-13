@@ -19,7 +19,6 @@
 {
     if (self = [super init]) {
         [self initButton];
-        [self initStartButton];
         [self initGameOverLabel];
         _gameOverMenu.visible = NO;
     }
@@ -41,17 +40,6 @@
     _controlMenu = [CCMenu menuWithItems:plusButton,minusButton, nil];
     _controlMenu.position = CGPointZero;
     [self addChild:_controlMenu];
-}
-
--(void) initStartButton
-{
-    CCMenuItem *startButton = [CCMenuItemImage itemWithNormalImage:@"replay.png" selectedImage:@"replay.png" target:self selector:@selector(startButtonPressed)];
-    startButton.scale = 0.5;
-    startButton.position = ccp([UIScreen mainScreen].bounds.size.height/2, 200);
-    
-    _startMenu = [CCMenu menuWithItems:startButton, nil];
-    _startMenu.position = CGPointZero;
-    [self addChild:_startMenu];
 }
 
 -(void) initGameOverLabel
@@ -82,12 +70,6 @@
 -(void) restartButtonPressed
 {
     [[CCDirector sharedDirector] replaceScene:[SRSpaceLayer scene]];
-}
-
--(void) startButtonPressed
-{
-    [[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagSpaceLayer] scheduleUpdate];
-    _startMenu.visible = NO;
 }
 
 -(void) saveCurrentScore: (int)score withName: (NSString*)name

@@ -27,11 +27,9 @@
 #define MaskBitsPlane 0x0002
 
 #define zControlLayer 100
-#define zSpaceLayer 0
 
 enum {
 	kTagControlLayer = 1,
-    kTagSpaceLayer = 2,
 };
 
 #define LaserMaxWidth 320
