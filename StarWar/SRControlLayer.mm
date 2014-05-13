@@ -81,10 +81,7 @@
 
 -(void) restartButtonPressed
 {
-    CCScene *scene = [SRSpaceLayer scene];
-    [[scene getChildByTag:kTagSpaceLayer] scheduleUpdate];
-    ((SRControlLayer*)[scene getChildByTag:kTagControlLayer]).startMenu.visible = NO;
-    [[CCDirector sharedDirector] replaceScene:scene];
+    [[CCDirector sharedDirector] replaceScene:[SRSpaceLayer scene]];
 }
 
 -(void) startButtonPressed
