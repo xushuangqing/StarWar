@@ -175,9 +175,9 @@
     [self unscheduleAllSelectors];
     [self unscheduleUpdate];
     
-    SRControlLayer* controlLayer = (SRControlLayer *)[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagControlLayer];
+    //SRControlLayer* controlLayer = (SRControlLayer *)[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagControlLayer];
     //controlLayer.gameOverMenu.visible = true;
-    [controlLayer saveCurrentScore:_score withName:@"No Name"];
+    //[controlLayer saveCurrentScore:_score withName:@"No Name"];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRGameOverBoardLayer scene]]];
     
 }

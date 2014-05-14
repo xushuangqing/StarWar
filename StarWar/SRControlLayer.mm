@@ -73,18 +73,4 @@
     [[CCDirector sharedDirector] replaceScene:[SRSpaceLayer scene]];
 }
 
--(void) saveCurrentScore: (int)score withName: (NSString*)name
-{
-    AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [app managedObjectContext];
-    User *contactInfo = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
-    [contactInfo setName:name];
-    [contactInfo setScore:[NSNumber numberWithInt:score]];
-    
-    NSError *error;
-    if (![context save:&error]) {
-        NSLog(@"Fail to save context: %@", [error localizedDescription]);
-    }
-}
-
 @end

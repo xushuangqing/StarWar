@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "IntroLayer.h"
-#import <CoreData/CoreData.h>
 #import "User.h"
 
 @implementation MyNavigationController
@@ -142,22 +141,20 @@
 	// make main window visible
 	[window_ makeKeyAndVisible];
 
-    [self dataFetchRequest];
-
 	return YES;
 }
 
--(void) dataFetchRequest
+- (void)saveContext
 {
-    NSManagedObjectContext *context = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    NSError *error;
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (User *info in fetchedObjects){
-        NSLog(@"name:%@", [info name]);
-        NSLog(@"score:%@", [info score]);
+    NSError *error = nil;
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    if (managedObjectContext != nil) {
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
     }
 }
 

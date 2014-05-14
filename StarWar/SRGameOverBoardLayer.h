@@ -7,6 +7,7 @@
 //
 
 #import "cocos2d.h"
+#import <CoreData/CoreData.h>
 
 @interface SRGameOverBoardLayer : CCLayer
 
