@@ -2,59 +2,48 @@
 //  SRMenuLayer.m
 //  StarWar
 //
-//  Created by XuShuangqing on 14-5-13.
+//  Created by XuShuangqing on 14-5-16.
 //  Copyright (c) 2014年 XuShuangqing. All rights reserved.
 //
 
 #import "SRMenuLayer.h"
-#import "SRSpaceLayer.h"
-#import "SRScoreBoardLayer.h"
+#import "SRConstants.h"
 
 @implementation SRMenuLayer
 
-+(CCScene *) scene
-{
-	CCScene *scene = [CCScene node];
-	SRMenuLayer *layer = [SRMenuLayer node];
-	[scene addChild: layer];
-	return scene;
-}
-
 -(id) init
 {
-	if( (self=[super init])) {
-		[self initMenu];
+    if( (self=[super init])) {
+        [self initMenu];
+        [self initBackground];
 	}
-	
 	return self;
 }
 
 -(void) initMenu
 {
-    CCMenuItem *startButton = [CCMenuItemImage itemWithNormalImage:@"replay.png" selectedImage:@"replay.png" target:self selector:@selector(startButtonPressed)];
-    startButton.scale = 0.5;
-    startButton.position = ccp([UIScreen mainScreen].bounds.size.height/2, 200);
     
-    CCMenuItem *scoreBoardButton = [CCMenuItemImage itemWithNormalImage:@"replay.png" selectedImage:@"replay.png" target:self selector:@selector(scoreBoardButtonPressed)];
-    scoreBoardButton.scale = 0.5;
-    scoreBoardButton.position = ccp([UIScreen mainScreen].bounds.size.height/2, 100);
-    
-    _mainMenu = [CCMenu menuWithItems:startButton, scoreBoardButton, nil];
-    _mainMenu.position = CGPointZero;
-    [self addChild:_mainMenu];
 }
 
--(void) startButtonPressed
+-(void) initBackground
 {
-    NSLog(@"startButtonPressed");
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceLayer scene] ]];
+    [self initBackgroundColor];
+    [self initBackgroundEarth];
 }
 
--(void) scoreBoardButtonPressed
+-(void) initBackgroundColor
 {
-    NSLog(@"scoreBoardButtonPressed");
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRScoreBoardLayer scene] ]];
+    CCLayerColor *darkBlue = [CCLayerColor layerWithColor:menuBackgroundColor];
+    [self addChild:darkBlue z:zBackgroundColor tag:kTagBackgroundColor];
 }
 
+-(void) initBackgroundEarth
+{
+    CCSprite *backgroundEarth = [CCSprite spriteWithFile:@"backgroundEarth.png"];
+    backgroundEarth.scale = 0.5;
+    backgroundEarth.anchorPoint = ccp(0, 0);
+    backgroundEarth.position = ccp(0, 0);
+    [self addChild:backgroundEarth z:zBackgroundEarth tag:kTagBackgroundEarth];
+}
 
 @end

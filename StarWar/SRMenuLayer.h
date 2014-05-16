@@ -2,7 +2,7 @@
 //  SRMenuLayer.h
 //  StarWar
 //
-//  Created by XuShuangqing on 14-5-13.
+//  Created by XuShuangqing on 14-5-16.
 //  Copyright (c) 2014年 XuShuangqing. All rights reserved.
 //
 
@@ -10,8 +10,6 @@
 
 @interface SRMenuLayer : CCLayer
 
-@property CCMenu* mainMenu;
-
-+(CCScene *) scene;
+-(void) initBackground;
 
 @end

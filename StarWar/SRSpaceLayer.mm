@@ -114,7 +114,7 @@
     
     [_spaceShip createBodyForWorld:_world withPosition:position withGeocentric:_earth.geocentric withVelocity:velocity];
     
-    [self addChild:_spaceShip];
+    [self addChild:_spaceShip z:zSpaceShip tag:kTagSpaceShip];
 }
 
 -(void) initEarth
@@ -144,7 +144,7 @@
 {
     
     CGRect r = CGRectMake(0, 0, LaserMaxWidth, LaserHeight);
-    _laser = [SRLaser spriteWithFile:@"blocks.png" rect:r];
+    _laser = [SRLaser spriteWithFile:@"laser.png" rect:r];
     
     ccTexParams params = {
         GL_LINEAR,
@@ -155,7 +155,7 @@
     [_laser.texture setTexParameters:&params];
 
     _laser.anchorPoint = ccp(0, 0.5);
-    [self addChild:_laser];
+    [self addChild:_laser z:zLaser tag:kTagLaser];
 }
 
 -(void) initPlaneBatch

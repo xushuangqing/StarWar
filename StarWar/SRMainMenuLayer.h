@@ -1,5 +1,5 @@
 //
-//  SRGameOverBoard.h
+//  SRMainMenuLayer.h
 //  StarWar
 //
 //  Created by XuShuangqing on 14-5-13.
@@ -8,9 +8,10 @@
 
 #import "cocos2d.h"
 #import "SRMenuLayer.h"
-#import <CoreData/CoreData.h>
 
-@interface SRGameOverBoardLayer : SRMenuLayer
+@interface SRMainMenuLayer : SRMenuLayer
+
+@property CCMenu* mainMenu;
 
 +(CCScene *) scene;
 

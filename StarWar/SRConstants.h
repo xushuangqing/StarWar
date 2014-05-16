@@ -26,14 +26,45 @@
 #define MaskBitsLaser 0x0000
 #define MaskBitsPlane 0x0002
 
+
+
+
+//below is the tag and z-index in space scene
+
 #define zControlLayer 100
 
 enum {
 	kTagControlLayer = 1,
 };
 
-#define LaserMaxWidth 320
-#define LaserHeight 10
+#define zSpaceShip 100
+#define zLaser 99
+
+enum {
+    kTagSpaceShip = 1,
+    kTagLaser = 2,
+};
+
+
+//below is the tag and z-index in menu scene
+
+#define zBackgroundColor 0
+#define zBackgroundEarth 1
+#define zMenu 2
+
+enum {
+    kTagBackgroundColor = 1,
+    kTagBackgroundEarth = 2,
+    kTagMenu = 3,
+};
+
+
+
+
+#define LaserMaxWidth 640
+#define LaserHeight 16
+
+#define menuBackgroundColor ccc4(12, 33, 45, 255)
 
 @interface SRConstants: NSObject
 

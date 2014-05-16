@@ -7,9 +7,9 @@
 //
 
 #import "cocos2d.h"
-#import <CoreData/CoreData.h>
+#import "SRMenuLayer.h"
 
-@interface SRScoreBoardLayer : CCLayer
+@interface SRScoreBoardLayer : SRMenuLayer
 
 +(CCScene *) scene;
 
