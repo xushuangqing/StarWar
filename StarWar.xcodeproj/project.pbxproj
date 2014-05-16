@@ -220,6 +220,9 @@
 		4AAA9CD518FA2BFD00565381 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAA9CD418FA2BFD00565381 /* blocks.png */; };
 		4AAA9CDD18FA304D00565381 /* SRSpaceShip.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CDC18FA304D00565381 /* SRSpaceShip.mm */; };
 		4AAA9CE618FA329000565381 /* SRSpaceLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CE518FA329000565381 /* SRSpaceLayer.mm */; };
+		4AAC4089192648AF004635FB /* buttonMainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAC4087192648AF004635FB /* buttonMainMenu.png */; };
+		4AAC408C19264F81004635FB /* titleYourFinalScore.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAC408B19264F81004635FB /* titleYourFinalScore.png */; };
+		4AAC408E1926516C004635FB /* buttonPlayAgain.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAC408D1926516C004635FB /* buttonPlayAgain.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -651,6 +654,9 @@
 		4AAA9CDC18FA304D00565381 /* SRSpaceShip.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRSpaceShip.mm; sourceTree = "<group>"; };
 		4AAA9CE418FA329000565381 /* SRSpaceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSpaceLayer.h; sourceTree = "<group>"; };
 		4AAA9CE518FA329000565381 /* SRSpaceLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRSpaceLayer.mm; sourceTree = "<group>"; };
+		4AAC4087192648AF004635FB /* buttonMainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonMainMenu.png; path = Resources/buttonMainMenu.png; sourceTree = "<group>"; };
+		4AAC408B19264F81004635FB /* titleYourFinalScore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleYourFinalScore.png; path = Resources/titleYourFinalScore.png; sourceTree = "<group>"; };
+		4AAC408D1926516C004635FB /* buttonPlayAgain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonPlayAgain.png; path = Resources/buttonPlayAgain.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -817,6 +823,9 @@
 		4AAA9AA818FA2BFA00565381 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4AAC408D1926516C004635FB /* buttonPlayAgain.png */,
+				4AAC408B19264F81004635FB /* titleYourFinalScore.png */,
+				4AAC4087192648AF004635FB /* buttonMainMenu.png */,
 				4A9FDB0D19260225001D5D13 /* backgroundEarth.png */,
 				4A9FDB0B1925FC30001D5D13 /* laser.png */,
 				4A9FDB091925FB51001D5D13 /* buttonHelp.png */,
@@ -1421,6 +1430,7 @@
 				4AAA9ABA18FA2BFA00565381 /* Icon.png in Resources */,
 				4A97C17D191E357A007C1EAE /* minus.png in Resources */,
 				4A97C17F191E357A007C1EAE /* replay.png in Resources */,
+				4AAC408C19264F81004635FB /* titleYourFinalScore.png in Resources */,
 				4AAA9C1518FA2BFC00565381 /* ChangeLog in Resources */,
 				4A988B99191A5A1700A2C3D8 /* plane.png in Resources */,
 				4A9FDB081925FAA9001D5D13 /* buttonHighScores.png in Resources */,
@@ -1437,8 +1447,10 @@
 				4A9FDB0E19260225001D5D13 /* backgroundEarth.png in Resources */,
 				4AAA9AB818FA2BFA00565381 /* Icon-Small@2x.png in Resources */,
 				4A988B98191A5A1700A2C3D8 /* earth.png in Resources */,
+				4AAC408E1926516C004635FB /* buttonPlayAgain.png in Resources */,
 				4AAA9AB018FA2BFA00565381 /* Default-Landscape~ipad.png in Resources */,
 				4A9FDB0A1925FB51001D5D13 /* buttonHelp.png in Resources */,
+				4AAC4089192648AF004635FB /* buttonMainMenu.png in Resources */,
 				4AAA9AAE18FA2BFA00565381 /* Default-568h@2x.png in Resources */,
 				4AAA9ABC18FA2BFA00565381 /* Icon@2x.png in Resources */,
 				4A97C17C191E357A007C1EAE /* gameOver.png in Resources */,

@@ -51,11 +51,13 @@ enum {
 #define zBackgroundColor 0
 #define zBackgroundEarth 1
 #define zMenu 2
+#define zButtonMenu 3
 
 enum {
     kTagBackgroundColor = 1,
     kTagBackgroundEarth = 2,
     kTagMenu = 3,
+    kTagButtonMenu = 4,
 };
 
 

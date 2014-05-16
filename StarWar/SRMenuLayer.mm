@@ -8,19 +8,21 @@
 
 #import "SRMenuLayer.h"
 #import "SRConstants.h"
+#import "SRMainMenuLayer.h"
+#import "SRSpaceLayer.h"
 
 @implementation SRMenuLayer
 
 -(id) init
 {
     if( (self=[super init])) {
-        [self initMenu];
+        [self initMenuContent];
         [self initBackground];
 	}
 	return self;
 }
 
--(void) initMenu
+-(void) initMenuContent
 {
     
 }
@@ -44,6 +46,45 @@
     backgroundEarth.anchorPoint = ccp(0, 0);
     backgroundEarth.position = ccp(0, 0);
     [self addChild:backgroundEarth z:zBackgroundEarth tag:kTagBackgroundEarth];
+}
+
+-(void) initButtonMenu
+{
+    CCMenu* menu = [CCMenu menuWithItems: nil];
+    menu.position = CGPointZero;
+    [self addChild:menu z:zButtonMenu tag:kTagButtonMenu];
+}
+
+-(void) initBackButton
+{
+    CCMenuItem *backButton = [CCMenuItemImage itemWithNormalImage:@"buttonMainMenu.png" selectedImage:@"buttonMainMenu.png" target:self selector:@selector(backToMainMenu)];
+    backButton.scale = 0.5;
+    backButton.anchorPoint = ccp(1, 0);
+    backButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
+    
+    CCMenu* menu = (CCMenu *)[self getChildByTag:kTagButtonMenu];
+    [menu addChild:backButton];
+}
+
+-(void) initPlayAgainButton
+{
+    CCMenuItem *playAgainButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlayAgain.png" selectedImage:@"buttonPlayAgain.png" target:self selector:@selector(playAgain)];
+    playAgainButton .scale = 0.5;
+    playAgainButton .anchorPoint = ccp(0, 0);
+    playAgainButton .position = ccp(0, 0);
+    
+    CCMenu* menu = (CCMenu *)[self getChildByTag:kTagButtonMenu];
+    [menu addChild:playAgainButton];
+}
+
+-(void) backToMainMenu
+{
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRMainMenuLayer scene]]];
+}
+
+-(void) playAgain
+{
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceLayer scene]]];
 }
 
 @end

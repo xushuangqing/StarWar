@@ -11,8 +11,4 @@
 
 @interface SRMainMenuLayer : SRMenuLayer
 
-@property CCMenu* mainMenu;
-
-+(CCScene *) scene;
-
 @end

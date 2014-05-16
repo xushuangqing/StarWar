@@ -12,6 +12,4 @@
 
 @interface SRGameOverBoardLayer : SRMenuLayer
 
-+(CCScene *) scene;
-
 @end

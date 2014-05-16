@@ -21,6 +21,11 @@
 	return scene;
 }
 
+-(void) initMenuContent
+{
+    [self initMenu];
+}
+
 -(void) initMenu
 {
     CCMenuItem *startButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlay.png" selectedImage:@"buttonPlay.png" target:self selector:@selector(startButtonPressed)];
@@ -35,9 +40,9 @@
     helpButton.scale = 0.5;
     helpButton.position = ccp([UIScreen mainScreen].bounds.size.height/5*4, 90);
     
-    _mainMenu = [CCMenu menuWithItems:startButton, scoreBoardButton, helpButton, nil];
-    _mainMenu.position = CGPointZero;
-    [self addChild:_mainMenu z:zMenu tag:kTagMenu];
+    CCMenu* menu = [CCMenu menuWithItems:startButton, scoreBoardButton, helpButton, nil];
+    menu.position = CGPointZero;
+    [self addChild:menu z:zMenu tag:kTagMenu];
 }
 
 -(void) startButtonPressed
