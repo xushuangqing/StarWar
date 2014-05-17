@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "IntroLayer.h"
-#import "User.h"
+#import "Score.h"
 
 @implementation MyNavigationController
 

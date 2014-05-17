@@ -8,45 +8,42 @@
 
 #import "SRGameOverBoardLayer.h"
 #import "AppDelegate.h"
-#import "User.h"
+#import "Score.h"
 #import "SRConstants.h"
 
 @implementation SRGameOverBoardLayer
 
-+(CCScene *) scene
++(CCScene *) sceneWithFinalScore: (int)finalScore
 {
 	CCScene *scene = [CCScene node];
-	SRGameOverBoardLayer *layer = [SRGameOverBoardLayer node];
-	[scene addChild: layer];
+	SRGameOverBoardLayer *layer = [[[SRGameOverBoardLayer alloc] initWithFinalScore:finalScore] autorelease];
+	[scene addChild:layer];
 	return scene;
 }
 
--(id) init
+-(id) initWithFinalScore: (int)finalScore
 {
 	if( (self=[super init])) {
-        CCLabelTTF *label = [CCLabelTTF labelWithString:@"SRGameOverBoardLayer" fontName:@"Marker Felt" fontSize:32];
-        [self addChild:label];
-        label.position = ccp(100, 100);
-        [self saveCurrentScore:15 withName:@"text"];
+        [self initMenuWithFinalScore: finalScore];
+        [self saveCurrentScore: finalScore];
 	}
 	return self;
 }
 
 -(void) initMenuContent
 {
-    [self initMenu];
     [self initButtonMenu];
     [self initBackButton];
     [self initPlayAgainButton];
 }
 
--(void) initMenu
+-(void) initMenuWithFinalScore: (int)finalScore
 {
     CCMenuItemImage *title = [CCMenuItemImage itemWithNormalImage:@"titleYourFinalScore.png" selectedImage:@"titleYourFinalScore.png"];
     title.scale = 0.5;
     title.position = ccp([UIScreen mainScreen].bounds.size.height/2, 260);
     
-    CCMenuItem *bestScore = [CCMenuItemFont itemWithString:@"100"];
+    CCMenuItem *bestScore = [CCMenuItemFont itemWithString:[NSString stringWithFormat:@"%d", finalScore]];
     bestScore.position = ccp([UIScreen mainScreen].bounds.size.height/2, 200);
     
     CCMenu* menu = [CCMenu menuWithItems:title, bestScore, nil];
@@ -54,36 +51,18 @@
     [self addChild:menu z:zMenu tag:kTagMenu];
 }
 
--(void) saveCurrentScore: (int)score withName: (NSString*)name
+-(void) saveCurrentScore: (int)score
 {
     AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [app managedObjectContext];
-    User *currentUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
-    currentUser.name = name;
-    currentUser.score = [NSNumber numberWithInt:score];
+    
+    Score *finalScore = [NSEntityDescription insertNewObjectForEntityForName:@"Score" inManagedObjectContext:context];
+    
+    finalScore.timestamp = [NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]*1000];
+    finalScore.isPushed = [NSNumber numberWithBool:NO];
+    finalScore.score = [NSNumber numberWithInt:score];
     
     [app saveContext];
-    
-    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"score" ascending:NO];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    NSError *error;
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    
-    int i = 0;
-    for (User *info in fetchedObjects){
-        i++;
-        if (info == currentUser) {
-            NSLog(@"yyyyy%d", i);
-            break;
-        }
-    }
-    
 }
 
 @end

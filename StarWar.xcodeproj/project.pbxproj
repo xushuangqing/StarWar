@@ -15,7 +15,7 @@
 		4A97C17E191E357A007C1EAE /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A97C17A191E357A007C1EAE /* plus.png */; };
 		4A97C17F191E357A007C1EAE /* replay.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A97C17B191E357A007C1EAE /* replay.png */; };
 		4A97C183191E3BB2007C1EAE /* SRDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A97C181191E3BB2007C1EAE /* SRDataModel.xcdatamodeld */; };
-		4A97C1CA191E43E9007C1EAE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A97C1C9191E43E9007C1EAE /* User.m */; };
+		4A97C1CA191E43E9007C1EAE /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A97C1C9191E43E9007C1EAE /* Score.m */; };
 		4A97C1CC191E449A007C1EAE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A97C1CB191E449A007C1EAE /* CoreData.framework */; };
 		4A986E0719021CAE00B68A1B /* SRStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E0619021CAE00B68A1B /* SRStar.mm */; };
 		4A986E0A1902236200B68A1B /* SRContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E091902236200B68A1B /* SRContactListener.mm */; };
@@ -237,8 +237,8 @@
 		4A97C17A191E357A007C1EAE /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plus.png; path = Resources/plus.png; sourceTree = "<group>"; };
 		4A97C17B191E357A007C1EAE /* replay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = replay.png; path = Resources/replay.png; sourceTree = "<group>"; };
 		4A97C182191E3BB2007C1EAE /* SRDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SRDataModel.xcdatamodel; sourceTree = "<group>"; };
-		4A97C1C8191E43E9007C1EAE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		4A97C1C9191E43E9007C1EAE /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		4A97C1C8191E43E9007C1EAE /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		4A97C1C9191E43E9007C1EAE /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 		4A97C1CB191E449A007C1EAE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4A986E0519021CAE00B68A1B /* SRStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStar.h; sourceTree = "<group>"; };
 		4A986E0619021CAE00B68A1B /* SRStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRStar.mm; sourceTree = "<group>"; };
@@ -693,8 +693,8 @@
 		4A97C180191E3B81007C1EAE /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				4A97C1C8191E43E9007C1EAE /* User.h */,
-				4A97C1C9191E43E9007C1EAE /* User.m */,
+				4A97C1C8191E43E9007C1EAE /* Score.h */,
+				4A97C1C9191E43E9007C1EAE /* Score.m */,
 				4A97C181191E3BB2007C1EAE /* SRDataModel.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -1478,7 +1478,7 @@
 				4AAA9AE818FA2BFA00565381 /* CCActionTween.m in Sources */,
 				4AAA9BD818FA2BFC00565381 /* CGPointExtension.m in Sources */,
 				4AAA9C6518FA2BFC00565381 /* b2Settings.cpp in Sources */,
-				4A97C1CA191E43E9007C1EAE /* User.m in Sources */,
+				4A97C1CA191E43E9007C1EAE /* Score.m in Sources */,
 				4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */,
 				4AAA9B0D18FA2BFB00565381 /* CCGLProgram.m in Sources */,
 				4AAA9BFD18FA2BFC00565381 /* SimpleAudioEngine.m in Sources */,

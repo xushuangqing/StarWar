@@ -10,7 +10,6 @@
 #import "SRConstants.h"
 #import "SRSpaceLayer.h"
 #import "IntroLayer.h"
-#import "User.h"
 #import "AppDelegate.h"
 #import "SRScoreBoardLayer.h"
 

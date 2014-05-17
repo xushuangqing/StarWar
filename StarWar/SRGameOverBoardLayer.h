@@ -12,4 +12,6 @@
 
 @interface SRGameOverBoardLayer : SRMenuLayer
 
++(CCScene *) sceneWithFinalScore: (int)finalScore;
+
 @end

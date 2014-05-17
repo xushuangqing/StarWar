@@ -178,7 +178,9 @@
     //SRControlLayer* controlLayer = (SRControlLayer *)[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagControlLayer];
     //controlLayer.gameOverMenu.visible = true;
     //[controlLayer saveCurrentScore:_score withName:@"No Name"];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRGameOverBoardLayer scene]]];
+    
+    CCScene *newScene = [SRGameOverBoardLayer sceneWithFinalScore:_score];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:newScene]];
     
 }
 
