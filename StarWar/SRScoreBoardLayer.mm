@@ -77,6 +77,9 @@
         label.position = ccp([UIScreen mainScreen].bounds.size.height/4, 180);
         break;
     }
+    
+    [sortDescriptors release];
+    [sortDescriptor release];
 }
 
 @end
