@@ -11,7 +11,6 @@
 #import "SRSpaceShip.h"
 #import "SRConstants.h"
 #import "SRControlLayer.h"
-#import "SRGameOverBoardLayer.h"
 #import "SREarth.h"
 #import "SRStar.h"
 #import "SRContactListener.h"
@@ -36,7 +35,6 @@
     b2RayCastOutput _output;
     
     SRContactListener *listener;
-    int _score;
 }
 @end
 
@@ -75,8 +73,6 @@
         
         /* Only set scheduleUpdate, the update function can work*/
         [self scheduleUpdate];
-        
-        _score = 0;
     }
     return self;
 }
@@ -175,14 +171,6 @@
     }
     [self unscheduleAllSelectors];
     [self unscheduleUpdate];
-    
-    //SRControlLayer* controlLayer = (SRControlLayer *)[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagControlLayer];
-    //controlLayer.gameOverMenu.visible = true;
-    //[controlLayer saveCurrentScore:_score withName:@"No Name"];
-    
-    CCScene *newScene = [SRGameOverBoardLayer sceneWithFinalScore:_score];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:newScene]];
-    
 }
 
 -(void) draw {
@@ -275,7 +263,7 @@
 
 -(void) scorePlus
 {
-    _score++;
+    [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameScorePlus object:nil];
 }
 
 -(void) dealloc

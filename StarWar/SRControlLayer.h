@@ -11,7 +11,6 @@
 
 @interface SRControlLayer : CCLayer
 
-@property CCMenu *controlMenu;
-//@property CCMenu *gameOverMenu;
+@property int score;
 
 @end

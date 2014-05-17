@@ -12,17 +12,29 @@
 #import "IntroLayer.h"
 #import "AppDelegate.h"
 #import "SRScoreBoardLayer.h"
+#import "SRGameOverBoardLayer.h"
 
 @implementation SRControlLayer
 
 -(id) init
 {
     if (self = [super init]) {
+        _score = 0;
+        [self registerNotifications];
         [self initButton];
+        
         //[self initGameOverLabel];
         //_gameOverMenu.visible = NO;
     }
     return self;
+}
+
+-(void) registerNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scorePlus:) name:NSNotificationNameScorePlus object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipDown object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTouchPlane object:nil];
 }
 
 -(void) initButton
@@ -37,9 +49,20 @@
     minusButton.scale = 0.5;
     minusButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
     
-    _controlMenu = [CCMenu menuWithItems:plusButton,minusButton, nil];
-    _controlMenu.position = CGPointZero;
-    [self addChild:_controlMenu];
+    CCMenu *controlMenu = [CCMenu menuWithItems:plusButton,minusButton, nil];
+    controlMenu.position = CGPointZero;
+    [self addChild:controlMenu];
+}
+
+-(void) scorePlus: (NSNotification *) notification
+{
+    _score++;
+}
+
+-(void) gameOver: (NSNotification *) notification
+{
+    CCScene *newScene = [SRGameOverBoardLayer sceneWithFinalScore:_score];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:newScene]];
 }
 
 /*-(void) initGameOverLabel
@@ -48,13 +71,9 @@
     gameOverImage.scale = 0.5;
     gameOverImage.position = ccp([UIScreen mainScreen].bounds.size.height/2, 200);
     
-    CCMenuItem *restartButton = [CCMenuItemImage itemWithNormalImage:@"replay.png" selectedImage:@"replay.png" target:self selector:@selector(restartButtonPressed)];
-    restartButton.scale = 0.5;
-    restartButton.position = ccp([UIScreen mainScreen].bounds.size.height/2, 100);
-    
-    _gameOverMenu = [CCMenu menuWithItems:gameOverImage, restartButton, nil];
-    _gameOverMenu.position = CGPointZero;
-    [self addChild:_gameOverMenu];
+    CCMenu *gameOverMenu = [CCMenu menuWithItems:gameOverImage, nil];
+    gameOverMenu.position = CGPointZero;
+    [self addChild:gameOverMenu];
 }*/
 
 -(void) plusButtonPressed
@@ -70,6 +89,12 @@
 -(void) restartButtonPressed
 {
     [[CCDirector sharedDirector] replaceScene:[SRSpaceLayer scene]];
+}
+
+-(void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
 }
 
 @end

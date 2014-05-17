@@ -11,6 +11,7 @@
 #define NSNotificationNameMinusVelocity @"minusVelocity"
 #define NSNotificationNameSpaceShipDown @"spaceShipDown"
 #define NSNotificationNameSpaceShipTouchPlane @"spaceShipTouchPlane"
+#define NSNotificationNameScorePlus @"scorePlus"
 
 #define SpaceShipAngelInView 15
 
