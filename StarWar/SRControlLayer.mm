@@ -14,6 +14,13 @@
 #import "SRScoreBoardLayer.h"
 #import "SRGameOverBoardLayer.h"
 
+@interface SRControlLayer ()
+{
+    CCLabelTTF *_label;
+}
+
+@end
+
 @implementation SRControlLayer
 
 -(id) init
@@ -22,9 +29,7 @@
         _score = 0;
         [self registerNotifications];
         [self initButton];
-        
-        //[self initGameOverLabel];
-        //_gameOverMenu.visible = NO;
+        [self initScoreBoard];
     }
     return self;
 }
@@ -54,9 +59,17 @@
     [self addChild:controlMenu];
 }
 
+-(void) initScoreBoard
+{
+    _label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", _score] fontName:@"Marker Felt" fontSize:32];
+    _label.position = ccp([UIScreen mainScreen].bounds.size.height/2, 15);
+    [self addChild:_label];
+}
+
 -(void) scorePlus: (NSNotification *) notification
 {
     _score++;
+    _label.string = [NSString stringWithFormat:@"%d", _score];
 }
 
 -(void) gameOver: (NSNotification *) notification
