@@ -280,10 +280,16 @@
 
 -(void) dealloc
 {
+    b2Body *body = _world->GetBodyList();
+    for (; body; body = body->GetNext()) {
+        _world->DestroyBody(body);
+    }
+    
 	delete _world;
 	_world = NULL;
     
     delete listener;
+    listener = NULL;
 	
 	delete m_debugDraw;
 	m_debugDraw = NULL;
