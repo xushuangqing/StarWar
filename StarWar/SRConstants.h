@@ -33,9 +33,13 @@
 //below is the tag and z-index in space scene
 
 #define zControlLayer 100
+#define zSpaceLayer 10
+#define zBackgroundLayer 0
 
 enum {
 	kTagControlLayer = 1,
+    kTagSpaceLayer = 2,
+    kTagBackgroundLayer = 3,
 };
 
 #define zSpaceShip 100

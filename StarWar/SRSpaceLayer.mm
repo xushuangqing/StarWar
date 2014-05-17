@@ -47,10 +47,13 @@
     CCScene *scene = [CCScene node];
     
     SRSpaceLayer *layer = [SRSpaceLayer node];
-    [scene addChild: layer];
+    [scene addChild: layer z:zSpaceLayer tag:kTagSpaceLayer];
     
     SRControlLayer *controlLayer = [SRControlLayer node];
     [scene addChild:controlLayer z:zControlLayer tag:kTagControlLayer];
+    
+    CCLayerColor *darkBlue = [CCLayerColor layerWithColor:menuBackgroundColor];
+    [scene addChild:darkBlue z:zBackgroundLayer tag:kTagBackgroundLayer];
     
     return scene;
 }
