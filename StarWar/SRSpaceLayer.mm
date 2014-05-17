@@ -75,6 +75,7 @@
         
         /* Only set scheduleUpdate, the update function can work*/
         [self scheduleUpdate];
+        
         _score = 0;
     }
     return self;
@@ -256,16 +257,15 @@
         }
     }
     
-    if (touchedPlane) {
+    if (touchedPlane && touchedPlane.isAlive) {
         [self scorePlus];
-        
+        [touchedPlane hitByLaser];
+    }
+    else if (touchedPlane) {
         float v = sqrtf(powf(_spaceShip.b2Body->GetLinearVelocity().x, 2.0f)+powf(_spaceShip.b2Body->GetLinearVelocity().y, 2.0f));
         
         CGRect r = CGRectMake(0, 0, v*_output.fraction*PTM_RATIO, LaserHeight);
         [_laser setTextureRect:r];
-        
-        _world->DestroyBody(touchedPlane.b2Body);
-        [_planeBatch removeChild:touchedPlane];
     }
     else {
         CGRect r = CGRectMake(0, 0, LaserMaxWidth, LaserHeight);

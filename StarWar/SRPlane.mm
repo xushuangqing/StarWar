@@ -12,6 +12,14 @@
 
 @implementation SRPlane
 
+-(id) initWithTexture:(CCTexture2D *)texture
+{
+    if (self = [super initWithTexture:texture]) {
+        _isAlive = YES;
+    }
+    return self;
+}
+
 -(void) createBodyForWorld:(b2World *)world withGeocentric:(b2Vec2)geocentric withPosition:(b2Vec2)position withLinearVelocity:(b2Vec2)linearVelocity
 {
     b2BodyDef bodyDef;
@@ -52,5 +60,25 @@
         angle = 180+angle;
     }
     self.rotation = -angle;
+}
+
+-(void) hitByLaser
+{
+    _isAlive = NO;
+    [self hitByLaserAnimation];
+    [self scheduleOnce:@selector(removeSelf) delay:1];
+}
+
+-(void) hitByLaserAnimation
+{
+    CCFadeIn *action1 = [CCFadeIn actionWithDuration:0.1];
+    CCFadeOut *action2 = [CCFadeOut actionWithDuration:0.1];
+    [self runAction:[CCSequence actions:action1, action2, action1, action2, nil]];
+}
+
+-(void) removeSelf
+{
+    (self.b2Body->GetWorld())->DestroyBody(self.b2Body);
+    [[self parent] removeChild:self];
 }
 @end

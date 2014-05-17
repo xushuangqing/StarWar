@@ -61,8 +61,10 @@
         
         if (worldPosition.x > [UIScreen mainScreen].bounds.size.height+PTM_RATIO+PTM_RATIO || worldPosition.y > [UIScreen mainScreen].bounds.size.width+PTM_RATIO || worldPosition.x < -PTM_RATIO || worldPosition.y < -PTM_RATIO) {
             
-            _world->DestroyBody(plane.b2Body);
-            plane.b2Body = NULL;
+            if (plane.b2Body) {
+                _world->DestroyBody(plane.b2Body);
+                plane.b2Body = NULL;
+            }
             
             [self removeChild:plane cleanup:YES];
             plane = NULL;
