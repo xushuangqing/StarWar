@@ -9,6 +9,7 @@
 #import "SRScoreBoardLayer.h"
 #import "AppDelegate.h"
 #import "Score.h"
+#import "SRConstants.h"
 
 @implementation SRScoreBoardLayer
 
@@ -28,6 +29,32 @@
 	return self;
 }
 
+-(void) initMenuContent
+{
+    [self initMenu];
+    [self initButtonMenu];
+    [self initBackButton];
+}
+
+-(void) initMenu
+{
+    CCMenuItemImage *titleHighScores = [CCMenuItemImage itemWithNormalImage:@"titleHighScores.png" selectedImage:@"titleHighScores.png"];
+    titleHighScores.scale = 0.5;
+    titleHighScores.position = ccp([UIScreen mainScreen].bounds.size.height/2, 260);
+    
+    CCMenuItemImage *titleYourBestScore = [CCMenuItemImage itemWithNormalImage:@"titleYourBestScore.png" selectedImage:@"titleYourBestScore.png"];
+    titleYourBestScore.scale = 0.5;
+    titleYourBestScore.position = ccp([UIScreen mainScreen].bounds.size.height/4, 220);
+    
+    CCMenuItemImage *titleGlobleTop100 = [CCMenuItemImage itemWithNormalImage:@"titleGlobleTop100.png" selectedImage:@"titleGlobleTop100.png"];
+    titleGlobleTop100.scale = 0.5;
+    titleGlobleTop100.position = ccp([UIScreen mainScreen].bounds.size.height/4*3, 220);
+    
+    CCMenu *menu = [CCMenu menuWithItems:titleHighScores, titleYourBestScore, titleGlobleTop100, nil];
+    menu.position = CGPointZero;
+    [self addChild:menu z:zMenu tag:kTagMenu];
+}
+
 -(void) dataFetchRequest
 {
     AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
@@ -44,14 +71,11 @@
     NSError *error;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
-    int i = 0;
     for (Score *info in fetchedObjects){
         CCLabelTTF *label = [CCLabelTTF labelWithString:[[info score] stringValue] fontName:@"Marker Felt" fontSize:32];
         [self addChild:label];
-        label.position = ccp(200, 320 - 30*i);
-        i++;
-        if(i>=10)
-            break;
+        label.position = ccp([UIScreen mainScreen].bounds.size.height/4, 180);
+        break;
     }
 }
 
