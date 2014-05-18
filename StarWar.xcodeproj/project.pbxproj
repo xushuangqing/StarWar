@@ -27,6 +27,8 @@
 		4A988B9A191A5A1700A2C3D8 /* spaceShip.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B97191A5A1700A2C3D8 /* spaceShip.png */; };
 		4A98B400190409A60048E492 /* SRBullet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A98B3FD190409A60048E492 /* SRBullet.mm */; };
 		4A98B401190409A60048E492 /* SRBulletBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A98B3FF190409A60048E492 /* SRBulletBatch.mm */; };
+		4A998E2E1928CDF0002F1875 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A998E2D1928CDF0002F1875 /* fire.png */; };
+		4A998E311928D10A002F1875 /* SRFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A998E301928D10A002F1875 /* SRFire.m */; };
 		4A99B7C01907535300BCAB7E /* SRLaser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99B7BF1907535300BCAB7E /* SRLaser.mm */; };
 		4A99BA1719076B6400BCAB7E /* SRPlane.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99BA1619076B6400BCAB7E /* SRPlane.mm */; };
 		4A99BA1A19076D3700BCAB7E /* SRPlaneBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99BA1919076D3700BCAB7E /* SRPlaneBatch.mm */; };
@@ -260,6 +262,9 @@
 		4A98B3FD190409A60048E492 /* SRBullet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRBullet.mm; sourceTree = "<group>"; };
 		4A98B3FE190409A60048E492 /* SRBulletBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRBulletBatch.h; sourceTree = "<group>"; };
 		4A98B3FF190409A60048E492 /* SRBulletBatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRBulletBatch.mm; sourceTree = "<group>"; };
+		4A998E2D1928CDF0002F1875 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = Resources/fire.png; sourceTree = "<group>"; };
+		4A998E2F1928D10A002F1875 /* SRFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFire.h; sourceTree = "<group>"; };
+		4A998E301928D10A002F1875 /* SRFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRFire.m; sourceTree = "<group>"; };
 		4A99B7BE1907535300BCAB7E /* SRLaser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLaser.h; sourceTree = "<group>"; };
 		4A99B7BF1907535300BCAB7E /* SRLaser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRLaser.mm; sourceTree = "<group>"; };
 		4A99BA1519076B6400BCAB7E /* SRPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlane.h; sourceTree = "<group>"; };
@@ -719,6 +724,8 @@
 				4A960BBB1907D0D400099796 /* SRAircraft.mm */,
 				4AAA9CDB18FA304D00565381 /* SRSpaceShip.h */,
 				4AAA9CDC18FA304D00565381 /* SRSpaceShip.mm */,
+				4A998E2F1928D10A002F1875 /* SRFire.h */,
+				4A998E301928D10A002F1875 /* SRFire.m */,
 			);
 			name = Aircraft;
 			sourceTree = "<group>";
@@ -829,6 +836,7 @@
 		4AAA9AA818FA2BFA00565381 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A998E2D1928CDF0002F1875 /* fire.png */,
 				4AADF50219272448001C81A5 /* titleGlobleTop100.png */,
 				4AADF50319272448001C81A5 /* titleHighScores.png */,
 				4AADF50419272448001C81A5 /* titleYourBestScore.png */,
@@ -1460,6 +1468,7 @@
 				4A988B98191A5A1700A2C3D8 /* earth.png in Resources */,
 				4AAC408E1926516C004635FB /* buttonPlayAgain.png in Resources */,
 				4AAA9AB018FA2BFA00565381 /* Default-Landscape~ipad.png in Resources */,
+				4A998E2E1928CDF0002F1875 /* fire.png in Resources */,
 				4A9FDB0A1925FB51001D5D13 /* buttonHelp.png in Resources */,
 				4AAC4089192648AF004635FB /* buttonMainMenu.png in Resources */,
 				4AAA9AAE18FA2BFA00565381 /* Default-568h@2x.png in Resources */,
@@ -1644,6 +1653,7 @@
 				4AAA9C8918FA2BFD00565381 /* b2CircleContact.cpp in Sources */,
 				4A987AFD1922473000E4ABC1 /* SRScoreBoardLayer.mm in Sources */,
 				4AAA9C7518FA2BFD00565381 /* b2Fixture.cpp in Sources */,
+				4A998E311928D10A002F1875 /* SRFire.m in Sources */,
 				4AAA9B8418FA2BFB00565381 /* CCTileMapAtlas.m in Sources */,
 				4AAA9CBA18FA2BFD00565381 /* b2WeldJoint.cpp in Sources */,
 				4AAA9B1318FA2BFB00565381 /* CCGrabber.m in Sources */,

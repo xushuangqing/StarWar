@@ -21,10 +21,12 @@
 #import "SRLaser.h"
 #import "SRPlaneBatch.h"
 #import "SRPlane.h"
+#import "SRFire.h"
 
 @interface SRSpaceLayer(){
     b2World* _world;
     SRSpaceShip* _spaceShip;
+    SRFire* _fire;
     SREarth* _earth;
     SRStar *_star;
     SRLaser *_laser;
@@ -68,6 +70,7 @@
         [self registerNotifications];
         [self initEarth];
         [self initSpaceShip];
+        [self initFire];
         [self initStars];
         [self initLaser];
         [self initPlaneBatch];
@@ -113,8 +116,15 @@
     b2Vec2 velocity(0.7, 0.7);
     
     [_spaceShip createBodyForWorld:_world withPosition:position withGeocentric:_earth.geocentric withVelocity:velocity];
-    
+    _spaceShip.anchorPoint = ccp(0, 0.5);
     [self addChild:_spaceShip z:zSpaceShip tag:kTagSpaceShip];
+}
+
+-(void) initFire
+{
+    _fire = [SRFire spriteWithFile:@"fire.png"];
+    _fire.anchorPoint = ccp(1, 0.5);
+    [self addChild:_fire];
 }
 
 -(void) initEarth
@@ -225,6 +235,8 @@
         _spaceShip.rotation = velocityAngle + 180;
     }
     
+    _fire.position = _spaceShip.position;
+    _fire.rotation = -_spaceShip.rotation;
     [self destoryPlane];
 }
 
