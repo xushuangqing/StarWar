@@ -92,11 +92,27 @@
 -(void) plusButtonPressed
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNamePlusVelocity object:nil];
+    [self energe];
 }
 
 -(void) minusButtonPressed
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameMinusVelocity object:nil];
+    [self energe];
+}
+
+-(void) energe
+{
+    SRSpaceLayer *spaceLayer = (SRSpaceLayer*)[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagSpaceLayer];
+    b2Vec2 spaceShipPosition = spaceLayer.spaceShip.b2Body->GetPosition();
+    b2Vec2 earthPosition = spaceLayer.earth.b2Body->GetPosition();
+    b2Vec2 spaceShipVelocity = spaceLayer.spaceShip.b2Body->GetLinearVelocity();
+    float distance = sqrtf(powf(spaceShipPosition.x-earthPosition.x, 2)+powf(spaceShipPosition.y-earthPosition.y, 2));
+    float v2 = powf(spaceShipVelocity.x, 2)+powf(spaceShipVelocity.y, 2);
+    
+    float energy = 0.5*v2 - GM/distance;
+    NSLog(@"energy:%f", energy);
+    
 }
 
 -(void) restartButtonPressed

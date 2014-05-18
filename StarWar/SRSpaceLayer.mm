@@ -25,9 +25,9 @@
 
 @interface SRSpaceLayer(){
     b2World* _world;
-    SRSpaceShip* _spaceShip;
+    //SRSpaceShip* _spaceShip;
     SRFire* _fire;
-    SREarth* _earth;
+    //SREarth* _earth;
     SRStar *_star;
     SRLaser *_laser;
     SRPlaneBatch* _planeBatch;
