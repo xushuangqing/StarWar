@@ -164,7 +164,7 @@
     };
     [_laser.texture setTexParameters:&params];
 
-    _laser.anchorPoint = ccp(0, 0.5);
+    _laser.anchorPoint = ccp(-0.01, 0.5);
     [self addChild:_laser z:zLaser tag:kTagLaser];
 }
 
