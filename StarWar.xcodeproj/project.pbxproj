@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A960BBC1907D0D400099796 /* SRAircraft.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A960BBB1907D0D400099796 /* SRAircraft.mm */; };
 		4A964EB4191B989300C27FAE /* GB2ShapeCache.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A964EB3191B989300C27FAE /* GB2ShapeCache.mm */; };
+		4A96F31F192A36FB00885588 /* number.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A96F31E192A36FB00885588 /* number.png */; };
 		4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A971F9D1900B87A00A33EE3 /* SREarth.mm */; };
 		4A97C17C191E357A007C1EAE /* gameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A97C178191E357A007C1EAE /* gameOver.png */; };
 		4A97C17D191E357A007C1EAE /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A97C179191E357A007C1EAE /* minus.png */; };
@@ -235,6 +236,7 @@
 		4A960BBB1907D0D400099796 /* SRAircraft.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRAircraft.mm; sourceTree = "<group>"; };
 		4A964EB2191B989300C27FAE /* GB2ShapeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2ShapeCache.h; sourceTree = "<group>"; };
 		4A964EB3191B989300C27FAE /* GB2ShapeCache.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB2ShapeCache.mm; sourceTree = "<group>"; };
+		4A96F31E192A36FB00885588 /* number.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = number.png; path = Resources/number.png; sourceTree = "<group>"; };
 		4A971F9C1900B87A00A33EE3 /* SREarth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SREarth.h; sourceTree = "<group>"; };
 		4A971F9D1900B87A00A33EE3 /* SREarth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SREarth.mm; sourceTree = "<group>"; };
 		4A97C178191E357A007C1EAE /* gameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameOver.png; path = Resources/gameOver.png; sourceTree = "<group>"; };
@@ -836,6 +838,7 @@
 		4AAA9AA818FA2BFA00565381 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A96F31E192A36FB00885588 /* number.png */,
 				4A998E2D1928CDF0002F1875 /* fire.png */,
 				4AADF50219272448001C81A5 /* titleGlobleTop100.png */,
 				4AADF50319272448001C81A5 /* titleHighScores.png */,
@@ -1444,6 +1447,7 @@
 			files = (
 				4AA88C8F191DC80E0063436F /* physicsShape.plist in Resources */,
 				4A988B9A191A5A1700A2C3D8 /* spaceShip.png in Resources */,
+				4A96F31F192A36FB00885588 /* number.png in Resources */,
 				4AAA9ABA18FA2BFA00565381 /* Icon.png in Resources */,
 				4A97C17D191E357A007C1EAE /* minus.png in Resources */,
 				4AADF50719272448001C81A5 /* titleYourBestScore.png in Resources */,

@@ -16,7 +16,7 @@
 
 @interface SRControlLayer ()
 {
-    CCLabelTTF *_label;
+    CCLabelAtlas* _label;
 }
 
 @end
@@ -61,8 +61,9 @@
 
 -(void) initScoreBoard
 {
-    _label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", _score] fontName:@"Marker Felt" fontSize:32];
+    _label = [CCLabelAtlas labelWithString:@"0" charMapFile:@"number.png" itemWidth:25.4 itemHeight:28 startCharMap:'0'];
     _label.position = ccp([UIScreen mainScreen].bounds.size.height/2, 15);
+    _label.anchorPoint = ccp(0.5, 0.5);
     [self addChild:_label];
 }
 
