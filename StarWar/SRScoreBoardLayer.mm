@@ -72,7 +72,8 @@
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
     for (Score *info in fetchedObjects){
-        CCLabelTTF *label = [CCLabelTTF labelWithString:[[info score] stringValue] fontName:@"Marker Felt" fontSize:32];
+        CCLabelAtlas *label = [CCLabelAtlas labelWithString:[info.score stringValue] charMapFile:@"number.png" itemWidth:25.4 itemHeight:28 startCharMap:'0'];
+        label.anchorPoint = ccp(0.5, 0.5);
         [self addChild:label];
         label.position = ccp([UIScreen mainScreen].bounds.size.height/4, 180);
         break;

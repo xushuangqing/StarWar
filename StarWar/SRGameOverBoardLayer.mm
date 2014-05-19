@@ -43,7 +43,7 @@
     title.scale = 0.5;
     title.position = ccp([UIScreen mainScreen].bounds.size.height/2, 260);
     
-    CCMenuItem *bestScore = [CCMenuItemFont itemWithString:[NSString stringWithFormat:@"%d", finalScore]];
+    CCMenuItem *bestScore = [CCMenuItemAtlasFont itemWithString:[NSString stringWithFormat:@"%d", finalScore] charMapFile:@"number.png" itemWidth:25.4 itemHeight:27 startCharMap:'0'];;
     bestScore.position = ccp([UIScreen mainScreen].bounds.size.height/2, 200);
     
     CCMenu* menu = [CCMenu menuWithItems:title, bestScore, nil];
