@@ -10,6 +10,8 @@
 #import "SRConstants.h"
 #import "SRMainMenuLayer.h"
 #import "SRSpaceLayer.h"
+#import "AppDelegate.h"
+#import "Score.h"
 
 @implementation SRMenuLayer
 
@@ -85,6 +87,28 @@
 -(void) playAgain
 {
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceLayer scene]]];
+}
+
+-(NSArray *) dataFetchRequest
+{
+    AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [app managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Score" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"score" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+    [sortDescriptors release];
+    [sortDescriptor release];
+    
+    return fetchedObjects;
 }
 
 @end

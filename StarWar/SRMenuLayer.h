@@ -14,5 +14,5 @@
 -(void) initButtonMenu;
 -(void) initBackButton;
 -(void) initPlayAgainButton;
-
+-(NSArray *) dataFetchRequest;
 @end

@@ -7,9 +7,8 @@
 //
 
 #import "SRScoreBoardLayer.h"
-#import "AppDelegate.h"
-#import "Score.h"
 #import "SRConstants.h"
+#import "Score.h"
 
 @implementation SRScoreBoardLayer
 
@@ -24,7 +23,7 @@
 -(id) init
 {
 	if( (self=[super init])) {
-        [self dataFetchRequest];
+        [self fetchBestScore];
 	}
 	return self;
 }
@@ -55,32 +54,15 @@
     [self addChild:menu z:zMenu tag:kTagMenu];
 }
 
--(void) dataFetchRequest
+-(void) fetchBestScore
 {
-    AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [app managedObjectContext];
-    
-    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Score" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"score" ascending:NO];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    NSError *error;
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    
-    for (Score *info in fetchedObjects){
-        CCLabelAtlas *label = [CCLabelAtlas labelWithString:[info.score stringValue] charMapFile:@"number.png" itemWidth:25.4 itemHeight:28 startCharMap:'0'];
+    NSArray *scoreArray = [self dataFetchRequest];
+    for (Score *score in scoreArray) {
+        CCLabelAtlas *label = [CCLabelAtlas labelWithString:[score.score stringValue] charMapFile:@"number.png" itemWidth:25.4 itemHeight:28 startCharMap:'0'];
         label.anchorPoint = ccp(0.5, 0.5);
         [self addChild:label];
         label.position = ccp([UIScreen mainScreen].bounds.size.height/4, 180);
         break;
     }
-    
-    [sortDescriptors release];
-    [sortDescriptor release];
 }
-
 @end
