@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Score.h"
 #import "SRConstants.h"
+#import "Score.h"
 
 @interface SRGameOverBoardLayer ()
 {
@@ -90,11 +91,33 @@
     }
 }
 
+-(NSData *) convertToJsonDataFromArray: (NSArray *)array
+{
+    NSMutableArray *jsonArray = [[NSMutableArray alloc] init];
+    
+    for (Score* score in array) {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:score.timestamp, @"timestamp", score.score, @"score", score.isPushed, @"isPushed", nil];
+        [jsonArray addObject: dic];
+    }
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonArray options:NSJSONWritingPrettyPrinted error:&error];
+    
+    [jsonArray release];
+    return jsonData;
+}
+
 -(void) pushScoreToRemoteServer
 {
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", serverURL, scoreURL]]];
     [request setHTTPMethod:@"POST"];
+    
+
+    NSArray* scoreArray = [self dataFetchRequest];
+    NSData *jsonData = [self convertToJsonDataFromArray:scoreArray];
+    [request setHTTPBody:jsonData];
+    [request setValue:[NSString stringWithFormat:@"%d", [jsonData length]] forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 
     _operationQueue = [[NSOperationQueue alloc] init];
     _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
