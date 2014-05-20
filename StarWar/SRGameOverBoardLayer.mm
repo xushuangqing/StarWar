@@ -81,6 +81,25 @@
     NSLog(@"%@",[error localizedDescription]);
 }
 
+-(void) deleteScoreObjectsExceptBestScore
+{
+    AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [app managedObjectContext];
+    
+    NSArray *array = [self dataFetchRequest];
+    
+    BOOL isFirst = true;
+    for (Score *score in array) {
+        if (isFirst) {
+            score.isPushed = @YES;
+            isFirst = false;
+            continue;
+        }
+        [context deleteObject:score];
+    }
+    [app saveContext];
+}
+
 -(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     NSError *error;
@@ -89,6 +108,7 @@
     if (jsonDic && [jsonDic isKindOfClass:[NSDictionary class]]) {
         NSDictionary *dic = (NSDictionary*)jsonDic;
     }
+    [self deleteScoreObjectsExceptBestScore];
 }
 
 -(NSData *) convertToJsonDataFromArray: (NSArray *)array
@@ -96,8 +116,10 @@
     NSMutableArray *jsonArray = [[NSMutableArray alloc] init];
     
     for (Score* score in array) {
-        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:score.timestamp, @"timestamp", score.score, @"score", score.isPushed, @"isPushed", nil];
-        [jsonArray addObject: dic];
+        if (![score.isPushed boolValue]) {
+            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:score.timestamp, @"timestamp", score.score, @"score", nil];
+            [jsonArray addObject: dic];
+        }
     }
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonArray options:NSJSONWritingPrettyPrinted error:&error];
