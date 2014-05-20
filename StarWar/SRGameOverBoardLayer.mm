@@ -11,6 +11,15 @@
 #import "Score.h"
 #import "SRConstants.h"
 
+@interface SRGameOverBoardLayer ()
+{
+    NSOperationQueue *_operationQueue;
+    NSURLConnection *_connection;
+}
+
+@end
+
+
 @implementation SRGameOverBoardLayer
 
 +(CCScene *) sceneWithFinalScore: (int)finalScore
@@ -26,6 +35,7 @@
 	if( (self=[super init])) {
         [self initMenuWithFinalScore: finalScore];
         [self saveCurrentScore: finalScore];
+        [self pushScoreToRemoteServer];
 	}
 	return self;
 }
@@ -63,6 +73,40 @@
     finalScore.score = [NSNumber numberWithInt:score];
     
     [app saveContext];
+}
+
+-(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"%@",[error localizedDescription]);
+}
+
+-(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSError *error;
+    id jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+    
+    if (jsonDic && [jsonDic isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dic = (NSDictionary*)jsonDic;
+    }
+}
+
+-(void) pushScoreToRemoteServer
+{
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", serverURL, scoreURL]]];
+    [request setHTTPMethod:@"POST"];
+
+    _operationQueue = [[NSOperationQueue alloc] init];
+    _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [_connection setDelegateQueue:_operationQueue];
+    [_connection start];
+}
+
+-(void) dealloc
+{
+    [_connection release];
+    [_operationQueue release];
+    [super dealloc];
 }
 
 @end
