@@ -44,12 +44,12 @@
 
 -(void) initButton
 {
-    CCMenuItem *plusButton = [CCMenuItemImage itemWithNormalImage:@"plus.png" selectedImage:@"plus.png" target:self selector:@selector(plusButtonPressed)];
+    CCMenuItem *plusButton = [CCMenuItemImage itemWithNormalImage:@"plus.png" selectedImage:@"plus.png" target:self selector:@selector(plusButtonPressed:)];
     plusButton.anchorPoint = ccp(0, 0);
     plusButton.scale = 0.5;
     plusButton.position = ccp(0, 0);
     
-    CCMenuItem *minusButton = [CCMenuItemImage itemWithNormalImage:@"minus.png" selectedImage:@"minus.png" target:self selector:@selector(minusButtonPressed)];
+    CCMenuItem *minusButton = [CCMenuItemImage itemWithNormalImage:@"minus.png" selectedImage:@"minus.png" target:self selector:@selector(minusButtonPressed:)];
     minusButton.anchorPoint = ccp(1, 0);
     minusButton.scale = 0.5;
     minusButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
@@ -90,14 +90,30 @@
     [self addChild:gameOverMenu];
 }*/
 
--(void) plusButtonPressed
+-(void) buttonPressed: (id)sender isPlusButton: (BOOL)plus
 {
+    CCMenuItem *menuItem = (CCMenuItem*) sender;
+    CGPoint origion = menuItem.position;
+    if (plus) {
+        menuItem.position = ccp(origion.x-1, origion.y-1);
+    }
+    else {
+        menuItem.position = ccp(origion.x+1, origion.y-1);
+    }
+    CCMoveTo *moveBack = [CCMoveTo actionWithDuration:0.1 position:origion];
+    [menuItem runAction:moveBack];
+}
+
+-(void) plusButtonPressed: (id)sender
+{
+    [self buttonPressed:sender isPlusButton:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNamePlusVelocity object:nil];
     [self energe];
 }
 
--(void) minusButtonPressed
+-(void) minusButtonPressed: (id)sender
 {
+    [self buttonPressed:sender isPlusButton:NO];
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameMinusVelocity object:nil];
     [self energe];
 }
