@@ -73,8 +73,9 @@ enum {
 
 #define menuBackgroundColor ccc4(12, 33, 45, 255)
 
-#define serverURL @"http://192.168.1.107:8000"
+#define serverURL @"http://192.168.1.113:8000"
 #define scoreURL  @"/api/1.0/score"
+#define globleScoreURL @"/api/1.0/globle"
 
 @interface SRConstants: NSObject
 

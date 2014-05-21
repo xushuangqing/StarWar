@@ -10,6 +10,13 @@
 #import "SRConstants.h"
 #import "Score.h"
 
+@interface SRScoreBoardLayer ()
+{
+    NSOperationQueue *_operationQueue;
+    NSURLConnection *_connection;
+}
+@end
+
 @implementation SRScoreBoardLayer
 
 +(CCScene *) scene
@@ -24,6 +31,7 @@
 {
 	if( (self=[super init])) {
         [self fetchBestScore];
+        [self getGlobleTop100FromRemoteServer];
 	}
 	return self;
 }
@@ -64,5 +72,55 @@
         label.position = ccp([UIScreen mainScreen].bounds.size.height/4, 180);
         break;
     }
+}
+
+-(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"%@", [error localizedDescription]);
+}
+
+-(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSLog(@"connect");
+    NSError *error;
+    id jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    
+    NSArray *array;
+    if (jsonArray && [jsonArray isKindOfClass:[NSArray class]]) {
+        array = (NSArray*)jsonArray;
+    }
+    [self displayGlobleTop100:array];
+}
+
+-(void) displayGlobleTop100: (NSArray *)array
+{
+    if (!array) {
+        return;
+    }
+    for (id dic in array) {
+        if ([dic isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *dictionary = (NSDictionary *)dic;
+            NSLog(@"%@", [dictionary objectForKey:@"score"]);
+        }
+    }
+}
+
+-(void) getGlobleTop100FromRemoteServer
+{
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", serverURL, globleScoreURL]]];
+    [request setHTTPMethod:@"GET"];
+    
+    _operationQueue = [[NSOperationQueue alloc] init];
+    _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [_connection setDelegateQueue:_operationQueue];
+    [_connection start];
+}
+
+-(void) dealloc
+{
+    [_operationQueue release];
+    [_connection release];
+    [super dealloc];
 }
 @end
