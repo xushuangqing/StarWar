@@ -15,4 +15,5 @@
 -(void) initBackButton;
 -(void) initPlayAgainButton;
 -(NSArray *) dataFetchRequest;
+-(void)buttonPressed: (id)sender;
 @end

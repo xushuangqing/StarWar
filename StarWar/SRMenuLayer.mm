@@ -59,7 +59,7 @@
 
 -(void) initBackButton
 {
-    CCMenuItem *backButton = [CCMenuItemImage itemWithNormalImage:@"buttonMainMenu.png" selectedImage:@"buttonMainMenu.png" target:self selector:@selector(backToMainMenu)];
+    CCMenuItem *backButton = [CCMenuItemImage itemWithNormalImage:@"buttonMainMenu.png" selectedImage:@"buttonMainMenu.png" target:self selector:@selector(backToMainMenu:)];
     backButton.anchorPoint = ccp(1, 0);
     backButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
     
@@ -69,7 +69,7 @@
 
 -(void) initPlayAgainButton
 {
-    CCMenuItem *playAgainButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlayAgain.png" selectedImage:@"buttonPlayAgain.png" target:self selector:@selector(playAgain)];
+    CCMenuItem *playAgainButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlayAgain.png" selectedImage:@"buttonPlayAgain.png" target:self selector:@selector(playAgain:)];
     playAgainButton .anchorPoint = ccp(0, 0);
     playAgainButton .position = ccp(0, 0);
     
@@ -77,13 +77,15 @@
     [menu addChild:playAgainButton];
 }
 
--(void) backToMainMenu
+-(void) backToMainMenu: (id)sender
 {
+    [self buttonPressed:sender];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRMainMenuLayer scene]]];
 }
 
--(void) playAgain
+-(void) playAgain: (id)sender
 {
+    [self buttonPressed:sender];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceLayer scene]]];
 }
 
@@ -107,6 +109,12 @@
     [sortDescriptor release];
     
     return fetchedObjects;
+}
+
+-(void)buttonPressed: (id)sender
+{
+    CCMenuItem *menuItem = (CCMenuItem*) sender;
+    menuItem.position = ccp(menuItem.position.x-2, menuItem.position.y-2);
 }
 
 @end
