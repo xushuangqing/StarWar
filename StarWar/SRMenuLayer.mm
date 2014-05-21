@@ -60,7 +60,6 @@
 -(void) initBackButton
 {
     CCMenuItem *backButton = [CCMenuItemImage itemWithNormalImage:@"buttonMainMenu.png" selectedImage:@"buttonMainMenu.png" target:self selector:@selector(backToMainMenu)];
-    backButton.scale = 0.5;
     backButton.anchorPoint = ccp(1, 0);
     backButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
     
@@ -71,7 +70,6 @@
 -(void) initPlayAgainButton
 {
     CCMenuItem *playAgainButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlayAgain.png" selectedImage:@"buttonPlayAgain.png" target:self selector:@selector(playAgain)];
-    playAgainButton .scale = 0.5;
     playAgainButton .anchorPoint = ccp(0, 0);
     playAgainButton .position = ccp(0, 0);
     

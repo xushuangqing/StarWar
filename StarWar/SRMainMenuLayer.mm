@@ -29,15 +29,12 @@
 -(void) initMenu
 {
     CCMenuItem *startButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlay.png" selectedImage:@"buttonPlay.png" target:self selector:@selector(startButtonPressed)];
-    startButton.scale = 0.5;
     startButton.position = ccp([UIScreen mainScreen].bounds.size.height/2, 210);
     
     CCMenuItem *scoreBoardButton = [CCMenuItemImage itemWithNormalImage:@"buttonHighScores.png" selectedImage:@"buttonHighScores.png" target:self selector:@selector(scoreBoardButtonPressed)];
-    scoreBoardButton.scale = 0.5;
     scoreBoardButton.position = ccp([UIScreen mainScreen].bounds.size.height/5, 90);
     
     CCMenuItem *helpButton = [CCMenuItemImage itemWithNormalImage:@"buttonHelp.png" selectedImage:@"buttonHelp.png" target:self selector:@selector(scoreBoardButtonPressed)];
-    helpButton.scale = 0.5;
     helpButton.position = ccp([UIScreen mainScreen].bounds.size.height/5*4, 90);
     
     CCMenu* menu = [CCMenu menuWithItems:startButton, scoreBoardButton, helpButton, nil];
