@@ -14,6 +14,7 @@
 {
     NSOperationQueue *_operationQueue;
     NSURLConnection *_connection;
+    NSArray *_globleTop100;
 }
 @end
 
@@ -81,28 +82,37 @@
 
 -(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    NSLog(@"connect");
     NSError *error;
     id jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    
-    NSArray *array;
     if (jsonArray && [jsonArray isKindOfClass:[NSArray class]]) {
-        array = (NSArray*)jsonArray;
+        _globleTop100 = (NSArray*)jsonArray;
+        
+        //maybe it is not a good solution
+        [_globleTop100 retain];
     }
-    [self displayGlobleTop100:array];
+    [self scheduleOnce:@selector(displayGlobleTop100) delay:0];
 }
 
--(void) displayGlobleTop100: (NSArray *)array
+-(void) displayGlobleTop100
 {
-    if (!array) {
+    if (!_globleTop100) {
         return;
     }
-    for (id dic in array) {
+    CCMenu *menu = [CCMenu menuWithItems: nil];
+    int i = 0;
+    for (id dic in _globleTop100) {
         if ([dic isKindOfClass:[NSDictionary class]]) {
             NSDictionary *dictionary = (NSDictionary *)dic;
-            NSLog(@"%@", [dictionary objectForKey:@"score"]);
+            CCMenuItemAtlasFont *menuItem = [CCMenuItemAtlasFont itemWithString:[NSString stringWithFormat:@"%@", [dictionary objectForKey:@"score"]] charMapFile:@"number.png" itemWidth:25.5 itemHeight:27 startCharMap:'0'];
+            menuItem.scale = 0.5;
+            menuItem.position = ccp([UIScreen mainScreen].bounds.size.height/4*3, 190-i*20);
+            [menu addChild:menuItem];
+            i++;
         }
     }
+    menu.position = CGPointZero;
+    [self addChild:menu z:zMenu];
+    [_globleTop100 release];
 }
 
 -(void) getGlobleTop100FromRemoteServer
