@@ -14,7 +14,7 @@
 {
     NSOperationQueue *_operationQueue;
     NSURLConnection *_connection;
-    NSArray *_globleTop100;
+    int _globleBestScore;
 }
 @end
 
@@ -83,36 +83,23 @@
 -(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     NSError *error;
-    id jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    if (jsonArray && [jsonArray isKindOfClass:[NSArray class]]) {
-        _globleTop100 = (NSArray*)jsonArray;
-        
-        //maybe it is not a good solution
-        [_globleTop100 retain];
+    id jsonDic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    if (jsonDic && [jsonDic isKindOfClass:[NSDictionary class]]) {
+        _globleBestScore = [[(NSDictionary *)jsonDic objectForKey:@"score"] intValue];
     }
     [self scheduleOnce:@selector(displayGlobleTop100) delay:0];
 }
 
 -(void) displayGlobleTop100
 {
-    if (!_globleTop100) {
+    if (_globleBestScore == 0) {
         return;
     }
-    CCMenu *menu = [CCMenu menuWithItems: nil];
-    int i = 0;
-    for (id dic in _globleTop100) {
-        if ([dic isKindOfClass:[NSDictionary class]]) {
-            NSDictionary *dictionary = (NSDictionary *)dic;
-            CCMenuItemAtlasFont *menuItem = [CCMenuItemAtlasFont itemWithString:[NSString stringWithFormat:@"%@", [dictionary objectForKey:@"score"]] charMapFile:@"number.png" itemWidth:25.5 itemHeight:27 startCharMap:'0'];
-            menuItem.scale = 0.5;
-            menuItem.position = ccp([UIScreen mainScreen].bounds.size.height/4*3, 190-i*20);
-            [menu addChild:menuItem];
-            i++;
-        }
-    }
-    menu.position = CGPointZero;
-    [self addChild:menu z:zMenu];
-    [_globleTop100 release];
+
+    CCLabelAtlas *label = [CCLabelAtlas labelWithString:[NSString stringWithFormat:@"%d", _globleBestScore] charMapFile:@"number.png" itemWidth:25.4 itemHeight:28 startCharMap:'0'];
+    label.anchorPoint = ccp(0.5, 0.5);
+    [self addChild:label];
+    label.position = ccp([UIScreen mainScreen].bounds.size.height/4*3, 180);
 }
 
 -(void) getGlobleTop100FromRemoteServer
