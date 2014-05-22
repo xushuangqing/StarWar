@@ -14,16 +14,18 @@
 -(id) initWithFile:(NSString *)filename
 {
     if (self = [super initWithFile:filename]) {
-        [self registerNotification];
+        //[self registerNotification];
     }
     return self;
 }
 
+//not used
 -(void) registerNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(plusVelocity:) name:NSNotificationNamePlusVelocity object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(minusVelocity:) name:NSNotificationNameMinusVelocity object:nil];
 }
 
+//not used
 -(void) plusVelocity: (NSNotification *) notification
 {
     CCScaleTo *enlarge = [CCScaleTo actionWithDuration:0.1 scaleX:1.1 scaleY:1];
@@ -31,6 +33,7 @@
     [self runAction:[CCSequence actions:enlarge, narrow, nil]];
 }
 
+//not used
 -(void) minusVelocity: (NSNotification *) notification
 {
     CCScaleTo *narrow = [CCScaleTo actionWithDuration:0.1 scaleX:0.9 scaleY:1];
@@ -40,7 +43,7 @@
 
 -(void) dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    //[[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
 }
 

@@ -62,8 +62,8 @@
 -(void) initScoreBoard
 {
     _label = [CCLabelAtlas labelWithString:@"0" charMapFile:@"number.png" itemWidth:25.4 itemHeight:28 startCharMap:'0'];
-    _label.position = ccp([UIScreen mainScreen].bounds.size.height/2, 15);
-    _label.anchorPoint = ccp(0.5, 0.5);
+    _label.position = ccp([UIScreen mainScreen].bounds.size.height/2, [UIScreen mainScreen].bounds.size.width - 30);
+    _label.anchorPoint = ccp(0.5, 1);
     [self addChild:_label];
 }
 
@@ -108,16 +108,17 @@
 {
     [self buttonPressed:sender isPlusButton:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNamePlusVelocity object:nil];
-    [self energe];
+    //[self energe];
 }
 
 -(void) minusButtonPressed: (id)sender
 {
     [self buttonPressed:sender isPlusButton:NO];
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameMinusVelocity object:nil];
-    [self energe];
+    //[self energe];
 }
 
+//not used
 -(void) energe
 {
     SRSpaceLayer *spaceLayer = (SRSpaceLayer*)[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagSpaceLayer];
