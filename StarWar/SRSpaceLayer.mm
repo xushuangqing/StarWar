@@ -212,18 +212,18 @@
 	// generally best to keep the time step and iterations fixed.
 	_world->Step(dt, velocityIterations, positionIterations);
 
-    float angle = atan(([[UIScreen mainScreen] bounds].size.height/2-_spaceShip.position.x)/(_spaceShip.position.y-_earth.geocentric.y*PTM_RATIO));
-    angle = CC_RADIANS_TO_DEGREES(angle);
-    
-    if ((_spaceShip.position.y-_earth.geocentric.y*PTM_RATIO) >= 0)
-        [self setRotation:angle-SpaceShipAngelInView];
-    else
-        [self setRotation:180+angle-SpaceShipAngelInView];
-    
+    [self rotateSpaceLayer];
+    [self rotateSpaceShip];
+
+    [self destoryPlane];
+}
+
+-(void) rotateSpaceShip
+{
     float velocityAngle = atan((_spaceShip.b2Body->GetLinearVelocity()).y/(_spaceShip.b2Body->GetLinearVelocity()).x);
     velocityAngle = CC_RADIANS_TO_DEGREES(velocityAngle);
     _laser.position = _spaceShip.position;
-
+    
     if ((_spaceShip.b2Body->GetLinearVelocity()).x >= 0)
     {
         _laser.rotation = -velocityAngle;
@@ -237,7 +237,17 @@
     
     _fire.position = _spaceShip.position;
     _fire.rotation = -_spaceShip.rotation;
-    [self destoryPlane];
+}
+
+-(void) rotateSpaceLayer
+{
+    float angle = atan(([[UIScreen mainScreen] bounds].size.height/2-_spaceShip.position.x)/(_spaceShip.position.y-_earth.geocentric.y*PTM_RATIO));
+    angle = CC_RADIANS_TO_DEGREES(angle);
+    
+    if ((_spaceShip.position.y-_earth.geocentric.y*PTM_RATIO) >= 0)
+        [self setRotation:angle-SpaceShipAngelInView];
+    else
+        [self setRotation:180+angle-SpaceShipAngelInView];
 }
 
 -(void) destoryPlane
