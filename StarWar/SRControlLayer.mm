@@ -62,7 +62,7 @@
 -(void) initScoreBoard
 {
     _label = [CCLabelAtlas labelWithString:@"0" charMapFile:@"number.png" itemWidth:25.4 itemHeight:28 startCharMap:'0'];
-    _label.position = ccp([UIScreen mainScreen].bounds.size.height/2, [UIScreen mainScreen].bounds.size.width - 30);
+    _label.position = ccp([UIScreen mainScreen].bounds.size.height/2, [UIScreen mainScreen].bounds.size.width - 20);
     _label.anchorPoint = ccp(0.5, 1);
     [self addChild:_label];
 }
