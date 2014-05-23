@@ -56,21 +56,24 @@
 
 -(void)update:(ccTime)delta
 {
+    NSMutableArray *toBeDeleted = [[NSMutableArray alloc] init];
     for (SRPlane* plane in self.children) {
         CGPoint worldPosition = [self convertToWorldSpace:plane.position];
-        
+            
         if (worldPosition.x > [UIScreen mainScreen].bounds.size.height+PTM_RATIO+PTM_RATIO || worldPosition.y > [UIScreen mainScreen].bounds.size.width+PTM_RATIO || worldPosition.x < -PTM_RATIO || worldPosition.y < -PTM_RATIO) {
-            
-            if (plane.b2Body) {
-                _world->DestroyBody(plane.b2Body);
-                plane.b2Body = NULL;
-            }
-            
-            [self removeChild:plane cleanup:YES];
-            plane = NULL;
-            
+            [toBeDeleted addObject:plane];
         }
     }
+    
+    for (SRPlane* plane in toBeDeleted) {
+        [self removeChild:plane cleanup:YES];
+        _world->DestroyBody(plane.b2Body);
+        plane.b2Body = NULL;
+        plane = NULL;
+    }
+    
+    [toBeDeleted release];
+    
 }
 
 @end
