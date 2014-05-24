@@ -75,6 +75,16 @@
     self.b2Body->SetLinearVelocity(v);
 }
 
+-(void) update:(ccTime)delta
+{
+    [super update:delta];
+    CGPoint worldPosition = [self convertToWorldSpace:self.anchorPointInPoints];
+    if (worldPosition.y > [UIScreen mainScreen].bounds.size.width+200 || worldPosition.y < -PTM_RATIO) {
+        NSLog(@"farrrrrrr");
+        [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameSpaceShipTooFar object:nil];
+    }
+}
+
 -(void) dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
