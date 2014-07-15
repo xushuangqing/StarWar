@@ -11,4 +11,6 @@
 
 @interface SRMainMenuLayer : SRMenuLayer
 
++(CCScene *) scene;
+
 @end

@@ -11,4 +11,6 @@
 
 @interface SRScoreBoardLayer : SRMenuLayer
 
++(CCScene *) scene;
+
 @end

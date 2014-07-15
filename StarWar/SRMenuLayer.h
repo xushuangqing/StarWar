@@ -10,7 +10,6 @@
 
 @interface SRMenuLayer : CCLayer
 
-+(CCScene *) scene;
 -(void) initButtonMenu;
 -(void) initBackButton;
 -(void) initPlayAgainButton;
