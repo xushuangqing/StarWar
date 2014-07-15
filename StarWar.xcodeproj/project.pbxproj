@@ -217,7 +217,6 @@
 		4AAA9CC118FA2BFD00565381 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CC018FA2BFD00565381 /* b2Rope.cpp */; };
 		4AAA9CC718FA2BFD00565381 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CC618FA2BFD00565381 /* main.m */; };
 		4AAA9CCA18FA2BFD00565381 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CC918FA2BFD00565381 /* AppDelegate.mm */; };
-		4AAA9CCD18FA2BFD00565381 /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CCC18FA2BFD00565381 /* HelloWorldLayer.mm */; };
 		4AAA9CD018FA2BFD00565381 /* IntroLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CCF18FA2BFD00565381 /* IntroLayer.mm */; };
 		4AAA9CD318FA2BFD00565381 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CD218FA2BFD00565381 /* GLES-Render.mm */; };
 		4AAA9CD518FA2BFD00565381 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAA9CD418FA2BFD00565381 /* blocks.png */; };
@@ -653,8 +652,6 @@
 		4AAA9CC618FA2BFD00565381 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4AAA9CC818FA2BFD00565381 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AAA9CC918FA2BFD00565381 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		4AAA9CCB18FA2BFD00565381 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		4AAA9CCC18FA2BFD00565381 /* HelloWorldLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldLayer.mm; sourceTree = "<group>"; };
 		4AAA9CCE18FA2BFD00565381 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		4AAA9CCF18FA2BFD00565381 /* IntroLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = IntroLayer.mm; sourceTree = "<group>"; };
 		4AAA9CD118FA2BFD00565381 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
@@ -815,8 +812,6 @@
 				4A986E0419021C5100B68A1B /* Aircraft */,
 				4AAA9CC818FA2BFD00565381 /* AppDelegate.h */,
 				4AAA9CC918FA2BFD00565381 /* AppDelegate.mm */,
-				4AAA9CCB18FA2BFD00565381 /* HelloWorldLayer.h */,
-				4AAA9CCC18FA2BFD00565381 /* HelloWorldLayer.mm */,
 				4AAA9CCE18FA2BFD00565381 /* IntroLayer.h */,
 				4AAA9CCF18FA2BFD00565381 /* IntroLayer.mm */,
 				4AAA9CD118FA2BFD00565381 /* GLES-Render.h */,
@@ -1609,7 +1604,6 @@
 				4AAA9B4418FA2BFB00565381 /* CCPhysicsDebugNode.m in Sources */,
 				4AAA9B7E18FA2BFB00565381 /* CCTextureCache.m in Sources */,
 				4AAA9BF618FA2BFC00565381 /* CDXPropertyModifierAction.m in Sources */,
-				4AAA9CCD18FA2BFD00565381 /* HelloWorldLayer.mm in Sources */,
 				4AAA9C4D18FA2BFC00565381 /* b2ChainShape.cpp in Sources */,
 				4AAA9C2118FA2BFC00565381 /* neon_matrix_impl.c in Sources */,
 				4AAA9B4E18FA2BFB00565381 /* CCRenderTexture.m in Sources */,
