@@ -9,6 +9,7 @@
 #define PTM_RATIO 32
 #define NSNotificationNamePlusVelocity @"plusVelocity"
 #define NSNotificationNameMinusVelocity @"minusVelocity"
+#define NSNotificationNamePause @"pause"
 #define NSNotificationNameSpaceShipDown @"spaceShipDown"
 #define NSNotificationNameSpaceShipTooFar @"spaceShipTooFar"
 #define NSNotificationNameSpaceShipTouchPlane @"spaceShipTouchPlane"

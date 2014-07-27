@@ -14,15 +14,23 @@
 #import "SRScoreBoardLayer.h"
 #import "SRGameOverBoardLayer.h"
 
+typedef NS_ENUM(NSUInteger, Status) {
+    StatusRunning,
+    StatusPause,
+    StatusOther,
+};
+
 @implementation SRControlLayer
 {
     CCLabelAtlas* _label;
+    Status _currentStatus;
 }
 
 -(id) init
 {
     if (self = [super init]) {
         _score = 0;
+        _currentStatus = StatusRunning;
         [self registerNotifications];
         [self initButton];
         [self initScoreBoard];
@@ -51,7 +59,12 @@
     minusButton.scale = 0.5;
     minusButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
     
-    CCMenu *controlMenu = [CCMenu menuWithItems:plusButton,minusButton, nil];
+    CCMenuItem *pauseButton = [CCMenuItemImage itemWithNormalImage:@"minus.png" selectedImage:@"minus.png" target:self selector:@selector(pauseButtonPressed:)];
+    pauseButton.anchorPoint = ccp(1, 0);
+    pauseButton.scale = 0.5;
+    pauseButton.position = ccp([UIScreen mainScreen].bounds.size.height, 200);
+    
+    CCMenu *controlMenu = [CCMenu menuWithItems:plusButton,minusButton,pauseButton, nil];
     controlMenu.position = CGPointZero;
     [self addChild:controlMenu];
 }
@@ -113,6 +126,12 @@
     [self buttonPressed:sender isPlusButton:NO];
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameMinusVelocity object:nil];
     //[self energe];
+}
+
+-(void) pauseButtonPressed: (id)sender
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNamePause object:nil];
+    _currentStatus = StatusPause;
 }
 
 //not used
