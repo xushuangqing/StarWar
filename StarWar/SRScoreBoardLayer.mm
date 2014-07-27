@@ -10,15 +10,12 @@
 #import "SRConstants.h"
 #import "Score.h"
 
-@interface SRScoreBoardLayer ()
+@implementation SRScoreBoardLayer
 {
     NSOperationQueue *_operationQueue;
     NSURLConnection *_connection;
     int _globleBestScore;
 }
-@end
-
-@implementation SRScoreBoardLayer
 
 +(CCScene *) scene
 {

@@ -10,16 +10,11 @@
 #import "SRConstants.h"
 #import "SRPlane.h"
 
-@interface SRPlaneBatch ()
+@implementation SRPlaneBatch
 {
     b2World* _world;
     b2Vec2 _geocentric;
 }
-
-@end
-
-@implementation SRPlaneBatch
-
 
 -(void)createPlaneBatchForWorld: (b2World *)world withGeocentric: (b2Vec2)geocentric
 {

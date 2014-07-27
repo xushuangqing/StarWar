@@ -14,14 +14,10 @@
 #import "SRScoreBoardLayer.h"
 #import "SRGameOverBoardLayer.h"
 
-@interface SRControlLayer ()
+@implementation SRControlLayer
 {
     CCLabelAtlas* _label;
 }
-
-@end
-
-@implementation SRControlLayer
 
 -(id) init
 {

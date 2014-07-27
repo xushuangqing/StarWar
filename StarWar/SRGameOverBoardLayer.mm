@@ -12,16 +12,11 @@
 #import "SRConstants.h"
 #import "Score.h"
 
-@interface SRGameOverBoardLayer ()
+@implementation SRGameOverBoardLayer
 {
     NSOperationQueue *_operationQueue;
     NSURLConnection *_connection;
 }
-
-@end
-
-
-@implementation SRGameOverBoardLayer
 
 +(CCScene *) sceneWithFinalScore: (int)finalScore
 {

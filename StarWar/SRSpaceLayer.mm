@@ -23,7 +23,8 @@
 #import "SRPlane.h"
 #import "SRFire.h"
 
-@interface SRSpaceLayer(){
+@implementation SRSpaceLayer
+{
     b2World* _world;
     //SRSpaceShip* _spaceShip;
     SRFire* _fire;
@@ -38,10 +39,6 @@
     
     SRContactListener *listener;
 }
-@end
-
-
-@implementation SRSpaceLayer
 
 +(CCScene *) scene
 {

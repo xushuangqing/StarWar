@@ -10,10 +10,6 @@
 #import "SRSpaceShip.h"
 #import "SRConstants.h"
 
-@interface SRSpaceShip ()
-
-@end
-
 @implementation SRSpaceShip
 
 -(id) initWithFile:(NSString *)filename
