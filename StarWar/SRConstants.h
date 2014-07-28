@@ -10,6 +10,7 @@
 #define NSNotificationNamePlusVelocity @"plusVelocity"
 #define NSNotificationNameMinusVelocity @"minusVelocity"
 #define NSNotificationNamePause @"pause"
+#define NSNotificationNameResume @"resume"
 #define NSNotificationNameSpaceShipDown @"spaceShipDown"
 #define NSNotificationNameSpaceShipTooFar @"spaceShipTooFar"
 #define NSNotificationNameSpaceShipTouchPlane @"spaceShipTouchPlane"

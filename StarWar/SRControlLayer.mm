@@ -24,6 +24,8 @@ typedef NS_ENUM(NSUInteger, Status) {
 {
     CCLabelAtlas* _label;
     Status _currentStatus;
+    CCMenuItem *_pauseButton;
+    CCMenuItem *_resumeButton;
 }
 
 -(id) init
@@ -34,6 +36,7 @@ typedef NS_ENUM(NSUInteger, Status) {
         [self registerNotifications];
         [self initButton];
         [self initScoreBoard];
+        [self updateStatus];
     }
     return self;
 }
@@ -59,12 +62,19 @@ typedef NS_ENUM(NSUInteger, Status) {
     minusButton.scale = 0.5;
     minusButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
     
-    CCMenuItem *pauseButton = [CCMenuItemImage itemWithNormalImage:@"minus.png" selectedImage:@"minus.png" target:self selector:@selector(pauseButtonPressed:)];
-    pauseButton.anchorPoint = ccp(1, 0);
-    pauseButton.scale = 0.5;
-    pauseButton.position = ccp([UIScreen mainScreen].bounds.size.height, 200);
+    _pauseButton = [CCMenuItemImage itemWithNormalImage:@"minus.png" selectedImage:@"minus.png" target:self selector:@selector(pauseButtonPressed:)];
+    _pauseButton.anchorPoint = ccp(1, 0);
+    _pauseButton.scale = 0.5;
+    _pauseButton.position = ccp([UIScreen mainScreen].bounds.size.height, 200);
+    _pauseButton.visible = NO;
     
-    CCMenu *controlMenu = [CCMenu menuWithItems:plusButton,minusButton,pauseButton, nil];
+    _resumeButton = [CCMenuItemImage itemWithNormalImage:@"plus.png" selectedImage:@"plus.png" target:self selector:@selector(resumeButtonPressed:)];
+    _resumeButton.anchorPoint = ccp(1, 0);
+    _resumeButton.scale = 0.5;
+    _resumeButton.position = ccp([UIScreen mainScreen].bounds.size.height, 200);
+    _resumeButton.visible = NO;
+    
+    CCMenu *controlMenu = [CCMenu menuWithItems:plusButton,minusButton,_pauseButton,_resumeButton, nil];
     controlMenu.position = CGPointZero;
     [self addChild:controlMenu];
 }
@@ -132,6 +142,33 @@ typedef NS_ENUM(NSUInteger, Status) {
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNamePause object:nil];
     _currentStatus = StatusPause;
+    [self updateStatus];
+}
+
+-(void) resumeButtonPressed: (id)sender
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameResume object:nil];
+    _currentStatus = StatusRunning;
+    [self updateStatus];
+}
+
+
+-(void) updateStatus
+{
+    switch (_currentStatus) {
+        case StatusRunning:
+            _pauseButton.visible = YES;
+            _resumeButton.visible = NO;
+            break;
+        case StatusPause:
+            _pauseButton.visible = NO;
+            _resumeButton.visible = YES;
+            break;
+        case StatusOther:
+            break;
+        default:
+            break;
+    }
 }
 
 //not used

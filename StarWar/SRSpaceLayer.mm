@@ -86,6 +86,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTouchPlane object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTooFar object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pause:) name:NSNotificationNamePause object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resume:) name:NSNotificationNameResume object:nil];
 }
 
 -(void) initPhysics
@@ -187,7 +188,18 @@
 
 -(void) pause: (NSNotification *) notification
 {
+    for (CCNode* node in self.children) {
+        [node pauseSchedulerAndActions];
+    }
     [self pauseSchedulerAndActions];
+}
+
+-(void) resume: (NSNotification *) notification
+{
+    for (CCNode* node in self.children) {
+        [node resumeSchedulerAndActions];
+    }
+    [self resumeSchedulerAndActions];
 }
 
 -(void) draw {
