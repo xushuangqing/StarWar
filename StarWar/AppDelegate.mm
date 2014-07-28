@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "IntroLayer.h"
 #import "Score.h"
+#import "SRConstants.h"
+#import "SRControlLayer.h"
 
 @implementation MyNavigationController
 
@@ -161,6 +163,10 @@
 // getting a call, pause the game
 -(void) applicationWillResignActive:(UIApplication *)application
 {
+    SRControlLayer *controlLayer = (SRControlLayer*)[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagControlLayer];
+    if (controlLayer) {
+        [controlLayer pause];
+    }
 	if( [navController_ visibleViewController] == director_ )
 		[director_ pause];
 }

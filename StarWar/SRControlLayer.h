@@ -13,4 +13,6 @@
 
 @property int score;
 
+-(void) pause;
+
 @end

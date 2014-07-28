@@ -148,6 +148,11 @@ typedef NS_ENUM(NSUInteger, Status) {
 
 -(void) pauseButtonPressed: (id)sender
 {
+    [self pause];
+}
+
+-(void) pause
+{
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNamePause object:nil];
     _currentStatus = StatusPause;
     [self updateStatus];
