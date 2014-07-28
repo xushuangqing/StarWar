@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 #import "SRScoreBoardLayer.h"
 #import "SRGameOverBoardLayer.h"
+#import "SRMainMenuLayer.h"
 
 typedef NS_ENUM(NSUInteger, Status) {
     StatusRunning,
@@ -26,6 +27,7 @@ typedef NS_ENUM(NSUInteger, Status) {
     Status _currentStatus;
     CCMenuItem *_pauseButton;
     CCMenuItem *_resumeButton;
+    CCMenuItem *_restartButton;
 }
 
 -(id) init
@@ -74,7 +76,13 @@ typedef NS_ENUM(NSUInteger, Status) {
     _resumeButton.position = ccp([UIScreen mainScreen].bounds.size.height, 200);
     _resumeButton.visible = NO;
     
-    CCMenu *controlMenu = [CCMenu menuWithItems:plusButton,minusButton,_pauseButton,_resumeButton, nil];
+    _restartButton = [CCMenuItemImage itemWithNormalImage:@"plus.png" selectedImage:@"plus.png" target:self selector:@selector(restartButtonPressed:)];
+    _restartButton.anchorPoint = ccp(1, 0);
+    _restartButton.scale = 0.5;
+    _restartButton.position = ccp([UIScreen mainScreen].bounds.size.height, 100);
+    _restartButton.visible = NO;
+    
+    CCMenu *controlMenu = [CCMenu menuWithItems:plusButton,minusButton,_pauseButton,_resumeButton,_restartButton, nil];
     controlMenu.position = CGPointZero;
     [self addChild:controlMenu];
 }
@@ -152,6 +160,11 @@ typedef NS_ENUM(NSUInteger, Status) {
     [self updateStatus];
 }
 
+-(void) restartButtonPressed: (id)sender
+{
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRMainMenuLayer scene]]];
+}
+
 
 -(void) updateStatus
 {
@@ -159,10 +172,12 @@ typedef NS_ENUM(NSUInteger, Status) {
         case StatusRunning:
             _pauseButton.visible = YES;
             _resumeButton.visible = NO;
+            _restartButton.visible = NO;
             break;
         case StatusPause:
             _pauseButton.visible = NO;
             _resumeButton.visible = YES;
+            _restartButton.visible = YES;
             break;
         case StatusOther:
             break;
@@ -184,11 +199,6 @@ typedef NS_ENUM(NSUInteger, Status) {
     float energy = 0.5*v2 - GM/distance;
     NSLog(@"energy:%f", energy);
     
-}
-
--(void) restartButtonPressed
-{
-    [[CCDirector sharedDirector] replaceScene:[SRSpaceLayer scene]];
 }
 
 -(void) dealloc
