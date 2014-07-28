@@ -25,6 +25,8 @@ typedef NS_ENUM(NSUInteger, Status) {
 {
     CCLabelAtlas* _label;
     Status _currentStatus;
+    CCMenuItem *_plusButton;
+    CCMenuItem *_minusButton;
     CCMenuItem *_pauseButton;
     CCMenuItem *_resumeButton;
     CCMenuItem *_restartButton;
@@ -39,6 +41,7 @@ typedef NS_ENUM(NSUInteger, Status) {
         [self initButton];
         [self initScoreBoard];
         [self updateStatus];
+        [self schedule:@selector(watchOverButtonPressed) interval:0.1];
     }
     return self;
 }
@@ -54,15 +57,15 @@ typedef NS_ENUM(NSUInteger, Status) {
 
 -(void) initButton
 {
-    CCMenuItem *plusButton = [CCMenuItemImage itemWithNormalImage:@"plus.png" selectedImage:@"plus.png" target:self selector:@selector(plusButtonPressed:)];
-    plusButton.anchorPoint = ccp(0, 0);
-    plusButton.scale = 0.5;
-    plusButton.position = ccp(0, 0);
+    _plusButton = [CCMenuItemImage itemWithNormalImage:@"plus.png" selectedImage:@"plus.png" target:self selector:@selector(plusButtonPressed:)];
+    _plusButton.anchorPoint = ccp(0, 0);
+    _plusButton.scale = 0.5;
+    _plusButton.position = ccp(0, 0);
     
-    CCMenuItem *minusButton = [CCMenuItemImage itemWithNormalImage:@"minus.png" selectedImage:@"minus.png" target:self selector:@selector(minusButtonPressed:)];
-    minusButton.anchorPoint = ccp(1, 0);
-    minusButton.scale = 0.5;
-    minusButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
+    _minusButton = [CCMenuItemImage itemWithNormalImage:@"minus.png" selectedImage:@"minus.png" target:self selector:@selector(minusButtonPressed:)];
+    _minusButton.anchorPoint = ccp(1, 0);
+    _minusButton.scale = 0.5;
+    _minusButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
     
     _pauseButton = [CCMenuItemImage itemWithNormalImage:@"minus.png" selectedImage:@"minus.png" target:self selector:@selector(pauseButtonPressed:)];
     _pauseButton.anchorPoint = ccp(1, 0);
@@ -82,7 +85,7 @@ typedef NS_ENUM(NSUInteger, Status) {
     _restartButton.position = ccp([UIScreen mainScreen].bounds.size.height, 100);
     _restartButton.visible = NO;
     
-    CCMenu *controlMenu = [CCMenu menuWithItems:plusButton,minusButton,_pauseButton,_resumeButton,_restartButton, nil];
+    CCMenu *controlMenu = [CCMenu menuWithItems:_plusButton,_minusButton,_pauseButton,_resumeButton,_restartButton, nil];
     controlMenu.position = CGPointZero;
     [self addChild:controlMenu];
 }
@@ -204,6 +207,16 @@ typedef NS_ENUM(NSUInteger, Status) {
     float energy = 0.5*v2 - GM/distance;
     NSLog(@"energy:%f", energy);
     
+}
+
+-(void) watchOverButtonPressed
+{
+    if ([_plusButton isSelected]) {
+        [self plusButtonPressed:nil];
+    }
+    if ([_minusButton isSelected]) {
+        [self minusButtonPressed:nil];
+    }
 }
 
 -(void) dealloc
