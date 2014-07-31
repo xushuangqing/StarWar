@@ -193,6 +193,18 @@ typedef NS_ENUM(NSUInteger, Status) {
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRMainMenuLayer scene]]];
 }
 
+- (void)disableMenuButton
+{
+    _plusButton.isEnabled = NO;
+    _minusButton.isEnabled = NO;
+}
+
+- (void)enableMenuButton
+{
+    _plusButton.isEnabled = YES;
+    _minusButton.isEnabled = YES;
+}
+
 
 -(void) updateStatus
 {
@@ -202,12 +214,14 @@ typedef NS_ENUM(NSUInteger, Status) {
             _resumeButton.visible = NO;
             _restartButton.visible = NO;
             [self setRunningColor];
+            [self enableMenuButton];
             break;
         case StatusPause:
             _pauseButton.visible = NO;
             _resumeButton.visible = YES;
             _restartButton.visible = YES;
             [self setPausedColor];
+            [self disableMenuButton];
             break;
         case StatusOther:
             break;
