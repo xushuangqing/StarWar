@@ -71,4 +71,20 @@
     
 }
 
+- (void)pauseSchedulerAndActions
+{
+    [super pauseSchedulerAndActions];
+    for (CCNode *child in self.children) {
+        [child pauseSchedulerAndActions];
+    }
+}
+
+- (void)resumeSchedulerAndActions
+{
+    [super resumeSchedulerAndActions];
+    for (CCNode *child in self.children) {
+        [child resumeSchedulerAndActions];
+    }
+}
+
 @end
