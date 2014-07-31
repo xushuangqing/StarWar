@@ -231,7 +231,7 @@
     [self rotateSpaceLayer];
     [self rotateSpaceShip];
 
-    [self destoryPlane];
+    [self destoryPlane:dt];
 }
 
 -(void) rotateSpaceShip
@@ -266,7 +266,7 @@
         [self setRotation:180+angle-SpaceShipAngelInView];
 }
 
--(void) destoryPlane
+-(void) destoryPlane:(ccTime)dt
 {
     _input.p1 = _spaceShip.b2Body->GetPosition();
     _input.p2 = b2Vec2((_spaceShip.b2Body->GetPosition()).x+(_spaceShip.b2Body->GetLinearVelocity()).x, (_spaceShip.b2Body->GetPosition()).y+(_spaceShip.b2Body->GetLinearVelocity()).y);
@@ -286,6 +286,12 @@
         }
     }
     
+    static float offset = 0;
+    offset += LaserTextureMovingSpeed * dt;
+    if (offset <= -LaserTextureWidth) {
+        offset += LaserTextureWidth;
+    }
+
     if (touchedPlane && touchedPlane.isAlive) {
         [self scorePlus];
         [touchedPlane hitByLaser];
@@ -293,11 +299,11 @@
     else if (touchedPlane) {
         float v = sqrtf(powf(_spaceShip.b2Body->GetLinearVelocity().x, 2.0f)+powf(_spaceShip.b2Body->GetLinearVelocity().y, 2.0f));
         
-        CGRect r = CGRectMake(0, 0, v*_output.fraction*PTM_RATIO, LaserHeight);
+        CGRect r = CGRectMake(offset, 0, v*_output.fraction*PTM_RATIO, LaserHeight);
         [_laser setTextureRect:r];
     }
     else {
-        CGRect r = CGRectMake(0, 0, LaserMaxWidth, LaserHeight);
+        CGRect r = CGRectMake(offset, 0, LaserMaxWidth, LaserHeight);
         [_laser setTextureRect:r];
     }
 }

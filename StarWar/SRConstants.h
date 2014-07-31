@@ -72,7 +72,9 @@ enum {
 
 
 #define LaserMaxWidth 640
+#define LaserTextureWidth 64
 #define LaserHeight 16
+#define LaserTextureMovingSpeed -60
 
 #define menuBackgroundColor ccc4(12, 33, 45, 255)
 
