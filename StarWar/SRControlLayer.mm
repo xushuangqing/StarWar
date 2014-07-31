@@ -30,6 +30,7 @@ typedef NS_ENUM(NSUInteger, Status) {
     CCMenuItem *_pauseButton;
     CCMenuItem *_resumeButton;
     CCMenuItem *_restartButton;
+    CCLayerColor *_mask;
 }
 
 -(id) init
@@ -41,6 +42,8 @@ typedef NS_ENUM(NSUInteger, Status) {
         [self initButton];
         [self initScoreBoard];
         [self updateStatus];
+        [self initMask];
+        [self setRunningColor];
         [self schedule:@selector(watchOverButtonPressed) interval:0.1];
     }
     return self;
@@ -53,6 +56,23 @@ typedef NS_ENUM(NSUInteger, Status) {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipDown object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTouchPlane object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTooFar object:nil];
+}
+
+- (void)setPausedColor
+{
+    [_mask setVisible:YES];
+}
+
+- (void)setRunningColor
+{
+    [_mask setVisible:NO];
+}
+
+- (void)initMask
+{
+    _mask = [CCLayerColor layerWithColor:ccc4(0, 0, 0, 200)];
+    [self addChild:_mask z:100];
+    [_mask setVisible:YES];
 }
 
 -(void) initButton
@@ -181,11 +201,13 @@ typedef NS_ENUM(NSUInteger, Status) {
             _pauseButton.visible = YES;
             _resumeButton.visible = NO;
             _restartButton.visible = NO;
+            [self setRunningColor];
             break;
         case StatusPause:
             _pauseButton.visible = NO;
             _resumeButton.visible = YES;
             _restartButton.visible = YES;
+            [self setPausedColor];
             break;
         case StatusOther:
             break;
