@@ -40,7 +40,7 @@
 -(void)addPlane
 {
     SRPlane* plane = [SRPlane spriteWithTexture:[self texture]];
-    float y = ((float)rand()/RAND_MAX)*[UIScreen mainScreen].bounds.size.width;
+    float y = CCRANDOM_0_1()*[UIScreen mainScreen].bounds.size.width;
     CGPoint ccpPosition = [self convertToNodeSpace:ccp([UIScreen mainScreen].bounds.size.height+PTM_RATIO, y)];
     
     b2Vec2 position(ccpPosition.x/PTM_RATIO, ccpPosition.y/PTM_RATIO);
