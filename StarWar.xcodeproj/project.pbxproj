@@ -26,8 +26,6 @@
 		4A988B98191A5A1700A2C3D8 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B95191A5A1700A2C3D8 /* earth.png */; };
 		4A988B99191A5A1700A2C3D8 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B96191A5A1700A2C3D8 /* plane.png */; };
 		4A988B9A191A5A1700A2C3D8 /* spaceShip.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B97191A5A1700A2C3D8 /* spaceShip.png */; };
-		4A98B400190409A60048E492 /* SRBullet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A98B3FD190409A60048E492 /* SRBullet.mm */; };
-		4A98B401190409A60048E492 /* SRBulletBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A98B3FF190409A60048E492 /* SRBulletBatch.mm */; };
 		4A998E2E1928CDF0002F1875 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A998E2D1928CDF0002F1875 /* fire.png */; };
 		4A998E311928D10A002F1875 /* SRFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A998E301928D10A002F1875 /* SRFire.m */; };
 		4A99B7C01907535300BCAB7E /* SRLaser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99B7BF1907535300BCAB7E /* SRLaser.mm */; };
@@ -259,10 +257,6 @@
 		4A988B95191A5A1700A2C3D8 /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = earth.png; path = Resources/earth.png; sourceTree = "<group>"; };
 		4A988B96191A5A1700A2C3D8 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plane.png; path = Resources/plane.png; sourceTree = "<group>"; };
 		4A988B97191A5A1700A2C3D8 /* spaceShip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spaceShip.png; path = Resources/spaceShip.png; sourceTree = "<group>"; };
-		4A98B3FC190409A60048E492 /* SRBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRBullet.h; sourceTree = "<group>"; };
-		4A98B3FD190409A60048E492 /* SRBullet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRBullet.mm; sourceTree = "<group>"; };
-		4A98B3FE190409A60048E492 /* SRBulletBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRBulletBatch.h; sourceTree = "<group>"; };
-		4A98B3FF190409A60048E492 /* SRBulletBatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRBulletBatch.mm; sourceTree = "<group>"; };
 		4A998E2D1928CDF0002F1875 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = Resources/fire.png; sourceTree = "<group>"; };
 		4A998E2F1928D10A002F1875 /* SRFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFire.h; sourceTree = "<group>"; };
 		4A998E301928D10A002F1875 /* SRFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRFire.m; sourceTree = "<group>"; };
@@ -747,10 +741,6 @@
 		4A98B402190409AF0048E492 /* Bullet */ = {
 			isa = PBXGroup;
 			children = (
-				4A98B3FC190409A60048E492 /* SRBullet.h */,
-				4A98B3FD190409A60048E492 /* SRBullet.mm */,
-				4A98B3FE190409A60048E492 /* SRBulletBatch.h */,
-				4A98B3FF190409A60048E492 /* SRBulletBatch.mm */,
 				4A99B7BE1907535300BCAB7E /* SRLaser.h */,
 				4A99B7BF1907535300BCAB7E /* SRLaser.mm */,
 			);
@@ -1484,7 +1474,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A98B400190409A60048E492 /* SRBullet.mm in Sources */,
 				4AAA9AFE18FA2BFA00565381 /* ccDeprecated.m in Sources */,
 				4A99B7C01907535300BCAB7E /* SRLaser.mm in Sources */,
 				4AAA9CE618FA329000565381 /* SRSpaceLayer.mm in Sources */,
@@ -1528,7 +1517,6 @@
 				4A99BA1719076B6400BCAB7E /* SRPlane.mm in Sources */,
 				4A99BA1A19076D3700BCAB7E /* SRPlaneBatch.mm in Sources */,
 				4AAA9B0A18FA2BFB00565381 /* ccFPSImages.m in Sources */,
-				4A98B401190409A60048E492 /* SRBulletBatch.mm in Sources */,
 				4AAA9BC618FA2BFC00565381 /* CCArray.m in Sources */,
 				4AAA9C9218FA2BFD00565381 /* b2EdgeAndCircleContact.cpp in Sources */,
 				4AAA9AE518FA2BFA00565381 /* CCActionTiledGrid.m in Sources */,

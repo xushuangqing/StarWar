@@ -14,10 +14,6 @@
 #import "SREarth.h"
 #import "SRStar.h"
 #import "SRContactListener.h"
-
-#import "SRBullet.h"
-#import "SRBulletBatch.h"
-
 #import "SRLaser.h"
 #import "SRPlaneBatch.h"
 #import "SRPlane.h"
@@ -140,14 +136,6 @@
     _star = [SRStar node];
     b2Vec2 p(0,0);
     [_star createBodyForWorld:_world withPosition:p];
-}
-
-/*This function will not be used now*/
--(void) initBullets
-{
-    SRBulletBatch *bulletBatch = [SRBulletBatch batchNodeWithFile:@"blocks.png"];
-    [bulletBatch createBulletBatchForWorld:_world withSpaceShip:_spaceShip];
-    [self addChild:bulletBatch];
 }
 
 -(void) initLaser
