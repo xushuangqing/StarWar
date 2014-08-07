@@ -16,7 +16,7 @@
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
     bodyDef.position = position;
-    bodyDef.userData = @"star";
+    bodyDef.userData = self;
     
     b2Body *body = world->CreateBody(&bodyDef);
     
@@ -28,6 +28,15 @@
     fixtureDef.shape = &dynamicBox;
     fixtureDef.density = 1.0f;//It is a test value
     body->CreateFixture(&fixtureDef);
+    
+    b2Filter filter;
+    filter.maskBits = MaskBitsStar;
+    filter.categoryBits = CategoryBitsStar;
+    
+    for (b2Fixture* fixture=body->GetFixtureList(); fixture; fixture=fixture->GetNext()) {
+        fixture->SetFilterData(filter);
+        fixture->SetDensity(0.1);
+    }
     
     [self setPTMRatio:PTM_RATIO];
     [self setB2Body:body];

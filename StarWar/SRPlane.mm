@@ -24,7 +24,7 @@
 {
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
-    bodyDef.userData = @"plane";
+    bodyDef.userData = self;
     bodyDef.position = position;
     
     b2Body *body = world->CreateBody(&bodyDef);

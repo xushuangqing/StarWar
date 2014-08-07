@@ -12,6 +12,7 @@
 #define NSNotificationNamePause @"pause"
 #define NSNotificationNameResume @"resume"
 #define NSNotificationNameSpaceShipDown @"spaceShipDown"
+#define NSNotificationNameSpaceShitTouchStar @"spaceShipTouchStar"
 #define NSNotificationNameSpaceShipTooFar @"spaceShipTooFar"
 #define NSNotificationNameSpaceShipTouchPlane @"spaceShipTouchPlane"
 #define NSNotificationNameScorePlus @"scorePlus"
@@ -24,11 +25,13 @@
 #define CategoryBitsSpaceShip 0x0002
 #define CategoryBitsLaser 0x0004
 #define CategoryBitsPlane 0x0008
+#define CategoryBitsStar 0x0010
 
 #define MaskBitsEarth 0x0002
-#define MaskBitsSpaceShip 0x0008
+#define MaskBitsSpaceShip 0x0018
 #define MaskBitsLaser 0x0000
 #define MaskBitsPlane 0x0002
+#define MaskBitsStar 0x0002
 
 
 
