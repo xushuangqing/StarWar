@@ -12,7 +12,7 @@
 
 @implementation SRPlaneBatch
 {
-    b2World* _world;
+    b2World *_world;
     b2Vec2 _geocentric;
 }
 

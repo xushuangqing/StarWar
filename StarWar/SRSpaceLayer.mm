@@ -16,6 +16,7 @@
 #import "SRContactListener.h"
 #import "SRLaser.h"
 #import "SRPlaneBatch.h"
+#import "SRStarBatch.h"
 #import "SRPlane.h"
 #import "SRFire.h"
 
@@ -25,7 +26,7 @@
     //SRSpaceShip* _spaceShip;
     SRFire* _fire;
     //SREarth* _earth;
-    SRStar *_star;
+    SRStarBatch *_starBatch;
     SRLaser *_laser;
     SRPlaneBatch* _planeBatch;
     
@@ -64,7 +65,7 @@
         [self initEarth];
         [self initSpaceShip];
         [self initFire];
-        [self initStars];
+        [self initStarBatch];
         [self initLaser];
         [self initPlaneBatch];
         
@@ -131,11 +132,11 @@
     [self addChild:_earth];
 }
 
--(void) initStars
+-(void) initStarBatch
 {
-    _star = [SRStar node];
-    b2Vec2 p(0,0);
-    [_star createBodyForWorld:_world withPosition:p];
+    _starBatch = [SRStarBatch batchNodeWithFile:@"fire.png"];
+    [_starBatch createStarBatchForWorld:_world];
+    [self addChild:_starBatch];
 }
 
 -(void) initLaser

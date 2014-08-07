@@ -226,6 +226,7 @@
 		4AADF50519272448001C81A5 /* titleGlobleTop100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50219272448001C81A5 /* titleGlobleTop100.png */; };
 		4AADF50619272448001C81A5 /* titleHighScores.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50319272448001C81A5 /* titleHighScores.png */; };
 		4AADF50719272448001C81A5 /* titleYourBestScore.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50419272448001C81A5 /* titleYourBestScore.png */; };
+		F7B099D31993A159003D6765 /* SRStarBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7B099D21993A159003D6765 /* SRStarBatch.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -661,6 +662,8 @@
 		4AADF50219272448001C81A5 /* titleGlobleTop100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleGlobleTop100.png; path = Resources/titleGlobleTop100.png; sourceTree = "<group>"; };
 		4AADF50319272448001C81A5 /* titleHighScores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleHighScores.png; path = Resources/titleHighScores.png; sourceTree = "<group>"; };
 		4AADF50419272448001C81A5 /* titleYourBestScore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleYourBestScore.png; path = Resources/titleYourBestScore.png; sourceTree = "<group>"; };
+		F7B099D11993A159003D6765 /* SRStarBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStarBatch.h; sourceTree = "<group>"; };
+		F7B099D21993A159003D6765 /* SRStarBatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRStarBatch.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -707,8 +710,6 @@
 		4A986E0419021C5100B68A1B /* Aircraft */ = {
 			isa = PBXGroup;
 			children = (
-				4A986E0519021CAE00B68A1B /* SRStar.h */,
-				4A986E0619021CAE00B68A1B /* SRStar.mm */,
 				4A99BA1519076B6400BCAB7E /* SRPlane.h */,
 				4A99BA1619076B6400BCAB7E /* SRPlane.mm */,
 				4A99BA1819076D3700BCAB7E /* SRPlaneBatch.h */,
@@ -794,6 +795,7 @@
 		4AAA9AA718FA2BFA00565381 /* StarWar */ = {
 			isa = PBXGroup;
 			children = (
+				F7B099D019939F6C003D6765 /* Suspensions */,
 				4A987AF719223F9B00E4ABC1 /* MenuLayer */,
 				4A99ECBC18FFF8E20092D9A9 /* Controller */,
 				4A97C180191E3B81007C1EAE /* CoreData */,
@@ -1379,6 +1381,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F7B099D019939F6C003D6765 /* Suspensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A986E0519021CAE00B68A1B /* SRStar.h */,
+				4A986E0619021CAE00B68A1B /* SRStar.mm */,
+				F7B099D11993A159003D6765 /* SRStarBatch.h */,
+				F7B099D21993A159003D6765 /* SRStarBatch.mm */,
+			);
+			name = Suspensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1498,6 +1511,7 @@
 				4AAA9CAB18FA2BFD00565381 /* b2MouseJoint.cpp in Sources */,
 				4AAA9C1B18FA2BFC00565381 /* matrix.c in Sources */,
 				4AAA9BB918FA2BFC00565381 /* CCEventDispatcher.m in Sources */,
+				F7B099D31993A159003D6765 /* SRStarBatch.mm in Sources */,
 				4AAA9ACA18FA2BFA00565381 /* CCActionCatmullRom.m in Sources */,
 				4AAA9C4918FA2BFC00565381 /* b2TimeOfImpact.cpp in Sources */,
 				4A964EB4191B989300C27FAE /* GB2ShapeCache.mm in Sources */,
