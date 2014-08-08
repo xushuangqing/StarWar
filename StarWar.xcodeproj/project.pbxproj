@@ -226,6 +226,7 @@
 		4AADF50519272448001C81A5 /* titleGlobleTop100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50219272448001C81A5 /* titleGlobleTop100.png */; };
 		4AADF50619272448001C81A5 /* titleHighScores.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50319272448001C81A5 /* titleHighScores.png */; };
 		4AADF50719272448001C81A5 /* titleYourBestScore.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50419272448001C81A5 /* titleYourBestScore.png */; };
+		F7A9FC6F1994DAD200E40DBA /* SRShieldStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7A9FC6E1994DAD200E40DBA /* SRShieldStar.mm */; };
 		F7B099D31993A159003D6765 /* SRStarBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7B099D21993A159003D6765 /* SRStarBatch.mm */; };
 /* End PBXBuildFile section */
 
@@ -662,6 +663,8 @@
 		4AADF50219272448001C81A5 /* titleGlobleTop100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleGlobleTop100.png; path = Resources/titleGlobleTop100.png; sourceTree = "<group>"; };
 		4AADF50319272448001C81A5 /* titleHighScores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleHighScores.png; path = Resources/titleHighScores.png; sourceTree = "<group>"; };
 		4AADF50419272448001C81A5 /* titleYourBestScore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleYourBestScore.png; path = Resources/titleYourBestScore.png; sourceTree = "<group>"; };
+		F7A9FC6D1994DAD200E40DBA /* SRShieldStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRShieldStar.h; sourceTree = "<group>"; };
+		F7A9FC6E1994DAD200E40DBA /* SRShieldStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRShieldStar.mm; sourceTree = "<group>"; };
 		F7B099D11993A159003D6765 /* SRStarBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStarBatch.h; sourceTree = "<group>"; };
 		F7B099D21993A159003D6765 /* SRStarBatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRStarBatch.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1388,6 +1391,8 @@
 				4A986E0619021CAE00B68A1B /* SRStar.mm */,
 				F7B099D11993A159003D6765 /* SRStarBatch.h */,
 				F7B099D21993A159003D6765 /* SRStarBatch.mm */,
+				F7A9FC6D1994DAD200E40DBA /* SRShieldStar.h */,
+				F7A9FC6E1994DAD200E40DBA /* SRShieldStar.mm */,
 			);
 			name = Suspensions;
 			sourceTree = "<group>";
@@ -1616,6 +1621,7 @@
 				4AAA9BD118FA2BFC00565381 /* ccUtils.c in Sources */,
 				4AAA9CB718FA2BFD00565381 /* b2RopeJoint.cpp in Sources */,
 				4A97C183191E3BB2007C1EAE /* SRDataModel.xcdatamodeld in Sources */,
+				F7A9FC6F1994DAD200E40DBA /* SRShieldStar.mm in Sources */,
 				4AAA9BCC18FA2BFC00565381 /* CCFileUtils.m in Sources */,
 				4AAA9CBD18FA2BFD00565381 /* b2WheelJoint.cpp in Sources */,
 				4AAA9C7C18FA2BFD00565381 /* b2World.cpp in Sources */,

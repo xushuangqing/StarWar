@@ -26,7 +26,7 @@
     
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &dynamicBox;
-    fixtureDef.density = 1.0f;//It is a test value
+    fixtureDef.density = 0.0f;//It is a test value
     body->CreateFixture(&fixtureDef);
     
     b2Filter filter;
