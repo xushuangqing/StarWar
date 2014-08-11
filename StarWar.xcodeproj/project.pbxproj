@@ -228,6 +228,8 @@
 		4AADF50719272448001C81A5 /* titleYourBestScore.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50419272448001C81A5 /* titleYourBestScore.png */; };
 		F7A9FC6F1994DAD200E40DBA /* SRShieldStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7A9FC6E1994DAD200E40DBA /* SRShieldStar.mm */; };
 		F7B099D31993A159003D6765 /* SRStarBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7B099D21993A159003D6765 /* SRStarBatch.mm */; };
+		F7B0D43D1998F4F1002993E9 /* green_star.png in Resources */ = {isa = PBXBuildFile; fileRef = F7B0D43B1998F4F1002993E9 /* green_star.png */; };
+		F7B0D43E1998F4F1002993E9 /* green_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7B0D43C1998F4F1002993E9 /* green_star@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -667,6 +669,8 @@
 		F7A9FC6E1994DAD200E40DBA /* SRShieldStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRShieldStar.mm; sourceTree = "<group>"; };
 		F7B099D11993A159003D6765 /* SRStarBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStarBatch.h; sourceTree = "<group>"; };
 		F7B099D21993A159003D6765 /* SRStarBatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRStarBatch.mm; sourceTree = "<group>"; };
+		F7B0D43B1998F4F1002993E9 /* green_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green_star.png; path = Resources/green_star.png; sourceTree = "<group>"; };
+		F7B0D43C1998F4F1002993E9 /* green_star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "green_star@2x.png"; path = "Resources/green_star@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -828,6 +832,8 @@
 		4AAA9AA818FA2BFA00565381 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F7B0D43B1998F4F1002993E9 /* green_star.png */,
+				F7B0D43C1998F4F1002993E9 /* green_star@2x.png */,
 				4A96F31E192A36FB00885588 /* number.png */,
 				4A998E2D1928CDF0002F1875 /* fire.png */,
 				4AADF50219272448001C81A5 /* titleGlobleTop100.png */,
@@ -1468,11 +1474,13 @@
 				4AAA9AB418FA2BFA00565381 /* Icon-Small-50.png in Resources */,
 				4A97C17E191E357A007C1EAE /* plus.png in Resources */,
 				4A9FDB0C1925FC30001D5D13 /* laser.png in Resources */,
+				F7B0D43E1998F4F1002993E9 /* green_star@2x.png in Resources */,
 				4AAA9ABF18FA2BFA00565381 /* iTunesArtwork in Resources */,
 				4AAA9CD518FA2BFD00565381 /* blocks.png in Resources */,
 				4A9FDB0E19260225001D5D13 /* backgroundEarth.png in Resources */,
 				4AAA9AB818FA2BFA00565381 /* Icon-Small@2x.png in Resources */,
 				4A988B98191A5A1700A2C3D8 /* earth.png in Resources */,
+				F7B0D43D1998F4F1002993E9 /* green_star.png in Resources */,
 				4AAC408E1926516C004635FB /* buttonPlayAgain.png in Resources */,
 				4AAA9AB018FA2BFA00565381 /* Default-Landscape~ipad.png in Resources */,
 				4A998E2E1928CDF0002F1875 /* fire.png in Resources */,

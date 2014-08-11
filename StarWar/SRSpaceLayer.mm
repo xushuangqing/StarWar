@@ -134,7 +134,7 @@
 
 -(void) initStarBatch
 {
-    _starBatch = [SRStarBatch batchNodeWithFile:@"fire.png"];
+    _starBatch = [SRStarBatch batchNodeWithFile:@"green_star.png"];
     [_starBatch createStarBatchForWorld:_world];
     [self addChild:_starBatch];
 }
