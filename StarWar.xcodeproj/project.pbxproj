@@ -230,6 +230,7 @@
 		F7B099D31993A159003D6765 /* SRStarBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7B099D21993A159003D6765 /* SRStarBatch.mm */; };
 		F7B0D43D1998F4F1002993E9 /* green_star.png in Resources */ = {isa = PBXBuildFile; fileRef = F7B0D43B1998F4F1002993E9 /* green_star.png */; };
 		F7B0D43E1998F4F1002993E9 /* green_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7B0D43C1998F4F1002993E9 /* green_star@2x.png */; };
+		F7B0D4411998FA53002993E9 /* SRGlobal.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7B0D4401998FA53002993E9 /* SRGlobal.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -671,6 +672,8 @@
 		F7B099D21993A159003D6765 /* SRStarBatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRStarBatch.mm; sourceTree = "<group>"; };
 		F7B0D43B1998F4F1002993E9 /* green_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green_star.png; path = Resources/green_star.png; sourceTree = "<group>"; };
 		F7B0D43C1998F4F1002993E9 /* green_star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "green_star@2x.png"; path = "Resources/green_star@2x.png"; sourceTree = "<group>"; };
+		F7B0D43F1998FA53002993E9 /* SRGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRGlobal.h; sourceTree = "<group>"; };
+		F7B0D4401998FA53002993E9 /* SRGlobal.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRGlobal.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -825,6 +828,8 @@
 				4A971F9D1900B87A00A33EE3 /* SREarth.mm */,
 				4A986E081902236200B68A1B /* SRContactListener.h */,
 				4A986E091902236200B68A1B /* SRContactListener.mm */,
+				F7B0D43F1998FA53002993E9 /* SRGlobal.h */,
+				F7B0D4401998FA53002993E9 /* SRGlobal.mm */,
 			);
 			path = StarWar;
 			sourceTree = "<group>";
@@ -1520,6 +1525,7 @@
 				4A99ECBF18FFF9300092D9A9 /* SRControlLayer.mm in Sources */,
 				4AAA9ADC18FA2BFA00565381 /* CCActionManager.m in Sources */,
 				4AAA9CB118FA2BFD00565381 /* b2PulleyJoint.cpp in Sources */,
+				F7B0D4411998FA53002993E9 /* SRGlobal.mm in Sources */,
 				4AAA9B0718FA2BFA00565381 /* CCDrawNode.m in Sources */,
 				4AAA9CAB18FA2BFD00565381 /* b2MouseJoint.cpp in Sources */,
 				4AAA9C1B18FA2BFC00565381 /* matrix.c in Sources */,

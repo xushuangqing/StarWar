@@ -12,6 +12,7 @@
 
 @interface SRStar : CCPhysicsSprite
 
--(void) createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position;
+- (void)createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position;
+- (void)touched;
 
 @end

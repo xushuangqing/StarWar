@@ -11,7 +11,7 @@
 
 @implementation SRStar
 
--(void) createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position
+- (void)createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position
 {
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
@@ -26,7 +26,7 @@
     
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &dynamicBox;
-    fixtureDef.density = 0.0f;//It is a test value
+    fixtureDef.density = 0.0001f;//It is a test value
     body->CreateFixture(&fixtureDef);
     
     b2Filter filter;
@@ -42,6 +42,10 @@
     [self setB2Body:body];
     [self scheduleUpdate];
     
+}
+
+- (void)touched
+{
 }
 
 @end

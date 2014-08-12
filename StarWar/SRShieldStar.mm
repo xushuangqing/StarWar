@@ -7,7 +7,14 @@
 //
 
 #import "SRShieldStar.h"
+#import "SRGlobal.h"
 
 @implementation SRShieldStar
+
+- (void)touched
+{
+    [super touched];
+    [SRGlobal setHasShield:YES];
+}
 
 @end
