@@ -46,6 +46,31 @@
 
 - (void)touched
 {
+    [self setMaskBitsZero];
+    [self hitByLaserAnimation];
+    [self scheduleOnce:@selector(removeSelf) delay:1];
+}
+
+- (void)setMaskBitsZero
+{
+    b2Filter filter;
+    for (b2Fixture* fixture=self.b2Body->GetFixtureList(); fixture; fixture=fixture->GetNext()) {
+        filter = fixture->GetFilterData();
+        filter.maskBits = 0x0000;
+        fixture->SetFilterData(filter);
+    }
+}
+
+- (void)hitByLaserAnimation
+{
+    CCFadeOut *fadeOut = [CCFadeOut actionWithDuration:1];
+    [self runAction:[CCSequence actions:fadeOut, nil]];
+}
+
+- (void)removeSelf
+{
+    (self.b2Body->GetWorld())->DestroyBody(self.b2Body);
+    [[self parent] removeChild:self];
 }
 
 @end
