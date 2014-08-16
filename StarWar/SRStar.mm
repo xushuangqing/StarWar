@@ -33,6 +33,8 @@
     filter.maskBits = MaskBitsStar;
     filter.categoryBits = CategoryBitsStar;
     
+    body->SetAngularVelocity(1);
+
     for (b2Fixture* fixture=body->GetFixtureList(); fixture; fixture=fixture->GetNext()) {
         fixture->SetFilterData(filter);
         fixture->SetDensity(0.1);
