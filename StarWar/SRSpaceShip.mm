@@ -55,6 +55,25 @@
     _geocentric = geocentric;
 }
 
+- (void)getShield
+{
+    for (b2Fixture* fixture=self.b2Body->GetFixtureList(); fixture; fixture=fixture->GetNext()) {
+        b2Filter filter = fixture->GetFilterData();
+        filter.maskBits = MaskBitsSpaceShipHasShield;
+        fixture->SetFilterData(filter);
+    }
+    [self scheduleOnce:@selector(shieldTimeOut) delay:ShieldTime];
+}
+
+- (void)shieldTimeOut
+{
+    for (b2Fixture* fixture=self.b2Body->GetFixtureList(); fixture; fixture=fixture->GetNext()) {
+        b2Filter filter = fixture->GetFilterData();
+        filter.maskBits = MaskBitsSpaceShip;
+        fixture->SetFilterData(filter);
+    }
+}
+
 -(void) plusVelocity: (NSNotification *) notification
 {
     b2Vec2 v = self.b2Body->GetLinearVelocity();

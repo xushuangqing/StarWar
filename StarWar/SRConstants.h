@@ -19,6 +19,8 @@
 
 #define SpaceShipAngelInView 15
 
+#define ShieldTime 20
+
 #define GM 10.0
 
 #define CategoryBitsEarth 0x0001
@@ -29,6 +31,7 @@
 
 #define MaskBitsEarth 0x0002
 #define MaskBitsSpaceShip 0x0018
+#define MaskBitsSpaceShipHasShield 0x0010
 #define MaskBitsLaser 0x0000
 #define MaskBitsPlane 0x0002
 #define MaskBitsStar 0x0002

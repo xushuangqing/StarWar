@@ -33,9 +33,11 @@ void SRContactListener::BeginContact(b2Contact *contact)
     if (([spriteA isKindOfClass:[SRSpaceShip class]] && [spriteB isKindOfClass:[SRStar class]]) || ([spriteB isKindOfClass:[SRSpaceShip class]] && [spriteA isKindOfClass:[SRStar class]])) {
         if ([spriteA isKindOfClass:[SRStar class]]) {
             [spriteA touched];
+            [spriteB getShield];
         }
         else {
             [spriteB touched];
+            [spriteA getShield];
         }
         NSLog(@"touched");
     }
