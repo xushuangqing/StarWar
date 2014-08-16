@@ -10,6 +10,7 @@
 // Import the interfaces
 #import "IntroLayer.h"
 #import "SRMainMenuLayer.h"
+#import "SRConstants.h"
 
 
 #pragma mark - IntroLayer
@@ -37,22 +38,16 @@
 -(id) init
 {
 	if( (self=[super init])) {
+        CCLayerColor *backgroundColor = [CCLayerColor layerWithColor:menuBackgroundColor];
+        [self addChild:backgroundColor z:zBackgroundColor];
 		
-		// ask director for the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
-		
-		CCSprite *background;
-		
-		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
-			background = [CCSprite spriteWithFile:@"Default.png"];
-			background.rotation = 90;
-		} else {
-			background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
-		}
-		background.position = ccp(size.width/2, size.height/2);
-		
-		// add the label as a child to this Layer
-		[self addChild: background];
+        CCSprite *background;
+        background = [CCSprite spriteWithFile:@"backgroundEarth.png"];
+        background.scale = 0.5;
+        background.anchorPoint = ccp(0, 0);
+        background.position = ccp(0, 0);
+
+        [self addChild: background z:zControlLayer];
 	}
 	
 	return self;
@@ -61,6 +56,6 @@
 -(void) onEnter
 {
 	[super onEnter];
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRMainMenuLayer scene]]];
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:1.0 scene:[SRMainMenuLayer scene]]];
 }
 @end
