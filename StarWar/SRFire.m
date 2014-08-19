@@ -15,6 +15,7 @@
 {
     if (self = [super initWithFile:filename]) {
         //[self registerNotification];
+        self.anchorPoint = ccp(1, 0.5);
     }
     return self;
 }

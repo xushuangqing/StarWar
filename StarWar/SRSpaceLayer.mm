@@ -22,22 +22,21 @@
 
 @implementation SRSpaceLayer
 {
-    b2World* _world;
-    //SRSpaceShip* _spaceShip;
-    SRFire* _fire;
-    //SREarth* _earth;
+    b2World *_world;
+
+    SRFire *_fire;
     SRStarBatch *_starBatch;
     SRLaser *_laser;
     SRPlaneBatch* _planeBatch;
-    
+
     GLESDebugDraw *m_debugDraw;
     b2RayCastInput _input;
     b2RayCastOutput _output;
-    
+
     SRContactListener *listener;
 }
 
-+(CCScene *) scene
++ (CCScene *)scene
 {
     //Create a new Scene which is the main scene of this game.
     CCScene *scene = [CCScene node];
@@ -54,14 +53,15 @@
     return scene;
 }
 
--(id) init
+- (id)init
 {
     if (self = [super init]) {
         
         [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"physicsShape.plist"];
-        
+
         [self initPhysics];
         [self registerNotifications];
+
         [self initEarth];
         [self initSpaceShip];
         [self initFire];
@@ -77,7 +77,7 @@
     return self;
 }
 
--(void) registerNotifications
+- (void)registerNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipDown object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTouchPlane object:nil];
@@ -86,7 +86,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resume:) name:NSNotificationNameResume object:nil];
 }
 
--(void) initPhysics
+- (void)initPhysics
 {
     //Create the world
     b2Vec2 gravity(0,0);
@@ -104,42 +104,36 @@
     _world->SetContactListener(listener);
 }
 
--(void) initSpaceShip
+- (void)initSpaceShip
 {
     _spaceShip = [SRSpaceShip spriteWithFile:@"spaceShip.png"];
-    //_spaceShip.scale = 0.15;
-    
     b2Vec2 position(2, 3);
     b2Vec2 velocity(0.7, 0.7);
-    
     [_spaceShip createBodyForWorld:_world withPosition:position withGeocentric:_earth.geocentric withVelocity:velocity];
-    _spaceShip.anchorPoint = ccp(0, 0.5);
     [self addChild:_spaceShip z:zSpaceShip tag:kTagSpaceShip];
 }
 
--(void) initFire
+- (void)initFire
 {
     _fire = [SRFire spriteWithFile:@"fire.png"];
-    _fire.anchorPoint = ccp(1, 0.5);
     [self addChild:_fire];
 }
 
--(void) initEarth
+- (void)initEarth
 {
     _earth = [SREarth spriteWithFile:@"earth.png"];
     [_earth createBodyForWorld:_world withRadius:11.5f withAngularVelocity:0];
-    
     [self addChild:_earth];
 }
 
--(void) initStarBatch
+- (void)initStarBatch
 {
     _starBatch = [SRStarBatch batchNodeWithFile:@"green_star.png"];
     [_starBatch createStarBatchForWorld:_world];
     [self addChild:_starBatch];
 }
 
--(void) initLaser
+- (void)initLaser
 {
 
     CGRect r = CGRectMake(0, 0, LaserMaxWidth, LaserHeight);
@@ -152,21 +146,19 @@
         GL_REPEAT
     };
     [_laser.texture setTexParameters:&params];
-
     _laser.anchorPoint = ccp(-0.01, 0.5);
     [self addChild:_laser z:zLaser tag:kTagLaser];
 }
 
--(void) initPlaneBatch
+- (void)initPlaneBatch
 {
     _planeBatch = [SRPlaneBatch batchNodeWithFile:@"plane.png"];
     [_planeBatch createPlaneBatchForWorld:_world withGeocentric:_earth.geocentric];
     [self addChild:_planeBatch];
 }
 
--(void) gameOver: (NSNotification *) notification
+- (void)gameOver:(NSNotification *)notification
 {
-    NSLog(@"Game Over!!!!!");
     for (CCNode* node in self.children) {
         [node unscheduleAllSelectors];
         [node unscheduleUpdate];
@@ -175,7 +167,7 @@
     [self unscheduleUpdate];
 }
 
--(void) pause: (NSNotification *) notification
+- (void)pause:(NSNotification *)notification
 {
     for (CCNode* node in self.children) {
         [node pauseSchedulerAndActions];
@@ -183,7 +175,7 @@
     [self pauseSchedulerAndActions];
 }
 
--(void) resume: (NSNotification *) notification
+- (void)resume:(NSNotification *)notification
 {
     for (CCNode* node in self.children) {
         [node resumeSchedulerAndActions];
@@ -191,7 +183,7 @@
     [self resumeSchedulerAndActions];
 }
 
--(void) draw {
+- (void)draw {
     [super draw];
 	
 	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
@@ -203,7 +195,7 @@
 	kmGLPopMatrix();
 }
 
--(void) update: (ccTime) dt
+- (void)update:(ccTime)dt
 {
 	//It is recommended that a fixed time step is used with Box2D for stability
 	//of the simulation, however, we are using a variable time step here.
@@ -218,12 +210,12 @@
 	_world->Step(dt, velocityIterations, positionIterations);
 
     [self rotateSpaceLayer];
-    [self rotateSpaceShip];
+    [self updateSpaceShipDirection];
 
     [self destoryPlane:dt];
 }
 
--(void) rotateSpaceShip
+- (void)updateSpaceShipDirection
 {
     float velocityAngle = atan((_spaceShip.b2Body->GetLinearVelocity()).y/(_spaceShip.b2Body->GetLinearVelocity()).x);
     velocityAngle = CC_RADIANS_TO_DEGREES(velocityAngle);
@@ -244,7 +236,7 @@
     _fire.rotation = -_spaceShip.rotation;
 }
 
--(void) rotateSpaceLayer
+- (void)rotateSpaceLayer
 {
     float angle = atan(([[UIScreen mainScreen] bounds].size.height/2-_spaceShip.position.x)/(_spaceShip.position.y-_earth.geocentric.y*PTM_RATIO));
     angle = CC_RADIANS_TO_DEGREES(angle);
@@ -255,7 +247,7 @@
         [self setRotation:180+angle-SpaceShipAngelInView];
 }
 
--(void) destoryPlane:(ccTime)dt
+- (void)destoryPlane:(ccTime)dt
 {
     _input.p1 = _spaceShip.b2Body->GetPosition();
     _input.p2 = b2Vec2((_spaceShip.b2Body->GetPosition()).x+(_spaceShip.b2Body->GetLinearVelocity()).x, (_spaceShip.b2Body->GetPosition()).y+(_spaceShip.b2Body->GetLinearVelocity()).y);

@@ -12,10 +12,11 @@
 
 @implementation SRSpaceShip
 
--(id) initWithFile:(NSString *)filename
+- (id)initWithFile:(NSString *)filename
 {
     if (self = [super initWithFile:filename]) {
         [self registerNotification];
+        self.anchorPoint = ccp(0, 0.5);
     }
     return self;
 }
