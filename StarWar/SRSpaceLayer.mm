@@ -231,9 +231,12 @@
         _laser.rotation = -velocityAngle - 180;
         _spaceShip.rotation = velocityAngle + 180;
     }
-    
-    _fire.position = _spaceShip.position;
+
+    _fire.position = CGPointMake((2*_fire.position.x+_spaceShip.position.x)/3, (2*_fire.position.y+_spaceShip.position.y)/3);
     _fire.rotation = -_spaceShip.rotation;
+
+    float dis = sqrtf((_fire.position.x-_spaceShip.position.x)*(_fire.position.x-_spaceShip.position.x)+(_fire.position.y-_spaceShip.position.y)*(_fire.position.y-_spaceShip.position.y));
+    _fire.scale = dis/60+1;
 }
 
 - (void)rotateSpaceLayer
