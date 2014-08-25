@@ -21,12 +21,12 @@
     return self;
 }
 
--(void) registerNotification {
+- (void)registerNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(plusVelocity:) name:NSNotificationNamePlusVelocity object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(minusVelocity:) name:NSNotificationNameMinusVelocity object:nil];
 }
 
--(void) createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position withGeocentric:(b2Vec2)geocentric withVelocity:(b2Vec2)velocity
+- (void)createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position withGeocentric:(b2Vec2)geocentric withVelocity:(b2Vec2)velocity
 {
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
@@ -75,7 +75,7 @@
     }
 }
 
--(void) plusVelocity: (NSNotification *) notification
+- (void)plusVelocity: (NSNotification *) notification
 {
     b2Vec2 v = self.b2Body->GetLinearVelocity();
     v.x = v.x * 1.1;
@@ -83,7 +83,7 @@
     self.b2Body->SetLinearVelocity(v);
 }
 
--(void) minusVelocity: (NSNotification *) notification
+- (void)minusVelocity: (NSNotification *) notification
 {
     b2Vec2 v = self.b2Body->GetLinearVelocity();
     v.x = v.x * 0.9;
@@ -91,12 +91,11 @@
     self.b2Body->SetLinearVelocity(v);
 }
 
--(void) update:(ccTime)delta
+- (void)update:(ccTime)delta
 {
     [super update:delta];
     CGPoint worldPosition = [self convertToWorldSpace:self.anchorPointInPoints];
     if (worldPosition.y > [UIScreen mainScreen].bounds.size.width+200 || worldPosition.y < -PTM_RATIO) {
-        NSLog(@"farrrrrrr");
         [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameSpaceShipTooFar object:nil];
     }
 }

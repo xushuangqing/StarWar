@@ -19,7 +19,7 @@
 - (void)createStarBatchForWorld:(b2World *)world
 {
     _world = world;
-    [self schedule:@selector(addShieldStar) interval:1];
+    [self schedule:@selector(addShieldStar) interval:10];
     [self scheduleUpdate];
 }
 

@@ -16,7 +16,7 @@
     b2Vec2 _geocentric;
 }
 
--(void)createPlaneBatchForWorld: (b2World *)world withGeocentric: (b2Vec2)geocentric
+- (void)createPlaneBatchForWorld:(b2World *)world withGeocentric:(b2Vec2)geocentric
 {
     _world = world;
     [self schedule:@selector(addPlane) interval:1];
@@ -24,7 +24,7 @@
     _geocentric = geocentric;
 }
 
--(b2Vec2) linearVelocityForCircularMotionWithPosition: (b2Vec2)position
+- (b2Vec2)linearVelocityForCircularMotionWithPosition:(b2Vec2)position
 {
     float sqrRadius = powf((position.x-_geocentric.x), 2) + powf((position.y-_geocentric.y), 2);
     float radius = sqrtf(sqrRadius);
@@ -37,7 +37,7 @@
     return velocityVec;
 }
 
--(void)addPlane
+- (void)addPlane
 {
     SRPlane* plane = [SRPlane spriteWithTexture:[self texture]];
     float y = CCRANDOM_0_1()*[UIScreen mainScreen].bounds.size.width;
@@ -49,12 +49,11 @@
     [self addChild:plane];
 }
 
--(void)update:(ccTime)delta
+- (void)update:(ccTime)delta
 {
     NSMutableArray *toBeDeleted = [[NSMutableArray alloc] init];
     for (SRPlane* plane in self.children) {
         CGPoint worldPosition = [self convertToWorldSpace:plane.position];
-            
         if (worldPosition.x > [UIScreen mainScreen].bounds.size.height+PTM_RATIO+PTM_RATIO || worldPosition.y > [UIScreen mainScreen].bounds.size.width+PTM_RATIO || worldPosition.x < -PTM_RATIO || worldPosition.y < -PTM_RATIO) {
             [toBeDeleted addObject:plane];
         }
@@ -68,7 +67,6 @@
     }
     
     [toBeDeleted release];
-    
 }
 
 - (void)pauseSchedulerAndActions

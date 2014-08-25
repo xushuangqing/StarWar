@@ -11,10 +11,8 @@
 
 @implementation SRAircraft
 
-
-
--(void) update:(ccTime)delta {
-    
+- (void)update:(ccTime)delta
+{
     float sqrRadius = powf((self.b2Body->GetPosition()).x-_geocentric.x, 2.0) + powf((self.b2Body->GetPosition()).y-_geocentric.y, 2.0);
     float radius = sqrtf(sqrRadius);
     

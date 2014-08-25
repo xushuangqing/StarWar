@@ -292,12 +292,12 @@
     }
 }
 
--(void) scorePlus
+- (void)scorePlus
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameScorePlus object:nil];
 }
 
--(void) dealloc
+- (void)dealloc
 {
     b2Body *body = _world->GetBodyList();
     for (; body; body = body->GetNext()) {
