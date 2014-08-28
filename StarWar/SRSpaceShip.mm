@@ -11,12 +11,21 @@
 #import "SRConstants.h"
 
 @implementation SRSpaceShip
+{
+    CCSprite *_shine;
+}
 
 - (id)initWithFile:(NSString *)filename
 {
     if (self = [super initWithFile:filename]) {
         [self registerNotification];
         self.anchorPoint = ccp(0, 0.5);
+
+        _shine = [CCSprite spriteWithFile:@"green_star.png"];
+        _shine.anchorPoint = CGPointMake(0.5, 0.5);
+        _shine.position = CGPointMake(10, 10);
+        [self addChild:_shine];
+        _shine.visible = NO;
     }
     return self;
 }
@@ -58,16 +67,28 @@
 
 - (void)getShield
 {
+    _shine.visible = YES;
+    CCFadeIn *fadeIn = [CCFadeIn actionWithDuration:0.4];
+    [_shine runAction:fadeIn];
     for (b2Fixture* fixture=self.b2Body->GetFixtureList(); fixture; fixture=fixture->GetNext()) {
         b2Filter filter = fixture->GetFilterData();
         filter.maskBits = MaskBitsSpaceShipHasShield;
         fixture->SetFilterData(filter);
     }
-    [self scheduleOnce:@selector(shieldTimeOut) delay:ShieldTime];
+    [self scheduleOnce:@selector(shieldWillTimeOut) delay:ShieldTime];
 }
 
-- (void)shieldTimeOut
+- (void)shieldWillTimeOut
 {
+    CCFadeIn *action1 = [CCFadeIn actionWithDuration:0.1];
+    CCFadeOut *action2 = [CCFadeOut actionWithDuration:0.1];
+    [_shine runAction:[CCSequence actions:action1, action2, action1, action2, action1, action2, nil]];
+    [self scheduleOnce:@selector(shieldDidTimeOut) delay:0.5];
+}
+
+- (void)shieldDidTimeOut
+{
+    _shine.visible = NO;
     for (b2Fixture* fixture=self.b2Body->GetFixtureList(); fixture; fixture=fixture->GetNext()) {
         b2Filter filter = fixture->GetFilterData();
         filter.maskBits = MaskBitsSpaceShip;
@@ -100,7 +121,7 @@
     }
 }
 
--(void) dealloc
+- (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
