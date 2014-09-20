@@ -21,7 +21,7 @@
         [self registerNotification];
         self.anchorPoint = ccp(0, 0.5);
 
-        _shine = [CCSprite spriteWithFile:@"green_star.png"];
+        _shine = [CCSprite spriteWithFile:@"red_star@2x.png"];
         _shine.anchorPoint = CGPointMake(0.5, 0.5);
         _shine.position = CGPointMake(10, 10);
         [self addChild:_shine];

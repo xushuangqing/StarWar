@@ -121,14 +121,14 @@
 
 - (void)initEarth
 {
-    _earth = [SREarth spriteWithFile:@"earth.png"];
+    _earth = [SREarth spriteWithFile:@"earth@2x.png"];
     [_earth createBodyForWorld:_world withRadius:11.5f withAngularVelocity:0];
     [self addChild:_earth];
 }
 
 - (void)initStarBatch
 {
-    _starBatch = [SRStarBatch batchNodeWithFile:@"green_star.png"];
+    _starBatch = [SRStarBatch batchNodeWithFile:@"red_star@2x.png"];
     [_starBatch createStarBatchForWorld:_world];
     [self addChild:_starBatch];
 }

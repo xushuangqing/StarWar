@@ -43,8 +43,7 @@
 
 -(void) initBackgroundEarth
 {
-    CCSprite *backgroundEarth = [CCSprite spriteWithFile:@"backgroundEarth.png"];
-    backgroundEarth.scale = 0.5;
+    CCSprite *backgroundEarth = [CCSprite spriteWithFile:@"backgroundEarth@2x.png"];
     backgroundEarth.anchorPoint = ccp(0, 0);
     backgroundEarth.position = ccp(0, 0);
     [self addChild:backgroundEarth z:zBackgroundEarth tag:kTagBackgroundEarth];
@@ -59,7 +58,7 @@
 
 -(void) initBackButton
 {
-    CCMenuItem *backButton = [CCMenuItemImage itemWithNormalImage:@"buttonMainMenu.png" selectedImage:@"buttonMainMenu.png" target:self selector:@selector(backToMainMenu:)];
+    CCMenuItem *backButton = [CCMenuItemImage itemWithNormalImage:@"buttonMainMenu@2x.png" selectedImage:@"buttonMainMenu@2x.png" target:self selector:@selector(backToMainMenu:)];
     backButton.anchorPoint = ccp(1, 0);
     backButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
     
@@ -69,7 +68,7 @@
 
 -(void) initPlayAgainButton
 {
-    CCMenuItem *playAgainButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlayAgain.png" selectedImage:@"buttonPlayAgain.png" target:self selector:@selector(playAgain:)];
+    CCMenuItem *playAgainButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlayAgain@2x.png" selectedImage:@"buttonPlayAgain@2x.png" target:self selector:@selector(playAgain:)];
     playAgainButton .anchorPoint = ccp(0, 0);
     playAgainButton .position = ccp(0, 0);
     

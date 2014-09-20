@@ -42,8 +42,7 @@
         [self addChild:backgroundColor z:zBackgroundColor];
 		
         CCSprite *background;
-        background = [CCSprite spriteWithFile:@"backgroundEarth.png"];
-        background.scale = 0.5;
+        background = [CCSprite spriteWithFile:@"backgroundEarth@2x.png"];
         background.anchorPoint = ccp(0, 0);
         background.position = ccp(0, 0);
 

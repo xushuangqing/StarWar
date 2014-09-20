@@ -28,13 +28,15 @@
 
 -(void) initMenu
 {
-    CCMenuItem *startButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlay.png" selectedImage:@"buttonPlay.png" target:self selector:@selector(startButtonPressed:)];
+    CCMenuItem *startButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlay@2x.png" selectedImage:@"buttonPlay@2x.png" target:self selector:@selector(startButtonPressed:)];
     startButton.position = ccp([UIScreen mainScreen].bounds.size.height/2, 210);
     
-    CCMenuItem *scoreBoardButton = [CCMenuItemImage itemWithNormalImage:@"buttonHighScores.png" selectedImage:@"buttonHighScores.png" target:self selector:@selector(scoreBoardButtonPressed:)];
+    CCMenuItem *scoreBoardButton = [CCMenuItemImage itemWithNormalImage:@"buttonHighScores@2x.png" selectedImage:@"buttonHighScores@2x.png" target:self selector:@selector(scoreBoardButtonPressed:)];
+    scoreBoardButton.scale = 0.8;
     scoreBoardButton.position = ccp([UIScreen mainScreen].bounds.size.height/5, 90);
     
-    CCMenuItem *helpButton = [CCMenuItemImage itemWithNormalImage:@"buttonHelp.png" selectedImage:@"buttonHelp.png" target:self selector:@selector(scoreBoardButtonPressed:)];
+    CCMenuItem *helpButton = [CCMenuItemImage itemWithNormalImage:@"buttonHelp@2x.png" selectedImage:@"buttonHelp@2x.png" target:self selector:@selector(scoreBoardButtonPressed:)];
+    helpButton.scale = 0.8;
     helpButton.position = ccp([UIScreen mainScreen].bounds.size.height/5*4, 90);
     
     CCMenu* menu = [CCMenu menuWithItems:startButton, scoreBoardButton, helpButton, nil];

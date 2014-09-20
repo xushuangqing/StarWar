@@ -32,11 +32,8 @@
 		4A99BA1719076B6400BCAB7E /* SRPlane.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99BA1619076B6400BCAB7E /* SRPlane.mm */; };
 		4A99BA1A19076D3700BCAB7E /* SRPlaneBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99BA1919076D3700BCAB7E /* SRPlaneBatch.mm */; };
 		4A99ECBF18FFF9300092D9A9 /* SRControlLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99ECBE18FFF9300092D9A9 /* SRControlLayer.mm */; };
-		4A9FDB061925FA19001D5D13 /* buttonPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9FDB051925FA19001D5D13 /* buttonPlay.png */; };
-		4A9FDB081925FAA9001D5D13 /* buttonHighScores.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9FDB071925FAA9001D5D13 /* buttonHighScores.png */; };
-		4A9FDB0A1925FB51001D5D13 /* buttonHelp.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9FDB091925FB51001D5D13 /* buttonHelp.png */; };
+		4A9FDB061925FA19001D5D13 /* buttonPlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9FDB051925FA19001D5D13 /* buttonPlay@2x.png */; };
 		4A9FDB0C1925FC30001D5D13 /* laser.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9FDB0B1925FC30001D5D13 /* laser.png */; };
-		4A9FDB0E19260225001D5D13 /* backgroundEarth.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9FDB0D19260225001D5D13 /* backgroundEarth.png */; };
 		4A9FDB1119260381001D5D13 /* SRMenuLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A9FDB1019260381001D5D13 /* SRMenuLayer.mm */; };
 		4AA88C8F191DC80E0063436F /* physicsShape.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AA88C8E191DC80E0063436F /* physicsShape.plist */; };
 		4AAA9A9418FA2BFA00565381 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9318FA2BFA00565381 /* QuartzCore.framework */; };
@@ -214,9 +211,7 @@
 		4AAA9CD518FA2BFD00565381 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAA9CD418FA2BFD00565381 /* blocks.png */; };
 		4AAA9CDD18FA304D00565381 /* SRSpaceShip.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CDC18FA304D00565381 /* SRSpaceShip.mm */; };
 		4AAA9CE618FA329000565381 /* SRSpaceLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA9CE518FA329000565381 /* SRSpaceLayer.mm */; };
-		4AAC4089192648AF004635FB /* buttonMainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAC4087192648AF004635FB /* buttonMainMenu.png */; };
 		4AAC408C19264F81004635FB /* titleYourFinalScore.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAC408B19264F81004635FB /* titleYourFinalScore.png */; };
-		4AAC408E1926516C004635FB /* buttonPlayAgain.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAC408D1926516C004635FB /* buttonPlayAgain.png */; };
 		4AADF50519272448001C81A5 /* titleGlobleTop100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50219272448001C81A5 /* titleGlobleTop100.png */; };
 		4AADF50619272448001C81A5 /* titleHighScores.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50319272448001C81A5 /* titleHighScores.png */; };
 		4AADF50719272448001C81A5 /* titleYourBestScore.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50419272448001C81A5 /* titleYourBestScore.png */; };
@@ -228,6 +223,13 @@
 		F7BAA429199A27EF008AEC72 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BAA426199A27EF008AEC72 /* Icon-60@2x.png */; };
 		F7BAA42A199A27EF008AEC72 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BAA427199A27EF008AEC72 /* Icon-76.png */; };
 		F7BAA42B199A27EF008AEC72 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BAA428199A27EF008AEC72 /* Icon-76@2x.png */; };
+		F7C49CED19CD4BA900D8D2BE /* earth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C49CEC19CD4BA900D8D2BE /* earth@2x.png */; };
+		F7C49CEF19CD4DCC00D8D2BE /* backgroundEarth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C49CEE19CD4DCC00D8D2BE /* backgroundEarth@2x.png */; };
+		F7C49CF419CD580C00D8D2BE /* buttonHelp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C49CF019CD580C00D8D2BE /* buttonHelp@2x.png */; };
+		F7C49CF519CD580C00D8D2BE /* buttonHighScores@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C49CF119CD580C00D8D2BE /* buttonHighScores@2x.png */; };
+		F7C49CF619CD580C00D8D2BE /* buttonMainMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C49CF219CD580C00D8D2BE /* buttonMainMenu@2x.png */; };
+		F7C49CF719CD580C00D8D2BE /* buttonPlayAgain@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C49CF319CD580C00D8D2BE /* buttonPlayAgain@2x.png */; };
+		F7C49CF919CD597F00D8D2BE /* red_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C49CF819CD597F00D8D2BE /* red_star@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -271,11 +273,8 @@
 		4A99ECB818FFEF660092D9A9 /* SRConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRConstants.h; sourceTree = "<group>"; };
 		4A99ECBD18FFF9300092D9A9 /* SRControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRControlLayer.h; sourceTree = "<group>"; };
 		4A99ECBE18FFF9300092D9A9 /* SRControlLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRControlLayer.mm; sourceTree = "<group>"; };
-		4A9FDB051925FA19001D5D13 /* buttonPlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonPlay.png; path = Resources/buttonPlay.png; sourceTree = "<group>"; };
-		4A9FDB071925FAA9001D5D13 /* buttonHighScores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonHighScores.png; path = Resources/buttonHighScores.png; sourceTree = "<group>"; };
-		4A9FDB091925FB51001D5D13 /* buttonHelp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonHelp.png; path = Resources/buttonHelp.png; sourceTree = "<group>"; };
+		4A9FDB051925FA19001D5D13 /* buttonPlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonPlay@2x.png"; path = "Resources/buttonPlay@2x.png"; sourceTree = "<group>"; };
 		4A9FDB0B1925FC30001D5D13 /* laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = laser.png; path = Resources/laser.png; sourceTree = "<group>"; };
-		4A9FDB0D19260225001D5D13 /* backgroundEarth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundEarth.png; path = Resources/backgroundEarth.png; sourceTree = "<group>"; };
 		4A9FDB0F19260381001D5D13 /* SRMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMenuLayer.h; sourceTree = "<group>"; };
 		4A9FDB1019260381001D5D13 /* SRMenuLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRMenuLayer.mm; sourceTree = "<group>"; };
 		4AA88C8E191DC80E0063436F /* physicsShape.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = physicsShape.plist; path = Resources/physicsShape.plist; sourceTree = "<group>"; };
@@ -651,9 +650,7 @@
 		4AAA9CDC18FA304D00565381 /* SRSpaceShip.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRSpaceShip.mm; sourceTree = "<group>"; };
 		4AAA9CE418FA329000565381 /* SRSpaceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSpaceLayer.h; sourceTree = "<group>"; };
 		4AAA9CE518FA329000565381 /* SRSpaceLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRSpaceLayer.mm; sourceTree = "<group>"; };
-		4AAC4087192648AF004635FB /* buttonMainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonMainMenu.png; path = Resources/buttonMainMenu.png; sourceTree = "<group>"; };
 		4AAC408B19264F81004635FB /* titleYourFinalScore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleYourFinalScore.png; path = Resources/titleYourFinalScore.png; sourceTree = "<group>"; };
-		4AAC408D1926516C004635FB /* buttonPlayAgain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonPlayAgain.png; path = Resources/buttonPlayAgain.png; sourceTree = "<group>"; };
 		4AADF50219272448001C81A5 /* titleGlobleTop100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleGlobleTop100.png; path = Resources/titleGlobleTop100.png; sourceTree = "<group>"; };
 		4AADF50319272448001C81A5 /* titleHighScores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleHighScores.png; path = Resources/titleHighScores.png; sourceTree = "<group>"; };
 		4AADF50419272448001C81A5 /* titleYourBestScore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleYourBestScore.png; path = Resources/titleYourBestScore.png; sourceTree = "<group>"; };
@@ -668,6 +665,13 @@
 		F7BAA426199A27EF008AEC72 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Resources/Icon-60@2x.png"; sourceTree = "<group>"; };
 		F7BAA427199A27EF008AEC72 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76.png"; path = "Resources/Icon-76.png"; sourceTree = "<group>"; };
 		F7BAA428199A27EF008AEC72 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76@2x.png"; path = "Resources/Icon-76@2x.png"; sourceTree = "<group>"; };
+		F7C49CEC19CD4BA900D8D2BE /* earth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "earth@2x.png"; path = "Resources/earth@2x.png"; sourceTree = "<group>"; };
+		F7C49CEE19CD4DCC00D8D2BE /* backgroundEarth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroundEarth@2x.png"; path = "Resources/backgroundEarth@2x.png"; sourceTree = "<group>"; };
+		F7C49CF019CD580C00D8D2BE /* buttonHelp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonHelp@2x.png"; path = "Resources/buttonHelp@2x.png"; sourceTree = "<group>"; };
+		F7C49CF119CD580C00D8D2BE /* buttonHighScores@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonHighScores@2x.png"; path = "Resources/buttonHighScores@2x.png"; sourceTree = "<group>"; };
+		F7C49CF219CD580C00D8D2BE /* buttonMainMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonMainMenu@2x.png"; path = "Resources/buttonMainMenu@2x.png"; sourceTree = "<group>"; };
+		F7C49CF319CD580C00D8D2BE /* buttonPlayAgain@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonPlayAgain@2x.png"; path = "Resources/buttonPlayAgain@2x.png"; sourceTree = "<group>"; };
+		F7C49CF819CD597F00D8D2BE /* red_star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "red_star@2x.png"; path = "Resources/red_star@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -831,6 +835,12 @@
 		4AAA9AA818FA2BFA00565381 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F7C49CF819CD597F00D8D2BE /* red_star@2x.png */,
+				F7C49CF019CD580C00D8D2BE /* buttonHelp@2x.png */,
+				F7C49CF119CD580C00D8D2BE /* buttonHighScores@2x.png */,
+				F7C49CF219CD580C00D8D2BE /* buttonMainMenu@2x.png */,
+				F7C49CF319CD580C00D8D2BE /* buttonPlayAgain@2x.png */,
+				F7C49CEE19CD4DCC00D8D2BE /* backgroundEarth@2x.png */,
 				F7BAA426199A27EF008AEC72 /* Icon-60@2x.png */,
 				F7BAA427199A27EF008AEC72 /* Icon-76.png */,
 				F7BAA428199A27EF008AEC72 /* Icon-76@2x.png */,
@@ -841,20 +851,16 @@
 				4AADF50219272448001C81A5 /* titleGlobleTop100.png */,
 				4AADF50319272448001C81A5 /* titleHighScores.png */,
 				4AADF50419272448001C81A5 /* titleYourBestScore.png */,
-				4AAC408D1926516C004635FB /* buttonPlayAgain.png */,
 				4AAC408B19264F81004635FB /* titleYourFinalScore.png */,
-				4AAC4087192648AF004635FB /* buttonMainMenu.png */,
-				4A9FDB0D19260225001D5D13 /* backgroundEarth.png */,
 				4A9FDB0B1925FC30001D5D13 /* laser.png */,
-				4A9FDB091925FB51001D5D13 /* buttonHelp.png */,
-				4A9FDB071925FAA9001D5D13 /* buttonHighScores.png */,
-				4A9FDB051925FA19001D5D13 /* buttonPlay.png */,
+				4A9FDB051925FA19001D5D13 /* buttonPlay@2x.png */,
 				4A97C178191E357A007C1EAE /* gameOver.png */,
 				4A97C179191E357A007C1EAE /* minus.png */,
 				4A97C17A191E357A007C1EAE /* plus.png */,
 				4A97C17B191E357A007C1EAE /* replay.png */,
 				4AA88C8E191DC80E0063436F /* physicsShape.plist */,
 				4A988B95191A5A1700A2C3D8 /* earth.png */,
+				F7C49CEC19CD4BA900D8D2BE /* earth@2x.png */,
 				4A988B96191A5A1700A2C3D8 /* plane.png */,
 				4A988B97191A5A1700A2C3D8 /* spaceShip.png */,
 				4AAA9AA918FA2BFA00565381 /* Default.png */,
@@ -1459,9 +1465,10 @@
 				4AAC408C19264F81004635FB /* titleYourFinalScore.png in Resources */,
 				4AAA9C1518FA2BFC00565381 /* ChangeLog in Resources */,
 				4AADF50519272448001C81A5 /* titleGlobleTop100.png in Resources */,
+				F7C49CF919CD597F00D8D2BE /* red_star@2x.png in Resources */,
 				4A988B99191A5A1700A2C3D8 /* plane.png in Resources */,
-				4A9FDB081925FAA9001D5D13 /* buttonHighScores.png in Resources */,
-				4A9FDB061925FA19001D5D13 /* buttonPlay.png in Resources */,
+				4A9FDB061925FA19001D5D13 /* buttonPlay@2x.png in Resources */,
+				F7C49CF419CD580C00D8D2BE /* buttonHelp@2x.png in Resources */,
 				F7BAA429199A27EF008AEC72 /* Icon-60@2x.png in Resources */,
 				4AAA9AAC18FA2BFA00565381 /* Default@2x.png in Resources */,
 				F7BAA42B199A27EF008AEC72 /* Icon-76@2x.png in Resources */,
@@ -1469,20 +1476,21 @@
 				4A97C17E191E357A007C1EAE /* plus.png in Resources */,
 				4A9FDB0C1925FC30001D5D13 /* laser.png in Resources */,
 				F7B0D43E1998F4F1002993E9 /* green_star@2x.png in Resources */,
+				F7C49CED19CD4BA900D8D2BE /* earth@2x.png in Resources */,
 				4AAA9ABF18FA2BFA00565381 /* iTunesArtwork in Resources */,
 				4AAA9CD518FA2BFD00565381 /* blocks.png in Resources */,
-				4A9FDB0E19260225001D5D13 /* backgroundEarth.png in Resources */,
+				F7C49CF619CD580C00D8D2BE /* buttonMainMenu@2x.png in Resources */,
+				F7C49CF719CD580C00D8D2BE /* buttonPlayAgain@2x.png in Resources */,
 				4A988B98191A5A1700A2C3D8 /* earth.png in Resources */,
 				F7B0D43D1998F4F1002993E9 /* green_star.png in Resources */,
-				4AAC408E1926516C004635FB /* buttonPlayAgain.png in Resources */,
 				4AAA9AB018FA2BFA00565381 /* Default-Landscape~ipad.png in Resources */,
 				4A998E2E1928CDF0002F1875 /* fire.png in Resources */,
-				4A9FDB0A1925FB51001D5D13 /* buttonHelp.png in Resources */,
-				4AAC4089192648AF004635FB /* buttonMainMenu.png in Resources */,
 				4AAA9AAE18FA2BFA00565381 /* Default-568h@2x.png in Resources */,
 				F7BAA42A199A27EF008AEC72 /* Icon-76.png in Resources */,
+				F7C49CEF19CD4DCC00D8D2BE /* backgroundEarth@2x.png in Resources */,
 				4AADF50619272448001C81A5 /* titleHighScores.png in Resources */,
 				4A97C17C191E357A007C1EAE /* gameOver.png in Resources */,
+				F7C49CF519CD580C00D8D2BE /* buttonHighScores@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
