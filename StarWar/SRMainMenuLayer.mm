@@ -13,20 +13,23 @@
 
 @implementation SRMainMenuLayer
 
-+(CCScene *) scene
++ (CCScene *)scene
 {
 	CCScene *scene = [CCScene node];
 	SRMainMenuLayer *layer = [SRMainMenuLayer node];
-	[scene addChild: layer];
+	[scene addChild:layer];
 	return scene;
 }
 
--(void) initMenuContent
+- (id)init
 {
-    [self initMenu];
+	if( (self=[super init])) {
+        [self initMenu];
+	}
+	return self;
 }
 
--(void) initMenu
+- (void)initMenu
 {
     CCMenuItem *startButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlay@2x.png" selectedImage:@"buttonPlay@2x.png" target:self selector:@selector(startButtonPressed:)];
     startButton.position = ccp([UIScreen mainScreen].bounds.size.height/2, 210);
@@ -44,14 +47,14 @@
     [self addChild:menu z:zMenu tag:kTagMenu];
 }
 
--(void) startButtonPressed: (id)sender
+- (void)startButtonPressed:(id)sender
 {
     [self buttonPressed:sender];
     NSLog(@"startButtonPressed");
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceLayer scene] ]];
 }
 
--(void) scoreBoardButtonPressed: (id)sender
+- (void)scoreBoardButtonPressed:(id)sender
 {
     [self buttonPressed:sender];
     NSLog(@"scoreBoardButtonPressed");

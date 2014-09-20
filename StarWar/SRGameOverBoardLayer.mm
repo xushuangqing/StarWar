@@ -18,7 +18,7 @@
     NSURLConnection *_connection;
 }
 
-+(CCScene *) sceneWithFinalScore: (int)finalScore
++ (CCScene *)sceneWithFinalScore: (int)finalScore
 {
 	CCScene *scene = [CCScene node];
 	SRGameOverBoardLayer *layer = [[[SRGameOverBoardLayer alloc] initWithFinalScore:finalScore] autorelease];
@@ -26,9 +26,10 @@
 	return scene;
 }
 
--(id) initWithFinalScore: (int)finalScore
+- (id)initWithFinalScore: (int)finalScore
 {
 	if( (self=[super init])) {
+        [self initMenuContent];
         [self initMenuWithFinalScore: finalScore];
         [self saveCurrentScore: finalScore];
         [self pushScoreToRemoteServer];
@@ -36,11 +37,31 @@
 	return self;
 }
 
--(void) initMenuContent
+- (void)initMenuContent
 {
     [self initButtonMenu];
     [self initBackButton];
     [self initPlayAgainButton];
+}
+
+- (void)initBackButton
+{
+    CCMenuItem *backButton = [CCMenuItemImage itemWithNormalImage:@"buttonMainMenu@2x.png" selectedImage:@"buttonMainMenu@2x.png" target:self selector:@selector(backToMainMenu:)];
+    backButton.anchorPoint = ccp(1, 0);
+    backButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
+    
+    CCMenu* menu = (CCMenu *)[self getChildByTag:kTagButtonMenu];
+    [menu addChild:backButton];
+}
+
+- (void)initPlayAgainButton
+{
+    CCMenuItem *playAgainButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlayAgain@2x.png" selectedImage:@"buttonPlayAgain@2x.png" target:self selector:@selector(playAgain:)];
+    playAgainButton .anchorPoint = ccp(0, 0);
+    playAgainButton .position = ccp(0, 0);
+    
+    CCMenu* menu = (CCMenu *)[self getChildByTag:kTagButtonMenu];
+    [menu addChild:playAgainButton];
 }
 
 -(void) initMenuWithFinalScore: (int)finalScore

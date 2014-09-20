@@ -17,7 +17,7 @@
     int _globleBestScore;
 }
 
-+(CCScene *) scene
++ (CCScene *)scene
 {
 	CCScene *scene = [CCScene node];
 	SRScoreBoardLayer *layer = [SRScoreBoardLayer node];
@@ -25,23 +25,34 @@
 	return scene;
 }
 
--(id) init
+- (id)init
 {
 	if( (self=[super init])) {
+        [self initMenuContent];
         [self fetchBestScore];
         [self getGlobleTop100FromRemoteServer];
 	}
 	return self;
 }
 
--(void) initMenuContent
+- (void)initMenuContent
 {
     [self initMenu];
     [self initButtonMenu];
     [self initBackButton];
 }
 
--(void) initMenu
+- (void)initBackButton
+{
+    CCMenuItem *backButton = [CCMenuItemImage itemWithNormalImage:@"buttonMainMenu@2x.png" selectedImage:@"buttonMainMenu@2x.png" target:self selector:@selector(backToMainMenu:)];
+    backButton.anchorPoint = ccp(1, 0);
+    backButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
+    
+    CCMenu* menu = (CCMenu *)[self getChildByTag:kTagButtonMenu];
+    [menu addChild:backButton];
+}
+
+- (void)initMenu
 {
     CCMenuItemImage *titleHighScores = [CCMenuItemImage itemWithNormalImage:@"titleHighScores.png" selectedImage:@"titleHighScores.png"];
     titleHighScores.scale = 0.5;
@@ -60,7 +71,7 @@
     [self addChild:menu z:zMenu tag:kTagMenu];
 }
 
--(void) fetchBestScore
+- (void)fetchBestScore
 {
     NSArray *scoreArray = [self dataFetchRequest];
     for (Score *score in scoreArray) {
@@ -72,12 +83,12 @@
     }
 }
 
--(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     NSLog(@"%@", [error localizedDescription]);
 }
 
--(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     NSError *error;
     id jsonDic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
@@ -111,7 +122,7 @@
     [_connection start];
 }
 
--(void) dealloc
+- (void)dealloc
 {
     [_operationQueue release];
     [_connection release];

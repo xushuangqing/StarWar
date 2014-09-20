@@ -10,9 +10,7 @@
 
 @interface SRMenuLayer : CCLayer
 
--(void) initButtonMenu;
--(void) initBackButton;
--(void) initPlayAgainButton;
+- (void)initButtonMenu;
 -(NSArray *) dataFetchRequest;
 -(void)buttonPressed: (id)sender;
 @end

@@ -15,33 +15,27 @@
 
 @implementation SRMenuLayer
 
--(id) init
+- (id)init
 {
     if( (self=[super init])) {
-        [self initMenuContent];
         [self initBackground];
 	}
 	return self;
 }
 
--(void) initMenuContent
-{
-    
-}
-
--(void) initBackground
+- (void)initBackground
 {
     [self initBackgroundColor];
     [self initBackgroundEarth];
 }
 
--(void) initBackgroundColor
+- (void)initBackgroundColor
 {
     CCLayerColor *darkBlue = [CCLayerColor layerWithColor:menuBackgroundColor];
     [self addChild:darkBlue z:zBackgroundColor tag:kTagBackgroundColor];
 }
 
--(void) initBackgroundEarth
+- (void)initBackgroundEarth
 {
     CCSprite *backgroundEarth = [CCSprite spriteWithFile:@"backgroundEarth@2x.png"];
     backgroundEarth.anchorPoint = ccp(0, 0);
@@ -49,46 +43,30 @@
     [self addChild:backgroundEarth z:zBackgroundEarth tag:kTagBackgroundEarth];
 }
 
--(void) initButtonMenu
+- (void)initButtonMenu
 {
     CCMenu* menu = [CCMenu menuWithItems: nil];
     menu.position = CGPointZero;
     [self addChild:menu z:zButtonMenu tag:kTagButtonMenu];
 }
 
--(void) initBackButton
-{
-    CCMenuItem *backButton = [CCMenuItemImage itemWithNormalImage:@"buttonMainMenu@2x.png" selectedImage:@"buttonMainMenu@2x.png" target:self selector:@selector(backToMainMenu:)];
-    backButton.anchorPoint = ccp(1, 0);
-    backButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
-    
-    CCMenu* menu = (CCMenu *)[self getChildByTag:kTagButtonMenu];
-    [menu addChild:backButton];
-}
 
--(void) initPlayAgainButton
-{
-    CCMenuItem *playAgainButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlayAgain@2x.png" selectedImage:@"buttonPlayAgain@2x.png" target:self selector:@selector(playAgain:)];
-    playAgainButton .anchorPoint = ccp(0, 0);
-    playAgainButton .position = ccp(0, 0);
-    
-    CCMenu* menu = (CCMenu *)[self getChildByTag:kTagButtonMenu];
-    [menu addChild:playAgainButton];
-}
 
--(void) backToMainMenu: (id)sender
+
+
+- (void)backToMainMenu:(id)sender
 {
     [self buttonPressed:sender];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRMainMenuLayer scene]]];
 }
 
--(void) playAgain: (id)sender
+- (void)playAgain: (id)sender
 {
     [self buttonPressed:sender];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceLayer scene]]];
 }
 
--(NSArray *) dataFetchRequest
+- (NSArray *)dataFetchRequest
 {
     AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [app managedObjectContext];
@@ -110,7 +88,7 @@
     return fetchedObjects;
 }
 
--(void)buttonPressed: (id)sender
+- (void)buttonPressed:(id)sender
 {
     CCMenuItem *menuItem = (CCMenuItem*) sender;
     menuItem.position = ccp(menuItem.position.x-2, menuItem.position.y-2);
