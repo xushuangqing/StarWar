@@ -251,6 +251,7 @@ typedef NS_ENUM(NSUInteger, Status) {
 -(void) dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.delegate release];
     [super dealloc];
 }
 
