@@ -33,7 +33,7 @@ typedef NS_ENUM(NSUInteger, Status) {
     CCLayerColor *_mask;
 }
 
--(id) init
+- (id)init
 {
     if (self = [super init]) {
         _score = 0;
@@ -49,7 +49,7 @@ typedef NS_ENUM(NSUInteger, Status) {
     return self;
 }
 
--(void) registerNotifications
+- (void)registerNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scorePlus:) name:NSNotificationNameScorePlus object:nil];
     
@@ -75,7 +75,7 @@ typedef NS_ENUM(NSUInteger, Status) {
     [_mask setVisible:YES];
 }
 
--(void) initButton
+- (void)initButton
 {
     _plusButton = [CCMenuItemImage itemWithNormalImage:@"plus.png" selectedImage:@"plus.png" target:self selector:@selector(plusButtonPressed:)];
     _plusButton.anchorPoint = ccp(0, 0);
@@ -105,7 +105,7 @@ typedef NS_ENUM(NSUInteger, Status) {
     [self addChild:controlMenu];
 }
 
--(void) initScoreBoard
+- (void)initScoreBoard
 {
     _label = [CCLabelAtlas labelWithString:@"0" charMapFile:@"number@2x.png" itemWidth:23 itemHeight:31 startCharMap:'0'];
     _label.position = ccp([UIScreen mainScreen].bounds.size.height/2, [UIScreen mainScreen].bounds.size.width - 35.);
@@ -113,13 +113,13 @@ typedef NS_ENUM(NSUInteger, Status) {
     [self addChild:_label];
 }
 
--(void) scorePlus: (NSNotification *) notification
+- (void)scorePlus: (NSNotification *) notification
 {
     _score++;
     _label.string = [NSString stringWithFormat:@"%d", _score];
 }
 
--(void) gameOver: (NSNotification *) notification
+- (void)gameOver: (NSNotification *) notification
 {
     CCScene *newScene = [SRGameOverBoardLayer sceneWithFinalScore:_score];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:newScene]];
@@ -136,7 +136,7 @@ typedef NS_ENUM(NSUInteger, Status) {
     [self addChild:gameOverMenu];
 }*/
 
--(void) buttonPressed: (id)sender isPlusButton: (BOOL)plus
+- (void)buttonPressed: (id)sender isPlusButton: (BOOL)plus
 {
     CCMenuItem *menuItem = (CCMenuItem*) sender;
     CGPoint origion = menuItem.position;
@@ -150,42 +150,42 @@ typedef NS_ENUM(NSUInteger, Status) {
     [menuItem runAction:moveBack];
 }
 
--(void) plusButtonPressed: (id)sender
+- (void)plusButtonPressed: (id)sender
 {
     [self buttonPressed:sender isPlusButton:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNamePlusVelocity object:nil];
     //[self energe];
 }
 
--(void) minusButtonPressed: (id)sender
+- (void)minusButtonPressed: (id)sender
 {
     [self buttonPressed:sender isPlusButton:NO];
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameMinusVelocity object:nil];
     //[self energe];
 }
 
--(void) pauseButtonPressed: (id)sender
+- (void)pauseButtonPressed: (id)sender
 {
     [self pause];
 }
 
--(void) pause
+- (void)pause
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNamePause object:nil];
     _currentStatus = StatusPause;
     [self updateStatus];
 }
 
--(void) resumeButtonPressed: (id)sender
+- (void)resumeButtonPressed: (id)sender
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameResume object:nil];
     _currentStatus = StatusRunning;
     [self updateStatus];
 }
 
--(void) restartButtonPressed: (id)sender
+- (void)restartButtonPressed: (id)sender
 {
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRMainMenuLayer scene]]];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceLayer scene]]];
 }
 
 - (void)disableMenuButton
