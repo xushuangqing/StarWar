@@ -75,7 +75,7 @@
 {
     NSArray *scoreArray = [self dataFetchRequest];
     for (Score *score in scoreArray) {
-        CCLabelAtlas *label = [CCLabelAtlas labelWithString:[score.score stringValue] charMapFile:@"number.png" itemWidth:25.4 itemHeight:28 startCharMap:'0'];
+        CCLabelAtlas *label = [CCLabelAtlas labelWithString:[score.score stringValue] charMapFile:@"number@2x.png" itemWidth:23 itemHeight:31 startCharMap:'0'];
         label.anchorPoint = ccp(0.5, 0.5);
         [self addChild:label];
         label.position = ccp([UIScreen mainScreen].bounds.size.height/4, 180);
@@ -104,7 +104,7 @@
         return;
     }
 
-    CCLabelAtlas *label = [CCLabelAtlas labelWithString:[NSString stringWithFormat:@"%d", _globleBestScore] charMapFile:@"number.png" itemWidth:25.4 itemHeight:28 startCharMap:'0'];
+    CCLabelAtlas *label = [CCLabelAtlas labelWithString:[NSString stringWithFormat:@"%d", _globleBestScore] charMapFile:@"number@2x.png" itemWidth:23 itemHeight:31 startCharMap:'0'];
     label.anchorPoint = ccp(0.5, 0.5);
     [self addChild:label];
     label.position = ccp([UIScreen mainScreen].bounds.size.height/4*3, 180);

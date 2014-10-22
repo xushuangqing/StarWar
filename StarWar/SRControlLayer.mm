@@ -79,30 +79,25 @@ typedef NS_ENUM(NSUInteger, Status) {
 {
     _plusButton = [CCMenuItemImage itemWithNormalImage:@"plus.png" selectedImage:@"plus.png" target:self selector:@selector(plusButtonPressed:)];
     _plusButton.anchorPoint = ccp(0, 0);
-    _plusButton.scale = 0.5;
     _plusButton.position = ccp(0, 0);
     
     _minusButton = [CCMenuItemImage itemWithNormalImage:@"minus.png" selectedImage:@"minus.png" target:self selector:@selector(minusButtonPressed:)];
     _minusButton.anchorPoint = ccp(1, 0);
-    _minusButton.scale = 0.5;
     _minusButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
     
-    _pauseButton = [CCMenuItemImage itemWithNormalImage:@"minus.png" selectedImage:@"minus.png" target:self selector:@selector(pauseButtonPressed:)];
-    _pauseButton.anchorPoint = ccp(1, 0);
-    _pauseButton.scale = 0.5;
-    _pauseButton.position = ccp([UIScreen mainScreen].bounds.size.height, 200);
+    _pauseButton = [CCMenuItemImage itemWithNormalImage:@"buttonPause@2x.png" selectedImage:@"buttonPause@2x.png" target:self selector:@selector(pauseButtonPressed:)];
+    _pauseButton.anchorPoint = ccp(0, 0.5);
+    _pauseButton.position = ccp(20., [UIScreen mainScreen].bounds.size.width-35.);
     _pauseButton.visible = NO;
     
-    _resumeButton = [CCMenuItemImage itemWithNormalImage:@"plus.png" selectedImage:@"plus.png" target:self selector:@selector(resumeButtonPressed:)];
-    _resumeButton.anchorPoint = ccp(1, 0);
-    _resumeButton.scale = 0.5;
-    _resumeButton.position = ccp([UIScreen mainScreen].bounds.size.height, 200);
+    _resumeButton = [CCMenuItemImage itemWithNormalImage:@"buttonResume@2x.png" selectedImage:@"buttonResume@2x.png" target:self selector:@selector(resumeButtonPressed:)];
+    _resumeButton.anchorPoint = ccp(0.5, 0.5);
+    _resumeButton.position = ccp([UIScreen mainScreen].bounds.size.height/3., [UIScreen mainScreen].bounds.size.width/2.);
     _resumeButton.visible = NO;
     
-    _restartButton = [CCMenuItemImage itemWithNormalImage:@"plus.png" selectedImage:@"plus.png" target:self selector:@selector(restartButtonPressed:)];
-    _restartButton.anchorPoint = ccp(1, 0);
-    _restartButton.scale = 0.5;
-    _restartButton.position = ccp([UIScreen mainScreen].bounds.size.height, 100);
+    _restartButton = [CCMenuItemImage itemWithNormalImage:@"buttonContinue@2x.png" selectedImage:@"buttonContinue@2x.png" target:self selector:@selector(restartButtonPressed:)];
+    _restartButton.anchorPoint = ccp(0.5, 0.5);
+    _restartButton.position = ccp([UIScreen mainScreen].bounds.size.height*2./3., [UIScreen mainScreen].bounds.size.width/2.);
     _restartButton.visible = NO;
     
     CCMenu *controlMenu = [CCMenu menuWithItems:_plusButton,_minusButton,_pauseButton,_resumeButton,_restartButton, nil];
@@ -112,9 +107,9 @@ typedef NS_ENUM(NSUInteger, Status) {
 
 -(void) initScoreBoard
 {
-    _label = [CCLabelAtlas labelWithString:@"0" charMapFile:@"number.png" itemWidth:25.4 itemHeight:28 startCharMap:'0'];
-    _label.position = ccp([UIScreen mainScreen].bounds.size.height/2, [UIScreen mainScreen].bounds.size.width - 20);
-    _label.anchorPoint = ccp(0.5, 1);
+    _label = [CCLabelAtlas labelWithString:@"0" charMapFile:@"number@2x.png" itemWidth:23 itemHeight:31 startCharMap:'0'];
+    _label.position = ccp([UIScreen mainScreen].bounds.size.height/2, [UIScreen mainScreen].bounds.size.width - 35.);
+    _label.anchorPoint = ccp(0.5, 0.5);
     [self addChild:_label];
 }
 

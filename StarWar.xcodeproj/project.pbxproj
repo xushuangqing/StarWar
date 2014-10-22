@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4A960BBC1907D0D400099796 /* SRAircraft.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A960BBB1907D0D400099796 /* SRAircraft.mm */; };
 		4A964EB4191B989300C27FAE /* GB2ShapeCache.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A964EB3191B989300C27FAE /* GB2ShapeCache.mm */; };
-		4A96F31F192A36FB00885588 /* number.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A96F31E192A36FB00885588 /* number.png */; };
 		4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A971F9D1900B87A00A33EE3 /* SREarth.mm */; };
 		4A97C17C191E357A007C1EAE /* gameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A97C178191E357A007C1EAE /* gameOver.png */; };
 		4A97C17D191E357A007C1EAE /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A97C179191E357A007C1EAE /* minus.png */; };
@@ -215,6 +214,10 @@
 		4AADF50519272448001C81A5 /* titleGlobleTop100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50219272448001C81A5 /* titleGlobleTop100.png */; };
 		4AADF50619272448001C81A5 /* titleHighScores.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50319272448001C81A5 /* titleHighScores.png */; };
 		4AADF50719272448001C81A5 /* titleYourBestScore.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50419272448001C81A5 /* titleYourBestScore.png */; };
+		F7A0BA3519F7CD60009D9959 /* buttonContinue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3219F7CD60009D9959 /* buttonContinue@2x.png */; };
+		F7A0BA3619F7CD60009D9959 /* buttonPause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3319F7CD60009D9959 /* buttonPause@2x.png */; };
+		F7A0BA3719F7CD60009D9959 /* buttonResume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3419F7CD60009D9959 /* buttonResume@2x.png */; };
+		F7A0BA3919F7CF54009D9959 /* number@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3819F7CF54009D9959 /* number@2x.png */; };
 		F7A9FC6F1994DAD200E40DBA /* SRShieldStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7A9FC6E1994DAD200E40DBA /* SRShieldStar.mm */; };
 		F7B099D31993A159003D6765 /* SRStarBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7B099D21993A159003D6765 /* SRStarBatch.mm */; };
 		F7B0D43D1998F4F1002993E9 /* green_star.png in Resources */ = {isa = PBXBuildFile; fileRef = F7B0D43B1998F4F1002993E9 /* green_star.png */; };
@@ -237,7 +240,6 @@
 		4A960BBB1907D0D400099796 /* SRAircraft.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRAircraft.mm; sourceTree = "<group>"; };
 		4A964EB2191B989300C27FAE /* GB2ShapeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2ShapeCache.h; sourceTree = "<group>"; };
 		4A964EB3191B989300C27FAE /* GB2ShapeCache.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB2ShapeCache.mm; sourceTree = "<group>"; };
-		4A96F31E192A36FB00885588 /* number.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = number.png; path = Resources/number.png; sourceTree = "<group>"; };
 		4A971F9C1900B87A00A33EE3 /* SREarth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SREarth.h; sourceTree = "<group>"; };
 		4A971F9D1900B87A00A33EE3 /* SREarth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SREarth.mm; sourceTree = "<group>"; };
 		4A97C178191E357A007C1EAE /* gameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameOver.png; path = Resources/gameOver.png; sourceTree = "<group>"; };
@@ -654,6 +656,10 @@
 		4AADF50219272448001C81A5 /* titleGlobleTop100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleGlobleTop100.png; path = Resources/titleGlobleTop100.png; sourceTree = "<group>"; };
 		4AADF50319272448001C81A5 /* titleHighScores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleHighScores.png; path = Resources/titleHighScores.png; sourceTree = "<group>"; };
 		4AADF50419272448001C81A5 /* titleYourBestScore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleYourBestScore.png; path = Resources/titleYourBestScore.png; sourceTree = "<group>"; };
+		F7A0BA3219F7CD60009D9959 /* buttonContinue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonContinue@2x.png"; path = "Resources/buttonContinue@2x.png"; sourceTree = "<group>"; };
+		F7A0BA3319F7CD60009D9959 /* buttonPause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonPause@2x.png"; path = "Resources/buttonPause@2x.png"; sourceTree = "<group>"; };
+		F7A0BA3419F7CD60009D9959 /* buttonResume@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonResume@2x.png"; path = "Resources/buttonResume@2x.png"; sourceTree = "<group>"; };
+		F7A0BA3819F7CF54009D9959 /* number@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "number@2x.png"; path = "Resources/number@2x.png"; sourceTree = "<group>"; };
 		F7A9FC6D1994DAD200E40DBA /* SRShieldStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRShieldStar.h; sourceTree = "<group>"; };
 		F7A9FC6E1994DAD200E40DBA /* SRShieldStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRShieldStar.mm; sourceTree = "<group>"; };
 		F7B099D11993A159003D6765 /* SRStarBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStarBatch.h; sourceTree = "<group>"; };
@@ -835,6 +841,10 @@
 		4AAA9AA818FA2BFA00565381 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F7A0BA3819F7CF54009D9959 /* number@2x.png */,
+				F7A0BA3219F7CD60009D9959 /* buttonContinue@2x.png */,
+				F7A0BA3319F7CD60009D9959 /* buttonPause@2x.png */,
+				F7A0BA3419F7CD60009D9959 /* buttonResume@2x.png */,
 				F7C49CF819CD597F00D8D2BE /* red_star@2x.png */,
 				F7C49CF019CD580C00D8D2BE /* buttonHelp@2x.png */,
 				F7C49CF119CD580C00D8D2BE /* buttonHighScores@2x.png */,
@@ -846,7 +856,6 @@
 				F7BAA428199A27EF008AEC72 /* Icon-76@2x.png */,
 				F7B0D43B1998F4F1002993E9 /* green_star.png */,
 				F7B0D43C1998F4F1002993E9 /* green_star@2x.png */,
-				4A96F31E192A36FB00885588 /* number.png */,
 				4A998E2D1928CDF0002F1875 /* fire.png */,
 				4AADF50219272448001C81A5 /* titleGlobleTop100.png */,
 				4AADF50319272448001C81A5 /* titleHighScores.png */,
@@ -1433,6 +1442,11 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = XuShuangqing;
+				TargetAttributes = {
+					4AAA9A8F18FA2BFA00565381 = {
+						DevelopmentTeam = C3ZEA4AFPL;
+					};
+				};
 			};
 			buildConfigurationList = 4AAA9A8B18FA2BFA00565381 /* Build configuration list for PBXProject "StarWar" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1457,8 +1471,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AA88C8F191DC80E0063436F /* physicsShape.plist in Resources */,
+				F7A0BA3719F7CD60009D9959 /* buttonResume@2x.png in Resources */,
 				4A988B9A191A5A1700A2C3D8 /* spaceShip.png in Resources */,
-				4A96F31F192A36FB00885588 /* number.png in Resources */,
 				4A97C17D191E357A007C1EAE /* minus.png in Resources */,
 				4AADF50719272448001C81A5 /* titleYourBestScore.png in Resources */,
 				4A97C17F191E357A007C1EAE /* replay.png in Resources */,
@@ -1475,6 +1489,7 @@
 				4AAA9AAA18FA2BFA00565381 /* Default.png in Resources */,
 				4A97C17E191E357A007C1EAE /* plus.png in Resources */,
 				4A9FDB0C1925FC30001D5D13 /* laser.png in Resources */,
+				F7A0BA3519F7CD60009D9959 /* buttonContinue@2x.png in Resources */,
 				F7B0D43E1998F4F1002993E9 /* green_star@2x.png in Resources */,
 				F7C49CED19CD4BA900D8D2BE /* earth@2x.png in Resources */,
 				4AAA9ABF18FA2BFA00565381 /* iTunesArtwork in Resources */,
@@ -1484,9 +1499,11 @@
 				4A988B98191A5A1700A2C3D8 /* earth.png in Resources */,
 				F7B0D43D1998F4F1002993E9 /* green_star.png in Resources */,
 				4AAA9AB018FA2BFA00565381 /* Default-Landscape~ipad.png in Resources */,
+				F7A0BA3919F7CF54009D9959 /* number@2x.png in Resources */,
 				4A998E2E1928CDF0002F1875 /* fire.png in Resources */,
 				4AAA9AAE18FA2BFA00565381 /* Default-568h@2x.png in Resources */,
 				F7BAA42A199A27EF008AEC72 /* Icon-76.png in Resources */,
+				F7A0BA3619F7CD60009D9959 /* buttonPause@2x.png in Resources */,
 				F7C49CEF19CD4DCC00D8D2BE /* backgroundEarth@2x.png in Resources */,
 				4AADF50619272448001C81A5 /* titleHighScores.png in Resources */,
 				4A97C17C191E357A007C1EAE /* gameOver.png in Resources */,
@@ -1728,6 +1745,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1745,6 +1764,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"StarWar/libs\"";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1754,6 +1774,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = StarWar/Prefix.pch;
@@ -1770,6 +1792,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"StarWar/libs\"";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
