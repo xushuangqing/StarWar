@@ -153,15 +153,13 @@ typedef NS_ENUM(NSUInteger, Status) {
 - (void)plusButtonPressed: (id)sender
 {
     [self buttonPressed:sender isPlusButton:YES];
-    [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNamePlusVelocity object:nil];
-    //[self energe];
+    [self.delegate controlLayerDidPressPlusButton:self];
 }
 
 - (void)minusButtonPressed: (id)sender
 {
     [self buttonPressed:sender isPlusButton:NO];
-    [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameMinusVelocity object:nil];
-    //[self energe];
+    [self.delegate controlLayerDidPressMinusButton:self];
 }
 
 - (void)pauseButtonPressed: (id)sender

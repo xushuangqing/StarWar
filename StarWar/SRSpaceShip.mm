@@ -18,7 +18,6 @@
 - (id)initWithFile:(NSString *)filename
 {
     if (self = [super initWithFile:filename]) {
-        [self registerNotification];
         self.anchorPoint = ccp(0, 0.5);
 
         _shine = [CCSprite spriteWithFile:@"red_star@2x.png"];
@@ -28,11 +27,6 @@
         _shine.visible = NO;
     }
     return self;
-}
-
-- (void)registerNotification {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(plusVelocity:) name:NSNotificationNamePlusVelocity object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(minusVelocity:) name:NSNotificationNameMinusVelocity object:nil];
 }
 
 - (void)createBodyForWorld:(b2World *)world withPosition:(b2Vec2)position withGeocentric:(b2Vec2)geocentric withVelocity:(b2Vec2)velocity
@@ -96,7 +90,7 @@
     }
 }
 
-- (void)plusVelocity: (NSNotification *) notification
+- (void)plusVelocity
 {
     b2Vec2 v = self.b2Body->GetLinearVelocity();
     v.x = v.x * 1.1;
@@ -104,7 +98,7 @@
     self.b2Body->SetLinearVelocity(v);
 }
 
-- (void)minusVelocity: (NSNotification *) notification
+- (void)minusVelocity
 {
     b2Vec2 v = self.b2Body->GetLinearVelocity();
     v.x = v.x * 0.9;

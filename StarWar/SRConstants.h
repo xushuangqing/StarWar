@@ -7,8 +7,6 @@
 //
 
 #define PTM_RATIO 32
-#define NSNotificationNamePlusVelocity @"plusVelocity"
-#define NSNotificationNameMinusVelocity @"minusVelocity"
 #define NSNotificationNamePause @"pause"
 #define NSNotificationNameResume @"resume"
 #define NSNotificationNameSpaceShipDown @"spaceShipDown"

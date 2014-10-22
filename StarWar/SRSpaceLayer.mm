@@ -20,6 +20,10 @@
 #import "SRPlane.h"
 #import "SRFire.h"
 
+@interface SRSpaceLayer () <SRControlLayerDelegate>
+
+@end
+
 @implementation SRSpaceLayer
 {
     b2World *_world;
@@ -45,6 +49,7 @@
     [scene addChild: layer z:zSpaceLayer tag:kTagSpaceLayer];
     
     SRControlLayer *controlLayer = [SRControlLayer node];
+    controlLayer.delegate = layer;
     [scene addChild:controlLayer z:zControlLayer tag:kTagControlLayer];
     
     CCLayerColor *darkBlue = [CCLayerColor layerWithColor:menuBackgroundColor];
@@ -316,6 +321,18 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 	
 	[super dealloc];
+}
+
+#pragma mark - SRControlLayerDelegate
+
+- (void)controlLayerDidPressMinusButton:(SRControlLayer *)controlLayer
+{
+    [_spaceShip minusVelocity];
+}
+
+- (void)controlLayerDidPressPlusButton:(SRControlLayer *)controlLayer
+{
+    [_spaceShip plusVelocity];
 }
 
 

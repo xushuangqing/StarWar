@@ -9,10 +9,20 @@
 #import "CCLayer.h"
 #import "cocos2d.h"
 
+@protocol SRControlLayerDelegate;
+
 @interface SRControlLayer : CCLayer
 
 @property int score;
+@property (retain) id<SRControlLayerDelegate> delegate;
 
--(void) pause;
+- (void)pause;
+
+@end
+
+@protocol SRControlLayerDelegate <NSObject>
+
+- (void)controlLayerDidPressPlusButton:(SRControlLayer *)controlLayer;
+- (void)controlLayerDidPressMinusButton:(SRControlLayer *)controlLayer;
 
 @end
