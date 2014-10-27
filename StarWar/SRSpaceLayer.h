@@ -11,6 +11,7 @@
 
 @interface SRSpaceLayer : CCLayer
 
+- (void)stopSchedule;
 - (void)spaceshipAccelerate;
 - (void)spaceshipDecelerate;
 - (void)pause;

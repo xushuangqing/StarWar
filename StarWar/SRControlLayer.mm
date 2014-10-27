@@ -33,10 +33,6 @@
 - (void)registerNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scorePlus:) name:NSNotificationNameScorePlus object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipDown object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTouchPlane object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTooFar object:nil];
 }
 
 - (void)initButton
@@ -66,12 +62,6 @@
 {
     _score++;
     _label.string = [NSString stringWithFormat:@"%d", _score];
-}
-
-- (void)gameOver: (NSNotification *) notification
-{
-    CCScene *newScene = [SRGameOverBoardLayer sceneWithFinalScore:_score];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:newScene]];
 }
 
 - (void)buttonPressed: (id)sender isPlusButton: (BOOL)plus

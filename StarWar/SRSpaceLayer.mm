@@ -46,7 +46,6 @@
         [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"physicsShape.plist"];
 
         [self initPhysics];
-        [self registerNotifications];
 
         [self initEarth];
         [self initSpaceShip];
@@ -61,13 +60,6 @@
         [self scheduleUpdate];
     }
     return self;
-}
-
-- (void)registerNotifications
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipDown object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTouchPlane object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTooFar object:nil];
 }
 
 - (void)initPhysics
@@ -141,7 +133,7 @@
     [self addChild:_planeBatch];
 }
 
-- (void)gameOver:(NSNotification *)notification
+- (void)stopSchedule
 {
     for (CCNode* node in self.children) {
         [node unscheduleAllSelectors];

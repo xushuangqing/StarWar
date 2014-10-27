@@ -11,7 +11,7 @@
 #import "Box2D.h"
 #import "CCPhysicsSprite.h"
 
-class SRContactListener:public b2ContactListener
+class SRContactListener: public b2ContactListener
 {
     virtual void BeginContact(b2Contact *contact);
 };
