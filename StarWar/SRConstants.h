@@ -7,8 +7,6 @@
 //
 
 #define PTM_RATIO 32
-#define NSNotificationNamePause @"pause"
-#define NSNotificationNameResume @"resume"
 #define NSNotificationNameSpaceShipDown @"spaceShipDown"
 #define NSNotificationNameSpaceShitTouchStar @"spaceShipTouchStar"
 #define NSNotificationNameSpaceShipTooFar @"spaceShipTooFar"
@@ -39,14 +37,16 @@
 
 //below is the tag and z-index in space scene
 
+#define zGameControlLayer 200
 #define zControlLayer 100
 #define zSpaceLayer 10
 #define zBackgroundLayer 0
 
 enum {
-	kTagControlLayer = 1,
-    kTagSpaceLayer = 2,
-    kTagBackgroundLayer = 3,
+    kTagGameControlLayer = 1,
+	kTagControlLayer = 2,
+    kTagSpaceLayer = 3,
+    kTagBackgroundLayer = 4,
 };
 
 #define zSpaceShip 100

@@ -213,6 +213,7 @@
 		4AADF50519272448001C81A5 /* titleGlobleTop100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50219272448001C81A5 /* titleGlobleTop100.png */; };
 		4AADF50619272448001C81A5 /* titleHighScores.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50319272448001C81A5 /* titleHighScores.png */; };
 		4AADF50719272448001C81A5 /* titleYourBestScore.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50419272448001C81A5 /* titleYourBestScore.png */; };
+		F7463C5919FCFE9E0032B6ED /* SRGameControlLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7463C5819FCFE9E0032B6ED /* SRGameControlLayer.mm */; };
 		F7A0BA3519F7CD60009D9959 /* buttonContinue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3219F7CD60009D9959 /* buttonContinue@2x.png */; };
 		F7A0BA3619F7CD60009D9959 /* buttonPause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3319F7CD60009D9959 /* buttonPause@2x.png */; };
 		F7A0BA3719F7CD60009D9959 /* buttonResume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3419F7CD60009D9959 /* buttonResume@2x.png */; };
@@ -653,6 +654,8 @@
 		4AADF50219272448001C81A5 /* titleGlobleTop100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleGlobleTop100.png; path = Resources/titleGlobleTop100.png; sourceTree = "<group>"; };
 		4AADF50319272448001C81A5 /* titleHighScores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleHighScores.png; path = Resources/titleHighScores.png; sourceTree = "<group>"; };
 		4AADF50419272448001C81A5 /* titleYourBestScore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleYourBestScore.png; path = Resources/titleYourBestScore.png; sourceTree = "<group>"; };
+		F7463C5719FCFE9E0032B6ED /* SRGameControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRGameControlLayer.h; sourceTree = "<group>"; };
+		F7463C5819FCFE9E0032B6ED /* SRGameControlLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRGameControlLayer.mm; sourceTree = "<group>"; };
 		F7A0BA3219F7CD60009D9959 /* buttonContinue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonContinue@2x.png"; path = "Resources/buttonContinue@2x.png"; sourceTree = "<group>"; };
 		F7A0BA3319F7CD60009D9959 /* buttonPause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonPause@2x.png"; path = "Resources/buttonPause@2x.png"; sourceTree = "<group>"; };
 		F7A0BA3419F7CD60009D9959 /* buttonResume@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonResume@2x.png"; path = "Resources/buttonResume@2x.png"; sourceTree = "<group>"; };
@@ -764,6 +767,8 @@
 			children = (
 				4A99ECBD18FFF9300092D9A9 /* SRControlLayer.h */,
 				4A99ECBE18FFF9300092D9A9 /* SRControlLayer.mm */,
+				F7463C5719FCFE9E0032B6ED /* SRGameControlLayer.h */,
+				F7463C5819FCFE9E0032B6ED /* SRGameControlLayer.mm */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1569,6 +1574,7 @@
 				4AAA9C8618FA2BFD00565381 /* b2ChainAndPolygonContact.cpp in Sources */,
 				4AAA9B1C18FA2BFB00565381 /* CCLabelBMFont.m in Sources */,
 				4AAA9BB618FA2BFC00565381 /* CCDirectorMac.m in Sources */,
+				F7463C5919FCFE9E0032B6ED /* SRGameControlLayer.mm in Sources */,
 				4AAA9B3218FA2BFB00565381 /* CCNode.m in Sources */,
 				4AAA9CB418FA2BFD00565381 /* b2RevoluteJoint.cpp in Sources */,
 				4AAA9BC218FA2BFC00565381 /* base64.c in Sources */,

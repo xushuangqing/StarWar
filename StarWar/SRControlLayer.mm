@@ -14,35 +14,20 @@
 #import "SRGameOverBoardLayer.h"
 #import "SRMainMenuLayer.h"
 
-typedef NS_ENUM(NSUInteger, Status) {
-    StatusRunning,
-    StatusPause,
-    StatusOther,
-};
-
 @implementation SRControlLayer
 {
     CCLabelAtlas* _label;
-    Status _currentStatus;
     CCMenuItem *_plusButton;
     CCMenuItem *_minusButton;
-    CCMenuItem *_pauseButton;
-    CCMenuItem *_resumeButton;
-    CCMenuItem *_restartButton;
-    CCLayerColor *_mask;
 }
 
 - (id)init
 {
     if (self = [super init]) {
         _score = 0;
-        _currentStatus = StatusRunning;
         [self registerNotifications];
         [self initButton];
         [self initScoreBoard];
-        [self updateStatus];
-        [self initMask];
-        [self setRunningColor];
         [self schedule:@selector(watchOverButtonPressed) interval:0.1];
     }
     return self;
@@ -57,23 +42,6 @@ typedef NS_ENUM(NSUInteger, Status) {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTooFar object:nil];
 }
 
-- (void)setPausedColor
-{
-    [_mask setVisible:YES];
-}
-
-- (void)setRunningColor
-{
-    [_mask setVisible:NO];
-}
-
-- (void)initMask
-{
-    _mask = [CCLayerColor layerWithColor:ccc4(0, 0, 0, 200)];
-    [self addChild:_mask z:100];
-    [_mask setVisible:YES];
-}
-
 - (void)initButton
 {
     _plusButton = [CCMenuItemImage itemWithNormalImage:@"plus.png" selectedImage:@"plus.png" target:self selector:@selector(plusButtonPressed:)];
@@ -84,22 +52,7 @@ typedef NS_ENUM(NSUInteger, Status) {
     _minusButton.anchorPoint = ccp(1, 0);
     _minusButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
     
-    _pauseButton = [CCMenuItemImage itemWithNormalImage:@"buttonPause@2x.png" selectedImage:@"buttonPause@2x.png" target:self selector:@selector(pauseButtonPressed:)];
-    _pauseButton.anchorPoint = ccp(0, 0.5);
-    _pauseButton.position = ccp(20., [UIScreen mainScreen].bounds.size.width-35.);
-    _pauseButton.visible = NO;
-    
-    _resumeButton = [CCMenuItemImage itemWithNormalImage:@"buttonResume@2x.png" selectedImage:@"buttonResume@2x.png" target:self selector:@selector(resumeButtonPressed:)];
-    _resumeButton.anchorPoint = ccp(0.5, 0.5);
-    _resumeButton.position = ccp([UIScreen mainScreen].bounds.size.height/3., [UIScreen mainScreen].bounds.size.width/2.);
-    _resumeButton.visible = NO;
-    
-    _restartButton = [CCMenuItemImage itemWithNormalImage:@"buttonContinue@2x.png" selectedImage:@"buttonContinue@2x.png" target:self selector:@selector(restartButtonPressed:)];
-    _restartButton.anchorPoint = ccp(0.5, 0.5);
-    _restartButton.position = ccp([UIScreen mainScreen].bounds.size.height*2./3., [UIScreen mainScreen].bounds.size.width/2.);
-    _restartButton.visible = NO;
-    
-    CCMenu *controlMenu = [CCMenu menuWithItems:_plusButton,_minusButton,_pauseButton,_resumeButton,_restartButton, nil];
+    CCMenu *controlMenu = [CCMenu menuWithItems:_plusButton, _minusButton, nil];
     controlMenu.position = CGPointZero;
     [self addChild:controlMenu];
 }
@@ -123,17 +76,6 @@ typedef NS_ENUM(NSUInteger, Status) {
     CCScene *newScene = [SRGameOverBoardLayer sceneWithFinalScore:_score];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:newScene]];
 }
-
-/*-(void) initGameOverLabel
-{
-    CCMenuItemImage *gameOverImage = [CCMenuItemImage itemWithNormalImage:@"gameOver.png" selectedImage:@"gameOver.png"];
-    gameOverImage.scale = 0.5;
-    gameOverImage.position = ccp([UIScreen mainScreen].bounds.size.height/2, 200);
-    
-    CCMenu *gameOverMenu = [CCMenu menuWithItems:gameOverImage, nil];
-    gameOverMenu.position = CGPointZero;
-    [self addChild:gameOverMenu];
-}*/
 
 - (void)buttonPressed: (id)sender isPlusButton: (BOOL)plus
 {
@@ -161,30 +103,6 @@ typedef NS_ENUM(NSUInteger, Status) {
     [self.delegate controlLayerDidPressMinusButton:self];
 }
 
-- (void)pauseButtonPressed: (id)sender
-{
-    [self pause];
-}
-
-- (void)pause
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNamePause object:nil];
-    _currentStatus = StatusPause;
-    [self updateStatus];
-}
-
-- (void)resumeButtonPressed: (id)sender
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameResume object:nil];
-    _currentStatus = StatusRunning;
-    [self updateStatus];
-}
-
-- (void)restartButtonPressed: (id)sender
-{
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceLayer scene]]];
-}
-
 - (void)disableMenuButton
 {
     _plusButton.isEnabled = NO;
@@ -197,47 +115,7 @@ typedef NS_ENUM(NSUInteger, Status) {
     _minusButton.isEnabled = YES;
 }
 
-
--(void) updateStatus
-{
-    switch (_currentStatus) {
-        case StatusRunning:
-            _pauseButton.visible = YES;
-            _resumeButton.visible = NO;
-            _restartButton.visible = NO;
-            [self setRunningColor];
-            [self enableMenuButton];
-            break;
-        case StatusPause:
-            _pauseButton.visible = NO;
-            _resumeButton.visible = YES;
-            _restartButton.visible = YES;
-            [self setPausedColor];
-            [self disableMenuButton];
-            break;
-        case StatusOther:
-            break;
-        default:
-            break;
-    }
-}
-
-//not used
--(void) energe
-{
-    SRSpaceLayer *spaceLayer = (SRSpaceLayer*)[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagSpaceLayer];
-    b2Vec2 spaceShipPosition = spaceLayer.spaceShip.b2Body->GetPosition();
-    b2Vec2 earthPosition = spaceLayer.earth.b2Body->GetPosition();
-    b2Vec2 spaceShipVelocity = spaceLayer.spaceShip.b2Body->GetLinearVelocity();
-    float distance = sqrtf(powf(spaceShipPosition.x-earthPosition.x, 2)+powf(spaceShipPosition.y-earthPosition.y, 2));
-    float v2 = powf(spaceShipVelocity.x, 2)+powf(spaceShipVelocity.y, 2);
-    
-    float energy = 0.5*v2 - GM/distance;
-    NSLog(@"energy:%f", energy);
-    
-}
-
--(void) watchOverButtonPressed
+- (void)watchOverButtonPressed
 {
     if ([_plusButton isSelected]) {
         [self plusButtonPressed:nil];

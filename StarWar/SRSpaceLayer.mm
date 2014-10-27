@@ -11,6 +11,7 @@
 #import "SRSpaceShip.h"
 #import "SRConstants.h"
 #import "SRControlLayer.h"
+#import "SRGameControlLayer.h"
 #import "SREarth.h"
 #import "SRStar.h"
 #import "SRContactListener.h"
@@ -20,7 +21,7 @@
 #import "SRPlane.h"
 #import "SRFire.h"
 
-@interface SRSpaceLayer () <SRControlLayerDelegate>
+@interface SRSpaceLayer () <SRControlLayerDelegate, SRGameControlLayerDelegate>
 
 @end
 
@@ -45,12 +46,16 @@
     //Create a new Scene which is the main scene of this game.
     CCScene *scene = [CCScene node];
     
-    SRSpaceLayer *layer = [SRSpaceLayer node];
-    [scene addChild: layer z:zSpaceLayer tag:kTagSpaceLayer];
+    SRSpaceLayer *spaceLayer = [SRSpaceLayer node];
+    [scene addChild: spaceLayer z:zSpaceLayer tag:kTagSpaceLayer];
     
     SRControlLayer *controlLayer = [SRControlLayer node];
-    controlLayer.delegate = layer;
+    controlLayer.delegate = spaceLayer;
     [scene addChild:controlLayer z:zControlLayer tag:kTagControlLayer];
+    
+    SRGameControlLayer *gameControlLayer = [SRGameControlLayer node];
+    gameControlLayer.delegate = spaceLayer;
+    [scene addChild:gameControlLayer z:zGameControlLayer tag:kTagGameControlLayer];
     
     CCLayerColor *darkBlue = [CCLayerColor layerWithColor:menuBackgroundColor];
     [scene addChild:darkBlue z:zBackgroundLayer tag:kTagBackgroundLayer];
@@ -87,8 +92,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipDown object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTouchPlane object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTooFar object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pause:) name:NSNotificationNamePause object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resume:) name:NSNotificationNameResume object:nil];
 }
 
 - (void)initPhysics
@@ -172,7 +175,7 @@
     [self unscheduleUpdate];
 }
 
-- (void)pause:(NSNotification *)notification
+- (void)pause
 {
     for (CCNode* node in self.children) {
         [node pauseSchedulerAndActions];
@@ -180,7 +183,7 @@
     [self pauseSchedulerAndActions];
 }
 
-- (void)resume:(NSNotification *)notification
+- (void)resume
 {
     for (CCNode* node in self.children) {
         [node resumeSchedulerAndActions];
@@ -333,6 +336,18 @@
 - (void)controlLayerDidPressPlusButton:(SRControlLayer *)controlLayer
 {
     [_spaceShip plusVelocity];
+}
+
+#pragma mark - SRGameControlLayerDelegate
+
+- (void)gameControlLayerDidPressPauseButton:(SRGameControlLayer *)controlLayer
+{
+    [self pause];
+}
+
+- (void)gameControlLayerDidPressResumeButton:(SRGameControlLayer *)controlLayer
+{
+    [self resume];
 }
 
 

@@ -16,8 +16,6 @@
 @property int score;
 @property (retain) id<SRControlLayerDelegate> delegate;
 
-- (void)pause;
-
 @end
 
 @protocol SRControlLayerDelegate <NSObject>

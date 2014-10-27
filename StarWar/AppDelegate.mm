@@ -163,10 +163,10 @@
 // getting a call, pause the game
 -(void) applicationWillResignActive:(UIApplication *)application
 {
-    SRControlLayer *controlLayer = (SRControlLayer*)[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagControlLayer];
+    /*SRControlLayer *controlLayer = (SRControlLayer*)[[[CCDirector sharedDirector] runningScene] getChildByTag:kTagControlLayer];
     if (controlLayer) {
         [controlLayer pause];
-    }
+    }*/
 	if( [navController_ visibleViewController] == director_ )
 		[director_ pause];
 }
