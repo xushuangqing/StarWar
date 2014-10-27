@@ -8,11 +8,19 @@
 
 #import "CCLayer.h"
 
+typedef NS_ENUM(NSUInteger, SRGameStatus) {
+    SRStatusRunning,
+    SRStatusPause,
+    SRStatusOther,
+};
+
 @protocol SRGameControlLayerDelegate;
 
 @interface SRGameControlLayer : CCLayer
 
 @property (retain) id<SRGameControlLayerDelegate> delegate;
+
+- (void)changeGameStatusTo:(SRGameStatus)status;
 
 @end
 

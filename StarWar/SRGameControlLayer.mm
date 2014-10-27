@@ -9,16 +9,10 @@
 #import "cocos2d.h"
 #import "SRGameControlLayer.h"
 
-typedef NS_ENUM(NSUInteger, Status) {
-    StatusRunning,
-    StatusPause,
-    StatusOther,
-};
-
 @implementation SRGameControlLayer
 {
     CCLabelAtlas* _label;
-    Status _currentStatus;
+    SRGameStatus _currentStatus;
     CCMenuItem *_pauseButton;
     CCMenuItem *_resumeButton;
     CCMenuItem *_restartButton;
@@ -30,7 +24,7 @@ typedef NS_ENUM(NSUInteger, Status) {
     if (self = [super init]) {
         [self initButton];
         [self initMask];
-        _currentStatus = StatusRunning;
+        _currentStatus = SRStatusRunning;
         [self updateStatus];
     }
     return self;
@@ -65,49 +59,47 @@ typedef NS_ENUM(NSUInteger, Status) {
 - (void)updateStatus
 {
     switch (_currentStatus) {
-        case StatusRunning:
+        case SRStatusRunning:
             _pauseButton.visible = YES;
             _resumeButton.visible = NO;
             _restartButton.visible = NO;
             [_mask setVisible:NO];
             break;
-        case StatusPause:
+        case SRStatusPause:
             _pauseButton.visible = NO;
             _resumeButton.visible = YES;
             _restartButton.visible = YES;
             [_mask setVisible:YES];
             break;
-        case StatusOther:
+        case SRStatusOther:
             break;
         default:
             break;
     }
 }
 
-- (void)pauseButtonPressed:(id)sender
+- (void)changeGameStatusTo:(SRGameStatus)status
 {
-    [self pause];
+    _currentStatus = status;
+    [self updateStatus];
 }
 
-- (void)pause
+
+#pragma mark - Buttons
+
+- (void)pauseButtonPressed:(id)sender
 {
     [self.delegate gameControlLayerDidPressPauseButton:self];
-    _currentStatus = StatusPause;
-    [self updateStatus];
 }
 
 - (void)resumeButtonPressed:(id)sender
 {
     [self.delegate gameControlLayerDidPressResumeButton:self];
-    _currentStatus = StatusRunning;
-    [self updateStatus];
 }
 
 - (void)restartButtonPressed:(id)sender
 {
     [self.delegate gameControlLayerDidPressRestartButton:self];
 }
-
-
 
 @end

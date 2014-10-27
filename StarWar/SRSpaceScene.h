@@ -10,4 +10,6 @@
 
 @interface SRSpaceScene : CCScene
 
+- (void)pause;
+
 @end

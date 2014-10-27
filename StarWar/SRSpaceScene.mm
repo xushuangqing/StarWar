@@ -49,11 +49,13 @@
 - (void)pause
 {
     [_spaceLayer pause];
+    [_gameControlLayer changeGameStatusTo:SRStatusPause];
 }
 
 - (void)resume
 {
     [_spaceLayer resume];
+    [_gameControlLayer changeGameStatusTo:SRStatusRunning];
 }
 
 - (void)restart
