@@ -10,6 +10,7 @@
 #import "SRSpaceLayer.h"
 #import "SRScoreBoardLayer.h"
 #import "SRConstants.h"
+#import "SRSpaceScene.h"
 
 @implementation SRMainMenuLayer
 
@@ -51,7 +52,7 @@
 {
     [self buttonPressed:sender];
     NSLog(@"startButtonPressed");
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceLayer scene] ]];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceScene node]]];
 }
 
 - (void)scoreBoardButtonPressed:(id)sender

@@ -20,5 +20,6 @@
 
 - (void)gameControlLayerDidPressPauseButton:(SRGameControlLayer *)controlLayer;
 - (void)gameControlLayerDidPressResumeButton:(SRGameControlLayer *)controlLayer;
+- (void)gameControlLayerDidPressRestartButton:(SRGameControlLayer *)controlLayer;
 
 @end

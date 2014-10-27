@@ -214,6 +214,7 @@
 		4AADF50619272448001C81A5 /* titleHighScores.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50319272448001C81A5 /* titleHighScores.png */; };
 		4AADF50719272448001C81A5 /* titleYourBestScore.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AADF50419272448001C81A5 /* titleYourBestScore.png */; };
 		F7463C5919FCFE9E0032B6ED /* SRGameControlLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7463C5819FCFE9E0032B6ED /* SRGameControlLayer.mm */; };
+		F77512CC19FE5E48008F2F18 /* SRSpaceScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = F77512CB19FE5E48008F2F18 /* SRSpaceScene.mm */; };
 		F7A0BA3519F7CD60009D9959 /* buttonContinue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3219F7CD60009D9959 /* buttonContinue@2x.png */; };
 		F7A0BA3619F7CD60009D9959 /* buttonPause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3319F7CD60009D9959 /* buttonPause@2x.png */; };
 		F7A0BA3719F7CD60009D9959 /* buttonResume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3419F7CD60009D9959 /* buttonResume@2x.png */; };
@@ -656,6 +657,8 @@
 		4AADF50419272448001C81A5 /* titleYourBestScore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleYourBestScore.png; path = Resources/titleYourBestScore.png; sourceTree = "<group>"; };
 		F7463C5719FCFE9E0032B6ED /* SRGameControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRGameControlLayer.h; sourceTree = "<group>"; };
 		F7463C5819FCFE9E0032B6ED /* SRGameControlLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRGameControlLayer.mm; sourceTree = "<group>"; };
+		F77512CA19FE5E48008F2F18 /* SRSpaceScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSpaceScene.h; sourceTree = "<group>"; };
+		F77512CB19FE5E48008F2F18 /* SRSpaceScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRSpaceScene.mm; sourceTree = "<group>"; };
 		F7A0BA3219F7CD60009D9959 /* buttonContinue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonContinue@2x.png"; path = "Resources/buttonContinue@2x.png"; sourceTree = "<group>"; };
 		F7A0BA3319F7CD60009D9959 /* buttonPause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonPause@2x.png"; path = "Resources/buttonPause@2x.png"; sourceTree = "<group>"; };
 		F7A0BA3419F7CD60009D9959 /* buttonResume@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonResume@2x.png"; path = "Resources/buttonResume@2x.png"; sourceTree = "<group>"; };
@@ -834,6 +837,8 @@
 				4A986E091902236200B68A1B /* SRContactListener.mm */,
 				F7B0D43F1998FA53002993E9 /* SRGlobal.h */,
 				F7B0D4401998FA53002993E9 /* SRGlobal.mm */,
+				F77512CA19FE5E48008F2F18 /* SRSpaceScene.h */,
+				F77512CB19FE5E48008F2F18 /* SRSpaceScene.mm */,
 			);
 			path = StarWar;
 			sourceTree = "<group>";
@@ -1546,6 +1551,7 @@
 				F7B099D31993A159003D6765 /* SRStarBatch.mm in Sources */,
 				4AAA9ACA18FA2BFA00565381 /* CCActionCatmullRom.m in Sources */,
 				4AAA9C4918FA2BFC00565381 /* b2TimeOfImpact.cpp in Sources */,
+				F77512CC19FE5E48008F2F18 /* SRSpaceScene.mm in Sources */,
 				4A964EB4191B989300C27FAE /* GB2ShapeCache.mm in Sources */,
 				4AAA9B2F18FA2BFB00565381 /* CCNode+Debug.m in Sources */,
 				4AAA9BE218FA2BFC00565381 /* TransformUtils.m in Sources */,

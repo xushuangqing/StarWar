@@ -90,7 +90,7 @@
     }
 }
 
-- (void)plusVelocity
+- (void)accelerate
 {
     b2Vec2 v = self.b2Body->GetLinearVelocity();
     v.x = v.x * 1.1;
@@ -98,7 +98,7 @@
     self.b2Body->SetLinearVelocity(v);
 }
 
-- (void)minusVelocity
+- (void)decelerate
 {
     b2Vec2 v = self.b2Body->GetLinearVelocity();
     v.x = v.x * 0.9;

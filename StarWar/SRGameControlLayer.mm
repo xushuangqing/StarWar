@@ -6,9 +6,8 @@
 //  Copyright (c) 2014年 XuShuangqing. All rights reserved.
 //
 
-#import "SRGameControlLayer.h"
 #import "cocos2d.h"
-#import "SRSpaceLayer.h"
+#import "SRGameControlLayer.h"
 
 typedef NS_ENUM(NSUInteger, Status) {
     StatusRunning,
@@ -106,7 +105,7 @@ typedef NS_ENUM(NSUInteger, Status) {
 
 - (void)restartButtonPressed:(id)sender
 {
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceLayer scene]]];
+    [self.delegate gameControlLayerDidPressRestartButton:self];
 }
 
 

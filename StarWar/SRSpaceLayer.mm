@@ -5,13 +5,14 @@
 //  Created by XuShuangqing on 14-4-12.
 //  Copyright (c) 2014年 XuShuangqing. All rights reserved.
 //
-#import "GB2ShapeCache.h"
 
+#import "cocos2d.h"
+#import "Box2D.h"
+#import "GLES-Render.h"
+#import "GB2ShapeCache.h"
 #import "SRSpaceLayer.h"
 #import "SRSpaceShip.h"
 #import "SRConstants.h"
-#import "SRControlLayer.h"
-#import "SRGameControlLayer.h"
 #import "SREarth.h"
 #import "SRStar.h"
 #import "SRContactListener.h"
@@ -21,14 +22,11 @@
 #import "SRPlane.h"
 #import "SRFire.h"
 
-@interface SRSpaceLayer () <SRControlLayerDelegate, SRGameControlLayerDelegate>
-
-@end
-
 @implementation SRSpaceLayer
 {
     b2World *_world;
-
+    SRSpaceShip *_spaceShip;
+    SREarth *_earth;
     SRFire *_fire;
     SRStarBatch *_starBatch;
     SRLaser *_laser;
@@ -39,28 +37,6 @@
     b2RayCastOutput _output;
 
     SRContactListener *listener;
-}
-
-+ (CCScene *)scene
-{
-    //Create a new Scene which is the main scene of this game.
-    CCScene *scene = [CCScene node];
-    
-    SRSpaceLayer *spaceLayer = [SRSpaceLayer node];
-    [scene addChild: spaceLayer z:zSpaceLayer tag:kTagSpaceLayer];
-    
-    SRControlLayer *controlLayer = [SRControlLayer node];
-    controlLayer.delegate = spaceLayer;
-    [scene addChild:controlLayer z:zControlLayer tag:kTagControlLayer];
-    
-    SRGameControlLayer *gameControlLayer = [SRGameControlLayer node];
-    gameControlLayer.delegate = spaceLayer;
-    [scene addChild:gameControlLayer z:zGameControlLayer tag:kTagGameControlLayer];
-    
-    CCLayerColor *darkBlue = [CCLayerColor layerWithColor:menuBackgroundColor];
-    [scene addChild:darkBlue z:zBackgroundLayer tag:kTagBackgroundLayer];
-    
-    return scene;
 }
 
 - (id)init
@@ -173,6 +149,16 @@
     }
     [self unscheduleAllSelectors];
     [self unscheduleUpdate];
+}
+
+- (void)spaceshipAccelerate
+{
+    [_spaceShip accelerate];
+}
+
+- (void)spaceshipDecelerate
+{
+    [_spaceShip decelerate];
 }
 
 - (void)pause
@@ -325,30 +311,5 @@
 	
 	[super dealloc];
 }
-
-#pragma mark - SRControlLayerDelegate
-
-- (void)controlLayerDidPressMinusButton:(SRControlLayer *)controlLayer
-{
-    [_spaceShip minusVelocity];
-}
-
-- (void)controlLayerDidPressPlusButton:(SRControlLayer *)controlLayer
-{
-    [_spaceShip plusVelocity];
-}
-
-#pragma mark - SRGameControlLayerDelegate
-
-- (void)gameControlLayerDidPressPauseButton:(SRGameControlLayer *)controlLayer
-{
-    [self pause];
-}
-
-- (void)gameControlLayerDidPressResumeButton:(SRGameControlLayer *)controlLayer
-{
-    [self resume];
-}
-
 
 @end

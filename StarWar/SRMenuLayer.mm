@@ -63,7 +63,7 @@
 - (void)playAgain: (id)sender
 {
     [self buttonPressed:sender];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceLayer scene]]];
+    //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceLayer scene]]];
 }
 
 - (NSArray *)dataFetchRequest

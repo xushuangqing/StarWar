@@ -42,13 +42,6 @@
 #define zSpaceLayer 10
 #define zBackgroundLayer 0
 
-enum {
-    kTagGameControlLayer = 1,
-	kTagControlLayer = 2,
-    kTagSpaceLayer = 3,
-    kTagBackgroundLayer = 4,
-};
-
 #define zSpaceShip 100
 #define zLaser 99
 

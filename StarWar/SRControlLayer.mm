@@ -6,13 +6,10 @@
 //  Copyright (c) 2014年 XuShuangqing. All rights reserved.
 //
 
+#import "cocos2d.h"
 #import "SRControlLayer.h"
 #import "SRConstants.h"
-#import "SRSpaceLayer.h"
-#import "AppDelegate.h"
-#import "SRScoreBoardLayer.h"
 #import "SRGameOverBoardLayer.h"
-#import "SRMainMenuLayer.h"
 
 @implementation SRControlLayer
 {
