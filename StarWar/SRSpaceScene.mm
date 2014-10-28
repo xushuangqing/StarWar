@@ -30,7 +30,6 @@
 - (void)onEnter
 {
     [super onEnter];
-    [self registerNotifications];
 
     _spaceLayer = [SRSpaceLayer node];
     [self addChild:_spaceLayer z:zSpaceLayer];
@@ -45,22 +44,6 @@
     
     _darkBlueBackground = [CCLayerColor layerWithColor:menuBackgroundColor];
     [self addChild:_darkBlueBackground z:zBackgroundLayer];
-}
-
-- (void)registerNotifications
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipDown object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTouchPlane object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTooFar object:nil];
-}
-
-#pragma mark - Handle Game Over
-
-- (void)gameOver: (NSNotification *) notification
-{
-    [_spaceLayer stopSchedule];
-    CCScene *newScene = [SRGameOverBoardLayer sceneWithFinalScore:0];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:newScene]];
 }
 
 #pragma mark - Control The Scene
@@ -92,6 +75,13 @@
 - (void)controlLayerDidPressPlusButton:(SRControlLayer *)controlLayer
 {
     [_spaceLayer spaceshipAccelerate];
+}
+
+- (void)controlLayer:(SRControlLayer *)controlLayer gameOverWithFinalScore:(NSInteger)score
+{
+    [_spaceLayer stopSchedule];
+    CCScene *newScene = [SRGameOverBoardLayer sceneWithFinalScore:score];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:newScene]];
 }
 
 #pragma mark - SRGameControlLayerDelegate Implement

@@ -18,7 +18,7 @@
     NSURLConnection *_connection;
 }
 
-+ (CCScene *)sceneWithFinalScore: (int)finalScore
++ (CCScene *)sceneWithFinalScore:(NSInteger)finalScore
 {
 	CCScene *scene = [CCScene node];
 	SRGameOverBoardLayer *layer = [[[SRGameOverBoardLayer alloc] initWithFinalScore:finalScore] autorelease];

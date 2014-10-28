@@ -12,7 +12,6 @@
 
 @interface SRControlLayer : CCLayer
 
-@property int score;
 @property (retain) id<SRControlLayerDelegate> delegate;
 
 @end
@@ -21,5 +20,6 @@
 
 - (void)controlLayerDidPressPlusButton:(SRControlLayer *)controlLayer;
 - (void)controlLayerDidPressMinusButton:(SRControlLayer *)controlLayer;
+- (void)controlLayer:(SRControlLayer *)controlLayer gameOverWithFinalScore:(NSInteger)score;
 
 @end

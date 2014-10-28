@@ -16,6 +16,7 @@
     CCLabelAtlas* _label;
     CCMenuItem *_plusButton;
     CCMenuItem *_minusButton;
+    NSInteger _score;
 }
 
 - (id)init
@@ -33,6 +34,9 @@
 - (void)registerNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scorePlus:) name:NSNotificationNameScorePlus object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipDown object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTouchPlane object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameOver:) name:NSNotificationNameSpaceShipTooFar object:nil];
 }
 
 - (void)initButton
@@ -110,6 +114,11 @@
     if ([_minusButton isSelected]) {
         [self minusButtonPressed:nil];
     }
+}
+
+- (void)gameOver:(NSNotification *)notification
+{
+    [self.delegate controlLayer:self gameOverWithFinalScore:_score];
 }
 
 -(void) dealloc
