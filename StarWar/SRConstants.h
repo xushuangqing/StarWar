@@ -37,6 +37,7 @@
 
 //below is the tag and z-index in space scene
 
+#define zGameOverLayer 300
 #define zGameControlLayer 200
 #define zControlLayer 100
 #define zSpaceLayer 10

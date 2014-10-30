@@ -18,7 +18,7 @@ typedef NS_ENUM(NSUInteger, SRGameStatus) {
 
 @interface SRGameControlLayer : CCLayer
 
-@property (retain) id<SRGameControlLayerDelegate> delegate;
+@property (nonatomic, retain) id<SRGameControlLayerDelegate> delegate;
 
 - (void)changeGameStatusTo:(SRGameStatus)status;
 

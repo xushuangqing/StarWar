@@ -25,16 +25,14 @@
         [self initButton];
         [self initMask];
         _currentStatus = SRStatusRunning;
-        [self updateStatus];
     }
     return self;
 }
 
 - (void)initMask
 {
-    _mask = [CCLayerColor layerWithColor:ccc4(0, 0, 0, 200)];
+    _mask = [CCLayerColor layerWithColor:ccc4(0, 0, 0, 0)];
     [self addChild:_mask z:100];
-    [_mask setVisible:NO];
 }
 
 - (void)initButton
@@ -46,30 +44,44 @@
     _resumeButton = [CCMenuItemImage itemWithNormalImage:@"buttonResume@2x.png" selectedImage:@"buttonResume@2x.png" target:self selector:@selector(resumeButtonPressed:)];
     _resumeButton.anchorPoint = ccp(0.5, 0.5);
     _resumeButton.position = ccp([UIScreen mainScreen].bounds.size.height/3., [UIScreen mainScreen].bounds.size.width/2.);
+    _resumeButton.opacity = 0;
     
     _restartButton = [CCMenuItemImage itemWithNormalImage:@"buttonContinue@2x.png" selectedImage:@"buttonContinue@2x.png" target:self selector:@selector(restartButtonPressed:)];
     _restartButton.anchorPoint = ccp(0.5, 0.5);
     _restartButton.position = ccp([UIScreen mainScreen].bounds.size.height*2./3., [UIScreen mainScreen].bounds.size.width/2.);
+    _restartButton.opacity = 0;
     
     CCMenu *controlMenu = [CCMenu menuWithItems:_pauseButton,_resumeButton,_restartButton, nil];
     controlMenu.position = CGPointZero;
     [self addChild:controlMenu z:200];
 }
 
+- (void)fadeToRunningMode
+{
+    [_mask runAction:[CCFadeOut actionWithDuration:0.3]];
+    [_resumeButton runAction:[CCFadeOut actionWithDuration:0.3]];
+    [_restartButton runAction:[CCFadeOut actionWithDuration:0.3]];
+
+    [_pauseButton runAction:[CCFadeIn actionWithDuration:0.3]];
+}
+
+- (void)fadeToPauseMode
+{
+    [_mask runAction:[CCFadeTo actionWithDuration:0.3 opacity:200]];
+    [_resumeButton runAction:[CCFadeIn actionWithDuration:0.3]];
+    [_restartButton runAction:[CCFadeIn actionWithDuration:0.3]];
+    
+    [_pauseButton runAction:[CCFadeOut actionWithDuration:0.3]];
+}
+
 - (void)updateStatus
 {
     switch (_currentStatus) {
         case SRStatusRunning:
-            _pauseButton.visible = YES;
-            _resumeButton.visible = NO;
-            _restartButton.visible = NO;
-            [_mask setVisible:NO];
+            [self fadeToRunningMode];
             break;
         case SRStatusPause:
-            _pauseButton.visible = NO;
-            _resumeButton.visible = YES;
-            _restartButton.visible = YES;
-            [_mask setVisible:YES];
+            [self fadeToPauseMode];
             break;
         case SRStatusOther:
             break;
@@ -100,6 +112,12 @@
 - (void)restartButtonPressed:(id)sender
 {
     [self.delegate gameControlLayerDidPressRestartButton:self];
+}
+
+- (void)dealloc
+{
+    [self.delegate release];
+    [super dealloc];
 }
 
 @end

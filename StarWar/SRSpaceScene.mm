@@ -12,10 +12,10 @@
 #import "SRSpaceLayer.h"
 #import "SRGameControlLayer.h"
 #import "SRControlLayer.h"
-
+#import "SRGameOverLayer.h"
 #import "SRGameOverBoardLayer.h"
 
-@interface SRSpaceScene () <SRControlLayerDelegate, SRGameControlLayerDelegate>
+@interface SRSpaceScene () <SRControlLayerDelegate, SRGameControlLayerDelegate, SRGameOverLayerProtocal>
 
 @end
 
@@ -25,6 +25,7 @@
     SRGameControlLayer *_gameControlLayer;
     SRControlLayer *_controlLayer;
     CCLayerColor *_darkBlueBackground;
+    SRGameOverLayer *_gameOverLayer;
 }
 
 - (void)onEnter
@@ -44,6 +45,15 @@
     
     _darkBlueBackground = [CCLayerColor layerWithColor:menuBackgroundColor];
     [self addChild:_darkBlueBackground z:zBackgroundLayer];
+}
+
+- (void)showGameOverLayer
+{
+    if (!_gameOverLayer) {
+        _gameOverLayer = [SRGameOverLayer node];
+        _gameOverLayer.delegate = self;
+        [self addChild:_gameOverLayer z:zGameOverLayer];
+    }
 }
 
 #pragma mark - Control The Scene
@@ -80,8 +90,7 @@
 - (void)controlLayer:(SRControlLayer *)controlLayer gameOverWithFinalScore:(NSInteger)score
 {
     [_spaceLayer stopSchedule];
-    CCScene *newScene = [SRGameOverBoardLayer sceneWithFinalScore:score];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:newScene]];
+    [self showGameOverLayer];
 }
 
 #pragma mark - SRGameControlLayerDelegate Implement
@@ -97,6 +106,18 @@
 }
 
 - (void)gameControlLayerDidPressRestartButton:(SRGameControlLayer *)controlLayer
+{
+    [self restart];
+}
+
+#pragma mark - SRGameOverLayerDelegate Implement
+
+- (void)gameOverLayerDidPressMainMenuButton:(SRGameOverLayer *)layer
+{
+    
+}
+
+- (void)gameOverLayerDidPressRestartButton:(SRGameOverLayer *)layer
 {
     [self restart];
 }
