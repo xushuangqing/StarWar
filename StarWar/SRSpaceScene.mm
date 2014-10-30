@@ -47,11 +47,12 @@
     [self addChild:_darkBlueBackground z:zBackgroundLayer];
 }
 
-- (void)showGameOverLayer
+- (void)showGameOverLayerWithFinalScore:(NSInteger)score
 {
     if (!_gameOverLayer) {
         _gameOverLayer = [SRGameOverLayer node];
         _gameOverLayer.delegate = self;
+        [_gameOverLayer setFinalScore:score];
         [self addChild:_gameOverLayer z:zGameOverLayer];
     }
 }
@@ -92,7 +93,7 @@
 - (void)controlLayer:(SRControlLayer *)controlLayer gameOverWithFinalScore:(NSInteger)score
 {
     [_spaceLayer stopSchedule];
-    [self showGameOverLayer];
+    [self showGameOverLayerWithFinalScore:score];
 }
 
 #pragma mark - SRGameControlLayerDelegate Implement

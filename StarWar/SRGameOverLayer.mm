@@ -25,6 +25,11 @@
     return self;
 }
 
+- (void)setFinalScore:(NSInteger)score
+{
+    
+}
+
 - (void)initMask
 {
     _mask = [CCLayerColor layerWithColor:ccc4(0, 0, 0, 0)];
