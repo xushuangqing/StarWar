@@ -9,7 +9,6 @@
 #import "cocos2d.h"
 #import "SRControlLayer.h"
 #import "SRConstants.h"
-#import "SRGameOverBoardLayer.h"
 
 @implementation SRControlLayer
 {

@@ -13,7 +13,7 @@
 #import "SRGameControlLayer.h"
 #import "SRControlLayer.h"
 #import "SRGameOverLayer.h"
-#import "SRGameOverBoardLayer.h"
+#import "SRMainMenuLayer.h"
 
 @interface SRSpaceScene () <SRControlLayerDelegate, SRGameControlLayerDelegate, SRGameOverLayerProtocal>
 
@@ -116,7 +116,7 @@
 
 - (void)gameOverLayerDidPressMainMenuButton:(SRGameOverLayer *)layer
 {
-    
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRMainMenuLayer scene]]];
 }
 
 - (void)gameOverLayerDidPressRestartButton:(SRGameOverLayer *)layer
