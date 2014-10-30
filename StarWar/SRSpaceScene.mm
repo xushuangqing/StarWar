@@ -61,12 +61,14 @@
 - (void)pause
 {
     [_spaceLayer pause];
+    [_controlLayer setMenuEnabled:NO];
     [_gameControlLayer changeGameStatusTo:SRStatusPause];
 }
 
 - (void)resume
 {
     [_spaceLayer resume];
+    [_controlLayer setMenuEnabled:YES];
     [_gameControlLayer changeGameStatusTo:SRStatusRunning];
 }
 

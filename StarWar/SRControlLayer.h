@@ -14,6 +14,8 @@
 
 @property (retain) id<SRControlLayerDelegate> delegate;
 
+- (void)setMenuEnabled:(BOOL)enabled;
+
 @end
 
 @protocol SRControlLayerDelegate <NSObject>

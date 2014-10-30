@@ -16,6 +16,7 @@
     CCLabelAtlas* _label;
     CCMenuItem *_plusButton;
     CCMenuItem *_minusButton;
+    CCMenu *_menu;
     NSInteger _score;
 }
 
@@ -49,9 +50,9 @@
     _minusButton.anchorPoint = ccp(1, 0);
     _minusButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
     
-    CCMenu *controlMenu = [CCMenu menuWithItems:_plusButton, _minusButton, nil];
-    controlMenu.position = CGPointZero;
-    [self addChild:controlMenu];
+    _menu = [CCMenu menuWithItems:_plusButton, _minusButton, nil];
+    _menu.position = CGPointZero;
+    [self addChild:_menu];
 }
 
 - (void)initScoreBoard
@@ -119,6 +120,11 @@
 - (void)gameOver:(NSNotification *)notification
 {
     [self.delegate controlLayer:self gameOverWithFinalScore:_score];
+}
+
+- (void)setMenuEnabled:(BOOL)enabled
+{
+    [_menu setEnabled:enabled];
 }
 
 -(void) dealloc
