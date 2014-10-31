@@ -39,15 +39,19 @@
 
 - (void)initButton
 {
-    _mainMenuButton = [CCMenuItemImage itemWithNormalImage:@"buttonResume@2x.png" selectedImage:@"buttonResume@2x.png" target:self selector:@selector(mainMenuButtonPressed:)];
+    CCMenuItemImage *gameOverLabel = [CCMenuItemImage itemWithNormalImage:@"labelGameOver@2x.png" selectedImage:@"labelGameOver@2x.png"];
+    gameOverLabel.anchorPoint = ccp(0.5, 0.0);
+    gameOverLabel.position = ccp([UIScreen mainScreen].bounds.size.height/2., 200);
+
+    _mainMenuButton = [CCMenuItemImage itemWithNormalImage:@"buttonMainMenuS@2x.png" selectedImage:@"buttonMainMenuS@2x.png" target:self selector:@selector(mainMenuButtonPressed:)];
     _mainMenuButton.anchorPoint = ccp(0.5, 0.5);
-    _mainMenuButton.position = ccp([UIScreen mainScreen].bounds.size.height/3., [UIScreen mainScreen].bounds.size.width/2.);
+    _mainMenuButton.position = ccp([UIScreen mainScreen].bounds.size.height-40., 40.);
     
-    _restartButton = [CCMenuItemImage itemWithNormalImage:@"buttonContinue@2x.png" selectedImage:@"buttonContinue@2x.png" target:self selector:@selector(restartButtonPressed:)];
+    _restartButton = [CCMenuItemImage itemWithNormalImage:@"buttonContinueS@2x.png" selectedImage:@"buttonContinueS@2x.png" target:self selector:@selector(restartButtonPressed:)];
     _restartButton.anchorPoint = ccp(0.5, 0.5);
-    _restartButton.position = ccp([UIScreen mainScreen].bounds.size.height*2./3., [UIScreen mainScreen].bounds.size.width/2.);
+    _restartButton.position = ccp([UIScreen mainScreen].bounds.size.height-120., 40.);
     
-    CCMenu *controlMenu = [CCMenu menuWithItems:_mainMenuButton,_restartButton, nil];
+    CCMenu *controlMenu = [CCMenu menuWithItems:gameOverLabel, _mainMenuButton, _restartButton, nil];
     controlMenu.position = CGPointZero;
     controlMenu.opacity = 0;
     [self addChild:controlMenu z:200];

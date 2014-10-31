@@ -226,6 +226,9 @@
 		F7BAA429199A27EF008AEC72 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BAA426199A27EF008AEC72 /* Icon-60@2x.png */; };
 		F7BAA42A199A27EF008AEC72 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BAA427199A27EF008AEC72 /* Icon-76.png */; };
 		F7BAA42B199A27EF008AEC72 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BAA428199A27EF008AEC72 /* Icon-76@2x.png */; };
+		F7C3FBE81A03C0C000AA7592 /* buttonContinueS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C3FBE51A03C0C000AA7592 /* buttonContinueS@2x.png */; };
+		F7C3FBE91A03C0C000AA7592 /* buttonMainMenuS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C3FBE61A03C0C000AA7592 /* buttonMainMenuS@2x.png */; };
+		F7C3FBEA1A03C0C000AA7592 /* labelGameOver@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C3FBE71A03C0C000AA7592 /* labelGameOver@2x.png */; };
 		F7C49CED19CD4BA900D8D2BE /* earth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C49CEC19CD4BA900D8D2BE /* earth@2x.png */; };
 		F7C49CEF19CD4DCC00D8D2BE /* backgroundEarth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C49CEE19CD4DCC00D8D2BE /* backgroundEarth@2x.png */; };
 		F7C49CF419CD580C00D8D2BE /* buttonHelp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C49CF019CD580C00D8D2BE /* buttonHelp@2x.png */; };
@@ -671,6 +674,9 @@
 		F7BAA426199A27EF008AEC72 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Resources/Icon-60@2x.png"; sourceTree = "<group>"; };
 		F7BAA427199A27EF008AEC72 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76.png"; path = "Resources/Icon-76.png"; sourceTree = "<group>"; };
 		F7BAA428199A27EF008AEC72 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76@2x.png"; path = "Resources/Icon-76@2x.png"; sourceTree = "<group>"; };
+		F7C3FBE51A03C0C000AA7592 /* buttonContinueS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonContinueS@2x.png"; path = "Resources/buttonContinueS@2x.png"; sourceTree = "<group>"; };
+		F7C3FBE61A03C0C000AA7592 /* buttonMainMenuS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonMainMenuS@2x.png"; path = "Resources/buttonMainMenuS@2x.png"; sourceTree = "<group>"; };
+		F7C3FBE71A03C0C000AA7592 /* labelGameOver@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "labelGameOver@2x.png"; path = "Resources/labelGameOver@2x.png"; sourceTree = "<group>"; };
 		F7C49CEC19CD4BA900D8D2BE /* earth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "earth@2x.png"; path = "Resources/earth@2x.png"; sourceTree = "<group>"; };
 		F7C49CEE19CD4DCC00D8D2BE /* backgroundEarth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroundEarth@2x.png"; path = "Resources/backgroundEarth@2x.png"; sourceTree = "<group>"; };
 		F7C49CF019CD580C00D8D2BE /* buttonHelp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonHelp@2x.png"; path = "Resources/buttonHelp@2x.png"; sourceTree = "<group>"; };
@@ -841,6 +847,9 @@
 		4AAA9AA818FA2BFA00565381 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F7C3FBE51A03C0C000AA7592 /* buttonContinueS@2x.png */,
+				F7C3FBE61A03C0C000AA7592 /* buttonMainMenuS@2x.png */,
+				F7C3FBE71A03C0C000AA7592 /* labelGameOver@2x.png */,
 				F7A0BA3819F7CF54009D9959 /* number@2x.png */,
 				F7A0BA3219F7CD60009D9959 /* buttonContinue@2x.png */,
 				F7A0BA3319F7CD60009D9959 /* buttonPause@2x.png */,
@@ -1480,13 +1489,16 @@
 				4AAA9C1518FA2BFC00565381 /* ChangeLog in Resources */,
 				4AADF50519272448001C81A5 /* titleGlobleTop100.png in Resources */,
 				F7C49CF919CD597F00D8D2BE /* red_star@2x.png in Resources */,
+				F7C3FBEA1A03C0C000AA7592 /* labelGameOver@2x.png in Resources */,
 				4A988B99191A5A1700A2C3D8 /* plane.png in Resources */,
 				4A9FDB061925FA19001D5D13 /* buttonPlay@2x.png in Resources */,
+				F7C3FBE91A03C0C000AA7592 /* buttonMainMenuS@2x.png in Resources */,
 				F7C49CF419CD580C00D8D2BE /* buttonHelp@2x.png in Resources */,
 				F7BAA429199A27EF008AEC72 /* Icon-60@2x.png in Resources */,
 				4AAA9AAC18FA2BFA00565381 /* Default@2x.png in Resources */,
 				F7BAA42B199A27EF008AEC72 /* Icon-76@2x.png in Resources */,
 				4AAA9AAA18FA2BFA00565381 /* Default.png in Resources */,
+				F7C3FBE81A03C0C000AA7592 /* buttonContinueS@2x.png in Resources */,
 				4A97C17E191E357A007C1EAE /* plus.png in Resources */,
 				4A9FDB0C1925FC30001D5D13 /* laser.png in Resources */,
 				F7A0BA3519F7CD60009D9959 /* buttonContinue@2x.png in Resources */,
