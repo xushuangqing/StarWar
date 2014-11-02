@@ -9,6 +9,8 @@
 #import "SRGameOverLayer.h"
 #import "cocos2d.h"
 
+static NSString * const HIGH_SCORE = @"highScore";
+
 @implementation SRGameOverLayer
 {
     CCLayerColor *_mask;
@@ -27,7 +29,25 @@
 
 - (void)setFinalScore:(NSInteger)score
 {
-    
+    [self saveHighScore:score];
+    [self initScoreBoardWithScore:score highestScore:[self getHighScore]];
+}
+
+- (void)saveHighScore:(NSInteger)score
+{
+    NSNumber *highestScore = [[NSUserDefaults standardUserDefaults] objectForKey:HIGH_SCORE];
+    if (!highestScore || highestScore.integerValue < score) {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:score] forKey:HIGH_SCORE];
+    }
+}
+
+- (NSInteger)getHighScore
+{
+    NSNumber *highestScore = [[NSUserDefaults standardUserDefaults] objectForKey:HIGH_SCORE];
+    if (!highestScore) {
+        return 0;
+    }
+    return highestScore.integerValue;
 }
 
 - (void)initMask
@@ -57,6 +77,19 @@
     [self addChild:controlMenu z:200];
     
     [controlMenu runAction:[CCFadeIn actionWithDuration:0.3]];
+}
+
+- (void)initScoreBoardWithScore:(NSInteger)score highestScore:(NSInteger)highestScore
+{
+    CCLabelAtlas *scoreLabel = [CCLabelAtlas labelWithString:[NSString stringWithFormat:@"%d", score] charMapFile:@"number@2x.png" itemWidth:23 itemHeight:31 startCharMap:'0'];
+    scoreLabel.position = ccp([UIScreen mainScreen].bounds.size.height/3, 100);
+    scoreLabel.anchorPoint = ccp(0.5, 0.5);
+    [self addChild:scoreLabel z:200];
+    
+    CCLabelAtlas *highestScoreLabel = [CCLabelAtlas labelWithString:[NSString stringWithFormat:@"%d", highestScore] charMapFile:@"number@2x.png" itemWidth:23 itemHeight:31 startCharMap:'0'];
+    highestScoreLabel.position = ccp([UIScreen mainScreen].bounds.size.height*2/3, 100);
+    highestScoreLabel.anchorPoint = ccp(0.5, 0.5);
+    [self addChild:highestScoreLabel z:200];
 }
 
 - (void)mainMenuButtonPressed:(id)sender
