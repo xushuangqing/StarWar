@@ -82,7 +82,7 @@
 
 - (void)initSpaceShip
 {
-    _spaceShip = [SRSpaceShip spriteWithFile:@"spaceShip.png"];
+    _spaceShip = [SRSpaceShip spriteWithFile:@"spaceship@2x.png"];
     b2Vec2 position(2, 3);
     b2Vec2 velocity(0.7, 0.7);
     [_spaceShip createBodyForWorld:_world withPosition:position withGeocentric:_earth.geocentric withVelocity:velocity];
@@ -91,7 +91,7 @@
 
 - (void)initFire
 {
-    _fire = [SRFire spriteWithFile:@"fire.png"];
+    _fire = [SRFire spriteWithFile:@"fire@2x.png"];
     [self addChild:_fire];
 }
 

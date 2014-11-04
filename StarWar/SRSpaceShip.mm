@@ -13,6 +13,7 @@
 @implementation SRSpaceShip
 {
     CCSprite *_shine;
+    CCAction *_repeatedShiningAction;
 }
 
 - (id)initWithFile:(NSString *)filename
@@ -20,11 +21,12 @@
     if (self = [super initWithFile:filename]) {
         self.anchorPoint = ccp(0, 0.5);
 
-        _shine = [CCSprite spriteWithFile:@"red_star@2x.png"];
-        _shine.anchorPoint = CGPointMake(0.5, 0.5);
-        _shine.position = CGPointMake(10, 10);
+        _shine = [CCSprite spriteWithFile:@"light1@2x.png"];
+        _shine.anchorPoint = CGPointMake(0, 0.5);
+        _shine.position = CGPointMake(0, 38);
         [self addChild:_shine];
         _shine.visible = NO;
+        [self initShineAnimation];
     }
     return self;
 }
@@ -83,11 +85,24 @@
 - (void)shieldDidTimeOut
 {
     _shine.visible = NO;
+    [_shine stopAction:_repeatedShiningAction];
     for (b2Fixture* fixture=self.b2Body->GetFixtureList(); fixture; fixture=fixture->GetNext()) {
         b2Filter filter = fixture->GetFilterData();
         filter.maskBits = MaskBitsSpaceShip;
         fixture->SetFilterData(filter);
     }
+}
+
+- (void)initShineAnimation
+{
+    CCSpriteFrame *frame1 = [CCSpriteFrame frameWithTextureFilename:@"light1@2x.png" rect:CGRectMake(0, 0, 95, 107)];
+    CCSpriteFrame *frame2 = [CCSpriteFrame frameWithTextureFilename:@"light2@2x.png" rect:CGRectMake(0, 0, 95, 107)];
+    CCSpriteFrame *frame3 = [CCSpriteFrame frameWithTextureFilename:@"light3@2x.png" rect:CGRectMake(0, 0, 95, 107)];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:@[frame1, frame2, frame3] delay:0.1];
+    CCAnimate *animate = [CCAnimate actionWithAnimation:animation];
+
+    _repeatedShiningAction = [CCRepeatForever actionWithAction:animate];
+    [_shine runAction:_repeatedShiningAction];
 }
 
 - (void)accelerate
