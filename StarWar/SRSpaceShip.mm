@@ -85,7 +85,6 @@
 - (void)shieldDidTimeOut
 {
     _shine.visible = NO;
-    [_shine stopAction:_repeatedShiningAction];
     for (b2Fixture* fixture=self.b2Body->GetFixtureList(); fixture; fixture=fixture->GetNext()) {
         b2Filter filter = fixture->GetFilterData();
         filter.maskBits = MaskBitsSpaceShip;
