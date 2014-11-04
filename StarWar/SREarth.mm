@@ -11,7 +11,7 @@
 
 @implementation SREarth
 
--(id) initWithFile:(NSString *)filename
+- (id)initWithFile:(NSString *)filename
 {
     if (self = [super initWithFile:filename]) {
         b2Vec2 center([[UIScreen mainScreen] bounds].size.height/PTM_RATIO/2, -8);
@@ -20,7 +20,7 @@
     return self;
 }
 
--(void) createBodyForWorld:(b2World *)world withRadius:(float)radius withAngularVelocity:(float)angularVelocity
+- (void)createBodyForWorld:(b2World *)world withRadius:(float)radius withAngularVelocity:(float)angularVelocity
 {
     b2BodyDef bodyDef;
     bodyDef.type = b2_kinematicBody;
@@ -48,7 +48,5 @@
     [self setB2Body:body];
     [self scheduleUpdate];
 }
-
-
 
 @end

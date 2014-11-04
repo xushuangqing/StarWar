@@ -13,6 +13,6 @@
 
 @property b2Vec2 geocentric;
 
--(void) createBodyForWorld:(b2World *)world withRadius:(float)radius withAngularVelocity:(float)angularVelocity;
+- (void)createBodyForWorld:(b2World *)world withRadius:(float)radius withAngularVelocity:(float)angularVelocity;
 
 @end
