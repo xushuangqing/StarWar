@@ -21,8 +21,6 @@ static NSString * const HIGH_SCORE = @"highScore";
 - (id)init
 {
     if (self = [super init]) {
-        [self initButton];
-        [self initMask];
     }
     return self;
 }
@@ -31,6 +29,12 @@ static NSString * const HIGH_SCORE = @"highScore";
 {
     [self saveHighScore:score];
     [self initScoreBoardWithScore:score highestScore:[self getHighScore]];
+}
+
+- (void)initGameOverMenu
+{
+    [self initButton];
+    [self initMask];
 }
 
 - (void)saveHighScore:(NSInteger)score
@@ -62,6 +66,14 @@ static NSString * const HIGH_SCORE = @"highScore";
     CCMenuItemImage *gameOverLabel = [CCMenuItemImage itemWithNormalImage:@"labelGameOver@2x.png" selectedImage:@"labelGameOver@2x.png"];
     gameOverLabel.anchorPoint = ccp(0.5, 0.0);
     gameOverLabel.position = ccp([UIScreen mainScreen].bounds.size.height/2., 200);
+    
+    CCMenuItemImage *scoreTitle = [CCMenuItemImage itemWithNormalImage:@"labelScore@2x.png" selectedImage:@"labelScore@2x.png"];
+    scoreTitle.anchorPoint = ccp(0.5, 0.5);
+    scoreTitle.position = ccp([UIScreen mainScreen].bounds.size.height/3, 150);
+    
+    CCMenuItemImage *highScoreTitle = [CCMenuItemImage itemWithNormalImage:@"labelHighScore@2x.png" selectedImage:@"labelHighScore@2x.png"];
+    highScoreTitle.anchorPoint = ccp(0.5, 0.5);
+    highScoreTitle.position = ccp([UIScreen mainScreen].bounds.size.height/3*2, 150);
 
     _mainMenuButton = [CCMenuItemImage itemWithNormalImage:@"buttonMainMenuS@2x.png" selectedImage:@"buttonMainMenuS@2x.png" target:self selector:@selector(mainMenuButtonPressed:)];
     _mainMenuButton.anchorPoint = ccp(0.5, 0.5);
@@ -71,7 +83,7 @@ static NSString * const HIGH_SCORE = @"highScore";
     _restartButton.anchorPoint = ccp(0.5, 0.5);
     _restartButton.position = ccp([UIScreen mainScreen].bounds.size.height-120., 40.);
     
-    CCMenu *controlMenu = [CCMenu menuWithItems:gameOverLabel, _mainMenuButton, _restartButton, nil];
+    CCMenu *controlMenu = [CCMenu menuWithItems:gameOverLabel, scoreTitle, highScoreTitle, _mainMenuButton, _restartButton, nil];
     controlMenu.position = CGPointZero;
     controlMenu.opacity = 0;
     [self addChild:controlMenu z:200];

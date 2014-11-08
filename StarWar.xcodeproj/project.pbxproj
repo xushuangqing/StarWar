@@ -218,6 +218,8 @@
 		F734D6A71A08F1A0007CA99C /* spaceship@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F734D6A21A08F1A0007CA99C /* spaceship@2x.png */; };
 		F7463C5919FCFE9E0032B6ED /* SRGameControlLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7463C5819FCFE9E0032B6ED /* SRGameControlLayer.mm */; };
 		F749E6CF1A0258230023EE9D /* SRGameOverLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F749E6CE1A0258230023EE9D /* SRGameOverLayer.mm */; };
+		F759F6981A0E0E4D0047C6B0 /* labelHighScore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F759F6961A0E0E4D0047C6B0 /* labelHighScore@2x.png */; };
+		F759F6991A0E0E4D0047C6B0 /* labelScore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F759F6971A0E0E4D0047C6B0 /* labelScore@2x.png */; };
 		F77512CC19FE5E48008F2F18 /* SRSpaceScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = F77512CB19FE5E48008F2F18 /* SRSpaceScene.mm */; };
 		F7A0BA3519F7CD60009D9959 /* buttonContinue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3219F7CD60009D9959 /* buttonContinue@2x.png */; };
 		F7A0BA3619F7CD60009D9959 /* buttonPause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3319F7CD60009D9959 /* buttonPause@2x.png */; };
@@ -667,6 +669,8 @@
 		F7463C5819FCFE9E0032B6ED /* SRGameControlLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRGameControlLayer.mm; sourceTree = "<group>"; };
 		F749E6CD1A0258230023EE9D /* SRGameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRGameOverLayer.h; sourceTree = "<group>"; };
 		F749E6CE1A0258230023EE9D /* SRGameOverLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRGameOverLayer.mm; sourceTree = "<group>"; };
+		F759F6961A0E0E4D0047C6B0 /* labelHighScore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "labelHighScore@2x.png"; path = "Resources/labelHighScore@2x.png"; sourceTree = "<group>"; };
+		F759F6971A0E0E4D0047C6B0 /* labelScore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "labelScore@2x.png"; path = "Resources/labelScore@2x.png"; sourceTree = "<group>"; };
 		F77512CA19FE5E48008F2F18 /* SRSpaceScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSpaceScene.h; sourceTree = "<group>"; };
 		F77512CB19FE5E48008F2F18 /* SRSpaceScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRSpaceScene.mm; sourceTree = "<group>"; };
 		F7A0BA3219F7CD60009D9959 /* buttonContinue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonContinue@2x.png"; path = "Resources/buttonContinue@2x.png"; sourceTree = "<group>"; };
@@ -857,6 +861,8 @@
 		4AAA9AA818FA2BFA00565381 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F759F6961A0E0E4D0047C6B0 /* labelHighScore@2x.png */,
+				F759F6971A0E0E4D0047C6B0 /* labelScore@2x.png */,
 				F734D69E1A08F1A0007CA99C /* fire@2x.png */,
 				F734D69F1A08F1A0007CA99C /* light1@2x.png */,
 				F734D6A01A08F1A0007CA99C /* light2@2x.png */,
@@ -1504,12 +1510,14 @@
 				4AAC408C19264F81004635FB /* titleYourFinalScore.png in Resources */,
 				4AAA9C1518FA2BFC00565381 /* ChangeLog in Resources */,
 				4AADF50519272448001C81A5 /* titleGlobleTop100.png in Resources */,
+				F759F6991A0E0E4D0047C6B0 /* labelScore@2x.png in Resources */,
 				F7C49CF919CD597F00D8D2BE /* red_star@2x.png in Resources */,
 				F7C3FBEA1A03C0C000AA7592 /* labelGameOver@2x.png in Resources */,
 				4A988B99191A5A1700A2C3D8 /* plane.png in Resources */,
 				4A9FDB061925FA19001D5D13 /* buttonPlay@2x.png in Resources */,
 				F7C3FBE91A03C0C000AA7592 /* buttonMainMenuS@2x.png in Resources */,
 				F734D6A41A08F1A0007CA99C /* light1@2x.png in Resources */,
+				F759F6981A0E0E4D0047C6B0 /* labelHighScore@2x.png in Resources */,
 				F7C49CF419CD580C00D8D2BE /* buttonHelp@2x.png in Resources */,
 				F7BAA429199A27EF008AEC72 /* Icon-60@2x.png in Resources */,
 				4AAA9AAC18FA2BFA00565381 /* Default@2x.png in Resources */,

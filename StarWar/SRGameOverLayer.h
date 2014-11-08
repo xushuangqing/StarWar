@@ -14,6 +14,7 @@
 
 @property (nonatomic, retain) id<SRGameOverLayerProtocal> delegate;
 
+- (void)initGameOverMenu;
 - (void)setFinalScore:(NSInteger)score;
 
 @end

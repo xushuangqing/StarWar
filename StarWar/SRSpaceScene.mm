@@ -53,6 +53,7 @@
         _gameOverLayer = [SRGameOverLayer node];
         _gameOverLayer.delegate = self;
         [_gameOverLayer setFinalScore:score];
+        [_gameOverLayer initGameOverMenu];
         [self addChild:_gameOverLayer z:zGameOverLayer];
     }
 }
