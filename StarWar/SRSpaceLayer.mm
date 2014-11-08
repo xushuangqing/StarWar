@@ -98,7 +98,7 @@
 - (void)initEarth
 {
     _earth = [SREarth spriteWithFile:@"earth@2x.png"];
-    [_earth createBodyForWorld:_world withRadius:11.5f withAngularVelocity:0];
+    [_earth createBodyForWorld:_world withRadius:11.3f withAngularVelocity:0];
     [self addChild:_earth];
 }
 
