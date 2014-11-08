@@ -113,7 +113,7 @@
 {
 
     CGRect r = CGRectMake(0, 0, LaserMaxWidth, LaserHeight);
-    _laser = [SRLaser spriteWithFile:@"laser.png" rect:r];
+    _laser = [SRLaser spriteWithFile:@"laser@2x.png" rect:r];
     
     ccTexParams params = {
         GL_LINEAR,
@@ -128,7 +128,7 @@
 
 - (void)initPlaneBatch
 {
-    _planeBatch = [SRPlaneBatch batchNodeWithFile:@"plane.png"];
+    _planeBatch = [SRPlaneBatch batchNodeWithFile:@"plane@2x.png"];
     [_planeBatch createPlaneBatchForWorld:_world withGeocentric:_earth.geocentric];
     [self addChild:_planeBatch];
 }

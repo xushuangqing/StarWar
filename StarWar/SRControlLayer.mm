@@ -41,11 +41,11 @@
 
 - (void)initButton
 {
-    _plusButton = [CCMenuItemImage itemWithNormalImage:@"plus.png" selectedImage:@"plus.png" target:self selector:@selector(plusButtonPressed:)];
+    _plusButton = [CCMenuItemImage itemWithNormalImage:@"plus@2x.png" selectedImage:@"plus@2x.png" target:self selector:@selector(plusButtonPressed:)];
     _plusButton.anchorPoint = ccp(0, 0);
     _plusButton.position = ccp(0, 0);
     
-    _minusButton = [CCMenuItemImage itemWithNormalImage:@"minus.png" selectedImage:@"minus.png" target:self selector:@selector(minusButtonPressed:)];
+    _minusButton = [CCMenuItemImage itemWithNormalImage:@"minus@2x.png" selectedImage:@"minus@2x.png" target:self selector:@selector(minusButtonPressed:)];
     _minusButton.anchorPoint = ccp(1, 0);
     _minusButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
     
