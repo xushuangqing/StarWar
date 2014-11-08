@@ -22,11 +22,15 @@
 - (id)init
 {
     if (self = [super init]) {
-        [self initButton];
-        [self initMask];
         _currentStatus = SRStatusRunning;
     }
     return self;
+}
+
+- (void)onEnter {
+    [super onEnter];
+    [self initButton];
+    [self initMask];
 }
 
 - (void)initMask
@@ -45,11 +49,13 @@
     _resumeButton.anchorPoint = ccp(0.5, 0.5);
     _resumeButton.position = ccp([UIScreen mainScreen].bounds.size.height/3., [UIScreen mainScreen].bounds.size.width/2.);
     _resumeButton.opacity = 0;
+    [_resumeButton setIsEnabled:NO];
     
     _restartButton = [CCMenuItemImage itemWithNormalImage:@"buttonContinue@2x.png" selectedImage:@"buttonContinue@2x.png" target:self selector:@selector(restartButtonPressed:)];
     _restartButton.anchorPoint = ccp(0.5, 0.5);
     _restartButton.position = ccp([UIScreen mainScreen].bounds.size.height*2./3., [UIScreen mainScreen].bounds.size.width/2.);
     _restartButton.opacity = 0;
+    [_restartButton setIsEnabled:NO];
     
     CCMenu *controlMenu = [CCMenu menuWithItems:_pauseButton,_resumeButton,_restartButton, nil];
     controlMenu.position = CGPointZero;
@@ -60,18 +66,24 @@
 {
     [_mask runAction:[CCFadeOut actionWithDuration:0.3]];
     [_resumeButton runAction:[CCFadeOut actionWithDuration:0.3]];
+    [_resumeButton setIsEnabled:NO];
     [_restartButton runAction:[CCFadeOut actionWithDuration:0.3]];
+    [_resumeButton setIsEnabled:NO];
 
     [_pauseButton runAction:[CCFadeIn actionWithDuration:0.3]];
+    [_pauseButton setIsEnabled:YES];
 }
 
 - (void)fadeToPauseMode
 {
     [_mask runAction:[CCFadeTo actionWithDuration:0.3 opacity:200]];
     [_resumeButton runAction:[CCFadeIn actionWithDuration:0.3]];
+    [_resumeButton setIsEnabled:YES];
     [_restartButton runAction:[CCFadeIn actionWithDuration:0.3]];
+    [_resumeButton setIsEnabled:YES];
     
     [_pauseButton runAction:[CCFadeOut actionWithDuration:0.3]];
+    [_pauseButton setIsEnabled:NO];
 }
 
 - (void)updateStatus
