@@ -62,13 +62,13 @@
     [self addChild:_label];
 }
 
-- (void)scorePlus: (NSNotification *) notification
+- (void)scorePlus:(NSNotification *)notification
 {
     _score++;
     _label.string = [NSString stringWithFormat:@"%d", _score];
 }
 
-- (void)buttonPressed: (id)sender isPlusButton: (BOOL)plus
+- (void)buttonPressed:(id)sender isPlusButton:(BOOL)plus
 {
     CCMenuItem *menuItem = (CCMenuItem*) sender;
     CGPoint origion = menuItem.position;
@@ -82,28 +82,16 @@
     [menuItem runAction:moveBack];
 }
 
-- (void)plusButtonPressed: (id)sender
+- (void)plusButtonPressed:(id)sender
 {
     [self buttonPressed:sender isPlusButton:YES];
     [self.delegate controlLayerDidPressPlusButton:self];
 }
 
-- (void)minusButtonPressed: (id)sender
+- (void)minusButtonPressed:(id)sender
 {
     [self buttonPressed:sender isPlusButton:NO];
     [self.delegate controlLayerDidPressMinusButton:self];
-}
-
-- (void)disableMenuButton
-{
-    _plusButton.isEnabled = NO;
-    _minusButton.isEnabled = NO;
-}
-
-- (void)enableMenuButton
-{
-    _plusButton.isEnabled = YES;
-    _minusButton.isEnabled = YES;
 }
 
 - (void)watchOverButtonPressed
@@ -126,7 +114,7 @@
     [_menu setEnabled:enabled];
 }
 
--(void) dealloc
+- (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self.delegate release];
