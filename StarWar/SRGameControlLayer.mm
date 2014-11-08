@@ -68,7 +68,7 @@
     [_resumeButton runAction:[CCFadeOut actionWithDuration:0.3]];
     [_resumeButton setIsEnabled:NO];
     [_restartButton runAction:[CCFadeOut actionWithDuration:0.3]];
-    [_resumeButton setIsEnabled:NO];
+    [_restartButton setIsEnabled:NO];
 
     [_pauseButton runAction:[CCFadeIn actionWithDuration:0.3]];
     [_pauseButton setIsEnabled:YES];
@@ -80,7 +80,7 @@
     [_resumeButton runAction:[CCFadeIn actionWithDuration:0.3]];
     [_resumeButton setIsEnabled:YES];
     [_restartButton runAction:[CCFadeIn actionWithDuration:0.3]];
-    [_resumeButton setIsEnabled:YES];
+    [_restartButton setIsEnabled:YES];
     
     [_pauseButton runAction:[CCFadeOut actionWithDuration:0.3]];
     [_pauseButton setIsEnabled:NO];
@@ -91,7 +91,7 @@
     [_resumeButton runAction:[CCFadeOut actionWithDuration:0.5]];
     [_resumeButton setIsEnabled:NO];
     [_restartButton runAction:[CCFadeOut actionWithDuration:0.5]];
-    [_resumeButton setIsEnabled:NO];
+    [_restartButton setIsEnabled:NO];
     [_pauseButton runAction:[CCFadeOut actionWithDuration:0.5]];
     [_pauseButton setIsEnabled:NO];
 }
