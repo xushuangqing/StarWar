@@ -54,7 +54,7 @@ static NSString * const HIGH_SCORE = @"highScore";
 {
     _mask = [CCLayerColor layerWithColor:ccc4(0, 0, 0, 0)];
     [self addChild:_mask z:100];
-    [_mask runAction:[CCFadeTo actionWithDuration:0.3 opacity:200]];
+    [_mask runAction:[CCFadeTo actionWithDuration:0.5 opacity:200]];
 }
 
 - (void)initButton
@@ -76,7 +76,7 @@ static NSString * const HIGH_SCORE = @"highScore";
     controlMenu.opacity = 0;
     [self addChild:controlMenu z:200];
     
-    [controlMenu runAction:[CCFadeIn actionWithDuration:0.3]];
+    [controlMenu runAction:[CCFadeIn actionWithDuration:0.5]];
 }
 
 - (void)initScoreBoardWithScore:(NSInteger)score highestScore:(NSInteger)highestScore

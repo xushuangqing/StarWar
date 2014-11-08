@@ -86,6 +86,16 @@
     [_pauseButton setIsEnabled:NO];
 }
 
+- (void)fadeToStopMode
+{
+    [_resumeButton runAction:[CCFadeOut actionWithDuration:0.5]];
+    [_resumeButton setIsEnabled:NO];
+    [_restartButton runAction:[CCFadeOut actionWithDuration:0.5]];
+    [_resumeButton setIsEnabled:NO];
+    [_pauseButton runAction:[CCFadeOut actionWithDuration:0.5]];
+    [_pauseButton setIsEnabled:NO];
+}
+
 - (void)updateStatus
 {
     switch (_currentStatus) {
@@ -95,7 +105,8 @@
         case SRStatusPause:
             [self fadeToPauseMode];
             break;
-        case SRStatusOther:
+        case SRStatusStop:
+            [self fadeToStopMode];
             break;
         default:
             break;

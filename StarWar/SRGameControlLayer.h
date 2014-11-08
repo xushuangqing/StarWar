@@ -11,7 +11,7 @@
 typedef NS_ENUM(NSUInteger, SRGameStatus) {
     SRStatusRunning,
     SRStatusPause,
-    SRStatusOther,
+    SRStatusStop,
 };
 
 @protocol SRGameControlLayerDelegate;

@@ -93,6 +93,8 @@
 - (void)controlLayer:(SRControlLayer *)controlLayer gameOverWithFinalScore:(NSInteger)score
 {
     [_spaceLayer stopSchedule];
+    [_controlLayer fadeOut];
+    [_gameControlLayer changeGameStatusTo:SRStatusStop];
     [self showGameOverLayerWithFinalScore:score];
 }
 

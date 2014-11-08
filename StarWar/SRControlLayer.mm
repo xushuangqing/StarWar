@@ -54,6 +54,13 @@
     [self addChild:_menu];
 }
 
+- (void)fadeOut
+{
+    [_plusButton runAction:[CCFadeOut actionWithDuration:0.5]];
+    [_minusButton runAction:[CCFadeOut actionWithDuration:0.5]];
+    [_label runAction:[CCFadeOut actionWithDuration:0.5]];
+}
+
 - (void)initScoreBoard
 {
     _label = [CCLabelAtlas labelWithString:@"0" charMapFile:@"number@2x.png" itemWidth:23 itemHeight:31 startCharMap:'0'];

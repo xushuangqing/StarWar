@@ -14,6 +14,7 @@
 
 @property (retain) id<SRControlLayerDelegate> delegate;
 
+- (void)fadeOut;
 - (void)setMenuEnabled:(BOOL)enabled;
 
 @end
