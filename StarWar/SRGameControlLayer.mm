@@ -65,34 +65,34 @@
 - (void)fadeToRunningMode
 {
     [_mask runAction:[CCFadeOut actionWithDuration:0.3]];
-    [_resumeButton runAction:[CCFadeOut actionWithDuration:0.3]];
+    [_resumeButton runAction:[CCFadeTo actionWithDuration:0.3 opacity:0]];
     [_resumeButton setIsEnabled:NO];
-    [_restartButton runAction:[CCFadeOut actionWithDuration:0.3]];
+    [_restartButton runAction:[CCFadeTo actionWithDuration:0.3 opacity:0]];
     [_restartButton setIsEnabled:NO];
 
-    [_pauseButton runAction:[CCFadeIn actionWithDuration:0.3]];
+    [_pauseButton runAction:[CCFadeTo actionWithDuration:0.3 opacity:255]];
     [_pauseButton setIsEnabled:YES];
 }
 
 - (void)fadeToPauseMode
 {
     [_mask runAction:[CCFadeTo actionWithDuration:0.3 opacity:200]];
-    [_resumeButton runAction:[CCFadeIn actionWithDuration:0.3]];
+    [_resumeButton runAction:[CCFadeTo actionWithDuration:0.3 opacity:255]];
     [_resumeButton setIsEnabled:YES];
-    [_restartButton runAction:[CCFadeIn actionWithDuration:0.3]];
+    [_restartButton runAction:[CCFadeTo actionWithDuration:0.3 opacity:255]];
     [_restartButton setIsEnabled:YES];
     
-    [_pauseButton runAction:[CCFadeOut actionWithDuration:0.3]];
+    [_pauseButton runAction:[CCFadeTo actionWithDuration:0.3 opacity:0]];
     [_pauseButton setIsEnabled:NO];
 }
 
 - (void)fadeToStopMode
 {
-    [_resumeButton runAction:[CCFadeOut actionWithDuration:0.5]];
+    [_resumeButton runAction:[CCFadeTo actionWithDuration:0.5 opacity:0]];
     [_resumeButton setIsEnabled:NO];
-    [_restartButton runAction:[CCFadeOut actionWithDuration:0.5]];
+    [_restartButton runAction:[CCFadeTo actionWithDuration:0.5 opacity:0]];
     [_restartButton setIsEnabled:NO];
-    [_pauseButton runAction:[CCFadeOut actionWithDuration:0.5]];
+    [_pauseButton runAction:[CCFadeTo actionWithDuration:0.5 opacity:0]];
     [_pauseButton setIsEnabled:NO];
 }
 
