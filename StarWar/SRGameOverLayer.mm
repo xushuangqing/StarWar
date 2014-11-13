@@ -109,7 +109,7 @@ static NSString * const HIGH_SCORE = @"highScore";
 
 - (void)dealloc
 {
-    [self.delegate release];
+    self.delegate = nil;
     [super dealloc];
 }
 

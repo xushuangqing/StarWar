@@ -139,7 +139,7 @@
 
 - (void)dealloc
 {
-    [self.delegate release];
+    self.delegate = nil;
     [super dealloc];
 }
 

@@ -9,6 +9,7 @@
 #import "SRPlane.h"
 #import "SRConstants.h"
 #import "GB2ShapeCache.h"
+#import "cocos2d.h"
 
 @implementation SRPlane
 

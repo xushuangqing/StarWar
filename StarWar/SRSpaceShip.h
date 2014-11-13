@@ -6,12 +6,8 @@
 //  Copyright 2014年 XuShuangqing. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "cocos2d.h"
-#import "CCPhysicsSprite.h"
 #import "Box2D.h"
 #import "SRAircraft.h"
-
 
 @interface SRSpaceShip : SRAircraft
 

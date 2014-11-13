@@ -7,11 +7,11 @@
 //
 
 #import "CCPhysicsSprite.h"
-#import "cocos2d.h"
 #import "Box2D.h"
 
 @interface SRAircraft : CCPhysicsSprite
 {
     b2Vec2 _geocentric;
 }
+
 @end

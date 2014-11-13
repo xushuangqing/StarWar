@@ -9,6 +9,7 @@
 #import "SRPlaneBatch.h"
 #import "SRConstants.h"
 #import "SRPlane.h"
+#import "cocos2d.h"
 
 @implementation SRPlaneBatch
 {

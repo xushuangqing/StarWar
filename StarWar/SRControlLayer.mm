@@ -126,7 +126,7 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [self.delegate release];
+    self.delegate = nil;
     [super dealloc];
 }
 

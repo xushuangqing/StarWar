@@ -14,8 +14,6 @@
 #import "SRStar.h"
 #import <typeinfo>
 
-//@implementation SRContactListener
-
 void SRContactListener::BeginContact(b2Contact *contact)
 {
     
@@ -39,9 +37,5 @@ void SRContactListener::BeginContact(b2Contact *contact)
             [spriteB touched];
             [spriteA getShield];
         }
-        NSLog(@"touched");
     }
 }
-
-
-//@end

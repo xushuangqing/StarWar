@@ -6,11 +6,12 @@
 //  Copyright (c) 2014年 XuShuangqing. All rights reserved.
 //
 
-#import "cocos2d.h"
-#import "SRMenuLayer.h"
+#import "CCLayer.h"
 
-@interface SRMainMenuLayer : SRMenuLayer
+@class CCScene;
 
-+(CCScene *) scene;
+@interface SRMainMenuLayer : CCLayer
+
++ (CCScene *)scene;
 
 @end

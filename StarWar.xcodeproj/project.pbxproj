@@ -12,20 +12,16 @@
 		4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A971F9D1900B87A00A33EE3 /* SREarth.mm */; };
 		4A97C17D191E357A007C1EAE /* minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A97C179191E357A007C1EAE /* minus@2x.png */; };
 		4A97C17E191E357A007C1EAE /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A97C17A191E357A007C1EAE /* plus@2x.png */; };
-		4A97C183191E3BB2007C1EAE /* SRDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A97C181191E3BB2007C1EAE /* SRDataModel.xcdatamodeld */; };
-		4A97C1CA191E43E9007C1EAE /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A97C1C9191E43E9007C1EAE /* Score.m */; };
 		4A97C1CC191E449A007C1EAE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A97C1CB191E449A007C1EAE /* CoreData.framework */; };
 		4A986E0719021CAE00B68A1B /* SRStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E0619021CAE00B68A1B /* SRStar.mm */; };
 		4A986E0A1902236200B68A1B /* SRContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E091902236200B68A1B /* SRContactListener.mm */; };
 		4A987AFA19223FE900E4ABC1 /* SRMainMenuLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A987AF919223FE900E4ABC1 /* SRMainMenuLayer.mm */; };
 		4A988B99191A5A1700A2C3D8 /* plane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B96191A5A1700A2C3D8 /* plane@2x.png */; };
-		4A99B7C01907535300BCAB7E /* SRLaser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99B7BF1907535300BCAB7E /* SRLaser.mm */; };
 		4A99BA1719076B6400BCAB7E /* SRPlane.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99BA1619076B6400BCAB7E /* SRPlane.mm */; };
 		4A99BA1A19076D3700BCAB7E /* SRPlaneBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99BA1919076D3700BCAB7E /* SRPlaneBatch.mm */; };
 		4A99ECBF18FFF9300092D9A9 /* SRControlLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99ECBE18FFF9300092D9A9 /* SRControlLayer.mm */; };
 		4A9FDB061925FA19001D5D13 /* buttonPlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9FDB051925FA19001D5D13 /* buttonPlay@2x.png */; };
 		4A9FDB0C1925FC30001D5D13 /* laser@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9FDB0B1925FC30001D5D13 /* laser@2x.png */; };
-		4A9FDB1119260381001D5D13 /* SRMenuLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A9FDB1019260381001D5D13 /* SRMenuLayer.mm */; };
 		4AA88C8F191DC80E0063436F /* physicsShape.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AA88C8E191DC80E0063436F /* physicsShape.plist */; };
 		4AAA9A9418FA2BFA00565381 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9318FA2BFA00565381 /* QuartzCore.framework */; };
 		4AAA9A9618FA2BFA00565381 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAA9A9518FA2BFA00565381 /* OpenGLES.framework */; };
@@ -233,9 +229,6 @@
 		4A971F9D1900B87A00A33EE3 /* SREarth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SREarth.mm; sourceTree = "<group>"; };
 		4A97C179191E357A007C1EAE /* minus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "minus@2x.png"; path = "Resources/minus@2x.png"; sourceTree = "<group>"; };
 		4A97C17A191E357A007C1EAE /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plus@2x.png"; path = "Resources/plus@2x.png"; sourceTree = "<group>"; };
-		4A97C182191E3BB2007C1EAE /* SRDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SRDataModel.xcdatamodel; sourceTree = "<group>"; };
-		4A97C1C8191E43E9007C1EAE /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
-		4A97C1C9191E43E9007C1EAE /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 		4A97C1CB191E449A007C1EAE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4A986E0519021CAE00B68A1B /* SRStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStar.h; sourceTree = "<group>"; };
 		4A986E0619021CAE00B68A1B /* SRStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRStar.mm; sourceTree = "<group>"; };
@@ -244,8 +237,6 @@
 		4A987AF819223FE900E4ABC1 /* SRMainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMainMenuLayer.h; sourceTree = "<group>"; };
 		4A987AF919223FE900E4ABC1 /* SRMainMenuLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRMainMenuLayer.mm; sourceTree = "<group>"; };
 		4A988B96191A5A1700A2C3D8 /* plane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plane@2x.png"; path = "Resources/plane@2x.png"; sourceTree = "<group>"; };
-		4A99B7BE1907535300BCAB7E /* SRLaser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLaser.h; sourceTree = "<group>"; };
-		4A99B7BF1907535300BCAB7E /* SRLaser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRLaser.mm; sourceTree = "<group>"; };
 		4A99BA1519076B6400BCAB7E /* SRPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlane.h; sourceTree = "<group>"; };
 		4A99BA1619076B6400BCAB7E /* SRPlane.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRPlane.mm; sourceTree = "<group>"; };
 		4A99BA1819076D3700BCAB7E /* SRPlaneBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlaneBatch.h; sourceTree = "<group>"; };
@@ -255,8 +246,6 @@
 		4A99ECBE18FFF9300092D9A9 /* SRControlLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRControlLayer.mm; sourceTree = "<group>"; };
 		4A9FDB051925FA19001D5D13 /* buttonPlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonPlay@2x.png"; path = "Resources/buttonPlay@2x.png"; sourceTree = "<group>"; };
 		4A9FDB0B1925FC30001D5D13 /* laser@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "laser@2x.png"; path = "Resources/laser@2x.png"; sourceTree = "<group>"; };
-		4A9FDB0F19260381001D5D13 /* SRMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMenuLayer.h; sourceTree = "<group>"; };
-		4A9FDB1019260381001D5D13 /* SRMenuLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRMenuLayer.mm; sourceTree = "<group>"; };
 		4AA88C8E191DC80E0063436F /* physicsShape.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = physicsShape.plist; path = Resources/physicsShape.plist; sourceTree = "<group>"; };
 		4AAA9A9018FA2BFA00565381 /* StarWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AAA9A9318FA2BFA00565381 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -686,16 +675,6 @@
 			name = PhysicsEditorSources;
 			sourceTree = "<group>";
 		};
-		4A97C180191E3B81007C1EAE /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				4A97C1C8191E43E9007C1EAE /* Score.h */,
-				4A97C1C9191E43E9007C1EAE /* Score.m */,
-				4A97C181191E3BB2007C1EAE /* SRDataModel.xcdatamodeld */,
-			);
-			name = CoreData;
-			sourceTree = "<group>";
-		};
 		4A986E0419021C5100B68A1B /* Aircraft */ = {
 			isa = PBXGroup;
 			children = (
@@ -716,19 +695,8 @@
 			children = (
 				4A987AF819223FE900E4ABC1 /* SRMainMenuLayer.h */,
 				4A987AF919223FE900E4ABC1 /* SRMainMenuLayer.mm */,
-				4A9FDB0F19260381001D5D13 /* SRMenuLayer.h */,
-				4A9FDB1019260381001D5D13 /* SRMenuLayer.mm */,
 			);
 			name = MenuLayer;
-			sourceTree = "<group>";
-		};
-		4A98B402190409AF0048E492 /* Bullet */ = {
-			isa = PBXGroup;
-			children = (
-				4A99B7BE1907535300BCAB7E /* SRLaser.h */,
-				4A99B7BF1907535300BCAB7E /* SRLaser.mm */,
-			);
-			name = Bullet;
 			sourceTree = "<group>";
 		};
 		4A99ECBC18FFF8E20092D9A9 /* Controller */ = {
@@ -783,9 +751,7 @@
 				F7B099D019939F6C003D6765 /* Suspensions */,
 				4A987AF719223F9B00E4ABC1 /* MenuLayer */,
 				4A99ECBC18FFF8E20092D9A9 /* Controller */,
-				4A97C180191E3B81007C1EAE /* CoreData */,
 				4A964EB1191B987100C27FAE /* PhysicsEditorSources */,
-				4A98B402190409AF0048E492 /* Bullet */,
 				4A986E0419021C5100B68A1B /* Aircraft */,
 				4AAA9CC818FA2BFD00565381 /* AppDelegate.h */,
 				4AAA9CC918FA2BFD00565381 /* AppDelegate.mm */,
@@ -1472,7 +1438,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AAA9AFE18FA2BFA00565381 /* ccDeprecated.m in Sources */,
-				4A99B7C01907535300BCAB7E /* SRLaser.mm in Sources */,
 				4AAA9CE618FA329000565381 /* SRSpaceLayer.mm in Sources */,
 				4AAA9C9818FA2BFD00565381 /* b2PolygonAndCircleContact.cpp in Sources */,
 				4AAA9BC918FA2BFC00565381 /* ccCArray.m in Sources */,
@@ -1484,7 +1449,6 @@
 				4AAA9AE818FA2BFA00565381 /* CCActionTween.m in Sources */,
 				4AAA9BD818FA2BFC00565381 /* CGPointExtension.m in Sources */,
 				4AAA9C6518FA2BFC00565381 /* b2Settings.cpp in Sources */,
-				4A97C1CA191E43E9007C1EAE /* Score.m in Sources */,
 				4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */,
 				4AAA9B0D18FA2BFB00565381 /* CCGLProgram.m in Sources */,
 				4AAA9BFD18FA2BFC00565381 /* SimpleAudioEngine.m in Sources */,
@@ -1535,7 +1499,6 @@
 				4AAA9B8718FA2BFB00565381 /* CCTMXLayer.m in Sources */,
 				4AAA9B8A18FA2BFB00565381 /* CCTMXObjectGroup.m in Sources */,
 				4AAA9BA718FA2BFB00565381 /* CCES2Renderer.m in Sources */,
-				4A9FDB1119260381001D5D13 /* SRMenuLayer.mm in Sources */,
 				4AAA9BF318FA2BFC00565381 /* CDXMacOSXSupport.m in Sources */,
 				4AAA9B6F18FA2BFB00565381 /* CCSpriteBatchNode.m in Sources */,
 				4A987AFA19223FE900E4ABC1 /* SRMainMenuLayer.mm in Sources */,
@@ -1602,7 +1565,6 @@
 				4AAA9AF718FA2BFA00565381 /* CCClippingNode.m in Sources */,
 				4AAA9BD118FA2BFC00565381 /* ccUtils.c in Sources */,
 				4AAA9CB718FA2BFD00565381 /* b2RopeJoint.cpp in Sources */,
-				4A97C183191E3BB2007C1EAE /* SRDataModel.xcdatamodeld in Sources */,
 				4AAA9BCC18FA2BFC00565381 /* CCFileUtils.m in Sources */,
 				4AAA9CBD18FA2BFD00565381 /* b2WheelJoint.cpp in Sources */,
 				4AAA9C7C18FA2BFD00565381 /* b2World.cpp in Sources */,
@@ -1771,19 +1733,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		4A97C181191E3BB2007C1EAE /* SRDataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4A97C182191E3BB2007C1EAE /* SRDataModel.xcdatamodel */,
-			);
-			currentVersion = 4A97C182191E3BB2007C1EAE /* SRDataModel.xcdatamodel */;
-			path = SRDataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 4AAA9A8818FA2BFA00565381 /* Project object */;
 }

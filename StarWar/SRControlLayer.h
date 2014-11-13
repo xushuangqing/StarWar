@@ -12,7 +12,7 @@
 
 @interface SRControlLayer : CCLayer
 
-@property (retain) id<SRControlLayerDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id<SRControlLayerDelegate> delegate;
 
 - (void)fadeOut;
 - (void)setMenuEnabled:(BOOL)enabled;

@@ -9,6 +9,7 @@
 #import "GB2ShapeCache.h"
 #import "SRSpaceShip.h"
 #import "SRConstants.h"
+#import "cocos2d.h"
 
 @implementation SRSpaceShip
 {

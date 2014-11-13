@@ -10,6 +10,7 @@
 #import "SRSpaceLayer.h"
 #import "SRConstants.h"
 #import "SRSpaceScene.h"
+#import "cocos2d.h"
 
 @implementation SRMainMenuLayer
 
@@ -21,12 +22,31 @@
 	return scene;
 }
 
-- (id)init
+- (void)onEnter
 {
-	if( (self=[super init])) {
-        [self initMenu];
-	}
-	return self;
+    [super onEnter];
+    [self initBackground];
+    [self initMenu];
+}
+
+- (void)initBackground
+{
+    [self initBackgroundColor];
+    [self initBackgroundEarth];
+}
+
+- (void)initBackgroundColor
+{
+    CCLayerColor *darkBlue = [CCLayerColor layerWithColor:menuBackgroundColor];
+    [self addChild:darkBlue z:zBackgroundColor tag:kTagBackgroundColor];
+}
+
+- (void)initBackgroundEarth
+{
+    CCSprite *backgroundEarth = [CCSprite spriteWithFile:@"backgroundEarth@2x.png"];
+    backgroundEarth.anchorPoint = ccp(0, 0);
+    backgroundEarth.position = ccp(0, 0);
+    [self addChild:backgroundEarth z:zBackgroundEarth tag:kTagBackgroundEarth];
 }
 
 - (void)initMenu
@@ -44,6 +64,12 @@
     [self buttonPressed:sender];
     NSLog(@"startButtonPressed");
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SRSpaceScene node]]];
+}
+
+- (void)buttonPressed:(id)sender
+{
+    CCMenuItem *menuItem = (CCMenuItem*) sender;
+    menuItem.position = ccp(menuItem.position.x-2, menuItem.position.y-2);
 }
 
 

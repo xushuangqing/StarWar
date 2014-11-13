@@ -16,7 +16,6 @@
 #import "SREarth.h"
 #import "SRStar.h"
 #import "SRContactListener.h"
-#import "SRLaser.h"
 #import "SRPlaneBatch.h"
 #import "SRStarBatch.h"
 #import "SRPlane.h"
@@ -28,7 +27,7 @@
     SREarth *_earth;
     CCSprite *_fire;
     SRStarBatch *_starBatch;
-    SRLaser *_laser;
+    CCSprite *_laser;
     SRPlaneBatch* _planeBatch;
 
     GLESDebugDraw *m_debugDraw;
@@ -112,7 +111,7 @@
 - (void)initLaser
 {
     CGRect r = CGRectMake(0, 0, LaserMaxWidth, LaserHeight);
-    _laser = [SRLaser spriteWithFile:@"laser@2x.png" rect:r];
+    _laser = [CCSprite spriteWithFile:@"laser@2x.png" rect:r];
     
     ccTexParams params = {
         GL_LINEAR,

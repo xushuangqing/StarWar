@@ -12,7 +12,7 @@
 
 @interface SRGameOverLayer : CCLayer
 
-@property (nonatomic, retain) id<SRGameOverLayerProtocal> delegate;
+@property (nonatomic, unsafe_unretained) id<SRGameOverLayerProtocal> delegate;
 
 - (void)initGameOverMenu;
 - (void)setFinalScore:(NSInteger)score;
