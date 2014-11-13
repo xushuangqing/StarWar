@@ -59,6 +59,8 @@
     [_plusButton runAction:[CCFadeOut actionWithDuration:0.5]];
     [_minusButton runAction:[CCFadeOut actionWithDuration:0.5]];
     [_label runAction:[CCFadeOut actionWithDuration:0.5]];
+    _plusButton.isEnabled = NO;
+    _minusButton.isEnabled = NO;
 }
 
 - (void)initScoreBoard
