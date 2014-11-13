@@ -20,14 +20,13 @@
 #import "SRPlaneBatch.h"
 #import "SRStarBatch.h"
 #import "SRPlane.h"
-#import "SRFire.h"
 
 @implementation SRSpaceLayer
 {
     b2World *_world;
     SRSpaceShip *_spaceShip;
     SREarth *_earth;
-    SRFire *_fire;
+    CCSprite *_fire;
     SRStarBatch *_starBatch;
     SRLaser *_laser;
     SRPlaneBatch* _planeBatch;
@@ -36,7 +35,7 @@
     b2RayCastInput _input;
     b2RayCastOutput _output;
 
-    SRContactListener *listener;
+    SRContactListener *_listener;
 }
 
 - (id)init
@@ -76,8 +75,8 @@
 
     m_debugDraw->SetFlags(b2Draw::e_shapeBit);
     
-    listener = new SRContactListener();
-    _world->SetContactListener(listener);
+    _listener = new SRContactListener();
+    _world->SetContactListener(_listener);
 }
 
 - (void)initSpaceShip
@@ -91,7 +90,8 @@
 
 - (void)initFire
 {
-    _fire = [SRFire spriteWithFile:@"fire@2x.png"];
+    _fire = [CCSprite spriteWithFile:@"fire@2x.png"];
+    _fire.anchorPoint = ccp(1, 0.5);
     [self addChild:_fire];
 }
 
@@ -111,7 +111,6 @@
 
 - (void)initLaser
 {
-
     CGRect r = CGRectMake(0, 0, LaserMaxWidth, LaserHeight);
     _laser = [SRLaser spriteWithFile:@"laser@2x.png" rect:r];
     
@@ -293,8 +292,8 @@
 	delete _world;
 	_world = NULL;
     
-    delete listener;
-    listener = NULL;
+    delete _listener;
+    _listener = NULL;
 	
 	delete m_debugDraw;
 	m_debugDraw = NULL;

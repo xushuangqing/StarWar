@@ -8,7 +8,6 @@
 
 #import "SRStarBatch.h"
 #import "SRStar.h"
-#import "SRShieldStar.h"
 #import "SRConstants.h"
 
 @implementation SRStarBatch
@@ -25,12 +24,12 @@
 
 - (void)addShieldStar
 {
-    SRShieldStar *shieldStar = [SRShieldStar spriteWithTexture:[self texture]];
+    SRStar *star = [SRStar spriteWithTexture:[self texture]];
     float y = CCRANDOM_0_1()*[UIScreen mainScreen].bounds.size.width;
     CGPoint ccpPosition = [self convertToNodeSpace:ccp([UIScreen mainScreen].bounds.size.height+PTM_RATIO, y)];
     b2Vec2 position(ccpPosition.x/PTM_RATIO, ccpPosition.y/PTM_RATIO);
-    [shieldStar createBodyForWorld:_world withPosition:position];
-    [self addChild:shieldStar];
+    [star createBodyForWorld:_world withPosition:position];
+    [self addChild:star];
 }
 
 -(void)update:(ccTime)delta

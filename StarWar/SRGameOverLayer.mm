@@ -18,13 +18,6 @@ static NSString * const HIGH_SCORE = @"highScore";
     CCMenuItem *_mainMenuButton;
 }
 
-- (id)init
-{
-    if (self = [super init]) {
-    }
-    return self;
-}
-
 - (void)setFinalScore:(NSInteger)score
 {
     [self saveHighScore:score];

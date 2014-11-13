@@ -19,7 +19,6 @@
 		4A986E0A1902236200B68A1B /* SRContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A986E091902236200B68A1B /* SRContactListener.mm */; };
 		4A987AFA19223FE900E4ABC1 /* SRMainMenuLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A987AF919223FE900E4ABC1 /* SRMainMenuLayer.mm */; };
 		4A988B99191A5A1700A2C3D8 /* plane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A988B96191A5A1700A2C3D8 /* plane@2x.png */; };
-		4A998E311928D10A002F1875 /* SRFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A998E301928D10A002F1875 /* SRFire.m */; };
 		4A99B7C01907535300BCAB7E /* SRLaser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99B7BF1907535300BCAB7E /* SRLaser.mm */; };
 		4A99BA1719076B6400BCAB7E /* SRPlane.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99BA1619076B6400BCAB7E /* SRPlane.mm */; };
 		4A99BA1A19076D3700BCAB7E /* SRPlaneBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A99BA1919076D3700BCAB7E /* SRPlaneBatch.mm */; };
@@ -213,9 +212,7 @@
 		F7A0BA3619F7CD60009D9959 /* buttonPause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3319F7CD60009D9959 /* buttonPause@2x.png */; };
 		F7A0BA3719F7CD60009D9959 /* buttonResume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3419F7CD60009D9959 /* buttonResume@2x.png */; };
 		F7A0BA3919F7CF54009D9959 /* number@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0BA3819F7CF54009D9959 /* number@2x.png */; };
-		F7A9FC6F1994DAD200E40DBA /* SRShieldStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7A9FC6E1994DAD200E40DBA /* SRShieldStar.mm */; };
 		F7B099D31993A159003D6765 /* SRStarBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7B099D21993A159003D6765 /* SRStarBatch.mm */; };
-		F7B0D4411998FA53002993E9 /* SRGlobal.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7B0D4401998FA53002993E9 /* SRGlobal.mm */; };
 		F7BAA429199A27EF008AEC72 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BAA426199A27EF008AEC72 /* Icon-60@2x.png */; };
 		F7BAA42A199A27EF008AEC72 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BAA427199A27EF008AEC72 /* Icon-76.png */; };
 		F7BAA42B199A27EF008AEC72 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BAA428199A27EF008AEC72 /* Icon-76@2x.png */; };
@@ -247,8 +244,6 @@
 		4A987AF819223FE900E4ABC1 /* SRMainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMainMenuLayer.h; sourceTree = "<group>"; };
 		4A987AF919223FE900E4ABC1 /* SRMainMenuLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRMainMenuLayer.mm; sourceTree = "<group>"; };
 		4A988B96191A5A1700A2C3D8 /* plane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plane@2x.png"; path = "Resources/plane@2x.png"; sourceTree = "<group>"; };
-		4A998E2F1928D10A002F1875 /* SRFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFire.h; sourceTree = "<group>"; };
-		4A998E301928D10A002F1875 /* SRFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRFire.m; sourceTree = "<group>"; };
 		4A99B7BE1907535300BCAB7E /* SRLaser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLaser.h; sourceTree = "<group>"; };
 		4A99B7BF1907535300BCAB7E /* SRLaser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRLaser.mm; sourceTree = "<group>"; };
 		4A99BA1519076B6400BCAB7E /* SRPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlane.h; sourceTree = "<group>"; };
@@ -647,12 +642,8 @@
 		F7A0BA3319F7CD60009D9959 /* buttonPause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonPause@2x.png"; path = "Resources/buttonPause@2x.png"; sourceTree = "<group>"; };
 		F7A0BA3419F7CD60009D9959 /* buttonResume@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonResume@2x.png"; path = "Resources/buttonResume@2x.png"; sourceTree = "<group>"; };
 		F7A0BA3819F7CF54009D9959 /* number@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "number@2x.png"; path = "Resources/number@2x.png"; sourceTree = "<group>"; };
-		F7A9FC6D1994DAD200E40DBA /* SRShieldStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRShieldStar.h; sourceTree = "<group>"; };
-		F7A9FC6E1994DAD200E40DBA /* SRShieldStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRShieldStar.mm; sourceTree = "<group>"; };
 		F7B099D11993A159003D6765 /* SRStarBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStarBatch.h; sourceTree = "<group>"; };
 		F7B099D21993A159003D6765 /* SRStarBatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRStarBatch.mm; sourceTree = "<group>"; };
-		F7B0D43F1998FA53002993E9 /* SRGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRGlobal.h; sourceTree = "<group>"; };
-		F7B0D4401998FA53002993E9 /* SRGlobal.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SRGlobal.mm; sourceTree = "<group>"; };
 		F7BAA426199A27EF008AEC72 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Resources/Icon-60@2x.png"; sourceTree = "<group>"; };
 		F7BAA427199A27EF008AEC72 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76.png"; path = "Resources/Icon-76.png"; sourceTree = "<group>"; };
 		F7BAA428199A27EF008AEC72 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76@2x.png"; path = "Resources/Icon-76@2x.png"; sourceTree = "<group>"; };
@@ -716,8 +707,6 @@
 				4A960BBB1907D0D400099796 /* SRAircraft.mm */,
 				4AAA9CDB18FA304D00565381 /* SRSpaceShip.h */,
 				4AAA9CDC18FA304D00565381 /* SRSpaceShip.mm */,
-				4A998E2F1928D10A002F1875 /* SRFire.h */,
-				4A998E301928D10A002F1875 /* SRFire.m */,
 			);
 			name = Aircraft;
 			sourceTree = "<group>";
@@ -812,8 +801,6 @@
 				4A971F9D1900B87A00A33EE3 /* SREarth.mm */,
 				4A986E081902236200B68A1B /* SRContactListener.h */,
 				4A986E091902236200B68A1B /* SRContactListener.mm */,
-				F7B0D43F1998FA53002993E9 /* SRGlobal.h */,
-				F7B0D4401998FA53002993E9 /* SRGlobal.mm */,
 				F77512CA19FE5E48008F2F18 /* SRSpaceScene.h */,
 				F77512CB19FE5E48008F2F18 /* SRSpaceScene.mm */,
 				F749E6CD1A0258230023EE9D /* SRGameOverLayer.h */,
@@ -1384,8 +1371,6 @@
 				4A986E0619021CAE00B68A1B /* SRStar.mm */,
 				F7B099D11993A159003D6765 /* SRStarBatch.h */,
 				F7B099D21993A159003D6765 /* SRStarBatch.mm */,
-				F7A9FC6D1994DAD200E40DBA /* SRShieldStar.h */,
-				F7A9FC6E1994DAD200E40DBA /* SRShieldStar.mm */,
 			);
 			name = Suspensions;
 			sourceTree = "<group>";
@@ -1506,7 +1491,6 @@
 				4A99ECBF18FFF9300092D9A9 /* SRControlLayer.mm in Sources */,
 				4AAA9ADC18FA2BFA00565381 /* CCActionManager.m in Sources */,
 				4AAA9CB118FA2BFD00565381 /* b2PulleyJoint.cpp in Sources */,
-				F7B0D4411998FA53002993E9 /* SRGlobal.mm in Sources */,
 				4AAA9B0718FA2BFA00565381 /* CCDrawNode.m in Sources */,
 				4AAA9CAB18FA2BFD00565381 /* b2MouseJoint.cpp in Sources */,
 				4AAA9C1B18FA2BFC00565381 /* matrix.c in Sources */,
@@ -1619,7 +1603,6 @@
 				4AAA9BD118FA2BFC00565381 /* ccUtils.c in Sources */,
 				4AAA9CB718FA2BFD00565381 /* b2RopeJoint.cpp in Sources */,
 				4A97C183191E3BB2007C1EAE /* SRDataModel.xcdatamodeld in Sources */,
-				F7A9FC6F1994DAD200E40DBA /* SRShieldStar.mm in Sources */,
 				4AAA9BCC18FA2BFC00565381 /* CCFileUtils.m in Sources */,
 				4AAA9CBD18FA2BFD00565381 /* b2WheelJoint.cpp in Sources */,
 				4AAA9C7C18FA2BFD00565381 /* b2World.cpp in Sources */,
@@ -1654,7 +1637,6 @@
 				4AAA9BDB18FA2BFC00565381 /* NSThread+performBlock.m in Sources */,
 				4AAA9C8918FA2BFD00565381 /* b2CircleContact.cpp in Sources */,
 				4AAA9C7518FA2BFD00565381 /* b2Fixture.cpp in Sources */,
-				4A998E311928D10A002F1875 /* SRFire.m in Sources */,
 				4AAA9B8418FA2BFB00565381 /* CCTileMapAtlas.m in Sources */,
 				4AAA9CBA18FA2BFD00565381 /* b2WeldJoint.cpp in Sources */,
 				4AAA9B1318FA2BFB00565381 /* CCGrabber.m in Sources */,
