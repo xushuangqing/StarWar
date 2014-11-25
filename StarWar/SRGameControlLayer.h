@@ -7,12 +7,8 @@
 //
 
 #import "CCLayer.h"
+#import "SRGlobal.h"
 
-typedef NS_ENUM(NSUInteger, SRGameStatus) {
-    SRStatusRunning,
-    SRStatusPause,
-    SRStatusStop,
-};
 
 @protocol SRGameControlLayerDelegate;
 

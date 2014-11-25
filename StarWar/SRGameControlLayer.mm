@@ -12,7 +12,6 @@
 @implementation SRGameControlLayer
 {
     CCLabelAtlas* _label;
-    SRGameStatus _currentStatus;
     CCMenuItem *_pauseButton;
     CCMenuItem *_resumeButton;
     CCMenuItem *_restartButton;
@@ -22,7 +21,7 @@
 - (id)init
 {
     if (self = [super init]) {
-        _currentStatus = SRStatusRunning;
+        [SRGlobal setGameStatus:SRStatusRunning];
     }
     return self;
 }
@@ -98,7 +97,7 @@
 
 - (void)updateStatus
 {
-    switch (_currentStatus) {
+    switch ([SRGlobal gameStatus]) {
         case SRStatusRunning:
             [self fadeToRunningMode];
             break;
@@ -115,7 +114,7 @@
 
 - (void)changeGameStatusTo:(SRGameStatus)status
 {
-    _currentStatus = status;
+    [SRGlobal setGameStatus:status];
     [self updateStatus];
 }
 

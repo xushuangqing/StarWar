@@ -11,6 +11,7 @@
 #import "SRConstants.h"
 #import "SRSpaceScene.h"
 #import "cocos2d.h"
+#import "SRGlobal.h"
 
 @implementation SRMainMenuLayer
 
@@ -24,6 +25,7 @@
 
 - (void)onEnter
 {
+    [SRGlobal setGameStatus:SRStatusStop];
     [super onEnter];
     [self initBackground];
     [self initMenu];

@@ -10,6 +10,7 @@
 #import "SRSpaceScene.h"
 #import "SRConstants.h"
 #import "SRMainMenuLayer.h"
+#import "SRGlobal.h"
 
 @implementation MyNavigationController
 
@@ -163,7 +164,7 @@
 -(void) applicationWillResignActive:(UIApplication *)application
 {
     CCScene *runningScene = [[CCDirector sharedDirector] runningScene];
-    if ([runningScene isKindOfClass:[SRSpaceScene class]]) {
+    if ([runningScene isKindOfClass:[SRSpaceScene class]] && [SRGlobal gameStatus] != SRStatusStop) {
         [(SRSpaceScene *)runningScene pause];
     }
 

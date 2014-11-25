@@ -220,6 +220,7 @@
 		F7C49CED19CD4BA900D8D2BE /* earth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C49CEC19CD4BA900D8D2BE /* earth@2x.png */; };
 		F7C49CEF19CD4DCC00D8D2BE /* backgroundEarth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C49CEE19CD4DCC00D8D2BE /* backgroundEarth@2x.png */; };
 		F7C49CF919CD597F00D8D2BE /* red_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C49CF819CD597F00D8D2BE /* red_star@2x.png */; };
+		F7FF738A1A24A77900870D91 /* SRGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FF73891A24A77900870D91 /* SRGlobal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -646,6 +647,8 @@
 		F7C49CEC19CD4BA900D8D2BE /* earth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "earth@2x.png"; path = "Resources/earth@2x.png"; sourceTree = "<group>"; };
 		F7C49CEE19CD4DCC00D8D2BE /* backgroundEarth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroundEarth@2x.png"; path = "Resources/backgroundEarth@2x.png"; sourceTree = "<group>"; };
 		F7C49CF819CD597F00D8D2BE /* red_star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "red_star@2x.png"; path = "Resources/red_star@2x.png"; sourceTree = "<group>"; };
+		F7FF73881A24A77900870D91 /* SRGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRGlobal.h; sourceTree = "<group>"; };
+		F7FF73891A24A77900870D91 /* SRGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRGlobal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -775,6 +778,8 @@
 				F77512CB19FE5E48008F2F18 /* SRSpaceScene.mm */,
 				F749E6CD1A0258230023EE9D /* SRGameOverLayer.h */,
 				F749E6CE1A0258230023EE9D /* SRGameOverLayer.mm */,
+				F7FF73881A24A77900870D91 /* SRGlobal.h */,
+				F7FF73891A24A77900870D91 /* SRGlobal.m */,
 			);
 			path = StarWar;
 			sourceTree = "<group>";
@@ -1456,6 +1461,7 @@
 				4AAA9BBF18FA2BFC00565381 /* CCWindow.m in Sources */,
 				4AAA9AE818FA2BFA00565381 /* CCActionTween.m in Sources */,
 				4AAA9BD818FA2BFC00565381 /* CGPointExtension.m in Sources */,
+				F7FF738A1A24A77900870D91 /* SRGlobal.m in Sources */,
 				4AAA9C6518FA2BFC00565381 /* b2Settings.cpp in Sources */,
 				4A971F9E1900B87A00A33EE3 /* SREarth.mm in Sources */,
 				4AAA9B0D18FA2BFB00565381 /* CCGLProgram.m in Sources */,
