@@ -30,7 +30,7 @@
     CCSprite *_laser;
     SRPlaneBatch* _planeBatch;
 
-    GLESDebugDraw *m_debugDraw;
+    //GLESDebugDraw *m_debugDraw;
     b2RayCastInput _input;
     b2RayCastOutput _output;
 
@@ -69,10 +69,10 @@
     _world->SetAllowSleeping(true);
 	_world->SetContinuousPhysics(true);
     
-    m_debugDraw = new GLESDebugDraw(PTM_RATIO);
-	_world->SetDebugDraw(m_debugDraw);
+    //m_debugDraw = new GLESDebugDraw(PTM_RATIO);
+	//_world->SetDebugDraw(m_debugDraw);
 
-    m_debugDraw->SetFlags(b2Draw::e_shapeBit);
+    //m_debugDraw->SetFlags(b2Draw::e_shapeBit);
     
     _listener = new SRContactListener();
     _world->SetContactListener(_listener);
@@ -294,8 +294,8 @@
     delete _listener;
     _listener = NULL;
 	
-	delete m_debugDraw;
-	m_debugDraw = NULL;
+	//delete m_debugDraw;
+	//m_debugDraw = NULL;
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 	
