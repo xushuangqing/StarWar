@@ -14,9 +14,17 @@ typedef NS_ENUM(NSUInteger, SRGameStatus) {
     SRStatusStop,
 };
 
+typedef NS_ENUM(NSUInteger, SRSpaceshipShied) {
+    SRShied,
+    SRNotShied,
+};
+
 @interface SRGlobal : NSObject
 
 + (void)setGameStatus:(SRGameStatus)status;
 + (SRGameStatus)gameStatus;
+
++ (void)setSpaceshipShied:(SRSpaceshipShied)status;
++ (SRSpaceshipShied)spaceshipShied;
 
 @end

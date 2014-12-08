@@ -10,6 +10,7 @@
 #import "SRSpaceShip.h"
 #import "SRConstants.h"
 #import "cocos2d.h"
+#import "SRGlobal.h"
 
 @implementation SRSpaceShip
 {
@@ -60,6 +61,8 @@
     [self scheduleUpdate];
     
     _geocentric = geocentric;
+    
+    [SRGlobal setSpaceshipShied:SRNotShied];
 }
 
 - (void)getShield
@@ -72,6 +75,7 @@
         filter.maskBits = MaskBitsSpaceShipHasShield;
         fixture->SetFilterData(filter);
     }
+    [SRGlobal setSpaceshipShied:SRShied];
     [self scheduleOnce:@selector(shieldWillTimeOut) delay:ShieldTime];
 }
 
@@ -91,6 +95,7 @@
         filter.maskBits = MaskBitsSpaceShip;
         fixture->SetFilterData(filter);
     }
+    [SRGlobal setSpaceshipShied:SRShied];
 }
 
 - (void)initShineAnimation

@@ -9,6 +9,7 @@
 #import "SRGlobal.h"
 
 static SRGameStatus gameStatus;
+static SRSpaceshipShied spaceshipShied;
 
 @implementation SRGlobal
 
@@ -20,6 +21,16 @@ static SRGameStatus gameStatus;
 + (SRGameStatus)gameStatus
 {
     return gameStatus;
+}
+
++ (void)setSpaceshipShied:(SRSpaceshipShied)status
+{
+    spaceshipShied = status;
+}
+
++ (SRSpaceshipShied)spaceshipShied
+{
+    return spaceshipShied;
 }
 
 @end

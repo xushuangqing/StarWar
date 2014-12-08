@@ -9,6 +9,7 @@
 #import "SRStarBatch.h"
 #import "SRStar.h"
 #import "SRConstants.h"
+#import "SRGlobal.h"
 
 @implementation SRStarBatch
 {
@@ -24,6 +25,9 @@
 
 - (void)addShieldStar
 {
+    if ([SRGlobal spaceshipShied] == SRShied) {
+        return;
+    }
     SRStar *star = [SRStar spriteWithTexture:[self texture]];
     float y = CCRANDOM_0_1()*[UIScreen mainScreen].bounds.size.width;
     CGPoint ccpPosition = [self convertToNodeSpace:ccp([UIScreen mainScreen].bounds.size.height+PTM_RATIO, y)];
