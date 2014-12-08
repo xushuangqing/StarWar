@@ -238,7 +238,7 @@
 {
     _input.p1 = _spaceShip.b2Body->GetPosition();
     _input.p2 = b2Vec2((_spaceShip.b2Body->GetPosition()).x+(_spaceShip.b2Body->GetLinearVelocity()).x, (_spaceShip.b2Body->GetPosition()).y+(_spaceShip.b2Body->GetLinearVelocity()).y);
-    _input.maxFraction = 100;
+    _input.maxFraction = MAXFLOAT;
     
     float minFraction = _input.maxFraction;
     SRPlane* touchedPlane = nil;
