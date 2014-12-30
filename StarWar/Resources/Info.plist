@@ -12,12 +12,13 @@
 	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
+		<string>Icon-60@3x.png</string>
 		<string>Icon-60@2x.png</string>
 		<string>Icon-76.png</string>
 		<string>Icon-76@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.xushuangqing.StarWar</string>
+	<string>com.xushuangqing.FutureStarWar</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

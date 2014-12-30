@@ -47,7 +47,7 @@
     
     _minusButton = [CCMenuItemImage itemWithNormalImage:@"minus@2x.png" selectedImage:@"minusSelected@2x.png" target:self selector:@selector(minusButtonPressed:)];
     _minusButton.anchorPoint = ccp(1, 0);
-    _minusButton.position = ccp([UIScreen mainScreen].bounds.size.height, 0);
+    _minusButton.position = ccp([UIScreen mainScreen].bounds.size.width, 0);
     
     _menu = [CCMenu menuWithItems:_plusButton, _minusButton, nil];
     _menu.position = CGPointZero;
@@ -66,7 +66,7 @@
 - (void)initScoreBoard
 {
     _label = [CCLabelAtlas labelWithString:@"0" charMapFile:@"number@2x.png" itemWidth:23 itemHeight:31 startCharMap:'0'];
-    _label.position = ccp([UIScreen mainScreen].bounds.size.height/2, [UIScreen mainScreen].bounds.size.width - 35.);
+    _label.position = ccp([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height - 35.);
     _label.anchorPoint = ccp(0.5, 0.5);
     [self addChild:_label];
 }

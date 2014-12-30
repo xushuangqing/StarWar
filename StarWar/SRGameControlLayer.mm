@@ -42,17 +42,17 @@
 {
     _pauseButton = [CCMenuItemImage itemWithNormalImage:@"buttonPause@2x.png" selectedImage:@"buttonPause@2x.png" target:self selector:@selector(pauseButtonPressed:)];
     _pauseButton.anchorPoint = ccp(0, 0.5);
-    _pauseButton.position = ccp(20., [UIScreen mainScreen].bounds.size.width-35.);
+    _pauseButton.position = ccp(20., [UIScreen mainScreen].bounds.size.height-35.);
     
     _resumeButton = [CCMenuItemImage itemWithNormalImage:@"buttonResume@2x.png" selectedImage:@"buttonResume@2x.png" target:self selector:@selector(resumeButtonPressed:)];
     _resumeButton.anchorPoint = ccp(0.5, 0.5);
-    _resumeButton.position = ccp([UIScreen mainScreen].bounds.size.height/3., [UIScreen mainScreen].bounds.size.width/2.);
+    _resumeButton.position = ccp([UIScreen mainScreen].bounds.size.width/3., [UIScreen mainScreen].bounds.size.height/2.);
     _resumeButton.opacity = 0;
     [_resumeButton setIsEnabled:NO];
     
     _restartButton = [CCMenuItemImage itemWithNormalImage:@"buttonContinue@2x.png" selectedImage:@"buttonContinue@2x.png" target:self selector:@selector(restartButtonPressed:)];
     _restartButton.anchorPoint = ccp(0.5, 0.5);
-    _restartButton.position = ccp([UIScreen mainScreen].bounds.size.height*2./3., [UIScreen mainScreen].bounds.size.width/2.);
+    _restartButton.position = ccp([UIScreen mainScreen].bounds.size.width*2./3., [UIScreen mainScreen].bounds.size.height/2.);
     _restartButton.opacity = 0;
     [_restartButton setIsEnabled:NO];
     

@@ -40,8 +40,8 @@
 
 - (void)addPlane
 {
-    float y = CCRANDOM_0_1()*[UIScreen mainScreen].bounds.size.width;
-    CGPoint ccpPosition = [self convertToNodeSpace:ccp([UIScreen mainScreen].bounds.size.height+PTM_RATIO, y)];
+    float y = CCRANDOM_0_1()*[UIScreen mainScreen].bounds.size.height;
+    CGPoint ccpPosition = [self convertToNodeSpace:ccp([UIScreen mainScreen].bounds.size.width+PTM_RATIO, y)];
     b2Vec2 position(ccpPosition.x/PTM_RATIO, ccpPosition.y/PTM_RATIO);
     if (!position.IsValid()) {
         return;
@@ -58,7 +58,7 @@
     NSMutableArray *toBeDeleted = [[NSMutableArray alloc] init];
     for (SRPlane* plane in self.children) {
         CGPoint worldPosition = [self convertToWorldSpace:plane.position];
-        if (worldPosition.x > [UIScreen mainScreen].bounds.size.height+PTM_RATIO+PTM_RATIO || worldPosition.y > [UIScreen mainScreen].bounds.size.width+PTM_RATIO || worldPosition.x < -PTM_RATIO || worldPosition.y < -PTM_RATIO) {
+        if (worldPosition.x > [UIScreen mainScreen].bounds.size.width+PTM_RATIO+PTM_RATIO || worldPosition.y > [UIScreen mainScreen].bounds.size.height+PTM_RATIO || worldPosition.x < -PTM_RATIO || worldPosition.y < -PTM_RATIO) {
             [toBeDeleted addObject:plane];
         }
     }

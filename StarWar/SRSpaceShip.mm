@@ -130,7 +130,7 @@
 {
     [super update:delta];
     CGPoint worldPosition = [self convertToWorldSpace:self.anchorPointInPoints];
-    if (worldPosition.y > [UIScreen mainScreen].bounds.size.width+200 || worldPosition.y < -PTM_RATIO) {
+    if (worldPosition.y > [UIScreen mainScreen].bounds.size.height+200 || worldPosition.y < -PTM_RATIO) {
         [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationNameSpaceShipTooFar object:nil];
     }
 }

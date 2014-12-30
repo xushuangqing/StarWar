@@ -54,7 +54,7 @@
 - (void)initMenu
 {
     CCMenuItem *startButton = [CCMenuItemImage itemWithNormalImage:@"buttonPlay@2x.png" selectedImage:@"buttonPlay@2x.png" target:self selector:@selector(startButtonPressed:)];
-    startButton.position = ccp([UIScreen mainScreen].bounds.size.height/2, 210);
+    startButton.position = ccp([UIScreen mainScreen].bounds.size.width/2, 210);
     
     CCMenu* menu = [CCMenu menuWithItems:startButton, nil];
     menu.position = CGPointZero;

@@ -52,7 +52,7 @@
         [self initLaser];
         [self initPlaneBatch];
         
-        [self setAnchorPoint:ccp(0.5,PTM_RATIO*_earth.geocentric.y/[UIScreen mainScreen].bounds.size.width)];
+        [self setAnchorPoint:ccp(0.5,PTM_RATIO*_earth.geocentric.y/[UIScreen mainScreen].bounds.size.height)];
         
         /* Only set scheduleUpdate, the update function can work*/
         [self scheduleUpdate];
@@ -225,7 +225,7 @@
 
 - (void)rotateSpaceLayer
 {
-    float angle = atan(([[UIScreen mainScreen] bounds].size.height/2-_spaceShip.position.x)/(_spaceShip.position.y-_earth.geocentric.y*PTM_RATIO));
+    float angle = atan(([[UIScreen mainScreen] bounds].size.width/2-_spaceShip.position.x)/(_spaceShip.position.y-_earth.geocentric.y*PTM_RATIO));
     angle = CC_RADIANS_TO_DEGREES(angle);
     
     if ((_spaceShip.position.y-_earth.geocentric.y*PTM_RATIO) >= 0)
