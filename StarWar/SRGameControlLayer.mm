@@ -42,7 +42,7 @@
 {
     _pauseButton = [CCMenuItemImage itemWithNormalImage:@"buttonPause@2x.png" selectedImage:@"buttonPause@2x.png" target:self selector:@selector(pauseButtonPressed:)];
     _pauseButton.anchorPoint = ccp(0, 0.5);
-    _pauseButton.position = ccp(20., [UIScreen mainScreen].bounds.size.height-35.);
+    _pauseButton.position = ccp(10., [UIScreen mainScreen].bounds.size.height-32.);
     
     _resumeButton = [CCMenuItemImage itemWithNormalImage:@"buttonResume@2x.png" selectedImage:@"buttonResume@2x.png" target:self selector:@selector(resumeButtonPressed:)];
     _resumeButton.anchorPoint = ccp(0.5, 0.5);
